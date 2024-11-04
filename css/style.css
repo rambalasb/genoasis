@@ -101,6 +101,9 @@ a {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  min-height: 25vh;
+  display: flex;
+  align-items: center;
 }
 
 /* Home page specific hero */
@@ -134,32 +137,21 @@ a {
 /* About page hero */
 .hero-about {
   background-image: url('../images/about-banner.jpg');
-  padding-top: 10rem !important;
-  padding-bottom: 10rem !important;
-  min-height: 25vh !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  padding: 8rem 0 !important;
 }
 
 /* Products page hero */
 .hero-products {
   background-image: url('../images/products-banner.jpg');
-  padding-top: 10rem !important;
-  padding-bottom: 10rem !important;
-  min-height: 25vh !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  padding: 8rem 0 !important;
 }
 
 /* Contact page hero */
 .hero-contact {
   background-image: url('../images/contact-banner.jpg');
-  padding-top: 10rem !important;
-  padding-bottom: 10rem !important;
+  background-position: center 90%;
+  padding-top: 15rem !important;
+  padding-bottom: 10 !important;
   min-height: 25vh !important;
   display: flex;
   align-items: center;
@@ -199,10 +191,12 @@ Common overlay and content positioning for all heroes
     .hero .intro-excerpt {
       max-width: 450px; } }
 .hero h1 {
-  font-family: "Abel", serif;
+  font-family: 'Abel', sans-serif;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 30px; }
+  margin: 0;
+  text-align: left;
+}
   @media (min-width: 1400px) {
     .hero h1 {
       font-size: 54px; } }
