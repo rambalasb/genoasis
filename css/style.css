@@ -146,6 +146,12 @@ a {
   padding: 8rem 0 !important;
 }
 
+/* Water Treatment page hero */
+.hero-water-treatment {
+  background-image: url('../images/water-treatment-banner.jpg');
+  padding: 8rem 0 !important;
+}
+
 /* Contact page hero */
 .hero-contact {
   background-image: url('../images/contact-banner.jpg');
