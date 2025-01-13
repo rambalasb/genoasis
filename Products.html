@@ -1,172 +1,926 @@
-
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
 
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/tiny-slider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Add AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .product-category .category-title {
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+        .product-types {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
 
-		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="css/tiny-slider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<title>GenOasis - Our Products</title>
-	</head>
+        .product-types li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
 
-	<body>
+        .product-types li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+        }
 
-		<!-- Start Header/Navigation -->
-		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="GenOasis navigation bar">
+        .e-con-boxed {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
 
-			<div class="container">
-				<a class="navbar-brand" href="index.html">
-					<img src="images/logo.png" alt="Company Logo" style="height: 40px;">
-				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenOasis" aria-controls="navbarsGenOasis" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+        .e-con-inner {
+            width: 100%;
+        }
 
-				<div class="collapse navbar-collapse" id="navbarsGenOasis">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item ">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li><a class="nav-link" href="about.html">About us</a></li>
-						<li class="active"><a class="nav-link" href="Products.html">Products</a></li>
-						<li><a class="nav-link" href="contact.html">Contact us</a></li>
-					</ul>
-				</div>
-			</div>
-				
-		</nav>
-		<!-- End Header/Navigation -->
+        .row {
+            display: flex;
+            margin: 0;
+        }
 
-		<!-- Start Hero Section -->
-		<div class="hero hero-products">
-			<div class="container">
-				<div class="row justify-content-between">
-					<div class="col-lg-5">
-						<div class="intro-excerpt">
-							<h1 style="font-family: 'Abel', sans-serif;">Products & Services</h1>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Hero Section -->		
+        .content-column {
+            padding: 40px;
+            width: 66.666%;
+            background-color: #f8f9fa;
+        }
 
-		<div class="untree_co-section product-section before-footer-section">
-		    <div class="container">
-		      	<div class="row">
-				<!-- Products Row 1 -->
-				<div class="row">
-					<div class="col-12 col-md-4 mb-5">
-						<a class="product-item" href="cart.html">
-							<img src="images/product-1.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Filtration and Reverse Osmosis</h3>
-						</a>
-					</div>
-					
-					<div class="col-12 col-md-4 mb-5">
-						<a class="product-item" href="cart.html">
-							<img src="images/product-2.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Specialty Chemicals</h3>
-						</a>
-					</div>
-					
-					<div class="col-12 col-md-4 mb-5">
-						<a class="product-item" href="water-treatment.html">
-							<img src="images/product-3.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Water Treatment Solution</h3>
-						</a>
-					</div>
-				</div>
+        .image-column {
+            width: 33.333%;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+        }
 
-				<!-- Products Row 2 -->
-				<div class="row">
-					<div class="col-12 col-md-4 mb-5">
-						<a class="product-item" href="cart.html">
-							<img src="images/product-4.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Lab Equipment</h3>
-						</a>
-					</div>
-					
-					<div class="col-12 col-md-4 mb-5">
-						<a class="product-item" href="cart.html">
-							<img src="images/product-5.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Industrial Chemicals</h3>
-						</a>
-					</div>
-					
-					<div class="col-12 col-md-4 mb-5">
-						<a class="product-item" href="cart.html">
-							<img src="images/product-6.png" class="img-fluid product-thumbnail">
-							<h3 class="product-title">Water Testing Equipment</h3>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Product Section -->
-		<!-- Start Footer Section -->
-		<footer class="footer-section">
-			<div class="container relative">
-				<div class="row g-5 mb-5">
-					<div class="col-lg-4">
-						<div class="mb-4 footer-logo-wrap">
-							<a href="#" class="footer-logo">
-								<img src="images/logo.png" alt="Company Logo" style="height: 40px;">
-							</a>
-						</div>							
-						<p class="mb-4">Empowering water treatment plants with advanced chemicals and supplies for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
-						<ul class="list-unstyled custom-social">
-							<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-						</ul>
-					</div>
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .content-column,
+            .image-column {
+                width: 100%;
+            }
+            
+            .image-column {
+                min-height: 300px;
+            }
+        }
 
-					<div class="col-lg-8">
-						<div class="row links-wrap">
-							<div class="col-6 col-sm-6 col-md-3">
-								<ul class="list-unstyled">
-									<li><a href="about.html">About us</a></li>
-									<li><a href="Products.html">Products</a></li>
-									<li><a href="contact.html">Contact us</a></li>
+        .elementor-icon-list-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .elementor-icon-list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .elementor-icon-list-icon {
+            margin-right: 10px;
+        }
+
+        .elementor-spacer {
+            height: 20px;
+        }
+
+        .product-category .category-container {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .product-types li:before {
+            content: "\f061"; /* FontAwesome arrow right */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #333;
+        }
+
+        /* Add these image-specific styles */
+        .e-con-boxed .image-container {
+            height: 300px; /* Fixed height for consistency */
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .e-con-boxed .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This ensures the image covers the area without distortion */
+            object-position: center;
+        }
+
+        /* For responsive design */
+        @media (max-width: 768px) {
+            .e-con-boxed .image-container {
+                height: 250px; /* Slightly smaller on tablets */
+                margin-top: 20px; /* Add some space between text and image on mobile */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .e-con-boxed .image-container {
+                height: 200px; /* Even smaller on mobile phones */
+            }
+        }
+
+        .content-column {
+            padding: 40px;
+        }
+
+        .image-column {
+            padding: 0;
+            position: relative;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .image-column {
+                position: relative;
+                height: 300px;
+            }
+            .image-container {
+                position: relative;
+            }
+            .content-column {
+                padding: 30px;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .content-column,
+            .image-column {
+                width: 100%;
+            }
+            
+            .image-column {
+                height: 300px;
+            }
+        }
+
+        /* List styles */
+        .elementor-icon-list-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .elementor-icon-list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .elementor-icon-list-icon {
+            margin-right: 10px;
+        }
+
+        /* Title and text styles */
+        .category-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .content-column,
+            .image-column {
+                width: 100%;
+            }
+            
+            .image-column {
+                height: 300px;
+            }
+        }
+    </style>
+    <title>GenOasis - Products</title>
+</head>
+
+<body>
+    <!-- Start Header/Navigation -->
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="GenOasis navigation bar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenOasis" aria-controls="navbarsGenOasis" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsGenOasis">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="active"><a class="nav-link" href="Products.html">Products</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Header/Navigation -->
+
+    <!-- Start Hero Section -->
+    <div class="hero hero-water-treatment">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <div class="intro-excerpt">
+                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">Products</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Hero Section -->
+
+	<!-- Start Product Categories Section -->
+	<div class="untree_co-section product-section before-footer-section">
+		<div class="container">
+			<div class="product-category">
+				<!-- Pumps (Image Right) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="content-column" data-aos="fade-right" data-aos-duration="1000">
+								<h2 class="category-title">PUMPS</h2>
+								<div class="description">
+									<p>GenOasis provides a wide range of pumps tailored to various water types and applications, including surface water, groundwater, seawater, tap water, and wastewater. Whether for seawater treatment or ultrapure water production, our technical sales team is here to assist you in selecting and sizing pumps to ensure reliable solutions that meet your specific system requirements.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Low-pressure pumps</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">High-pressure pumps</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Dosing/Chemical pumps</span>
+									</li>
 								</ul>
 							</div>
-
-
+							<div class="image-column" data-aos="fade-left" data-aos-duration="1000" 
+								 style="background-image: url('images/pumps.jpg');"></div>
 						</div>
 					</div>
-
 				</div>
 
-				<div class="border-top copyright">
-					<div class="row pt-4">
-						<div class="col-lg-6">
-							<p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> GenOasis | All Rights Reserved.</p>
+				<!-- Filters (Image Left) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="image-column" data-aos="fade-right" data-aos-duration="1000" 
+								 style="background-image: url('images/filters.jpg');"></div>
+							<div class="content-column" data-aos="fade-left" data-aos-duration="1000">
+								<h2 class="category-title">FILTERS & FILTER HOUSINGS</h2>
+								<div class="description">
+									<p>GenOasis supplies replacement cartridges and bag filters for industries such as Oil & Gas, Food & Beverage, and Pharmaceuticals. We offer a complete range of filtration products and systems for pure water purification. To meet restocking needs, we provide competitive supply agreements and express delivery services as needed.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Cartridge filters</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Filter bags</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Self-cleaning filters</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Strainers</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Filter housings</span>
+									</li>
+								</ul>
+							</div>
 						</div>
+					</div>
+				</div>
 
+				<!-- Multimedia & Activated Carbon (Image Right) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="content-column" data-aos="fade-right" data-aos-duration="1000">
+								<h2 class="category-title">MULTIMEDIA & ACTIVATED CARBON</h2>
+								<div class="description">
+									<p>Our portfolio includes various filter media and adsorbents for multimedia filters (MMF), from anthracite and sand to specialty media like calcite for remineralization. Our technical sales team can help you select the most effective media for your filtration needs.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Activated Carbon</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Arsenic Adsorbent</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Garnet</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Sand & Gravel</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Anthracite</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Calcite</span>
+									</li>
+								</ul>
+							</div>
+							<div class="image-column" data-aos="fade-left" data-aos-duration="1000" 
+								 style="background-image: url('images/multimedia.jpg');"></div>
+						</div>
+					</div>
+				</div>
 
+				<!-- Ultrafiltration Modules (Image Left) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="image-column" data-aos="fade-right" data-aos-duration="1000" 
+								 style="background-image: url('images/ultrafiltration.jpg');"></div>
+							<div class="content-column" data-aos="fade-left" data-aos-duration="1000">
+								<h2 class="category-title">ULTRAFILTRATION MODULES</h2>
+								<div class="description">
+									<p>Ultrafiltration technology effectively separates suspended solids, colloids, bacteria, and viruses, making it ideal as a pre-treatment for processes like reverse osmosis and ion exchange. It is particularly useful for surface water applications with high suspended solids.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Ultrafiltration membranes</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- RO & MBR Membranes (Image Right) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="content-column" data-aos="fade-right" data-aos-duration="1000">
+								<h2 class="category-title">RO & MBR MEMBRANES</h2>
+								<div class="description">
+									<p>GenOasis offers Reverse Osmosis (RO) and Nano-filtration (NF) elements, ranging from 1.8" to 8" in diameter, suitable for various water sources and applications, including municipal desalination and residential drinking water.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">High/Low Brackish Water</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Seawater</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Nanofiltration</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Fouling Resistant</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Low & Eco Low Energy</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Flat Sheets</span>
+									</li>
+								</ul>
+							</div>
+							<div class="image-column" data-aos="fade-left" data-aos-duration="1000" 
+								 style="background-image: url('images/ro-membranes.jpg');"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Chemicals (Image Left) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="image-column" data-aos="fade-right" data-aos-duration="1000" 
+								 style="background-image: url('images/chemicals.jpg');"></div>
+							<div class="content-column" data-aos="fade-left" data-aos-duration="1000">
+								<h2 class="category-title">CHEMICALS</h2>
+								<div class="description">
+									<p>With over 25 years in the chemical industry, GenOasis offers a range of chemical solutions for water treatment, from pre-treatment to post-treatment processes. We design dosing systems and recommend suitable products based on each application's needs.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Generic Chemicals</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Antiscalants</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Membrane Cleaners</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Biocides</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Polymers</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Ion Exchange Resins (Image Right) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="content-column" data-aos="fade-right" data-aos-duration="1000">
+								<h2 class="category-title">ION EXCHANGE RESINS</h2>
+								<div class="description">
+									<p>GenOasis supplies ion exchange solutions for diverse applications such as demineralization and ultrapure water production. We offer competitive pricing and expert technical support for selecting the best products.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Weak/Strong Anion Resins</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Weak/Strong Cation Resins</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Mixed Bed Resins</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Chelating Resins</span>
+									</li>
+								</ul>
+							</div>
+							<div class="image-column" data-aos="fade-left" data-aos-duration="1000" 
+								 style="background-image: url('images/ion-exchange.jpg');"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Disinfection (Image Left) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="image-column" data-aos="fade-right" data-aos-duration="1000" 
+								 style="background-image: url('images/disinfection.jpg');"></div>
+							<div class="content-column" data-aos="fade-left" data-aos-duration="1000">
+								<h2 class="category-title">DISINFECTION</h2>
+								<div class="description">
+									<p>Our disinfection solutions include chemical-free options and advanced oxidation/disinfection systems suitable for all water applications. Full product details and technical specifications are available on our website.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">UV/Ultra-Pure Systems</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">UV Lamps</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Ozone Generators</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Pressure Vessels & Tanks (Image Right) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="content-column" data-aos="fade-right" data-aos-duration="1000">
+								<h2 class="category-title">PRESSURE VESSELS & TANKS</h2>
+								<div class="description">
+									<p>GenOasis offers a variety of pressure vessels and tanks, including RO and nanofiltration membrane housings. Our team can assist with selecting or customizing vessels to meet your water treatment requirements.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">RO Pressure Vessels</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">FRP Media Tanks</span>
+									</li>
+								</ul>
+							</div>
+							<div class="image-column" data-aos="fade-left" data-aos-duration="1000" 
+								 style="background-image: url('images/pressure-vessels.jpg');"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Instruments (Image Left) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="image-column" data-aos="fade-right" data-aos-duration="1000" 
+								 style="background-image: url('images/instruments.jpg');"></div>
+							<div class="content-column" data-aos="fade-left" data-aos-duration="1000">
+								<h2 class="category-title">INSTRUMENTS</h2>
+								<div class="description">
+									<p>We provide a range of measurement devices to keep up with evolving water treatment technologies. Our Testomat selection tool helps customers quickly find the most suitable device for their needs.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Measurement devices</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Alarm devices</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Testing kits</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Lab apparatus</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Valves & Couplings (Image Right) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="content-column" data-aos="fade-right" data-aos-duration="1000">
+								<h2 class="category-title">VALVES & COUPLINGS</h2>
+								<div class="description">
+									<p>GenOasis provides a comprehensive range of valves and couplings for water treatment applications. Our technical team can assist in selecting the right products for your specific needs.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Valves</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Couplings</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Fittings</span>
+									</li>
+								</ul>
+							</div>
+							<div class="image-column" data-aos="fade-left" data-aos-duration="1000" 
+								 style="background-image: url('images/valves.jpg');"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Bio media (Image Left) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="image-column" data-aos="fade-right" data-aos-duration="1000" 
+								 style="background-image: url('images/wastewater.jpg');"></div>
+							<div class="content-column" data-aos="fade-left" data-aos-duration="1000">
+								<h2 class="category-title">BIO MEDIA</h2>
+								<div class="description">
+									<p>GenOasis offers comprehensive solutions for wastewater treatment, including both municipal and industrial applications. Our products are designed to meet strict environmental standards while ensuring efficient treatment processes.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">MBBR MEDIA</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">MBBR-BIOCHIP
+										</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">BIOBLOCK
+										</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">SAFF MEDIA</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Air Diffusers (Image Right) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="content-column" data-aos="fade-right" data-aos-duration="1000">
+								<h2 class="category-title">AIR DIFFUSERS</h2>
+								<div class="description">
+									<p>Our air diffusion systems are designed for optimal oxygen transfer in biological treatment processes. We offer various types of diffusers suitable for different tank configurations and treatment requirements.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Fine Bubble Diffusers</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Coarse Bubble Diffusers</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Tube Diffusers</span>
+									</li>
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Disc Diffusers</span>
+									</li>
+								</ul>
+							</div>
+							<div class="image-column" data-aos="fade-left" data-aos-duration="1000" 
+								 style="background-image: url('images/air-diffusers.jpg');"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Tube Settler media (Image Left) -->
+				<div class="e-con-boxed">
+					<div class="e-con-inner">
+						<div class="row">
+							<div class="image-column" data-aos="fade-right" data-aos-duration="1000" 
+									style="background-image: url('images/wastewater.jpg');"></div>
+							<div class="content-column" data-aos="fade-left" data-aos-duration="1000">
+								<h2 class="category-title">TUBE SETTLER MEDIA</h2>
+								<div class="description">
+									<p>GenOasis offers comprehensive solutions for wastewater treatment, including both municipal and industrial applications. Our products are designed to meet strict environmental standards while ensuring efficient treatment processes.</p>
+								</div>
+								<p>Our solutions include:</p>
+								<ul class="elementor-icon-list-items">
+									<li class="elementor-icon-list-item">
+										<span class="elementor-icon-list-icon">
+											<i class="fas fa-arrow-right"></i>
+										</span>
+										<span class="elementor-icon-list-text">Tube Settler</span>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 
 			</div>
-		</footer>
-		<!-- End Footer Section -->	
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/tiny-slider.js"></script>
-		<script src="js/custom.js"></script>
-	</body>
+		</div>
+	</div>
+	<!-- End Product Categories Section -->
+    <!-- Start Footer Section -->
+    <footer class="footer-section">
+        <div class="container relative">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <div class="mb-4 footer-logo-wrap">
+                        <a href="#" class="footer-logo">
+                            <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
+                        </a>
+                    </div>
+                    <p class="mb-4">Empowering water treatment plants with advanced chemicals and supplies for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
+                    <ul class="list-unstyled custom-social">
+                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+								<li><a href="about.html">About us</a></li>
+								<li><a href="Products.html">Products</a></li>
+								<li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> GenOasis | All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
 </html>
