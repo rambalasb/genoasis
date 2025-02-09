@@ -240,8 +240,10 @@
 		    submitButton.innerHTML = 'Sending...';
 
 		    try {
-		      // Get reCAPTCHA token
-		      const token = await grecaptcha.execute('6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf', {action: 'submit'});
+		      const token = await getRecaptchaToken('submit');
+		      if (!token) {
+		        throw new Error('Failed to get reCAPTCHA token');
+		      }
 		      
 		      const formData = new FormData(form);
 		      formData.append('g-recaptcha-response', token);
@@ -258,6 +260,7 @@
 		        errorMessage.style.display = 'block';
 		      }
 		    } catch (error) {
+		      console.error('Form submission error:', error);
 		      errorMessage.style.display = 'block';
 		    }
 
@@ -265,6 +268,7 @@
 		    submitButton.innerHTML = 'Send Message';
 		  }
 		</script>
+		<script src="js/recaptcha.js"></script>
 	</body>
 
 </html>
