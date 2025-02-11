@@ -252,12 +252,11 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1000;
-            max-width: 800px; /* Set a fixed max-width */
-            max-height: 800px; /* Set a fixed max-height */
+            max-width: 800px;
+            max-height: 800px;
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
             border-radius: 8px;
             overflow: hidden;
-            pointer-events: none; /* Prevents the popup from interfering with hover */
         }
 
         .image-popup img {
@@ -275,16 +274,68 @@
             bottom: 0;
             background-color: rgba(0,0,0,0.8);
             z-index: 999;
-            pointer-events: none; /* Prevents the overlay from interfering with hover */
+            cursor: pointer;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .popup-close:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .popup-close::before,
+        .popup-close::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 2px;
+            background-color: white;
+        }
+
+        .popup-close::before {
+            transform: rotate(45deg);
+        }
+
+        .popup-close::after {
+            transform: rotate(-45deg);
         }
 
         .image-column {
             cursor: pointer;
-            transition: opacity 0.3s;
         }
 
-        .image-column:hover {
-            opacity: 0.9;
+        @media (max-width: 992px) {
+            .image-popup {
+                max-width: 600px;
+                max-height: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-popup {
+                max-width: 400px;
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .image-popup {
+                max-width: 90%;
+                max-height: 90vh;
+            }
         }
     </style>
     <title>GenOasis - Products</title>
@@ -1007,6 +1058,7 @@
     <script src="js/recaptcha.js"></script>
     <div class="popup-overlay"></div>
     <div class="image-popup">
+        <div class="popup-close"></div>
         <img src="" alt="Product detail image">
     </div>
     <script>
@@ -1015,9 +1067,15 @@
             const popup = document.querySelector('.image-popup');
             const popupImg = popup.querySelector('img');
             const overlay = document.querySelector('.popup-overlay');
+            const closeButton = document.querySelector('.popup-close');
+
+            function closePopup() {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+            }
 
             imageColumns.forEach(column => {
-                column.addEventListener('mouseenter', function() {
+                column.addEventListener('click', function() {
                     const hoverImage = this.getAttribute('data-hover-image');
                     if (hoverImage) {
                         popupImg.src = hoverImage;
@@ -1025,12 +1083,13 @@
                         overlay.style.display = 'block';
                     }
                 });
-
-                column.addEventListener('mouseleave', function() {
-                    popup.style.display = 'none';
-                    overlay.style.display = 'none';
-                });
             });
+
+            // Close popup when clicking the close button
+            closeButton.addEventListener('click', closePopup);
+
+            // Close popup when clicking the overlay
+            overlay.addEventListener('click', closePopup);
         });
     </script>
 </body>
