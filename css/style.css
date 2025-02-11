@@ -1139,16 +1139,19 @@ html {
     display: inline-block;
 }
 
-@media (max-width: 768px) {
-    .contact-info {
-        position: relative;
-        text-align: center !important;
-    }
-    
-    .contact-info span {
-        display: block;
-        margin-bottom: 5px;
-    }
+@media (max-width: 576px) {
+  .top-bar .d-flex {
+      flex-direction: column;
+      align-items: flex-end;
+  }
+  
+  .top-bar a {
+      margin-bottom: 0.25rem;
+  }
+  
+  .top-bar a:last-child {
+      margin-bottom: 0;
+  }
 }
 
 /* Footer Contact Section Styles */
