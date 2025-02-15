@@ -457,6 +457,21 @@
                 font-size: 0.95rem;
             }
         }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .collapse {
+            transition: all 0.3s ease;
+        }
     </style>
     <title>GenOasis - Wastewater Equipments</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
@@ -528,123 +543,128 @@
                             The Genoasis Small Boss MBBR biofilter media is designed with exceptional mechanical properties and high impact strength. It features optimal density, excellent hydrophilic performance, and a long service life. This media provides an ideal growing environment for anaerobic microorganisms, offering numerous advantages for efficient wastewater treatment.
                         </p>
 
-                        <h3 class="mb-3">Product description</h3>
-                        <h4 class="mb-3">Technical core of Small Boss MBBR Bio Filter Media</h4>
-                        <ul class="feature-list">
-                            <li>Special design of surface, stronger bio-film growth capacity</li>
-                            <li>Large specific surface area, high voidage, the more periphyton biomass</li>
-                            <li>Unique design of structure and shape according to hydromechanics, strong three-dimensional flow dynamics in the water</li>
-                            <li>Adding hydrophilic groups and other trace elements, the biofilm formation time only 3-15 days</li>
-                            <li>Excellent impact strength, strong gas shear capacity</li>
-                            <li>Without any holder, easy to cure, save energy and space</li>
-                        </ul>
+                        <div class="collapse" id="mbbrDetails">
+                            <h3 class="mb-3">Product description</h3>
+                            <h4 class="mb-3">Technical core of Small Boss MBBR Bio Filter Media</h4>
+                            <ul class="feature-list">
+                                <li>Special design of surface, stronger bio-film growth capacity</li>
+                                <li>Large specific surface area, high voidage, the more periphyton biomass</li>
+                                <li>Unique design of structure and shape according to hydromechanics, strong three-dimensional flow dynamics in the water</li>
+                                <li>Adding hydrophilic groups and other trace elements, the biofilm formation time only 3-15 days</li>
+                                <li>Excellent impact strength, strong gas shear capacity</li>
+                                <li>Without any holder, easy to cure, save energy and space</li>
+                            </ul>
+
+                            <div class="table-responsive mt-5">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>Proportion</th>
+                                            <th>Specifications<br>(diameter*thickness)</th>
+                                            <th>Specific surface area</th>
+                                            <th>Number of stacks</th>
+                                            <th>Material</th>
+                                            <th>Service life</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>PE01</td>
+                                            <td>0.96-0.98g/cm³</td>
+                                            <td>Φ12mm*9mm</td>
+                                            <td>&gt;800m²/m³</td>
+                                            <td>&gt;630,000 pcs/m³</td>
+                                            <td>HDPE</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PE02</td>
+                                            <td>0.96-0.98g/cm³</td>
+                                            <td>Φ11mm*7mm</td>
+                                            <td>&gt;900m²/m³</td>
+                                            <td>&gt;930,000 pcs/m³</td>
+                                            <td>HDPE</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PE03</td>
+                                            <td>0.96-0.98g/cm³</td>
+                                            <td>Φ10mm*7mm</td>
+                                            <td>&gt;1000m²/m³</td>
+                                            <td>&gt;990,000 pcs/m³</td>
+                                            <td>HDPE</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PE04</td>
+                                            <td>0.96-0.98g/cm³</td>
+                                            <td>Φ16mm*10mm</td>
+                                            <td>&gt;800m²/m³</td>
+                                            <td>&gt;260,000 pcs/m³</td>
+                                            <td>HDPE</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PE05</td>
+                                            <td>0.96-0.98g/cm³</td>
+                                            <td>Φ25mm*12mm</td>
+                                            <td>&gt;500m²/m³</td>
+                                            <td>&gt;100,000 pcs/m³</td>
+                                            <td>HDPE</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PE06</td>
+                                            <td>0.96-0.98g/cm³</td>
+                                            <td>Φ25mm*10mm</td>
+                                            <td>&gt;500m²/m³</td>
+                                            <td>&gt;118,000 pcs/m³</td>
+                                            <td>HDPE</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PE08</td>
+                                            <td>1.02-1.05g/cm³</td>
+                                            <td>Φ5mm*10mm</td>
+                                            <td>&gt;3500m²/m³</td>
+                                            <td>&gt;1,540,000 pcs/m³</td>
+                                            <td>HIPS</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PE09</td>
+                                            <td>0.96-0.98g/cm³</td>
+                                            <td>Φ15mm*15mm</td>
+                                            <td>&gt;900m²/m³</td>
+                                            <td>&gt;230,000 pcs/m³</td>
+                                            <td>HDPE</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PE38</td>
+                                            <td>0.96-0.98g/cm³</td>
+                                            <td>Φ25mm*10mm</td>
+                                            <td>&gt;800m²/m³</td>
+                                            <td>&gt;118,000 pcs/m³</td>
+                                            <td>HDPE</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#mbbrDetails" aria-expanded="false" aria-controls="mbbrDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
                     </div>
                     <div class="col-md-4 d-flex align-items-start justify-content-center">
                         <img src="images/mbbrmedia.jpg" alt="MBBR Media" style="max-width: 200px; margin-top: 20px;">
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="table-responsive mt-5">
-            <table class="table table-striped table-bordered">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Model</th>
-                        <th>Proportion</th>
-                        <th>Specifications<br>(diameter*thickness)</th>
-                        <th>Specific surface area</th>
-                        <th>Number of stacks</th>
-                        <th>Material</th>
-                        <th>Service life</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>PE01</td>
-                        <td>0.96-0.98g/cm³</td>
-                        <td>Φ12mm*9mm</td>
-                        <td>&gt;800m²/m³</td>
-                        <td>&gt;630,000 pcs/m³</td>
-                        <td>HDPE</td>
-                        <td>&gt; 15 years</td>
-                    </tr>
-                    <tr>
-                        <td>PE02</td>
-                        <td>0.96-0.98g/cm³</td>
-                        <td>Φ11mm*7mm</td>
-                        <td>&gt;900m²/m³</td>
-                        <td>&gt;930,000 pcs/m³</td>
-                        <td>HDPE</td>
-                        <td>&gt; 15 years</td>
-                    </tr>
-                    <tr>
-                        <td>PE03</td>
-                        <td>0.96-0.98g/cm³</td>
-                        <td>Φ10mm*7mm</td>
-                        <td>&gt;1000m²/m³</td>
-                        <td>&gt;990,000 pcs/m³</td>
-                        <td>HDPE</td>
-                        <td>&gt; 15 years</td>
-                    </tr>
-                    <tr>
-                        <td>PE04</td>
-                        <td>0.96-0.98g/cm³</td>
-                        <td>Φ16mm*10mm</td>
-                        <td>&gt;800m²/m³</td>
-                        <td>&gt;260,000 pcs/m³</td>
-                        <td>HDPE</td>
-                        <td>&gt; 15 years</td>
-                    </tr>
-                    <tr>
-                        <td>PE05</td>
-                        <td>0.96-0.98g/cm³</td>
-                        <td>Φ25mm*12mm</td>
-                        <td>&gt;500m²/m³</td>
-                        <td>&gt;100,000 pcs/m³</td>
-                        <td>HDPE</td>
-                        <td>&gt; 15 years</td>
-                    </tr>
-                    <tr>
-                        <td>PE06</td>
-                        <td>0.96-0.98g/cm³</td>
-                        <td>Φ25mm*10mm</td>
-                        <td>&gt;500m²/m³</td>
-                        <td>&gt;118,000 pcs/m³</td>
-                        <td>HDPE</td>
-                        <td>&gt; 15 years</td>
-                    </tr>
-                    <tr>
-                        <td>PE08</td>
-                        <td>1.02-1.05g/cm³</td>
-                        <td>Φ5mm*10mm</td>
-                        <td>&gt;3500m²/m³</td>
-                        <td>&gt;1,540,000 pcs/m³</td>
-                        <td>HIPS</td>
-                        <td>&gt; 15 years</td>
-                    </tr>
-                    <tr>
-                        <td>PE09</td>
-                        <td>0.96-0.98g/cm³</td>
-                        <td>Φ15mm*15mm</td>
-                        <td>&gt;900m²/m³</td>
-                        <td>&gt;230,000 pcs/m³</td>
-                        <td>HDPE</td>
-                        <td>&gt; 15 years</td>
-                    </tr>
-                    <tr>
-                        <td>PE38</td>
-                        <td>0.96-0.98g/cm³</td>
-                        <td>Φ25mm*10mm</td>
-                        <td>&gt;800m²/m³</td>
-                        <td>&gt;118,000 pcs/m³</td>
-                        <td>HDPE</td>
-                        <td>&gt; 15 years</td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
 
@@ -706,71 +726,75 @@
         <div class="row mb-5">
             <div class="col-12">
                 <div class="row">
-                    <div class="col-md-4 d-flex align-items-start justify-content-center">
-                        <img src="images/bioblock.jpg" alt="Bio-Block Filter Media" style="max-width: 200px; margin-top: 20px;">
-                    </div>
                     <div class="col-md-8">
                         <h2 class="mb-4">BIO-BLOK Filter Media</h2>
                         <p class="lead mb-4">
-                            BIO-BLOK filter media helps increasing the surface area in your system to improve the efficiency and reducing the footprint. BIO-BLOK® is used for most wastewater treatment applications, in aquaculture and for stormwater management. We provide free consultancy to give you the best conditions for designing your system.
+                            BIO-BLOK filter media helps increasing the surface area in your system to improve the efficiency and reducing the footprint. BIO-BLOK® is used for most wastewater treatment applications, in aquaculture and for stormwater management.
                         </p>
 
-                        <div class="table-responsive mt-4">
-                            <table class="table table-striped table-bordered">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Type</th>
-                                        <th>Diameter</th>
-                                        <th>Effective Surface Area</th>
-                                        <th>Weight</th>
-                                        <th>Density</th>
-                                        <th>Material</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Bio Block 35</td>
-                                        <td>35mm</td>
-                                        <td>＞350m²/m³</td>
-                                        <td>100kg/CBM</td>
-                                        <td>0.96-0.98g/cm³</td>
-                                        <td>HDPE</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bio Block 50</td>
-                                        <td>50mm</td>
-                                        <td>＞300m²/m³</td>
-                                        <td>70kg/CBM</td>
-                                        <td>0.96-0.98g/cm³</td>
-                                        <td>HDPE</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bio Block 55</td>
-                                        <td>55mm</td>
-                                        <td>＞200m²/m³</td>
-                                        <td>60kg/CBM</td>
-                                        <td>0.96-0.98g/cm³</td>
-                                        <td>HDPE</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bio Block 70</td>
-                                        <td>70mm</td>
-                                        <td>＞150m²/m³</td>
-                                        <td>50kg/CBM</td>
-                                        <td>0.96-0.98g/cm³</td>
-                                        <td>HDPE</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bio Block 75</td>
-                                        <td>75mm</td>
-                                        <td>＞100m²/m³</td>
-                                        <td>46kg/CBM</td>
-                                        <td>0.96-0.98g/cm³</td>
-                                        <td>HDPE</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="collapse" id="bioBlockDetails">
+                            <h3 class="mb-3">Features & Benefits</h3>
+                            <ul class="feature-list mb-4">
+                                <li>High specific surface area</li>
+                                <li>High void space</li>
+                                <li>Optimal conditions for biofilm growth</li>
+                                <li>Strong and durable construction</li>
+                                <li>Easy installation</li>
+                                <li>Cost-effective solution</li>
+                            </ul>
+
+                            <div class="table-responsive mt-4">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Specific Surface Area</th>
+                                            <th>Void Space</th>
+                                            <th>Material</th>
+                                            <th>Application</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>BIO-BLOK® 80 HD G</td>
+                                            <td>80 m²/m³</td>
+                                            <td>95%</td>
+                                            <td>PE/PP</td>
+                                            <td>Pre-treatment</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BIO-BLOK® 100</td>
+                                            <td>100 m²/m³</td>
+                                            <td>95%</td>
+                                            <td>PE/PP</td>
+                                            <td>Standard treatment</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BIO-BLOK® 150 HD</td>
+                                            <td>150 m²/m³</td>
+                                            <td>95%</td>
+                                            <td>PE/PP</td>
+                                            <td>Advanced treatment</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BIO-BLOK® 200</td>
+                                            <td>200 m²/m³</td>
+                                            <td>95%</td>
+                                            <td>PE/PP</td>
+                                            <td>Intensive treatment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#bioBlockDetails" aria-expanded="false" aria-controls="bioBlockDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-start justify-content-center">
+                        <img src="images/bioblock.jpg" alt="BIO-BLOK Filter Media" style="max-width: 200px; margin-top: 20px;">
                     </div>
                 </div>
             </div>
@@ -783,39 +807,67 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h2 class="mb-4">Bio Chip</h2>
-                        <p class="lead mb-4" style="word-wrap: break-word;">
+                        <p class="lead mb-4">
                             Small Boss MBBR biofilter media has excellent mechanical property, high impact strength, suitable density, good hydrophilic performance, long service life, good growing environment for Anaerbic and many other advantages.
                         </p>
+
+                        <div class="collapse" id="bioChipDetails">
+                            <h3 class="mb-3">Technical Specifications</h3>
+                            <ul class="feature-list mb-4">
+                                <li>Material: High-quality PP/PE</li>
+                                <li>Specific surface area: >500m²/m³</li>
+                                <li>Void ratio: >90%</li>
+                                <li>Density: 0.95-1.05g/cm³</li>
+                                <li>Service life: >15 years</li>
+                            </ul>
+
+                            <h3 class="mb-3">Applications</h3>
+                            <ul class="feature-list mb-4">
+                                <li>Municipal wastewater treatment</li>
+                                <li>Industrial wastewater treatment</li>
+                                <li>Aquaculture systems</li>
+                                <li>Biological aerated filters</li>
+                                <li>Moving bed biofilm reactors</li>
+                            </ul>
+
+                            <div class="table-responsive mt-4">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>Size</th>
+                                            <th>Surface Area</th>
+                                            <th>Material</th>
+                                            <th>Color</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>BC-01</td>
+                                            <td>25x12mm</td>
+                                            <td>500m²/m³</td>
+                                            <td>PP/PE</td>
+                                            <td>Black/White</td>
+                                        </tr>
+                                        <tr>
+                                            <td>BC-02</td>
+                                            <td>15x15mm</td>
+                                            <td>650m²/m³</td>
+                                            <td>PP/PE</td>
+                                            <td>Black/White</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#bioChipDetails" aria-expanded="false" aria-controls="bioChipDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
                     </div>
                     <div class="col-md-4 d-flex align-items-start justify-content-center">
                         <img src="images/biochip.jpg" alt="Bio Chip" style="max-width: 200px; margin-top: 20px;">
-                    </div>
-                </div>
-
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Span</th>
-                                        <th>Surface Area</th>
-                                        <th>Life Span</th>
-                                        <th>Packing Numbers</th>
-                                        <th>Material</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Φ30*1.1mm</td>
-                                        <td>＞5500m²/m³</td>
-                                        <td>＞15 years</td>
-                                        <td>＞340000 pcs/m³</td>
-                                        <td>HDPE</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -831,54 +883,125 @@
                         <p class="lead mb-4">
                             Tubular settlers and parallel plates improve the settling capacity of circular clarifiers and/or rectangular settling tanks by reducing the vertical distance that flocculated particles must settle before they coalesce to form larger particles.
                         </p>
+
+                        <div class="collapse" id="lamellaDetails">
+                            <div class="table-responsive mt-4">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Installation Service</th>
+                                            <th>Industry</th>
+                                            <th>Angle Correction</th>
+                                            <th>Fitting Arrangement</th>
+                                            <th>Width of Inlet Launder</th>
+                                            <th>Cross Sectional Area</th>
+                                            <th>Plan Area</th>
+                                            <th>Hydraulic Ratio</th>
+                                            <th>Hopper Depth</th>
+                                            <th>Hopper Slope</th>
+                                            <th>Material</th>
+                                            <th>Shape</th>
+                                            <th>Settling Velocity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Lamella, Horizontal Flow, Rectangular, Solids Contact, Circular</td>
+                                            <td>Yes</td>
+                                            <td>Distillery, Dairy Industry, Slaughter House, Automobile, Chemical/Petroleum Industry, Paper Mills, Sugar Industry, Pharmaceutical Industry, sewage, Leather Industry</td>
+                                            <td>0.43 m</td>
+                                            <td>Tongue & Groove</td>
+                                            <td>0.30 m</td>
+                                            <td>120 MM X 44 MM</td>
+                                            <td>68.72 m²</td>
+                                            <td>1.5 CM.</td>
+                                            <td>1.66 m</td>
+                                            <td>50.0 Degrees</td>
+                                            <td>PVC</td>
+                                            <td>Hexagonal Shevron</td>
+                                            <td>0.50 m/sec</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#lamellaDetails" aria-expanded="false" aria-controls="lamellaDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
                     </div>
                     <div class="col-md-4 d-flex align-items-start justify-content-center">
                         <img src="images/tubesettler.jpg" alt="Lamella Tube Settler Media" style="max-width: 200px; margin-top: 20px;">
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Type</th>
-                                        <th>Installation Service</th>
-                                        <th>Industry</th>
-                                        <th>Angle Correction</th>
-                                        <th>Fitting Arrangement</th>
-                                        <th>Width of Inlet Launder</th>
-                                        <th>Cross Sectional Area</th>
-                                        <th>Plan Area</th>
-                                        <th>Hydraulic Ratio</th>
-                                        <th>Hopper Depth</th>
-                                        <th>Hopper Slope</th>
-                                        <th>Material</th>
-                                        <th>Shape</th>
-                                        <th>Settling Velocity</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Lamella, Horizontal Flow, Rectangular, Solids Contact, Circular</td>
-                                        <td>Yes</td>
-                                        <td>Distillery, Dairy Industry, Slaughter House, Automobile, Chemical/Petroleum Industry, Paper Mills, Sugar Industry, Pharmaceutical Industry, sewage, Leather Industry</td>
-                                        <td>0.43 m</td>
-                                        <td>Tongue & Groove</td>
-                                        <td>0.30 m</td>
-                                        <td>120 MM X 44 MM</td>
-                                        <td>68.72 m²</td>
-                                        <td>1.5 CM.</td>
-                                        <td>1.66 m</td>
-                                        <td>50.0 Degrees</td>
-                                        <td>PVC</td>
-                                        <td>Hexagonal Shevron</td>
-                                        <td>0.50 m/sec</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2 class="mb-4">Coarse Bubble Diffusers</h2>
+                        <p class="lead mb-4">
+                            The Genoasis diffusers are crafted using the latest technology and are specifically designed for use in wastewater treatment plants. Each diffuser's projection is the result of extensive Research and Development, tailored to meet the unique needs of wastewater treatment facilities.
+                        </p>
+
+                        <div class="collapse" id="coarseBubbleDetails">
+                            <ul class="feature-list mb-4">
+                                <li>Coarse Bubble Disc Diffusers can be installed to HDPE, PVC or stainless-steel pipes by PP Saddles.</li>
+                                <li>Connections are 3/4" male.</li>
+                                <li>Material of body part is PP (polypropylene) and supported with %30 GPR for UV rays and different chemical processes.</li>
+                                <li>Standard material of diffuser membranes are EPDM. Also, Genoasis supports the customers with PTFE COATED membranes for different treatment processes.</li>
+                                <li>Membrane hole diameter is 4 mm and distributed equally around the membrane.</li>
+                                <li>It warrants between 20%-25% oxygen efficiency.</li>
+                                <li>It holds energy costs very low because of minimum pressure loss.</li>
+                            </ul>
+
+                            <div class="table-responsive mt-4">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Height or Total Dia (mm)</th>
+                                            <th>Type of Product</th>
+                                            <th>Total Height (mm)</th>
+                                            <th>Effective Area / Total Diameter (mm)</th>
+                                            <th>Perforated Area (m²)</th>
+                                            <th>Capacity (Nm³/h)</th>
+                                            <th>Material of Membrane</th>
+                                            <th>Total Weight (kg)</th>
+                                            <th>Outlet</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>80-3"</td>
+                                            <td>46</td>
+                                            <td>CBDD80-3"</td>
+                                            <td>46</td>
+                                            <td>60/80</td>
+                                            <td>0,02</td>
+                                            <td>2-25</td>
+                                            <td>EPDM - PTFE</td>
+                                            <td>0,4</td>
+                                            <td>3/4" Male</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#coarseBubbleDetails" aria-expanded="false" aria-controls="coarseBubbleDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-start justify-content-center">
+                        <img src="images/coarsebubble.jpg" alt="Coarse Bubble Diffusers" style="max-width: 200px; margin-top: 20px;">
                     </div>
                 </div>
             </div>
@@ -892,24 +1015,35 @@
                     <div class="col-md-8">
                         <h2 class="mb-4">Submerged Aerobic Fixed Film Reactor (SAFF MEDIA)</h2>
                         <p class="lead mb-4">
-                            Submerged Aerobic Fixed Film Reactor (SAFF) is a cost-effective method of waste water treatment and sewage sanitation that is primarily used in residential and commercial complexes. This technology primarily has on the three stages that are Primary Settlement, Secondary Treatment and Final Settlement / Clarification.
+                            Submerged Aerobic Fixed Film Reactor (SAFF) is a cost-effective method of waste water treatment and sewage sanitation that is primarily used in residential and commercial complexes.
                         </p>
 
-                        <h3 class="mb-3">Features</h3>
-                        <ul class="feature-list">
-                            <li>Upgrading existing rock trickling filters BOD</li>
-                            <li>Reduction in Trickling Filters Complete Secondary</li>
-                            <li>Treatment Trickling Filters/Solids Contact(TF/SC)</li>
-                            <li>Roughing of pre-treatment</li>
-                            <li>Nitrification De-nitrification</li>
-                            <li>Odor Scrubbing. Anaerobic Treatment</li>
-                            <li>SAFF or submerged aerobic fixed film reactors</li>
-                        </ul>
+                        <div class="collapse" id="saffMediaDetails">
+                            <p class="mb-4">
+                                This technology primarily has on the three stages that are Primary Settlement, Secondary Treatment and Final Settlement / Clarification.
+                            </p>
 
-                        <h3 class="mb-3 mt-4">APPLICATION:</h3>
-                        <p>
-                            SAFFMEDIA has numerous applications in Waste water treatment. The shape of the media has a significant influence on application and must be considered along specific surface area and void ratio.
-                        </p>
+                            <h3 class="mb-3">Features</h3>
+                            <ul class="feature-list">
+                                <li>Upgrading existing rock trickling filters BOD</li>
+                                <li>Reduction in Trickling Filters Complete Secondary</li>
+                                <li>Treatment Trickling Filters/Solids Contact(TF/SC)</li>
+                                <li>Roughing of pre-treatment</li>
+                                <li>Nitrification De-nitrification</li>
+                                <li>Odor Scrubbing. Anaerobic Treatment</li>
+                                <li>SAFF or submerged aerobic fixed film reactors</li>
+                            </ul>
+
+                            <h3 class="mb-3 mt-4">APPLICATION:</h3>
+                            <p>
+                                SAFFMEDIA has numerous applications in Waste water treatment. The shape of the media has a significant influence on application and must be considered along specific surface area and void ratio.
+                            </p>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#saffMediaDetails" aria-expanded="false" aria-controls="saffMediaDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
                     </div>
                     <div class="col-md-4 d-flex align-items-start justify-content-center">
                         <img src="images/saffmedia.jpg" alt="SAFF Media" style="max-width: 200px; margin-top: 20px;">
@@ -924,138 +1058,76 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col-md-8">
-                        <h2 class="mb-4">Coarse Bubble Diffusers</h2>
-                        <p class="lead mb-4" style="word-wrap: break-word;">
-                            The Genoasis diffusers are crafted using the latest technology and are specifically designed for use in wastewater treatment plants. Each diffuser's projection is the result of extensive Research and Development, tailored to meet the unique needs of wastewater treatment facilities. The materials used in Genoasis diffusers are carefully chosen to suit the specific processes of wastewater treatment, and each diffuser undergoes rigorous testing before shipment to ensure top performance.
-                        </p>
-
-                        <ul class="feature-list mb-4">
-                            <li>Coarse Bubble Disc Diffusers can be installed to HDPE, PVC or stainless-steel pipes by PP Saddles.</li>
-                            <li>Connections are 3/4" male.</li>
-                            <li>Material of body part is PP (polypropylene) and supported with %30 GPR for UV rays and different chemical processes.</li>
-                            <li>Standard material of diffuser membranes are EPDM. Also, Genoasis supports the customers with PTFE COATED membranes for different treatment processes.</li>
-                            <li>Membrane hole diameter is 4 mm and distributed equally around the membrane.</li>
-                            <li>It warrants between 20%-25% oxygen efficiency.</li>
-                            <li>It holds energy costs very low because of minimum pressure loss.</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 d-flex align-items-start justify-content-center">
-                        <img src="images/coarsebubble.jpg" alt="Coarse Bubble Diffusers" style="max-width: 200px; margin-top: 20px;">
-                    </div>
-                </div>
-
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Type</th>
-                                        <th>Height or Total Dia (mm)</th>
-                                        <th>Type of Product</th>
-                                        <th>Total Height (mm)</th>
-                                        <th>Effective Area / Total Diameter (mm)</th>
-                                        <th>Perforated Area (m²)</th>
-                                        <th>Capacity (Nm³/h)</th>
-                                        <th>Material of Membrane</th>
-                                        <th>Total Weight (kg)</th>
-                                        <th>Outlet</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>80-3"</td>
-                                        <td>46</td>
-                                        <td>CBDD80-3"</td>
-                                        <td>46</td>
-                                        <td>60/80</td>
-                                        <td>0,02</td>
-                                        <td>2-25</td>
-                                        <td>EPDM - PTFE</td>
-                                        <td>0,4</td>
-                                        <td>3/4" Male</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12">
-                <div class="row">
-                    <div class="col-md-8">
                         <h2 class="mb-4">FINE BUBBLE DISC DIFFUSER</h2>
-                        <p class="lead mb-4" style="word-wrap: break-word;">
+                        <p class="lead mb-4">
                             Disc diffusers have 3 parts as lower part, frame and membrane. Disc Diffusers can be installed to HDPE, PVC or stainless steel pipes by PP Saddles. Material of frame and lower part is PP (polypropylene) and supported with %30 GPR for UV rays and different chemical processes.
                         </p>
 
-                        <ul class="feature-list mb-4">
-                            <li>Connections are 3/4" or 1" male.</li>
-                            <li>Diffusers are suitable for retractable systems.</li>
-                            <li>Standart material of diffuser membranes are EPDM. Also Aquaflex supports the customers with SILICON and PTFE COATED membranes for different treatment processes.</li>
-                            <li>When the air flow is stopped, the gaps on the membrane close themselves because of its conic structure, in order to prevent the sludge and particulate matter fill.</li>
-                            <li>Maximum oxygen efficiency is aimed while different production techniques with carefully chosen materials</li>
-                            <li>It warrants between 35%-45% oxygen efficiency.</li>
-                            <li>It holds energy costs very low because of minimum pressure loss.</li>
-                            <li>The aeration costs loom very large at total operation costs. Because of that reason, Genoasis Disc Diffusers decrease the operation costs minimum.</li>
-                        </ul>
+                        <div class="collapse" id="fineBubbleDetails">
+                            <ul class="feature-list mb-4">
+                                <li>Connections are 3/4" or 1" male.</li>
+                                <li>Diffusers are suitable for retractable systems.</li>
+                                <li>Standart material of diffuser membranes are EPDM. Also Aquaflex supports the customers with SILICON and PTFE COATED membranes for different treatment processes.</li>
+                                <li>When the air flow is stopped, the gaps on the membrane close themselves because of its conic structure, in order to prevent the sludge and particulate matter fill.</li>
+                                <li>Maximum oxygen efficiency is aimed while different production techniques with carefully chosen materials</li>
+                                <li>It warrants between 35%-45% oxygen efficiency.</li>
+                                <li>It holds energy costs very low because of minimum pressure loss.</li>
+                                <li>The aeration costs loom very large at total operation costs. Because of that reason, Genoasis Disc Diffusers decrease the operation costs minimum.</li>
+                            </ul>
+
+                            <div class="table-responsive mt-4">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Type of Product</th>
+                                            <th>Total Height (mm)</th>
+                                            <th>Perforated Area / Outer Diameter (mm)</th>
+                                            <th>Effective Area (m²)</th>
+                                            <th>Capacity (Nm³/h)</th>
+                                            <th>Design Capacity (Nm³/h)</th>
+                                            <th>Material of Membrane</th>
+                                            <th>Total Weight (kg)</th>
+                                            <th>Number of Slots</th>
+                                            <th>Outlet</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>230-9" Disc Diffuser</td>
+                                            <td>48</td>
+                                            <td>230/270</td>
+                                            <td>0,039</td>
+                                            <td>1-8</td>
+                                            <td>3-5</td>
+                                            <td>EPDM-Silicon- PTFE Coated</td>
+                                            <td>0,6</td>
+                                            <td>6800</td>
+                                            <td>3/4", 1" Male</td>
+                                        </tr>
+                                        <tr>
+                                            <td>300-12" Disc Diffuser</td>
+                                            <td>61</td>
+                                            <td>300/340</td>
+                                            <td>0,066</td>
+                                            <td>1-12</td>
+                                            <td>5-8</td>
+                                            <td>EPDM - Silicon - PTFE Coated</td>
+                                            <td>1,3</td>
+                                            <td>10900</td>
+                                            <td>3/4" - 1" Male</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#fineBubbleDetails" aria-expanded="false" aria-controls="fineBubbleDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
                     </div>
                     <div class="col-md-4 d-flex align-items-start justify-content-center">
                         <img src="images/finebubble.jpg" alt="Fine Bubble Disc Diffuser" style="max-width: 200px; margin-top: 20px;">
-                    </div>
-                </div>
-
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Type of Product</th>
-                                        <th>Total Height (mm)</th>
-                                        <th>Perforated Area / Outer Diameter (mm)</th>
-                                        <th>Effective Area (m²)</th>
-                                        <th>Capacity (Nm³/h)</th>
-                                        <th>Design Capacity (Nm³/h)</th>
-                                        <th>Material of Membrane</th>
-                                        <th>Total Weight (kg)</th>
-                                        <th>Number of Slots</th>
-                                        <th>Outlet</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>230-9" Disc Diffuser</td>
-                                        <td>48</td>
-                                        <td>230/270</td>
-                                        <td>0,039</td>
-                                        <td>1-8</td>
-                                        <td>3-5</td>
-                                        <td>EPDM-Silicon- PTFE Coated</td>
-                                        <td>0,6</td>
-                                        <td>6800</td>
-                                        <td>3/4", 1" Male</td>
-                                    </tr>
-                                    <tr>
-                                        <td>300-12" Disc Diffuser</td>
-                                        <td>61</td>
-                                        <td>300/340</td>
-                                        <td>0,066</td>
-                                        <td>1-12</td>
-                                        <td>5-8</td>
-                                        <td>EPDM - Silicon - PTFE Coated</td>
-                                        <td>1,3</td>
-                                        <td>10900</td>
-                                        <td>3/4" - 1" Male</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1068,120 +1140,127 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h2 class="mb-4">TUBE DIFFUSERS</h2>
-                        <p class="lead mb-4" style="word-wrap: break-word;">
-                            Genoasis tube diffusers are best solution for long and narrow aeration tanks. Opportunity to choose different material, connection thread, and size makes Genoasis tube diffusers fit to any type of waste water. The diffusers in Genoasis are produced with the latest technology and the diffusers are used in wastewater treatment plants. The projection of each diffusers of Genoasis was done after Research and Development studies that response the requests of waste water treatment plants. Materials used in Genoasis diffusers are carefully selected according to the processes of wastewater treatment plants and tested regularly before shipment.
+                        <p class="lead mb-4">
+                            Genoasis tube diffusers are best solution for long and narrow aeration tanks. Opportunity to choose different material, connection thread, and size makes Genoasis tube diffusers fit to any type of waste water.
                         </p>
 
-                        <ul class="feature-list mb-4">
-                            <li>Genoasis Tube Diffusers can be installed to stainless steel box profiles by stainless steel long nipples.</li>
-                            <li>Also, Tube Diffusers can be installed to HDPE, PVC or Stainless Steel pipes by PP Saddles with stainless steel short nipples.</li>
-                            <li>Connections are 3/4" or 1" female. Also male options are available.</li>
-                            <li>It is very suitable to be used in moving (retractable) systems.</li>
-                            <li>Material of pipe part is PP (polypropylene) and supported with %30 GPR for UV rays and different chemical processes.</li>
-                            <li>After the membrane is poured on the PP pipe, clamps are mounted on both sides and thus the product will be finalized.</li>
-                            <li>Standard material of diffuser membranes are EPDM. Also Genoasis supports the customers with SILICON, TPU and PTFE COATED membranes for different treatment processes.</li>
-                            <li>When the air flow is stopped, the gaps on the membrane close themselves because of its conic structure, in order to prevent the sludge and particulate matter fill.</li>
-                            <li>Maximum oxygen efficiency is aimed while different production techniques with carefully chosen materials.</li>
-                            <li>It warrants between 35%-45% oxygen efficiency.</li>
-                            <li>It holds energy costs very low because of minimum pressure loss.</li>
-                            <li>The aeration costs loom very large at total operation costs. Because of that reason, Genoasis Tube Diffusers decrease the operation costs minimum.</li>
-                        </ul>
+                        <div class="collapse" id="tubeDiffuserDetails">
+                            <p class="mb-4">
+                                The diffusers in Genoasis are produced with the latest technology and the diffusers are used in wastewater treatment plants. The projection of each diffusers of Genoasis was done after Research and Development studies that response the requests of waste water treatment plants. Materials used in Genoasis diffusers are carefully selected according to the processes of wastewater treatment plants and tested regularly before shipment.
+                            </p>
+
+                            <ul class="feature-list mb-4">
+                                <li>Genoasis Tube Diffusers can be installed to stainless steel box profiles by stainless steel long nipples.</li>
+                                <li>Also, Tube Diffusers can be installed to HDPE, PVC or Stainless Steel pipes by PP Saddles with stainless steel short nipples.</li>
+                                <li>Connections are 3/4" or 1" female. Also male options are available.</li>
+                                <li>It is very suitable to be used in moving (retractable) systems.</li>
+                                <li>Material of pipe part is PP (polypropylene) and supported with %30 GPR for UV rays and different chemical processes.</li>
+                                <li>After the membrane is poured on the PP pipe, clamps are mounted on both sides and thus the product will be finalized.</li>
+                                <li>Standard material of diffuser membranes are EPDM. Also Genoasis supports the customers with SILICON, TPU and PTFE COATED membranes for different treatment processes.</li>
+                                <li>When the air flow is stopped, the gaps on the membrane close themselves because of its conic structure, in order to prevent the sludge and particulate matter fill.</li>
+                                <li>Maximum oxygen efficiency is aimed while different production techniques with carefully chosen materials.</li>
+                                <li>It warrants between 35%-45% oxygen efficiency.</li>
+                                <li>It holds energy costs very low because of minimum pressure loss.</li>
+                                <li>The aeration costs loom very large at total operation costs. Because of that reason, Genoasis Tube Diffusers decrease the operation costs minimum.</li>
+                            </ul>
+
+                            <div class="table-responsive mt-4">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Type of Product</th>
+                                            <th>Total Diameter (mm)</th>
+                                            <th>Perforated Area / Total Area (mm)</th>
+                                            <th>Effective Area (m²)</th>
+                                            <th>Capacity (Nm³/h)</th>
+                                            <th>Material of Membrane</th>
+                                            <th>Total Weight (kg)</th>
+                                            <th>Outlet</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ATD63-500</td>
+                                            <td>67</td>
+                                            <td>500/560</td>
+                                            <td>0,1</td>
+                                            <td>2-8</td>
+                                            <td>EPDM – Silicon – PTFE - TPU</td>
+                                            <td>0,8</td>
+                                            <td>3/4" or 1"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ATD63-750</td>
+                                            <td>67</td>
+                                            <td>750/810</td>
+                                            <td>0,12</td>
+                                            <td>2-10</td>
+                                            <td>EPDM – Silicon – PTFE - TPU</td>
+                                            <td>1,1</td>
+                                            <td>3/4" or 1"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ATD63-1000</td>
+                                            <td>67</td>
+                                            <td>1000/1060</td>
+                                            <td>0,16</td>
+                                            <td>2-12</td>
+                                            <td>EPDM – Silicon – PTFE - TPU</td>
+                                            <td>1,4</td>
+                                            <td>3/4" or 1"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ATD90-500</td>
+                                            <td>94</td>
+                                            <td>500/560</td>
+                                            <td>0,2</td>
+                                            <td>2-12</td>
+                                            <td>EPDM – Silicon – PTFE - TPU</td>
+                                            <td>1,25</td>
+                                            <td>3/4" or 1"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ATD90-750</td>
+                                            <td>94</td>
+                                            <td>750/810</td>
+                                            <td>1,25</td>
+                                            <td>2-14</td>
+                                            <td>EPDM – Silicon – PTFE - TPU</td>
+                                            <td>1,65</td>
+                                            <td>3/4" or 1"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ATD90-1000</td>
+                                            <td>94</td>
+                                            <td>1000/1060</td>
+                                            <td>1,32</td>
+                                            <td>2-16</td>
+                                            <td>EPDM – Silicon – PTFE - TPU</td>
+                                            <td>2</td>
+                                            <td>3/4" or 1"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ATD118-1350</td>
+                                            <td>121</td>
+                                            <td>1350/1410</td>
+                                            <td>0,70</td>
+                                            <td>2-48</td>
+                                            <td>EPDM – Silicon – PTFE - TPU</td>
+                                            <td>3,65</td>
+                                            <td>1" Female or Modular</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#tubeDiffuserDetails" aria-expanded="false" aria-controls="tubeDiffuserDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
                     </div>
                     <div class="col-md-4 d-flex align-items-start justify-content-center">
                         <img src="images/tubediffuser.jpg" alt="Tube Diffusers" style="max-width: 200px; margin-top: 20px;">
-                    </div>
-                </div>
-
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Type of Product</th>
-                                        <th>Total Diameter (mm)</th>
-                                        <th>Perforated Area / Total Area (mm)</th>
-                                        <th>Effective Area (m²)</th>
-                                        <th>Capacity (Nm³/h)</th>
-                                        <th>Material of Membrane</th>
-                                        <th>Total Weight (kg)</th>
-                                        <th>Outlet</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>ATD63-500</td>
-                                        <td>67</td>
-                                        <td>500/560</td>
-                                        <td>0,1</td>
-                                        <td>2-8</td>
-                                        <td>EPDM – Silicon – PTFE - TPU</td>
-                                        <td>0,8</td>
-                                        <td>3/4" or 1"</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ATD63-750</td>
-                                        <td>67</td>
-                                        <td>750/810</td>
-                                        <td>0,12</td>
-                                        <td>2-10</td>
-                                        <td>EPDM – Silicon – PTFE - TPU</td>
-                                        <td>1,1</td>
-                                        <td>3/4" or 1"</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ATD63-1000</td>
-                                        <td>67</td>
-                                        <td>1000/1060</td>
-                                        <td>0,16</td>
-                                        <td>2-12</td>
-                                        <td>EPDM – Silicon – PTFE - TPU</td>
-                                        <td>1,4</td>
-                                        <td>3/4" or 1"</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ATD90-500</td>
-                                        <td>94</td>
-                                        <td>500/560</td>
-                                        <td>0,2</td>
-                                        <td>2-12</td>
-                                        <td>EPDM – Silicon – PTFE - TPU</td>
-                                        <td>1,25</td>
-                                        <td>3/4" or 1"</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ATD90-750</td>
-                                        <td>94</td>
-                                        <td>750/810</td>
-                                        <td>1,25</td>
-                                        <td>2-14</td>
-                                        <td>EPDM – Silicon – PTFE - TPU</td>
-                                        <td>1,65</td>
-                                        <td>3/4" or 1"</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ATD90-1000</td>
-                                        <td>94</td>
-                                        <td>1000/1060</td>
-                                        <td>1,32</td>
-                                        <td>2-16</td>
-                                        <td>EPDM – Silicon – PTFE - TPU</td>
-                                        <td>2</td>
-                                        <td>3/4" or 1"</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ATD118-1350</td>
-                                        <td>121</td>
-                                        <td>1350/1410</td>
-                                        <td>0,70</td>
-                                        <td>2-48</td>
-                                        <td>EPDM – Silicon – PTFE - TPU</td>
-                                        <td>3,65</td>
-                                        <td>1" Female or Modular</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1194,63 +1273,70 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h2 class="mb-4">STAINLESS STEEL COARSE BUBBLE TUBE DIFFUSER</h2>
-                        <p class="lead mb-4" style="word-wrap: break-word;">
-                            Genoasis Coarse Bubble Tube Diffuser is used to provide a homogeneous mixture in chemical preservation units, equalization tanks, chemical mixing and oil separation of wastewater treatment plants. The projection of each diffusers of Genoasis was done after Research and Development studies that response the requests of waste water treatment plants. Materials used in Genoasis diffusers are carefully selected according to the processes of wastewater treatment plants and tested regularly before shipment.
+                        <p class="lead mb-4">
+                            Genoasis Coarse Bubble Tube Diffuser is used to provide a homogeneous mixture in chemical preservation units, equalization tanks, chemical mixing and oil separation of wastewater treatment plants.
                         </p>
 
-                        <ul class="feature-list mb-4">
-                            <li>Installation locations of coarse bubble tube diffusers are combined with welding method by TIG (Tungsten Inert Gas) process.</li>
-                            <li>It can be installed easily to stainless steel pipes.</li>
-                            <li>Material of product is Stainless Steel. According to the requirements of customers, material of product can be AISI304 or AISI316 Stainless Steel.</li>
-                            <li>It warrants between 20%-25% oxygen efficiency.</li>
-                            <li>It holds energy costs very low because of minimum pressure loss.</li>
-                        </ul>
+                        <div class="collapse" id="steelCoarseBubbleDetails">
+                            <p class="mb-4">
+                                The projection of each diffusers of Genoasis was done after Research and Development studies that response the requests of waste water treatment plants. Materials used in Genoasis diffusers are carefully selected according to the processes of wastewater treatment plants and tested regularly before shipment.
+                            </p>
+
+                            <ul class="feature-list mb-4">
+                                <li>Installation locations of coarse bubble tube diffusers are combined with welding method by TIG (Tungsten Inert Gas) process.</li>
+                                <li>It can be installed easily to stainless steel pipes.</li>
+                                <li>Material of product is Stainless Steel. According to the requirements of customers, material of product can be AISI304 or AISI316 Stainless Steel.</li>
+                                <li>It warrants between 20%-25% oxygen efficiency.</li>
+                                <li>It holds energy costs very low because of minimum pressure loss.</li>
+                            </ul>
+
+                            <div class="table-responsive mt-4">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Type Of Product</th>
+                                            <th>Total Height (mm)</th>
+                                            <th>Total Width / Total Length (mm)</th>
+                                            <th>Perforated Area (m²)</th>
+                                            <th>Capacity (Nm³/h)</th>
+                                            <th>Material</th>
+                                            <th>Total Weight (kg)</th>
+                                            <th>Outlet</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>CBTD-350</td>
+                                            <td>100</td>
+                                            <td>50/350</td>
+                                            <td>0,06</td>
+                                            <td>2-30</td>
+                                            <td>Stainless Steel (AISI304 or AISI316)</td>
+                                            <td>3,5</td>
+                                            <td>3/4" or 1"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CBTD-620</td>
+                                            <td>100</td>
+                                            <td>50/620</td>
+                                            <td>0,1</td>
+                                            <td>2-60</td>
+                                            <td>Stainless Steel (AISI304 or AISI316)</td>
+                                            <td>5,5</td>
+                                            <td>3/4" or 1"</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#steelCoarseBubbleDetails" aria-expanded="false" aria-controls="steelCoarseBubbleDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
                     </div>
                     <div class="col-md-4 d-flex align-items-start justify-content-center">
                         <img src="images/steelcoarse.jpg" alt="Stainless Steel Coarse Bubble Tube Diffuser" style="max-width: 200px; margin-top: 20px;">
-                    </div>
-                </div>
-
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Type Of Product</th>
-                                        <th>Total Height (mm)</th>
-                                        <th>Total Width / Total Length (mm)</th>
-                                        <th>Perforated Area (m²)</th>
-                                        <th>Capacity (Nm³/h)</th>
-                                        <th>Material</th>
-                                        <th>Total Weight (kg)</th>
-                                        <th>Outlet</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>CBTD-350</td>
-                                        <td>100</td>
-                                        <td>50/350</td>
-                                        <td>0,06</td>
-                                        <td>2-30</td>
-                                        <td>Stainless Steel (AISI304 or AISI316)</td>
-                                        <td>3,5</td>
-                                        <td>3/4" or 1"</td>
-                                    </tr>
-                                    <tr>
-                                        <td>CBTD-620</td>
-                                        <td>100</td>
-                                        <td>50/620</td>
-                                        <td>0,1</td>
-                                        <td>2-60</td>
-                                        <td>Stainless Steel (AISI304 or AISI316)</td>
-                                        <td>5,5</td>
-                                        <td>3/4" or 1"</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1263,59 +1349,66 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h2 class="mb-4">PLATE DIFFUSER</h2>
-                        <p class="lead mb-4" style="word-wrap: break-word;">
-                            Generally these types of diffusers are chosen for high capacities. There are proper mounting options according to pipe or box sections. Genoasis plate diffusers are manufactured with latest technology of present day and used at waste water treatment plants. The projection of each diffusers of Genoasis was done after Research and Development studies that response the requests of waste water treatment plants. The materials of Genoasis diffusers are chosen carefully according to processes of waste water treatment plant and coordinately check before delivery.
+                        <p class="lead mb-4">
+                            Generally these types of diffusers are chosen for high capacities. There are proper mounting options according to pipe or box sections.
                         </p>
 
-                        <ul class="feature-list mb-4">
-                            <li>They can be mounted easily with the help of AISI304 or AISI316 plate and bolt pin to the Stainless box section</li>
-                            <li>They can be also mounted to the HDPE, PVC or Steel Pipes with the help of saddle.</li>
-                            <li>Body and frame material of diffusers is (PP) polypropylene. And using 30% CFR (fiberglass) its production to increase the strength of the material to different chemicals and high temperatures and harmful UV rays</li>
-                            <li>It's pretty suitable for using at movable (Up and Down) systems.</li>
-                            <li>The joint part of plate diffuser is manufactured for a saddle is 1'' external grooved and for box section 30 mm (external outlet male).</li>
-                            <li>The membrane of plate diffusers are EPDM as standard. However, according to biological process it can be different as Silicon, PTFE (Teflon) covered.</li>
-                            <li>When the air flow is stopped, the gaps on the membrane close themselves because of its conic structure, in order to prevent the sludge and particulate matter fill.</li>
-                            <li>Maximum oxygen efficiency is aimed while different production techniques with carefully chosen materials.</li>
-                            <li>It warrants between 35%-45% oxygen efficiency.</li>
-                            <li>It holds energy costs very low because of minimum pressure loss.</li>
-                            <li>The aeration costs loom very large at total operation costs. Because of that reason, Genoasis Plate Diffusers decrease the operation costs minimum.</li>
-                        </ul>
+                        <div class="collapse" id="plateDiffuserDetails">
+                            <p class="mb-4">
+                                Genoasis plate diffusers are manufactured with latest technology of present day and used at waste water treatment plants. The projection of each diffusers of Genoasis was done after Research and Development studies that response the requests of waste water treatment plants.
+                            </p>
+
+                            <ul class="feature-list mb-4">
+                                <li>They can be mounted easily with the help of AISI304 or AISI316 plate and bolt pin to the Stainless box section</li>
+                                <li>They can be also mounted to the HDPE, PVC or Steel Pipes with the help of saddle.</li>
+                                <li>Body and frame material of diffusers is (PP) polypropylene. And using 30% CFR (fiberglass) its production to increase the strength of the material to different chemicals and high temperatures and harmful UV rays</li>
+                                <li>It's pretty suitable for using at movable (Up and Down) systems.</li>
+                                <li>The joint part of plate diffuser is manufactured for a saddle is 1'' external grooved and for box section 30 mm (external outlet male).</li>
+                                <li>The membrane of plate diffusers are EPDM as standard. However, according to biological process it can be different as Silicon, PTFE (Teflon) covered.</li>
+                                <li>When the air flow is stopped, the gaps on the membrane close themselves because of its conic structure, in order to prevent the sludge and particulate matter fill.</li>
+                                <li>Maximum oxygen efficiency is aimed while different production techniques with carefully chosen materials.</li>
+                                <li>It warrants between 35%-45% oxygen efficiency.</li>
+                                <li>It holds energy costs very low because of minimum pressure loss.</li>
+                                <li>The aeration costs loom very large at total operation costs. Because of that reason, Genoasis Plate Diffusers decrease the operation costs minimum.</li>
+                            </ul>
+
+                            <div class="table-responsive mt-4">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Product Type</th>
+                                            <th>Total Height (mm)</th>
+                                            <th>Perforated Area / Outer Diameter (mm)</th>
+                                            <th>Effective Area (m²)</th>
+                                            <th>Capacity (Nm³/h)</th>
+                                            <th>Material of Membrane</th>
+                                            <th>Total Weight (kg)</th>
+                                            <th>Outlet</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>APD650 Plate Diffuser</td>
+                                            <td>61</td>
+                                            <td>150*650/210*680</td>
+                                            <td>0,1</td>
+                                            <td>2-16</td>
+                                            <td>EPDM – Silicon – PTFE Coated</td>
+                                            <td>1,4</td>
+                                            <td>1" or 30mm</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#plateDiffuserDetails" aria-expanded="false" aria-controls="plateDiffuserDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
                     </div>
                     <div class="col-md-4 d-flex align-items-start justify-content-center">
                         <img src="images/platediffuser.jpg" alt="Plate Diffuser" style="max-width: 200px; margin-top: 20px;">
-                    </div>
-                </div>
-
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Product Type</th>
-                                        <th>Total Height (mm)</th>
-                                        <th>Perforated Area / Outer Diameter (mm)</th>
-                                        <th>Effective Area (m²)</th>
-                                        <th>Capacity (Nm³/h)</th>
-                                        <th>Material of Membrane</th>
-                                        <th>Total Weight (kg)</th>
-                                        <th>Outlet</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>APD650 Plate Diffuser</td>
-                                        <td>61</td>
-                                        <td>150*650/210*680</td>
-                                        <td>0,1</td>
-                                        <td>2-16</td>
-                                        <td>EPDM – Silicon – PTFE Coated</td>
-                                        <td>1,4</td>
-                                        <td>1" or 30mm</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1328,79 +1421,85 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h2 class="mb-4">PANEL DIFFUSER</h2>
-                        <p class="lead mb-4" style="word-wrap: break-word;">
+                        <p class="lead mb-4">
                             Genoasis Panel Diffusers operate with higher oxygen transfer efficiency, unique membrane diversity and strong body with different structure and higher air capacity than other diffusers.
                         </p>
 
-                        <p class="mb-3">
-                            Membranes of the panel diffusers have so special hole design. There are two different hole design for membranes, one of them; just perforation design top-half of surface and the second one is ; completly perforation of all surface of the membrane. The shape of Genoasis Panel diffuser support high oxygen transfer efficiency that's why Panel Diffusers are designed to the areation tank %60-65 density.
-                        </p>
+                        <div class="collapse" id="panelDiffuserDetails">
+                            <p class="mb-4">
+                                Membranes of the panel diffusers have so special hole design. There are two different hole design for membranes, one of them; just perforation design top-half of surface and the second one is ; completly perforation of all surface of the membrane.
+                            </p>
+                            <p class="mb-3">
+                                The shape of Genoasis Panel diffuser support high oxygen transfer efficiency that's why Panel Diffusers are designed to the areation tank %60-65 density.
+                            </p>
 
-                        <p class="mb-3">
-                            The Panel Diffusers target maximum SOTE and minimum pressure losses because of their holes on the surface of the membranes are microporus. All Genoasis Panel Diffuser are made of first-class membranes of Aquaflex which are carefully selected with Membrane Technology and special formulization.
-                        </p>
+                            <p class="mb-3">
+                                The Panel Diffusers target maximum SOTE and minimum pressure losses because of their holes on the surface of the membranes are microporus. All Genoasis Panel Diffuser are made of first-class membranes of Aquaflex which are carefully selected with Membrane Technology and special formulization.
+                            </p>
 
-                        <p class="mb-3">
-                            Genoasis Panel diffusers are used in industrial and municipal treatment plants as well as in Garbage Leachate waste water treatment plants. And a large oxygenation surface is achieved with minimal installation equipment, with retractable diffuser systems. As the Garbage Leachate waste water treatment process is very heavy and difficult to apply that's why membranes of the Genoasis Panel diffusers are produced from TPU (Polyurethane) material. In some applications, EPDM membranes are also used for Garbage Leachate waste water treatment plants.
-                        </p>
+                            <p class="mb-3">
+                                Genoasis Panel diffusers are used in industrial and municipal treatment plants as well as in Garbage Leachate waste water treatment plants. And a large oxygenation surface is achieved with minimal installation equipment, with retractable diffuser systems. As the Garbage Leachate waste water treatment process is very heavy and difficult to apply that's why membranes of the Genoasis Panel diffusers are produced from TPU (Polyurethane) material. In some applications, EPDM membranes are also used for Garbage Leachate waste water treatment plants.
+                            </p>
 
-                        <p class="mb-3">
-                            Genoasis Panel diffusers are produced from PP material (pipe and PP Saddle) for mechanical durability due to high chemical exposure.
-                        </p>
+                            <p class="mb-3">
+                                Genoasis Panel diffusers are produced from PP material (pipe and PP Saddle) for mechanical durability due to high chemical exposure.
+                            </p>
 
-                        <p class="mb-3">
-                            In addition, the PP Saddle of the Genoasis Panel Diffusers are designed to be mounted on DN100-DN150-DN200-DN250 Stainless Pipe.
-                        </p>
+                            <p class="mb-3">
+                                In addition, the PP Saddle of the Genoasis Panel Diffusers are designed to be mounted on DN100-DN150-DN200-DN250 Stainless Pipe.
+                            </p>
 
-                        <p class="mb-4">
-                            With its integrated check valve feature, it prevents backflow of water or different particulate matter to the diffuser and pipe. The available check valve feature is ideal for systems that operate continuously on / off. And requires minimal maintenance for long-term high performance.
-                        </p>
+                            <p class="mb-4">
+                                With its integrated check valve feature, it prevents backflow of water or different particulate matter to the diffuser and pipe. The available check valve feature is ideal for systems that operate continuously on / off. And requires minimal maintenance for long-term high performance.
+                            </p>
+
+                            <div class="table-responsive mt-4">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Total Dia (mm)</th>
+                                            <th>Effective Length / Total Length (mm)</th>
+                                            <th>Effective Area (m²)</th>
+                                            <th>Capacity (Nm³/h)</th>
+                                            <th>Material of Membrane</th>
+                                            <th>Total Weight</th>
+                                            <th>Dia of PP Saddle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>TD118-1500</td>
+                                            <td>118</td>
+                                            <td>1350 / 1500</td>
+                                            <td>0,492</td>
+                                            <td>0-35</td>
+                                            <td>EPDM-Silikon PTFE- TPU</td>
+                                            <td>4,71</td>
+                                            <td>DN100, DN150, DN200, DN250</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TD118-3000</td>
+                                            <td>118</td>
+                                            <td>2700 / 3000</td>
+                                            <td>0,984</td>
+                                            <td>0 - 65</td>
+                                            <td>EPDM-Silikon PTFE- TPU</td>
+                                            <td>9,42</td>
+                                            <td>DN100, DN150, DN200, DN250</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#panelDiffuserDetails" aria-expanded="false" aria-controls="panelDiffuserDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
                     </div>
                     <div class="col-md-4 d-flex align-items-start justify-content-center">
                         <img src="images/paneldiffuser.jpg" alt="Panel Diffuser" style="max-width: 200px; margin-top: 20px;">
-                    </div>
-                </div>
-
-                <div class="row mt-4">
-                    <div class="col-12">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Total Dia (mm)</th>
-                                        <th>Effective Length / Total Length (mm)</th>
-                                        <th>Effective Area (m²)</th>
-                                        <th>Capacity (Nm³/h)</th>
-                                        <th>Material of Membrane</th>
-                                        <th>Total Weight</th>
-                                        <th>Dia of PP Saddle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>TD118-1500</td>
-                                        <td>118</td>
-                                        <td>1350 / 1500</td>
-                                        <td>0,492</td>
-                                        <td>0-35</td>
-                                        <td>EPDM-Silikon PTFE- TPU</td>
-                                        <td>4,71</td>
-                                        <td>DN100, DN150, DN200, DN250</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TD118-3000</td>
-                                        <td>118</td>
-                                        <td>2700 / 3000</td>
-                                        <td>0,984</td>
-                                        <td>0 - 65</td>
-                                        <td>EPDM-Silikon PTFE- TPU</td>
-                                        <td>9,42</td>
-                                        <td>DN100, DN150, DN200, DN250</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1413,18 +1512,70 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h2 class="mb-4">PP SADDLE</h2>
-                        <p class="lead mb-4" style="word-wrap: break-word;">
-                            Genoasis PP saddle with stainless screw bolt is projected for connecting all different type diffusers to different diameter aeration pipes system.
+                        <p class="lead mb-4">
+                            PP Saddles are used to connect diffusers to HDPE, PVC or stainless steel pipes. They are manufactured from polypropylene material which is resistant to UV rays and chemical processes.
                         </p>
 
-                        <ul class="feature-list mb-4">
-                            <li>Genoasis PP Saddle body is manufactured of PP (polypropylene).</li>
-                            <li>Screw bolt and bolt pins can be picked as AISI304 and AISI316</li>
-                            <li>One side PP saddles are used for disc and plate diffusers, two side of PP saddles are used for tube diffusers</li>
-                            <li>EPDM seal is used to prevent the air leakage.</li>
-                            <li>Discharge part of the PP Saddle has a strong and thick structure in order to increase pressure strength.</li>
-                            <li>It has excellent resistance for temperature differences because of its body material and its design.</li>
-                        </ul>
+                        <div class="collapse" id="ppSaddleDetails">
+                            <h3 class="mb-3">Features & Benefits</h3>
+                            <ul class="feature-list mb-4">
+                                <li>Material: Polypropylene (PP)</li>
+                                <li>UV resistant</li>
+                                <li>Chemical process resistant</li>
+                                <li>Easy installation</li>
+                                <li>Long service life</li>
+                                <li>Available in various sizes</li>
+                            </ul>
+
+                            <div class="table-responsive mt-4">
+                                <table class="table table-striped table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Model</th>
+                                            <th>Pipe Diameter</th>
+                                            <th>Connection Size</th>
+                                            <th>Material</th>
+                                            <th>Service Life</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>PS-63</td>
+                                            <td>63mm</td>
+                                            <td>3/4" or 1"</td>
+                                            <td>PP</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PS-75</td>
+                                            <td>75mm</td>
+                                            <td>3/4" or 1"</td>
+                                            <td>PP</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PS-90</td>
+                                            <td>90mm</td>
+                                            <td>3/4" or 1"</td>
+                                            <td>PP</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PS-110</td>
+                                            <td>110mm</td>
+                                            <td>3/4" or 1"</td>
+                                            <td>PP</td>
+                                            <td>&gt; 15 years</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#ppSaddleDetails" aria-expanded="false" aria-controls="ppSaddleDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
                     </div>
                     <div class="col-md-4 d-flex align-items-start justify-content-center">
                         <img src="images/ppsaddle.jpg" alt="PP Saddle" style="max-width: 200px; margin-top: 20px;">
@@ -1461,32 +1612,43 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h2 class="mb-4">Dewatering Bag</h2>
-                        <p class="lead mb-4" style="word-wrap: break-word;">
-                            Geobags are also known as dewatering bags, geotextile tubes, geocontainers, soil tubes, geosynthetic tubes or desludging bags. They are made of high strength polypropylene woven geotextile that resists ultraviolet, environment rotting, and biological degradation. They are inert to most naturally encountered chemicals, alkalis, and acids.
+                        <p class="lead mb-4">
+                            Geobags are also known as dewatering bags, geotextile tubes, geocontainers, soil tubes, geosynthetic tubes or desludging bags.
                         </p>
 
-                        <p class="mb-4">
-                            Historically, they have been used to contain sandy soils to permit their use as flexible, erosion resistance, mass gravity structures in hydraulic and marine applications.
-                        </p>
+                        <div class="collapse" id="dewateringBagDetails">
+                            <p class="mb-4">
+                                They are made of high strength polypropylene woven geotextile that resists ultraviolet, environment rotting, and biological degradation. They are inert to most naturally encountered chemicals, alkalis, and acids.
+                            </p>
 
-                        <p class="mb-4">
-                            Municipal Waste, Mine Sludge, Contaminated Sediments,
-                            Industrial Waste, Food Processing Waste
-                        </p>
+                            <p class="mb-4">
+                                Historically, they have been used to contain sandy soils to permit their use as flexible, erosion resistance, mass gravity structures in hydraulic and marine applications.
+                            </p>
 
-                        <h3 class="mb-3">Sludge Dewatering Bags Features & Benefits</h3>
-                        <ul class="feature-list mb-4">
-                            <li>High strength woven geotextile</li>
-                            <li>Length up to 100 meters; Circumference up to 36 meters</li>
-                            <li>Effectively drains out silt, sediment, sludge, and contaminated waste</li>
-                            <li>Reliable using in all weather conditions</li>
-                            <li>Reduces risks in operational safety</li>
-                            <li>Designed for large dewatering projects</li>
-                            <li>Custom size fits applications of structures and dewatering area</li>
-                            <li>After weeks to fairly dry, It's easy removal and disposal of solids</li>
-                            <li>Environmental friendly reduces carbon footprint</li>
-                            <li>Cost effective and low maintenance</li>
-                        </ul>
+                            <p class="mb-4">
+                                Municipal Waste, Mine Sludge, Contaminated Sediments,
+                                Industrial Waste, Food Processing Waste
+                            </p>
+
+                            <h3 class="mb-3">Sludge Dewatering Bags Features & Benefits</h3>
+                            <ul class="feature-list">
+                                <li>High strength woven geotextile</li>
+                                <li>Length up to 100 meters; Circumference up to 36 meters</li>
+                                <li>Effectively drains out silt, sediment, sludge, and contaminated waste</li>
+                                <li>Reliable using in all weather conditions</li>
+                                <li>Reduces risks in operational safety</li>
+                                <li>Designed for large dewatering projects</li>
+                                <li>Custom size fits applications of structures and dewatering area</li>
+                                <li>After weeks to fairly dry, It's easy removal and disposal of solids</li>
+                                <li>Environmental friendly reduces carbon footprint</li>
+                                <li>Cost effective and low maintenance</li>
+                            </ul>
+                        </div>
+
+                        <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#dewateringBagDetails" aria-expanded="false" aria-controls="dewateringBagDetails">
+                            <span class="show-more">Show More</span>
+                            <span class="show-less d-none">Show Less</span>
+                        </button>
                     </div>
                     <div class="col-md-4">
                         <div class="d-flex flex-column align-items-center">
@@ -1593,6 +1755,22 @@
 
             closeButton.addEventListener('click', closePopup);
             overlay.addEventListener('click', closePopup);
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapseButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
+            
+            collapseButtons.forEach(button => {
+                const showMoreText = button.querySelector('.show-more');
+                const showLessText = button.querySelector('.show-less');
+                
+                button.addEventListener('click', function() {
+                    const isCollapsed = this.getAttribute('aria-expanded') === 'true';
+                    showMoreText.classList.toggle('d-none', !isCollapsed);
+                    showLessText.classList.toggle('d-none', isCollapsed);
+                });
+            });
         });
     </script>
 </body>
