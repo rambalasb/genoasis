@@ -356,6 +356,7 @@
             overflow: hidden;
             transition: transform 0.3s ease;
             cursor: pointer;
+            height: 100%;
         }
 
         .product-item:hover {
@@ -378,20 +379,59 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(35, 161, 220, 0.7);
+            background: rgba(35, 161, 220, 0.9);
             color: white;
-            padding: 10px;
+            padding: 15px 10px;
             text-align: center;
             transition: background-color 0.3s ease;
+            font-size: 16px;
+            line-height: 1.2;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Specific smaller font size for known multi-line product names */
+        .product-item:has([alt="RO Pressure Vessels & FRP Filters"]) .product-name,
+        .product-item:has([alt="Filter Cartridges & Housings"]) .product-name,
+        .product-item:has([alt="Sand Media & Ion Exchange Resins"]) .product-name,
+        .product-item:has([alt="Instruments & Lab Apparatus"]) .product-name,
+        .product-item:has([alt="Valves, Couplings & Fittings"]) .product-name {
+            font-size: 14px;
         }
 
         .product-item:hover .product-name {
-            background: rgba(0,0,0,0.9);
+            background: rgba(0, 0, 0, 0.9);
         }
 
         @media (max-width: 768px) {
-            .product-item img {
-                height: 200px;
+            .product-name {
+                font-size: 14px;
+                min-height: 45px;
+            }
+            /* Even smaller for multi-line on mobile */
+            .product-item:has([alt="RO Pressure Vessels & FRP Filters"]) .product-name,
+            .product-item:has([alt="Filter Cartridges & Housings"]) .product-name,
+            .product-item:has([alt="Sand Media & Ion Exchange Resins"]) .product-name,
+            .product-item:has([alt="Instruments & Lab Apparatus"]) .product-name,
+            .product-item:has([alt="Valves, Couplings & Fittings"]) .product-name {
+                font-size: 12px;
+            }
+            
+        }
+
+        @media (max-width: 768px) {
+            [style*="flex: 0 0 20%"] {
+                flex: 0 0 50% !important;
+                max-width: 50% !important;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            [style*="flex: 0 0 20%"] {
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
             }
         }
     </style>
@@ -460,90 +500,76 @@
         <div class="container">            
             <div class="row g-4">
                 <!-- Grid items -->
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                    <div class="product-item">
+                        <img src="images/pressure-vessels.jpg" alt="RO Pressure Vessels & FRP Filters">
+                        <div class="product-name">RO Pressure Vessels & FRP Filters</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                    <div class="product-item">
+                        <img src="images/ro-membranes.jpg" alt="Membrane Products">
+                        <div class="product-name">Membrane Products</div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
                     <div class="product-item">
                         <img src="images/pumps.jpg" alt="Pumps">
                         <div class="product-name">Pumps</div>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
                     <div class="product-item">
-                        <img src="images/filters.jpg" alt="Filters & Filter Housings">
-                        <div class="product-name">Filters & Filter Housings</div>
+                        <img src="images/filters.jpg" alt="Filter Cartridges & Housings">
+                        <div class="product-name">Filter Cartridges & Housings</div>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
                     <div class="product-item">
-                        <img src="images/multimedia.jpg" alt="Multimedia & Activated Carbon">
-                        <div class="product-name">Multimedia & Activated Carbon</div>
+                        <img src="images/multimedia.jpg" alt="Sand Media & Ion Exchange Resins">
+                        <div class="product-name">Sand Media & Ion Exchange Resins</div>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
                     <div class="product-item">
-                        <img src="images/ultrafiltration.jpg" alt="Ultrafiltration Modules">
-                        <div class="product-name">Ultrafiltration Modules</div>
+                        <img src="images/chemicals.jpg" alt="Water Treatment Chemicals">
+                        <div class="product-name">Water Treatment Chemicals</div>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                    <a href="Wastewater.html" class="text-decoration-none">
+                        <div class="product-item">
+                            <img src="images/wastewater.jpg" alt="Waste Water Equipments">
+                            <div class="product-name">Waste Water Equipments</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
                     <div class="product-item">
-                        <img src="images/ro-membranes.jpg" alt="RO & MBR Membranes">
-                        <div class="product-name">RO & MBR Membranes</div>
+                        <img src="images/instruments.jpg" alt="Instruments & Lab Apparatus">
+                        <div class="product-name">Instruments & Lab Apparatus</div>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
                     <div class="product-item">
-                        <img src="images/chemicals.jpg" alt="Chemicals">
-                        <div class="product-name">Chemicals</div>
+                        <img src="images/disinfection.jpg" alt="Disinfectants">
+                        <div class="product-name">Disinfectants</div>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3">
+                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
                     <div class="product-item">
-                        <img src="images/ion-exchange.jpg" alt="Ion Exchange Resins">
-                        <div class="product-name">Ion Exchange Resins</div>
+                        <img src="images/valves.jpg" alt="Valves, Couplings & Fittings">
+                        <div class="product-name">Valves, Couplings & Fittings</div>
                     </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="product-item">
-                        <img src="images/disinfection.jpg" alt="Disinfection">
-                        <div class="product-name">Disinfection</div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="product-item">
-                        <img src="images/pressure-vessels.jpg" alt="Pressure Vessels & Tanks">
-                        <div class="product-name">Pressure Vessels & Tanks</div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="product-item">
-                        <img src="images/instruments.jpg" alt="Instruments">
-                        <div class="product-name">Instruments</div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="product-item">
-                        <img src="images/valves.jpg" alt="Valves & Couplings">
-                        <div class="product-name">Valves & Couplings</div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-					<a href="Wastewater.html" class="text-decoration-none">
-						<div class="product-item">
-							<img src="images/wastewater.jpg" alt="Wastewater Equipments">
-							<div class="product-name">Wastewater Equipments</div>
-						</div>
-					</a>
                 </div>
             </div>
         </div>
