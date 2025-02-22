@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RPG7M7CLBF');
+    </script>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/tiny-slider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Add AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .product-category .category-title {
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .product-types {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+
+        .product-types li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .product-types li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+        }
+
+        .e-con-boxed {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .e-con-inner {
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            margin: 0;
+        }
+
+        .content-column {
+            padding: 40px;
+            width: 66.666%;
+            background-color: #ffffff;
+        }
+
+        .image-column {
+            position: relative;
+            width: 33.333%;
+            height: 300px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #ffffff; /* Changed from #f8f9fa to white */
+        }
+
+        .image-column:hover {
+            opacity: 0.9;
+        }
+
+        .image-column::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-column:hover::before {
+            opacity: 1;
+        }
+
+        .image-column {
+            background-size: contain; /* Change from cover to contain */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #ffffff; /* Light background for empty spaces */
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .content-column,
+            .image-column {
+                width: 100%;
+            }
+            
+            .image-column {
+                height: 250px;
+            }
+        }
+
+        .elementor-icon-list-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .elementor-icon-list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .elementor-icon-list-icon {
+            margin-right: 10px;
+        }
+
+        .elementor-spacer {
+            height: 20px;
+        }
+
+        .product-category .category-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .product-types li:before {
+            content: "\f061"; /* FontAwesome arrow right */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #333;
+        }
+
+        /* Popup styles */
+        .image-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            width: 90%;
+            max-width: 800px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .image-popup img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 999;
+            cursor: pointer;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .popup-close:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .popup-close::before,
+        .popup-close::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 2px;
+            background-color: white;
+        }
+
+        .popup-close::before {
+            transform: rotate(45deg);
+        }
+
+        .popup-close::after {
+            transform: rotate(-45deg);
+        }
+
+        .products-section {
+            background-color: #fff;
+        }
+
+        .product-item {
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(35, 161, 220, 0.7);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-item:hover .product-name {
+            background: rgba(0,0,0,0.9);
+        }
+
+        @media (max-width: 768px) {
+            .product-item img {
+                height: 200px;
+            }
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .product-description p,
+        .lead,
+        .feature-list li,
+        table td,
+        table th {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .table {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .table th {
+            font-weight: 600;
+        }
+
+        .table td {
+            font-weight: 400;
+        }
+
+        .product-description {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-list li {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .lead {
+            font-weight: 400;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .table {
+                font-size: 0.85rem;
+            }
+            
+            .lead {
+                font-size: 1.05rem;
+            }
+            
+            p {
+                font-size: 0.95rem;
+            }
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .collapse {
+            transition: all 0.3s ease;
+        }
+    </style>
+    <title>GenOasis - Pumps</title>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
+</head>
+	<!-- Start Top Bar -->
+	<div class="top-bar py-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="d-flex justify-content-end">
+						<a href="tel:+918939167316" class="me-3 text-decoration-none text-dark">
+							<i class="fas fa-phone"></i> +91 893 916 7316
+						</a>
+						<a href="mailto:info@genoasis.com" class="text-decoration-none text-dark">
+							<i class="fas fa-envelope"></i> info@genoasis.com
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Top Bar -->
+<body>
+    <!-- Start Header/Navigation -->
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="GenOasis navigation bar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenOasis" aria-controls="navbarsGenOasis" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsGenOasis">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="active"><a class="nav-link" href="Products.html">Products</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Header/Navigation -->
+
+    <!-- Start Hero Section -->
+    <div class="hero hero-water-treatment">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <div class="intro-excerpt">
+                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">Pumps</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Hero Section -->
+
+<!-- Start Product Section -->
+<div class="untree_co-section product-section before-footer-section">
+    <div class="container">
+        <!-- End Suction Pumps -->
+        <div class="e-con-boxed" data-aos="fade-right" data-aos-duration="1000">
+            <div class="e-con-inner">
+                <div class="row">
+                    <div class="content-column">
+                        <h2 class="category-title">End Suction Pumps</h2>
+                        <div class="description">
+                            <p>Our End Suction Pumps are ideal for applications requiring solid handling or use in chemical and food processing industries. With minimal moving parts and no valves, these pumps offer a compact solution that is easy to handle and operate. Key features include energy efficiency, easy maintenance, and long service life. These pumps are designed for high efficiency and low hydraulic thrust, making them versatile and reliable for both corrosive and non-corrosive liquids.</p>
+                        </div>
+                    </div>
+                    <div class="image-column" 
+                         style="background-image: url('images/end-suction-pumps.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horizontal Centrifugal Pumps -->
+        <div class="e-con-boxed" data-aos="fade-left" data-aos-duration="1000">
+            <div class="e-con-inner">
+                <div class="row">
+                    <div class="content-column">
+                        <h2 class="category-title">Horizontal Centrifugal Pumps</h2>
+                        <div class="description">
+                            <p>We supply a range of high-quality horizontal centrifugal pumps, including both horizontal multistage and single-stage models. These pumps are designed using the latest technology to meet the diverse needs of industries such as chemical, water and wastewater, sugar, steel, and power stations. They are also used for pumping hydrocarbons and in irrigation and water desalination plants.</p>
+                        </div>
+                        <p>Specifications:</p>
+                        <ul class="feature-list">
+                            <li>Maximum Capacity: 1000 m³/hr</li>
+                            <li>Maximum Head: 140 m</li>
+                            <li>Temperature: Up to 160°C</li>
+                            <li>Working Pressure: 14 kg/cm²</li>
+                        </ul>
+                    </div>
+                    <div class="image-column" 
+                         style="background-image: url('images/horizontal-centrifugal-pumps.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vertical Multistage Pumps -->
+        <div class="e-con-boxed" data-aos="fade-right" data-aos-duration="1000">
+            <div class="e-con-inner">
+                <div class="row">
+                    <div class="content-column">
+                        <h2 class="category-title">Vertical Multistage Pumps</h2>
+                        <div class="description">
+                            <p>Our Vertical Multistage Pumps are reliable, technologically advanced solutions for various applications such as boiler feed systems, pressure boosting, irrigation, and water treatment. These pumps are designed for high pressure and high-temperature fluids and are equipped with IE3 standard motors for energy efficiency. They come in several configurations to meet the specific flow rate and pressure needs of your operation.</p>
+                        </div>
+                        <p>Specifications:</p>
+                        <ul class="feature-list">
+                            <li>Delivery: Up to 400 m³/h</li>
+                            <li>Head: Up to 330 m</li>
+                            <li>Power: From 0.37 kW to 300 kW</li>
+                            <li>Maximum Pressure: 60 Bar</li>
+                            <li>Temperature Range: From -30°C to 180°C (high-temperature version)</li>
+                        </ul>
+                    </div>
+                    <div class="image-column" 
+                         style="background-image: url('images/vertical-multistage-pumps.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sea Water FRP Pumps -->
+        <div class="e-con-boxed" data-aos="fade-left" data-aos-duration="1000">
+            <div class="e-con-inner">
+                <div class="row">
+                    <div class="content-column">
+                        <h2 class="category-title">Sea Water FRP Pumps</h2>
+                        <div class="description">
+                            <p>Our Sea Water FRP Pumps are constructed using high-quality fiberglass reinforced plastic (FRP), making them ideal for handling seawater and aggressive chemicals. These pumps offer excellent resistance to corrosion and abrasion, providing a cost-effective alternative to metal alloy or plastic-lined pumps in seawater and other harsh environments.</p>
+                        </div>
+                        <p>Configurations:</p>
+                        <ul class="feature-list">
+                            <li>Close Coupled Pump</li>
+                            <li>Long Coupled Pump</li>
+                            <li>Belt Driven Pump</li>
+                            <li>Chemical Road Tanker Pump</li>
+                            <li>Vertical Spindle Pump</li>
+                        </ul>
+                    </div>
+                    <div class="image-column" 
+                         style="background-image: url('images/sea-water-frp-pumps.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sea Water Super Duplex Pumps -->
+        <div class="e-con-boxed" data-aos="fade-right" data-aos-duration="1000">
+            <div class="e-con-inner">
+                <div class="row">
+                    <div class="content-column">
+                        <h2 class="category-title">Sea Water Super Duplex Pumps</h2>
+                        <div class="description">
+                            <p>Made from duplex steel, these pumps are ideal for applications involving seawater, such as desalination plants and offshore operations. Known for their high resistance to corrosion, abrasion, and stress corrosion cracking, these pumps are highly efficient and durable, providing reliable service in challenging environments.</p>
+                        </div>
+                        <p>Features:</p>
+                        <ul class="feature-list">
+                            <li>High efficiency (up to 87%)</li>
+                            <li>Super duplex construction (Zeron-100)</li>
+                            <li>High inlet pressure options (up to 83 bar)</li>
+                            <li>Lubricated by the pump itself for smooth operation</li>
+                        </ul>
+                    </div>
+                    <div class="image-column" 
+                         style="background-image: url('images/sea-water-super-duplex-pumps.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submersible Pumps -->
+        <div class="e-con-boxed" data-aos="fade-left" data-aos-duration="1000">
+            <div class="e-con-inner">
+                <div class="row">
+                    <div class="content-column">
+                        <h2 class="category-title">Submersible Pumps</h2>
+                        <div class="description">
+                            <p>Submersible Pumps are widely used in wells, tanks, and large containers for immersion purposes. They are designed for systems with high flow rates and are ideal for both domestic and light industrial applications. Submersible pumps are known for their quiet operation, low pressure spikes, and ease of installation.</p>
+                        </div>
+                        <ul class="feature-list">
+                            <li>Have low upkeep requirements and last for years</li>
+                            <li>Prevent flooding damage and can avert the damage</li>
+                            <li>Submersible Sewage Pump contain a powerful motor to boost up the working</li>
+                            <li>Minimize any damages and ensure long-term smooth performance</li>
+                            <li>Different models of Sewage Water Pump are available to suit varied applications</li>
+                        </ul>
+                    </div>
+                    <div class="image-column" 
+                         style="background-image: url('images/submersible-pumps.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Borewell Pumps -->
+        <div class="e-con-boxed" data-aos="fade-right" data-aos-duration="1000">
+            <div class="e-con-inner">
+                <div class="row">
+                    <div class="content-column">
+                        <h2 class="category-title">Borewell Pumps</h2>
+                        <div class="description">
+                            <p>Our Borewell Pumps are designed for deep well applications and are suitable for both residential and industrial use. These pumps are known for their efficiency in transferring water from deep wells to the surface, providing reliable performance even in challenging conditions.</p>
+                        </div>
+                        <ul class="feature-list">
+                            <li>It can handle solids and better for liquids only</li>
+                            <li>It's the best choice for domestic as well as light industrial pumping</li>
+                            <li>The best part of using Submersible Pump is that they don't need to be primed</li>
+                            <li>They are quiet and cause no spike in pressure because the water flows through the pump</li>
+                            <li>Easy to assemble, have low requirements and available in multiple configurations to suit varied preferences</li>
+                        </ul>
+                    </div>
+                    <div class="image-column" 
+                         style="background-image: url('images/borewell-pumps.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progressive Cavity Pumps -->
+        <div class="e-con-boxed" data-aos="fade-left" data-aos-duration="1000">
+            <div class="e-con-inner">
+                <div class="row">
+                    <div class="content-column">
+                        <h2 class="category-title">Progressive Cavity Pumps</h2>
+                        <div class="description">
+                            <p>Progressive Cavity Pumps are ideal for handling highly viscous, abrasive, and shear-sensitive fluids. These pumps provide a smooth and pulsation-free flow and are excellent for applications requiring precise fluid movement.</p>
+                        </div>
+                        <p>Features:</p>
+                        <ul class="feature-list">
+                            <li>Wide Flow Range: Handles flow rates from 1 LPH to 1000 m³/hr</li>
+                            <li>Self-Priming: Draws liquids from up to a 9-meter water column</li>
+                            <li>High Pressure: Conveys fluids at pressures from 1 bar to 240 bar</li>
+                            <li>Viscosity Range: Handles liquids from 1 cP to 3 million cP</li>
+                            <li>Solids Handling: Manages slurries with up to 70% solids</li>
+                            <li>Complex Liquids: Pumps high-viscous, abrasive, and corrosive fluids</li>
+                        </ul>
+                        <p>Applications:</p>
+                        <ul class="feature-list">
+                            <li>Handles highly viscous, abrasive, shear-sensitive, thixotropic, solids laden & aggressive fluids, as a single property to a combination</li>
+                            <li>Self-priming design with high suction capability up to 9 meters water column.</li>
+                            <li>Easy & Quick maintenance with Full-Service-In-Place (FSIP) design.</li>
+                        </ul>
+                    </div>
+                    <div class="image-column" 
+                         style="background-image: url('images/progressive-cavity-pumps.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Air Operated Diaphragm Pumps -->
+        <div class="e-con-boxed" data-aos="fade-right" data-aos-duration="1000">
+            <div class="e-con-inner">
+                <div class="row">
+                    <div class="content-column">
+                        <h2 class="category-title">Air Operated Diaphragm Pumps (AODD)</h2>
+                        <div class="description">
+                            <p>Our Air Operated Diaphragm Pumps (AODD) are designed for dosing and transferring thin to viscous fluids in a variety of industries, including general, chemical processing, food and beverage, and wastewater. These pumps offer low maintenance, energy efficiency, and ease of operation.</p>
+                        </div>
+                        <p>Performance Features:</p>
+                        <ul class="feature-list">
+                            <li>Optimized mean time between repair (MTBR)</li>
+                            <li>Simple and easy installation and use</li>
+                            <li>Lube-free operation</li>
+                            <li>Ideal for a wide variety of industrial applications</li>
+                            <li>Sanitary models available for hygienic applications</li>
+                            <li>Optimized energy efficiency in a wide range of industrial applications</li>
+                        </ul>
+                    </div>
+                    <div class="image-column" 
+                         style="background-image: url('images/aodd-pumps.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Swimming Pool Pumps -->
+        <div class="e-con-boxed" data-aos="fade-left" data-aos-duration="1000">
+            <div class="e-con-inner">
+                <div class="row">
+                    <div class="content-column">
+                        <h2 class="category-title">Swimming Pool Pumps</h2>
+                        <div class="description">
+                            <p>We offer a comprehensive range of swimming pool pumps for both residential and commercial pool applications. Our pumps are designed to ensure energy-efficient operation, optimized filtration quality, and low noise levels, ensuring crystal-clear water.</p>
+                        </div>
+                        <p>Applications:</p>
+                        <ul class="feature-list">
+                            <li>Pool filtration</li>
+                            <li>Water circulation</li>
+                            <li>Energy-saving solutions</li>
+                        </ul>
+                    </div>
+                    <div class="image-column" 
+                         style="background-image: url('images/swimming-pool-pumps.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- End Product Section -->
+
+    <!-- Start Footer Section -->
+    <footer class="footer-section">
+        <div class="container relative">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <div class="mb-4 footer-logo-wrap">
+                        <a href="#" class="footer-logo">
+                            <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
+                        </a>
+                    </div>
+                    <p class="mb-4">Empowering water treatment plants with advanced chemicals and supplies for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
+                    <ul class="list-unstyled custom-social">
+                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+								<li><a href="about.html">About us</a></li>
+								<li><a href="Products.html">Products</a></li>
+								<li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+						<!-- Add Contact Information Section -->
+						<div class="col-6 col-sm-6 col-md-4">
+							<ul class="list-unstyled">
+								<li><i class="fas fa-map-marker-alt me-2"></i>6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</li>
+								<li><i class="fas fa-phone me-2"></i>+91 893 916 7316</li>
+								<li><i class="fas fa-envelope me-2"></i>info@genoasis.com</li>
+							</ul>
+						</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> GenOasis | All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="js/recaptcha.js"></script>
+    <div class="popup-overlay"></div>
+    <div class="image-popup">
+        <div class="popup-close"></div>
+        <img src="" alt="Product detail image">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageColumns = document.querySelectorAll('.image-column');
+            const popup = document.querySelector('.image-popup');
+            const popupImg = popup.querySelector('img');
+            const overlay = document.querySelector('.popup-overlay');
+            const closeButton = document.querySelector('.popup-close');
+
+            imageColumns.forEach(column => {
+                column.addEventListener('click', function() {
+                    const bgImage = this.style.backgroundImage;
+                    const imageUrl = bgImage.slice(4, -1).replace(/["']/g, ""); // Extract URL from background-image
+                    popupImg.src = imageUrl;
+                    popup.style.display = 'block';
+                    overlay.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+                });
+            });
+
+            function closePopup() {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            closeButton.addEventListener('click', closePopup);
+            overlay.addEventListener('click', closePopup);
+
+            // Close popup with ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closePopup();
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapseButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
+            
+            collapseButtons.forEach(button => {
+                const showMoreText = button.querySelector('.show-more');
+                const showLessText = button.querySelector('.show-less');
+                
+                button.addEventListener('click', function() {
+                    const isCollapsed = this.getAttribute('aria-expanded') === 'true';
+                    showMoreText.classList.toggle('d-none', !isCollapsed);
+                    showLessText.classList.toggle('d-none', isCollapsed);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

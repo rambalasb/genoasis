@@ -356,7 +356,6 @@
             overflow: hidden;
             transition: transform 0.3s ease;
             cursor: pointer;
-            height: 100%;
         }
 
         .product-item:hover {
@@ -379,63 +378,102 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(35, 161, 220, 0.9);
+            background: rgba(35, 161, 220, 0.7);
             color: white;
-            padding: 15px 10px;
+            padding: 10px;
             text-align: center;
             transition: background-color 0.3s ease;
-            font-size: 16px;
-            line-height: 1.2;
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Specific smaller font size for known multi-line product names */
-        .product-item:has([alt="RO Pressure Vessels & FRP Filters"]) .product-name,
-        .product-item:has([alt="Filter Cartridges & Housings"]) .product-name,
-        .product-item:has([alt="Sand Media & Ion Exchange Resins"]) .product-name,
-        .product-item:has([alt="Instruments & Lab Apparatus"]) .product-name,
-        .product-item:has([alt="Valves, Couplings & Fittings"]) .product-name {
-            font-size: 14px;
         }
 
         .product-item:hover .product-name {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0,0,0,0.9);
         }
 
         @media (max-width: 768px) {
-            .product-name {
-                font-size: 14px;
-                min-height: 45px;
+            .product-item img {
+                height: 200px;
             }
-            /* Even smaller for multi-line on mobile */
-            .product-item:has([alt="RO Pressure Vessels & FRP Filters"]) .product-name,
-            .product-item:has([alt="Filter Cartridges & Housings"]) .product-name,
-            .product-item:has([alt="Sand Media & Ion Exchange Resins"]) .product-name,
-            .product-item:has([alt="Instruments & Lab Apparatus"]) .product-name,
-            .product-item:has([alt="Valves, Couplings & Fittings"]) .product-name {
-                font-size: 12px;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .product-description p,
+        .lead,
+        .feature-list li,
+        table td,
+        table th {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .table {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .table th {
+            font-weight: 600;
+        }
+
+        .table td {
+            font-weight: 400;
+        }
+
+        .product-description {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-list li {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .lead {
+            font-weight: 400;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .table {
+                font-size: 0.85rem;
             }
             
+            .lead {
+                font-size: 1.05rem;
+            }
+            
+            p {
+                font-size: 0.95rem;
+            }
         }
 
-        @media (max-width: 768px) {
-            [style*="flex: 0 0 20%"] {
-                flex: 0 0 50% !important;
-                max-width: 50% !important;
-            }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: all 0.3s ease;
         }
-        
-        @media (max-width: 576px) {
-            [style*="flex: 0 0 20%"] {
-                flex: 0 0 100% !important;
-                max-width: 100% !important;
-            }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .collapse {
+            transition: all 0.3s ease;
         }
     </style>
-    <title>GenOasis - Products</title>
+    <title>GenOasis - RO Pressure Vessels & FRP Media Filter Solutions</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
 </head>
 	<!-- Start Top Bar -->
@@ -480,115 +518,135 @@
         </div>
     </nav>
     <!-- End Header/Navigation -->
-
     <!-- Start Hero Section -->
-    <div class="hero hero-products">
+    <div class="hero hero-water-treatment">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
-                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">Products</h1>
+                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">RO Pressure Vessels & FRP Media Filter Solutions</h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Hero Section -->
+    
+    <!-- Introduction -->
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-12">
+                <p class="lead mb-4">
+                    We are a leading supplier and trader of premium RO pressure vessels and FRP media filters, designed to meet the demands of various commercial and industrial water treatment applications. Our solutions are engineered for cost-effective, continuous, and long-term use, offering optimal performance in a variety of operating conditions. At Genoasis Technologies, we offer a wide range of RO pressure vessels and FRP media filters designed to meet your specific water treatment needs. Whether you are handling municipal, industrial, or residential water treatment, our solutions are engineered to provide the highest level of performance and durability.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- RO Membrane Housings -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">RO Membrane Housings</h2>
+                <p class="lead mb-4">
+                    Our RO membrane housings are the perfect solution for a wide range of applications, including:
+                </p>
+                <ul class="feature-list mb-4">
+                    <li>Municipal water treatment</li>
+                    <li>Power generation</li>
+                    <li>Food and beverage processing</li>
+                    <li>Ultra-pure water production</li>
+                    <li>Oil & Gas</li>
+                </ul>
+                <p>These membrane housings are constructed from fibre-reinforced epoxy/glass composites and can accommodate up to 8 membrane elements. They are designed to handle a wide range of operating pressures, including 150 psi, 300 psi, 450 psi, 600 psi, 1000 psi, and 1200 psi. Our RO vessels are highly compatible for brackish, high brackish, and seawater applications.</p>
+                <p>Membrane housings with 8" and 4" diameters are the most commonly used worldwide across a variety of water treatment projects.</p>
+            </div>
+        </div>
+    </div>
 
-    <!-- Start Products Grid Section -->
-    <div class="products-section py-5">
-        <div class="container">            
-            <div class="row g-4">
-                <!-- Grid items -->
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="frpmedia.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/pressure-vessels.jpg" alt="RO Pressure Vessels & FRP Filters">
-                            <div class="product-name">RO Pressure Vessels & FRP Filters</div>
-                        </div>
-                    </a>
-                </div>
+    <!-- 8-Inch Side Entry Pressure Vessel -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">8-Inch Side Entry Pressure Vessel</h2>
+                <p class="lead mb-4">
+                    Our 8-inch side entry membrane housings are available in a wide operating pressure range from 150 to 1200 psi. The multi-port design allows vessel-to-vessel connection, minimizing the need for costly manifolds. Patented OCTA technology uses side ports mounted on flat sealing surfaces for easy servicing.
+                </p>
+                <ul class="feature-list mb-4">
+                    <li>80S Series: Available with side-port options of 1.5, 2.0, and 2.5-inch IPS grooved.</li>
+                    <li>80H Series: Available with side-port options of 3.0-inch IPS grooved.</li>
+                    <li>80U Series: Available with side-port options of 4.0-inch IPS grooved.</li>
+                </ul>
+                <p>Our 8-inch end entry membrane housings are also available in operating pressures of 300, 450, 600, 1000, and 1200 psi.</p>
+            </div>
+        </div>
+    </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="membranes.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/ro-membranes.jpg" alt="Membrane Products">
-                            <div class="product-name">Membrane Products</div>
-                        </div>
-                    </a>
-                </div>
+    <!-- 4-Inch Side Entry Pressure Vessel -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">4-Inch Side Entry Pressure Vessel</h2>
+                <p class="lead mb-4">
+                    Our 4-inch side entry membrane housings are available in operating pressures of 300 psi, 450 psi, and 600 psi. The multi-port feature in 4-inch membrane housings enables vessel-to-vessel connections, reducing the need for costly manifolds. Additionally, 4-inch end-entry membrane housings are available in operating pressures of 300, 600, and 1000 psi, designed to accommodate any standard 40-inch-long membrane.
+                </p>
+            </div>
+        </div>
+    </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="pumps.html" class="text-decoration-none">                   
-                        <div class="product-item">
-                            <img src="images/pumps.jpg" alt="Pumps">
-                            <div class="product-name">Pumps</div>
-                        </div>
-                    </a>
-                </div>
+    <!-- First Image -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <img src="images/pressurevessels.jpg" alt="RO Pressure Vessels" class="gallery-img" style="max-width: 800px; width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="filters.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/filters.jpg" alt="Filter Cartridges & Housings">
-                            <div class="product-name">Filter Cartridges & Housings</div>
-                        </div>
-                    </a>
-                </div>
+    <!-- Composite Pressure Vessels -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">Composite Pressure Vessels for Softening and Filtration Applications</h2>
+                <p class="lead mb-4">
+                    Our composite pressure vessels are perfect for residential, light commercial, and industrial water treatment applications. These vessels offer excellent flexibility and are easy to handle and install, providing superior performance and durability for long-term use in various treatment systems.
+                </p>
+                <h3>Features and Benefits:</h3>
+                <ul class="feature-list mb-4">
+                    <li>Constructed with standard polyester or chemical-resistant vinyl ester, depending on the application.</li>
+                    <li>Easy to handle and install.</li>
+                    <li>Residential Tanks (6"-16" diameter) are Certified to NSF 44.</li>
+                    <li>Commercial Tanks (18"-63" diameter) are Certified to NSF 61.</li>
+                    <li>Available in capacities up to 1,600 gallons.</li>
+                    <li>100% composite fiberglass construction for maximum durability.</li>
+                    <li>Outstanding performance even in harsh chemical environments.</li>
+                </ul>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="sandmedia.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/multimedia.jpg" alt="Sand Media & Ion Exchange Resins">
-                            <div class="product-name">Sand Media & Ion Exchange Resins</div>
-                        </div>
-                    </a>
-                </div>
+                <h3>Material of Construction:</h3>
+                <ul class="feature-list mb-4">
+                    <li>Polyethylene inner shell for enhanced resistance.</li>
+                </ul>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="chemicals.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/chemicals.jpg" alt="Water Treatment Chemicals">
-                            <div class="product-name">Water Treatment Chemicals</div>
-                        </div>
-                    </a>
-                </div>
+                <h3>Design Parameters:</h3>
+                <ul class="feature-list mb-4">
+                    <li>Safety factor of 4:1.</li>
+                    <li>Minimum burst pressure at 600 psi.</li>
+                </ul>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="Wastewater.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/wastewater.jpg" alt="Waste Water Equipments">
-                            <div class="product-name">Waste Water Equipments</div>
-                        </div>
-                    </a>
-                </div>
+                <h3>Operating Parameters:</h3>
+                <ul class="feature-list mb-4">
+                    <li>Maximum operating pressure: 150 psi.</li>
+                    <li>Maximum operating temperature: 120°F (threaded); 150°F (flanged).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="instruments.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/instruments.jpg" alt="Instruments & Lab Apparatus">
-                            <div class="product-name">Instruments & Lab Apparatus</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="disinfectants.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/disinfection.jpg" alt="Disinfectants">
-                            <div class="product-name">Disinfection Products</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="valves.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/valves.jpg" alt="Valves, Couplings & Fittings">
-                            <div class="product-name">Valves, Couplings & Fittings</div>
-                        </div>
-                    </a>
-                </div>
+    <!-- Second Image -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <img src="images/pressurevessels1.jpg" alt="Composite Pressure Vessels" class="gallery-img" style="max-width: 800px; width: 100%; height: auto;">
             </div>
         </div>
     </div>
@@ -663,7 +721,7 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const boxes = document.querySelectorAll('.e-con-boxed');
+            const galleryImages = document.querySelectorAll('.gallery-img');
             const popup = document.querySelector('.image-popup');
             const popupImg = popup.querySelector('img');
             const overlay = document.querySelector('.popup-overlay');
@@ -674,19 +732,39 @@
                 overlay.style.display = 'none';
             }
 
-            boxes.forEach(box => {
-                box.addEventListener('click', function() {
-                    const hoverImage = this.getAttribute('data-hover-image');
-                    if (hoverImage) {
-                        popupImg.src = hoverImage;
-                        popup.style.display = 'block';
-                        overlay.style.display = 'block';
-                    }
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    popupImg.src = this.src;
+                    popup.style.display = 'block';
+                    overlay.style.display = 'block';
                 });
             });
 
             closeButton.addEventListener('click', closePopup);
             overlay.addEventListener('click', closePopup);
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closePopup();
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapseButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
+            
+            collapseButtons.forEach(button => {
+                const showMoreText = button.querySelector('.show-more');
+                const showLessText = button.querySelector('.show-less');
+                
+                button.addEventListener('click', function() {
+                    const isCollapsed = this.getAttribute('aria-expanded') === 'true';
+                    showMoreText.classList.toggle('d-none', !isCollapsed);
+                    showLessText.classList.toggle('d-none', isCollapsed);
+                });
+            });
         });
     </script>
 </body>

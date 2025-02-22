@@ -356,7 +356,6 @@
             overflow: hidden;
             transition: transform 0.3s ease;
             cursor: pointer;
-            height: 100%;
         }
 
         .product-item:hover {
@@ -379,63 +378,102 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(35, 161, 220, 0.9);
+            background: rgba(35, 161, 220, 0.7);
             color: white;
-            padding: 15px 10px;
+            padding: 10px;
             text-align: center;
             transition: background-color 0.3s ease;
-            font-size: 16px;
-            line-height: 1.2;
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Specific smaller font size for known multi-line product names */
-        .product-item:has([alt="RO Pressure Vessels & FRP Filters"]) .product-name,
-        .product-item:has([alt="Filter Cartridges & Housings"]) .product-name,
-        .product-item:has([alt="Sand Media & Ion Exchange Resins"]) .product-name,
-        .product-item:has([alt="Instruments & Lab Apparatus"]) .product-name,
-        .product-item:has([alt="Valves, Couplings & Fittings"]) .product-name {
-            font-size: 14px;
         }
 
         .product-item:hover .product-name {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0,0,0,0.9);
         }
 
         @media (max-width: 768px) {
-            .product-name {
-                font-size: 14px;
-                min-height: 45px;
+            .product-item img {
+                height: 200px;
             }
-            /* Even smaller for multi-line on mobile */
-            .product-item:has([alt="RO Pressure Vessels & FRP Filters"]) .product-name,
-            .product-item:has([alt="Filter Cartridges & Housings"]) .product-name,
-            .product-item:has([alt="Sand Media & Ion Exchange Resins"]) .product-name,
-            .product-item:has([alt="Instruments & Lab Apparatus"]) .product-name,
-            .product-item:has([alt="Valves, Couplings & Fittings"]) .product-name {
-                font-size: 12px;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .product-description p,
+        .lead,
+        .feature-list li,
+        table td,
+        table th {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .table {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .table th {
+            font-weight: 600;
+        }
+
+        .table td {
+            font-weight: 400;
+        }
+
+        .product-description {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-list li {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .lead {
+            font-weight: 400;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .table {
+                font-size: 0.85rem;
             }
             
+            .lead {
+                font-size: 1.05rem;
+            }
+            
+            p {
+                font-size: 0.95rem;
+            }
         }
 
-        @media (max-width: 768px) {
-            [style*="flex: 0 0 20%"] {
-                flex: 0 0 50% !important;
-                max-width: 50% !important;
-            }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: all 0.3s ease;
         }
-        
-        @media (max-width: 576px) {
-            [style*="flex: 0 0 20%"] {
-                flex: 0 0 100% !important;
-                max-width: 100% !important;
-            }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .collapse {
+            transition: all 0.3s ease;
         }
     </style>
-    <title>GenOasis - Products</title>
+    <title>GenOasis - Disinfectants</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
 </head>
 	<!-- Start Top Bar -->
@@ -480,14 +518,13 @@
         </div>
     </nav>
     <!-- End Header/Navigation -->
-
     <!-- Start Hero Section -->
-    <div class="hero hero-products">
+    <div class="hero hero-water-treatment">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
-                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">Products</h1>
+                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">Disinfectants</h1>
                     </div>
                 </div>
             </div>
@@ -495,100 +532,86 @@
     </div>
     <!-- End Hero Section -->
 
-    <!-- Start Products Grid Section -->
-    <div class="products-section py-5">
-        <div class="container">            
-            <div class="row g-4">
-                <!-- Grid items -->
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="frpmedia.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/pressure-vessels.jpg" alt="RO Pressure Vessels & FRP Filters">
-                            <div class="product-name">RO Pressure Vessels & FRP Filters</div>
-                        </div>
-                    </a>
-                </div>
+    <div class="py-2"></div>  <!-- Added spacing -->
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="membranes.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/ro-membranes.jpg" alt="Membrane Products">
-                            <div class="product-name">Membrane Products</div>
-                        </div>
-                    </a>
-                </div>
+    <!-- Disinfection Systems Section -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">Disinfection Systems: UV Sterilizer & Ozone Generator Solutions</h2>
+                <p class="lead mb-4">
+                    We offer advanced disinfection solutions for a wide range of applications, ensuring high-efficiency water treatment. Our UV sterilizers and ozone generators are designed to effectively eliminate harmful microorganisms and contaminants from water, providing safe and clean water for industrial, municipal, and commercial uses.
+                </p>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="pumps.html" class="text-decoration-none">                   
-                        <div class="product-item">
-                            <img src="images/pumps.jpg" alt="Pumps">
-                            <div class="product-name">Pumps</div>
-                        </div>
-                    </a>
-                </div>
+                <h3 class="mb-3">UV Sterilizer</h3>
+                <p class="mb-4">
+                    Genoasis UV sterilizers use ultraviolet light to inactivate harmful microorganisms, including bacteria, viruses, and protozoa. The UV disinfection process is highly effective, chemical-free, and environmentally friendly, making it ideal for treating drinking water, wastewater, and process water.
+                </p>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="filters.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/filters.jpg" alt="Filter Cartridges & Housings">
-                            <div class="product-name">Filter Cartridges & Housings</div>
-                        </div>
-                    </a>
-                </div>
+                <h3 class="mb-3">Key Benefits</h3>
+                <ul class="feature-list mb-4">
+                    <li>Environmentally friendly, chemical-free treatment</li>
+                    <li>Effective against a wide range of microorganisms</li>
+                    <li>Low maintenance and cost-efficient operation</li>
+                    <li>Compact and easy to integrate into existing systems</li>
+                </ul>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="sandmedia.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/multimedia.jpg" alt="Sand Media & Ion Exchange Resins">
-                            <div class="product-name">Sand Media & Ion Exchange Resins</div>
-                        </div>
-                    </a>
-                </div>
+                <h3 class="mb-3">Applications</h3>
+                <ul class="feature-list mb-4">
+                    <li>Municipal water treatment</li>
+                    <li>Food & beverage industry</li>
+                    <li>Pharmaceutical water treatment</li>
+                    <li>Wastewater treatment</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Image Section for UV Sterilizer -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <img src="images/disinfectants1.jpg" alt="UV Sterilizer & Ozone Generator Systems" class="gallery-img" style="max-width: 800px; width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="chemicals.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/chemicals.jpg" alt="Water Treatment Chemicals">
-                            <div class="product-name">Water Treatment Chemicals</div>
-                        </div>
-                    </a>
-                </div>
+    <!-- Ozone Generator Section -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h3 class="mb-3">Ozone Generator</h3>
+                <p class="mb-4">
+                    Our ozone generators offer an advanced oxidation process to purify water, eliminate odors, and destroy microorganisms. Ozone is a powerful oxidant that effectively treats both organic and inorganic contaminants in water without leaving harmful residues.
+                </p>
+                <p class="mb-4">
+                    Genoasis provides customized UV sterilizers and ozone generators to meet the specific needs of your water treatment process. Our solutions are engineered for optimal performance, reliability, and ease of use.
+                </p>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="Wastewater.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/wastewater.jpg" alt="Waste Water Equipments">
-                            <div class="product-name">Waste Water Equipments</div>
-                        </div>
-                    </a>
-                </div>
+                <h3 class="mb-3">Key Benefits</h3>
+                <ul class="feature-list mb-4">
+                    <li>Strong disinfecting power, ideal for wastewater and drinking water treatment</li>
+                    <li>Reduces the need for chemicals, lowering operational costs</li>
+                    <li>Effectively controls biological contamination and eliminates odors</li>
+                    <li>Environmentally safe and efficient technology</li>
+                </ul>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="instruments.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/instruments.jpg" alt="Instruments & Lab Apparatus">
-                            <div class="product-name">Instruments & Lab Apparatus</div>
-                        </div>
-                    </a>
-                </div>
+                <h3 class="mb-3">Applications</h3>
+                <ul class="feature-list mb-4">
+                    <li>Drinking water purification</li>
+                    <li>Industrial wastewater treatment</li>
+                    <li>Aquaculture and pool water disinfection</li>
+                    <li>Food and beverage industry</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="disinfectants.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/disinfection.jpg" alt="Disinfectants">
-                            <div class="product-name">Disinfection Products</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="valves.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/valves.jpg" alt="Valves, Couplings & Fittings">
-                            <div class="product-name">Valves, Couplings & Fittings</div>
-                        </div>
-                    </a>
-                </div>
+    <!-- Image Section for Ozone Generator -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <img src="images/disinfectants2.jpg" alt="Ozone Generator Systems" class="gallery-img" style="max-width: 800px; width: 100%; height: auto;">
             </div>
         </div>
     </div>
@@ -663,7 +686,7 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const boxes = document.querySelectorAll('.e-con-boxed');
+            const galleryImages = document.querySelectorAll('.gallery-img');
             const popup = document.querySelector('.image-popup');
             const popupImg = popup.querySelector('img');
             const overlay = document.querySelector('.popup-overlay');
@@ -674,19 +697,39 @@
                 overlay.style.display = 'none';
             }
 
-            boxes.forEach(box => {
-                box.addEventListener('click', function() {
-                    const hoverImage = this.getAttribute('data-hover-image');
-                    if (hoverImage) {
-                        popupImg.src = hoverImage;
-                        popup.style.display = 'block';
-                        overlay.style.display = 'block';
-                    }
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    popupImg.src = this.src;
+                    popup.style.display = 'block';
+                    overlay.style.display = 'block';
                 });
             });
 
             closeButton.addEventListener('click', closePopup);
             overlay.addEventListener('click', closePopup);
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closePopup();
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapseButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
+            
+            collapseButtons.forEach(button => {
+                const showMoreText = button.querySelector('.show-more');
+                const showLessText = button.querySelector('.show-less');
+                
+                button.addEventListener('click', function() {
+                    const isCollapsed = this.getAttribute('aria-expanded') === 'true';
+                    showMoreText.classList.toggle('d-none', !isCollapsed);
+                    showLessText.classList.toggle('d-none', isCollapsed);
+                });
+            });
         });
     </script>
 </body>

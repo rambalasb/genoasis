@@ -356,7 +356,6 @@
             overflow: hidden;
             transition: transform 0.3s ease;
             cursor: pointer;
-            height: 100%;
         }
 
         .product-item:hover {
@@ -379,63 +378,102 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(35, 161, 220, 0.9);
+            background: rgba(35, 161, 220, 0.7);
             color: white;
-            padding: 15px 10px;
+            padding: 10px;
             text-align: center;
             transition: background-color 0.3s ease;
-            font-size: 16px;
-            line-height: 1.2;
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Specific smaller font size for known multi-line product names */
-        .product-item:has([alt="RO Pressure Vessels & FRP Filters"]) .product-name,
-        .product-item:has([alt="Filter Cartridges & Housings"]) .product-name,
-        .product-item:has([alt="Sand Media & Ion Exchange Resins"]) .product-name,
-        .product-item:has([alt="Instruments & Lab Apparatus"]) .product-name,
-        .product-item:has([alt="Valves, Couplings & Fittings"]) .product-name {
-            font-size: 14px;
         }
 
         .product-item:hover .product-name {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0,0,0,0.9);
         }
 
         @media (max-width: 768px) {
-            .product-name {
-                font-size: 14px;
-                min-height: 45px;
+            .product-item img {
+                height: 200px;
             }
-            /* Even smaller for multi-line on mobile */
-            .product-item:has([alt="RO Pressure Vessels & FRP Filters"]) .product-name,
-            .product-item:has([alt="Filter Cartridges & Housings"]) .product-name,
-            .product-item:has([alt="Sand Media & Ion Exchange Resins"]) .product-name,
-            .product-item:has([alt="Instruments & Lab Apparatus"]) .product-name,
-            .product-item:has([alt="Valves, Couplings & Fittings"]) .product-name {
-                font-size: 12px;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .product-description p,
+        .lead,
+        .feature-list li,
+        table td,
+        table th {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .table {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .table th {
+            font-weight: 600;
+        }
+
+        .table td {
+            font-weight: 400;
+        }
+
+        .product-description {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-list li {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .lead {
+            font-weight: 400;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .table {
+                font-size: 0.85rem;
             }
             
+            .lead {
+                font-size: 1.05rem;
+            }
+            
+            p {
+                font-size: 0.95rem;
+            }
         }
 
-        @media (max-width: 768px) {
-            [style*="flex: 0 0 20%"] {
-                flex: 0 0 50% !important;
-                max-width: 50% !important;
-            }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: all 0.3s ease;
         }
-        
-        @media (max-width: 576px) {
-            [style*="flex: 0 0 20%"] {
-                flex: 0 0 100% !important;
-                max-width: 100% !important;
-            }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .collapse {
+            transition: all 0.3s ease;
         }
     </style>
-    <title>GenOasis - Products</title>
+    <title>GenOasis - Membrane Products</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
 </head>
 	<!-- Start Top Bar -->
@@ -480,115 +518,100 @@
         </div>
     </nav>
     <!-- End Header/Navigation -->
-
     <!-- Start Hero Section -->
-    <div class="hero hero-products">
+    <div class="hero hero-water-treatment">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
-                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">Products</h1>
+                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">Membrane Products</h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Hero Section -->
+    
+    <!-- Introduction -->
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-12">
+                <p class="lead mb-4">
+                    We are a leading supplier and trader of advanced membrane solutions designed to meet diverse water treatment needs. Our Integrated Membrane Solutions (IMS) are customized to address specific business objectives, providing high-performance systems for applications such as brackish water, seawater desalination, wastewater treatment, and more. We offer comprehensive technical support and cutting-edge technology to optimize your water purification processes. At Genoasis Technologies, we provide high-performance membrane products designed to address a broad range of water treatment challenges. Whether for brackish water, desalination, wastewater reuse, or surface water purification, our membranes offer reliable, efficient, and cost-effective solutions.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- RO Membrane Technology -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">RO Membrane Technology (Reverse Osmosis)</h2>
+                <p class="lead mb-4">
+                    Reverse osmosis (RO) is an essential process for removing particles with a molecular weight cutoff of 100 to 200. Our RO membranes are designed to effectively eliminate substances such as metal ions, acids, sugars, dyes, natural resins, and ions.
+                </p>
+                <ul class="feature-list mb-4">
+                    <li>High Salt Rejection: Our RO membranes are renowned for their high salt rejection rates, making them the ideal choice for high-purity applications in industries such as pharmaceuticals, power generation, and semiconductor manufacturing.</li>
+                    <li>Available Sizes: 4" and 8" configurations for a wide range of applications.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Nanofiltration (NF) Membranes -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">Nanofiltration (NF) Membranes</h2>
+                <p class="lead mb-4">
+                    Nanofiltration membranes are perfect for applications that require the removal of particles with a molecular weight cutoff of 200 to 1500, including divalent ions, organic materials, color, bacteria, and viruses. These membranes can be integrated with RO or ultrafiltration systems for efficient primary or secondary water treatment.
+                </p>
+                <ul class="feature-list mb-4">
+                    <li>Superior Performance: Our NF membranes provide excellent performance at low pressures, ideal for applications such as softening, pesticide removal, and pathogen elimination.</li>
+                    <li>They offer a high degree of salt rejection (91%-99%) while allowing passage of monovalent ions like sodium and chloride, making them perfect for municipal potable water systems.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    <!-- Start Products Grid Section -->
-    <div class="products-section py-5">
-        <div class="container">            
-            <div class="row g-4">
-                <!-- Grid items -->
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="frpmedia.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/pressure-vessels.jpg" alt="RO Pressure Vessels & FRP Filters">
-                            <div class="product-name">RO Pressure Vessels & FRP Filters</div>
-                        </div>
-                    </a>
-                </div>
+    <!-- Ultrafiltration (UF) Membranes -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">Ultrafiltration (UF) Membranes</h2>
+                <p class="lead mb-4">
+                    Our ultrafiltration membranes offer high-efficiency filtration, providing superior permeate quality while minimizing footprint requirements. These modules are suitable for industrial or municipal wastewater, seawater, surface water, and ground water treatment.
+                </p>
+                <ul class="feature-list mb-4">
+                    <li>Advanced Ultrafiltration Technology: Utilizing advanced PVDF hollow fibers (0.08 micron pore size), our UF membranes offer high recovery rates, reduced fiber breakage, and no need for backwash pumps. Physical cleaning is performed through air scouring with a patented air diffuser design.</li>
+                    <li>Modular Systems: Our ultrafiltration modules can be integrated into pre-engineered, standardized rack systems for optimal space usage and efficient operation.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="membranes.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/ro-membranes.jpg" alt="Membrane Products">
-                            <div class="product-name">Membrane Products</div>
-                        </div>
-                    </a>
-                </div>
+    <!-- Membrane Bioreactor (MBR) Technology -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">Membrane Bioreactor (MBR) Technology</h2>
+                <p class="lead mb-4">
+                    Membrane bioreactors (MBRs) combine biological treatment with membrane filtration, producing high-quality permeate water suitable for Cooling Tower, Chiller and RO treatment. These systems eliminate the need for sedimentation tanks and can operate at higher mixed liquor suspended solids (MLSS) levels.
+                </p>
+                <ul class="feature-list mb-4">
+                    <li>Microfiltration and Ultrafiltration Technology: We offer both microfiltration and ultrafiltration MBR technologies. Microfiltration with a 0.4 µm pore size is ideal for municipal and industrial wastewater treatment.</li>
+                    <li>Ultrafiltration (0.05 µm pore size) is well-suited for more demanding wastewater applications in industries such as chemical, textile, food and beverage, and palm oil production.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="pumps.html" class="text-decoration-none">                   
-                        <div class="product-item">
-                            <img src="images/pumps.jpg" alt="Pumps">
-                            <div class="product-name">Pumps</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="filters.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/filters.jpg" alt="Filter Cartridges & Housings">
-                            <div class="product-name">Filter Cartridges & Housings</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="sandmedia.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/multimedia.jpg" alt="Sand Media & Ion Exchange Resins">
-                            <div class="product-name">Sand Media & Ion Exchange Resins</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="chemicals.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/chemicals.jpg" alt="Water Treatment Chemicals">
-                            <div class="product-name">Water Treatment Chemicals</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="Wastewater.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/wastewater.jpg" alt="Waste Water Equipments">
-                            <div class="product-name">Waste Water Equipments</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="instruments.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/instruments.jpg" alt="Instruments & Lab Apparatus">
-                            <div class="product-name">Instruments & Lab Apparatus</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="disinfectants.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/disinfection.jpg" alt="Disinfectants">
-                            <div class="product-name">Disinfection Products</div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="valves.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/valves.jpg" alt="Valves, Couplings & Fittings">
-                            <div class="product-name">Valves, Couplings & Fittings</div>
-                        </div>
-                    </a>
-                </div>
+    <!-- Single Image at the End -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <img src="images/membranes.jpg" alt="Membrane Technologies" class="gallery-img" style="max-width: 800px; width: 100%; height: auto;">
             </div>
         </div>
     </div>
@@ -663,7 +686,7 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const boxes = document.querySelectorAll('.e-con-boxed');
+            const galleryImages = document.querySelectorAll('.gallery-img');
             const popup = document.querySelector('.image-popup');
             const popupImg = popup.querySelector('img');
             const overlay = document.querySelector('.popup-overlay');
@@ -674,19 +697,39 @@
                 overlay.style.display = 'none';
             }
 
-            boxes.forEach(box => {
-                box.addEventListener('click', function() {
-                    const hoverImage = this.getAttribute('data-hover-image');
-                    if (hoverImage) {
-                        popupImg.src = hoverImage;
-                        popup.style.display = 'block';
-                        overlay.style.display = 'block';
-                    }
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    popupImg.src = this.src;
+                    popup.style.display = 'block';
+                    overlay.style.display = 'block';
                 });
             });
 
             closeButton.addEventListener('click', closePopup);
             overlay.addEventListener('click', closePopup);
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closePopup();
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapseButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
+            
+            collapseButtons.forEach(button => {
+                const showMoreText = button.querySelector('.show-more');
+                const showLessText = button.querySelector('.show-less');
+                
+                button.addEventListener('click', function() {
+                    const isCollapsed = this.getAttribute('aria-expanded') === 'true';
+                    showMoreText.classList.toggle('d-none', !isCollapsed);
+                    showLessText.classList.toggle('d-none', isCollapsed);
+                });
+            });
         });
     </script>
 </body>

@@ -1,0 +1,992 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RPG7M7CLBF');
+    </script>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/tiny-slider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Add AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .product-category .category-title {
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .product-types {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+
+        .product-types li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .product-types li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+        }
+
+        .e-con-boxed {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .e-con-inner {
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            margin: 0;
+        }
+
+        .content-column {
+            padding: 40px;
+            width: 66.666%;
+            background-color: #f8f9fa;
+        }
+
+        .image-column {
+            width: 33.333%;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .content-column,
+            .image-column {
+                width: 100%;
+            }
+            
+            .image-column {
+                min-height: 300px;
+            }
+        }
+
+        .elementor-icon-list-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .elementor-icon-list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .elementor-icon-list-icon {
+            margin-right: 10px;
+        }
+
+        .elementor-spacer {
+            height: 20px;
+        }
+
+        .product-category .category-container {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .product-types li:before {
+            content: "\f061"; /* FontAwesome arrow right */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #333;
+        }
+
+        /* Add these image-specific styles */
+        .e-con-boxed .image-container {
+            height: 300px; /* Fixed height for consistency */
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .e-con-boxed .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This ensures the image covers the area without distortion */
+            object-position: center;
+        }
+
+        /* For responsive design */
+        @media (max-width: 768px) {
+            .e-con-boxed .image-container {
+                height: 250px; /* Slightly smaller on tablets */
+                margin-top: 20px; /* Add some space between text and image on mobile */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .e-con-boxed .image-container {
+                height: 200px; /* Even smaller on mobile phones */
+            }
+        }
+
+        .content-column {
+            padding: 40px;
+        }
+
+        .image-column {
+            padding: 0;
+            position: relative;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .image-column {
+                position: relative;
+                height: 300px;
+            }
+            .image-container {
+                position: relative;
+            }
+            .content-column {
+                padding: 30px;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .content-column,
+            .image-column {
+                width: 100%;
+            }
+            
+            .image-column {
+                height: 300px;
+            }
+        }
+
+        /* List styles */
+        .elementor-icon-list-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .elementor-icon-list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .elementor-icon-list-icon {
+            margin-right: 10px;
+        }
+
+        /* Title and text styles */
+        .category-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .content-column,
+            .image-column {
+                width: 100%;
+            }
+            
+            .image-column {
+                height: 300px;
+            }
+        }
+
+        /* Add these new styles */
+        .image-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            max-width: 800px;
+            max-height: 800px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .image-popup img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 999;
+            cursor: pointer;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .popup-close:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .popup-close::before,
+        .popup-close::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 2px;
+            background-color: white;
+        }
+
+        .popup-close::before {
+            transform: rotate(45deg);
+        }
+
+        .popup-close::after {
+            transform: rotate(-45deg);
+        }
+
+        .image-column {
+            cursor: pointer;
+        }
+
+        @media (max-width: 992px) {
+            .image-popup {
+                max-width: 600px;
+                max-height: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-popup {
+                max-width: 400px;
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .image-popup {
+                max-width: 90%;
+                max-height: 90vh;
+            }
+        }
+
+        .products-section {
+            background-color: #fff;
+        }
+
+        .product-item {
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(35, 161, 220, 0.7);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-item:hover .product-name {
+            background: rgba(0,0,0,0.9);
+        }
+
+        @media (max-width: 768px) {
+            .product-item img {
+                height: 200px;
+            }
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .product-description p,
+        .lead,
+        .feature-list li,
+        table td,
+        table th {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .table {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .table th {
+            font-weight: 600;
+        }
+
+        .table td {
+            font-weight: 400;
+        }
+
+        .product-description {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-list li {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .lead {
+            font-weight: 400;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .table {
+                font-size: 0.85rem;
+            }
+            
+            .lead {
+                font-size: 1.05rem;
+            }
+            
+            p {
+                font-size: 0.95rem;
+            }
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .collapse {
+            transition: all 0.3s ease;
+        }
+
+        .chemical-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .chemical-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .chemical-card h3 {
+            color: #007bff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .chemical-details {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        .chemical-details p {
+            margin-bottom: 8px;
+        }
+        
+        .chemical-card ul, .chemical-card ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .chemical-card li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .chemical-card {
+                padding: 20px;
+            }
+        }
+    </style>
+    <title>GenOasis - Chemicals</title>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
+</head>
+	<!-- Start Top Bar -->
+	<div class="top-bar py-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="d-flex justify-content-end">
+						<a href="tel:+918939167316" class="me-3 text-decoration-none text-dark">
+							<i class="fas fa-phone"></i> +91 893 916 7316
+						</a>
+						<a href="mailto:info@genoasis.com" class="text-decoration-none text-dark">
+							<i class="fas fa-envelope"></i> info@genoasis.com
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Top Bar -->
+<body>
+    <!-- Start Header/Navigation -->
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="GenOasis navigation bar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenOasis" aria-controls="navbarsGenOasis" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsGenOasis">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="active"><a class="nav-link" href="Products.html">Products</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Header/Navigation -->
+    <!-- Start Hero Section -->
+    <div class="hero hero-water-treatment">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <div class="intro-excerpt">
+                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">Chemicals</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Hero Section -->
+    
+    <!-- Introduction -->
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <div class="col-12">
+                <p class="lead mb-4">
+                    Genoasis supplies a wide range of Water & Wastewater Treatment Chemicals, including specialty chemicals such as RO Antiscalants, RO Cleaning Chemicals, and Corrosion & Scale Inhibitors, along with commercial-grade solutions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Specialty Chemicals Section -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">Specialty Chemicals</h2>
+                
+                <div class="chemical-card mb-4">
+                    <h3>RO Antiscalants</h3>
+                    <p>Our antiscalants effectively inhibit scale formation while dispersing colloidal particles, ensuring optimal membrane performance and longevity.</p>
+                </div>
+                
+                <div class="chemical-card mb-4">
+                    <h3>RO Cleaners</h3>
+                    <p>Our cleaners provide efficient and cost-effective removal of various foulants and scales from membranes, restoring their efficiency.</p>
+                </div>
+                
+                <div class="chemical-card mb-4">
+                    <h3>Cleaners for MF/UF Applications</h3>
+                    <p>Specially formulated for microfiltration and ultrafiltration, these cleaners are designed to remove common fouling such as organic fouling, metal fouling, and particulate fouling in a cost-effective manner.</p>
+                </div>
+                
+                <div class="chemical-card mb-4">
+                    <h3>Chlorine Scavengers</h3>
+                    <p>Chlorine in feedwater can cause irreversible damage to membranes, leading to premature failure. Our chlorine scavengers help protect membranes, extending their lifespan and reducing replacement costs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Commercial Chemicals Section -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">Commercial Chemicals</h2>
+                
+                <div class="chemical-card mb-4">
+                    <h3>ALUMINIUM SULPHATE</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> Al₂(SO₄)₃</p>
+                        <p><strong>CAS Number:</strong> CID 24850</p>
+                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                    </div>
+                    <ul>
+                        <li>Premium-quality chemical compound</li>
+                        <li>Versatile applications in water treatment, paper manufacturing, and textile industries</li>
+                        <li>Highly effective water treatment agent</li>
+                        <li>Enhances paper strength and improves ink absorption</li>
+                        <li>Delivers reliable and consistent results</li>
+                    </ul>
+                    <p><strong>Applications:</strong></p>
+                    <ol>
+                        <li>Water treatment</li>
+                        <li>Paper manufacturing</li>
+                        <li>Textile processing</li>
+                        <li>pH regulation</li>
+                        <li>Dyeing and printing</li>
+                    </ol>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>CALCIUM HYPOCHLORITE</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> Ca(ClO)₂</p>
+                        <p><strong>CAS Number:</strong> 7778-54-3</p>
+                        <p><strong>Packaging:</strong> 45 KG DRUMS</p>
+                    </div>
+                    <ul>
+                        <li>High-quality compound, used as a powerful disinfectant and sanitizer</li>
+                        <li>Effective in water treatment, swimming pool maintenance, and cleaning applications</li>
+                        <li>Provides efficient chlorination and oxidation properties</li>
+                        <li>Consistent and reliable results for maintaining hygiene and sanitation</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>CHLORINE TABLET</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> C₃Cl₃N₃O₃</p>
+                        <p><strong>CAS Number:</strong> 87-90-1</p>
+                        <p><strong>Packaging:</strong> 50 KG DRUMS</p>
+                    </div>
+                    <ul>
+                        <li>High-quality tablet form of chlorine compound</li>
+                        <li>Widely used in water disinfection and purification</li>
+                        <li>Highly effective in eliminating bacteria, viruses, and other harmful pathogens</li>
+                        <li>Ideal for swimming pools, water tanks, and sanitation systems</li>
+                        <li>Consistent and reliable performance for maintaining clean and safe water</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>CITRIC ACID ANHYDROUS</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> C₆H₈O₇</p>
+                        <p><strong>CAS Number:</strong> 77-92-9</p>
+                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                    </div>
+                    <ul>
+                        <li>High-quality organic acid compound</li>
+                        <li>Versatile applications across food, beverages, and personal care industries</li>
+                        <li>Used as an acidifier, flavor enhancer, and preservative</li>
+                        <li>Provides tartness, freshness, and effective pH adjustment in formulations</li>
+                        <li>Reliable and consistent results for achieving desired product characteristics</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>DBNPA (DIBROMO-3-NITRILOPROPIONAMIDE)</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> C₃H₂Br₂N₂O</p>
+                        <p><strong>CAS Number:</strong> 10222-01-2</p>
+                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                    </div>
+                    <ul>
+                        <li>Premium-quality biocide and preservative</li>
+                        <li>Versatile applications in water treatment, paints, and personal care products</li>
+                        <li>Effective for controlling microbial growth</li>
+                        <li>Used as a disinfectant and antimicrobial agent</li>
+                        <li>Provides reliable and consistent microbial control</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>FERRIC CHLORIDE</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> FeCl₃·H₂O</p>
+                        <p><strong>CAS Number:</strong> 231-729-4</p>
+                        <p><strong>Packaging:</strong> 300 KG DRUMS</p>
+                    </div>
+                    <ul>
+                        <li>High-quality inorganic compound</li>
+                        <li>Suitable for a wide range of applications in water treatment, electronics, and metal finishing</li>
+                        <li>Used as a coagulant, etchant, and flocculant</li>
+                        <li>Highly effective in removing impurities and contaminants</li>
+                        <li>Reliable and consistent results for water purification and metal treatment</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>HYDRAZINE HYDRATE</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> N₂H₅OH</p>
+                        <p><strong>CAS Number:</strong> 7803-57-8</p>
+                        <p><strong>Packaging:</strong> 200 KG DRUMS</p>
+                    </div>
+                    <ul>
+                        <li>High-quality inorganic compound</li>
+                        <li>Versatile applications in industries such as chemicals, pharmaceuticals, and water treatment</li>
+                        <li>Used as a reducing agent, oxygen scavenger, and chemical intermediate</li>
+                        <li>Highly effective in oxygen removal and stabilization processes</li>
+                        <li>Provides consistent and reliable results for chemical processes</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>POLY ALUMINIUM CHLORIDE (PAC)</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> Al₂Cl(OH)₅</p>
+                        <p><strong>CAS Number:</strong> 1327-41-9</p>
+                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                    </div>
+                    <ul>
+                        <li>Premium-quality inorganic compound, commonly known as PAC</li>
+                        <li>Versatile applications in water treatment, paper manufacturing, and wastewater management</li>
+                        <li>Used as a coagulant, flocculant, and clarifying agent</li>
+                        <li>Highly effective in water purification and solid-liquid separation</li>
+                        <li>Reliable and consistent performance for effective treatment processes</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>SODA ASH LIGHT – Sodium Carbonate Light</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> Na₂CO₃</p>
+                        <p><strong>CAS Number:</strong> 497-19-8</p>
+                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                    </div>
+                    <ul>
+                        <li>Premium-quality inorganic compound, also known as light sodium carbonate</li>
+                        <li>Suitable for various industries such as glass manufacturing, water treatment, and chemicals</li>
+                        <li>Used as a pH regulator, flux, and buffering agent</li>
+                        <li>Effective for chemical reactions and alkalinity control</li>
+                        <li>Reliable and consistent results across industrial applications</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>SODIUM BICARBONATE</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> NaHCO₃</p>
+                        <p><strong>CAS Number:</strong> 144-55-8</p>
+                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                    </div>
+                    <ul>
+                        <li>High-quality inorganic compound, commonly known as baking soda</li>
+                        <li>Used across various industries including food, pharmaceuticals, and personal care</li>
+                        <li>Effective as a leavening agent, pH regulator, and cleaning agent</li>
+                        <li>Provides superior buffering and odor-neutralizing properties</li>
+                        <li>Delivers consistent and reliable results for various formulations</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>SODIUM BISULPHITE</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> NaHSO₃</p>
+                        <p><strong>CAS Number:</strong> 7631-90-5</p>
+                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                    </div>
+                    <ul>
+                        <li>Premium-quality inorganic compound</li>
+                        <li>Widely used in industries such as food processing, water treatment, and photography</li>
+                        <li>Functions as a preservative, reducing agent, and antioxidant</li>
+                        <li>Effective for antimicrobial control and oxidation prevention</li>
+                        <li>Consistent and reliable results for product preservation and quality</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>SODIUM METABISULPHITE</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> Na₂S₂O₅</p>
+                        <p><strong>CAS Number:</strong> 7681-57-4</p>
+                        <p><strong>Packaging:</strong> 25 KG BAGS (Powder) & 1 TON IBC (Liquid)</p>
+                    </div>
+                    <ul>
+                        <li>High-quality inorganic compound</li>
+                        <li>Commonly used in food processing, photography, and water treatment industries</li>
+                        <li>Functions as a preservative, antioxidant, and sterilizing agent</li>
+                        <li>Effective for antimicrobial control and oxidation prevention</li>
+                        <li>Reliable and consistent results for product preservation</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>SODIUM TRIPOLYPHOSPHATE – STPP</h3>
+                    <div class="chemical-details">
+                        <p><strong>Formula:</strong> Na₅P₃O₁₀</p>
+                        <p><strong>CAS Number:</strong> 7758-29-4</p>
+                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                    </div>
+                    <ul>
+                        <li>High-quality inorganic compound</li>
+                        <li>Widely used in detergent manufacturing, water treatment, and ceramics</li>
+                        <li>Serves as a builder, sequestrant, and emulsifier</li>
+                        <li>Provides excellent water softening and soil suspension properties</li>
+                        <li>Consistent and reliable results for effective cleaning and formulation processes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Specialty Polymers Section -->
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="mb-4">Specialty Polymers</h2>
+                
+                <div class="chemical-card mb-4">
+                    <h3>CATIONIC POLYACRYLAMIDE (PAM)</h3>
+                    <ul>
+                        <li>Cationic PAM is a linear organic polymer, copolymerized with cationic monomers and acrylamide, offering excellent water solubility</li>
+                        <li>Used primarily as a flocculant in solid-liquid separation processes across industries such as sewage treatment, paper manufacturing, food processing, petrochemical, and more</li>
+                        <li>Effective as a dry strength agent, retention agent, and filter aid in the paper industry</li>
+                        <li>Ensures reliable and efficient flocculation with minimal dosage for optimal results</li>
+                        <li>Commonly used in oil field applications for wastewater treatment, anti-clay swelling, and acidification</li>
+                    </ul>
+                </div>
+
+                <div class="chemical-card mb-4">
+                    <h3>ANIONIC POLYACRYLAMIDE</h3>
+                    <ul>
+                        <li>Soluble in water, exhibiting high polymer electrolyte characteristics in neutral and alkaline mediums</li>
+                        <li>Widely used in drilling mud additives, mining, coal washing, paper manufacturing, and wastewater treatment</li>
+                        <li>Efficient in enhancing water treatment, clarifying liquids, improving paper quality, and reducing energy costs</li>
+                        <li>Provides reliable and consistent performance for diverse industrial applications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Footer Section -->
+    <footer class="footer-section">
+        <div class="container relative">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <div class="mb-4 footer-logo-wrap">
+                        <a href="#" class="footer-logo">
+                            <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
+                        </a>
+                    </div>
+                    <p class="mb-4">Empowering water treatment plants with advanced chemicals and supplies for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
+                    <ul class="list-unstyled custom-social">
+                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+								<li><a href="about.html">About us</a></li>
+								<li><a href="Products.html">Products</a></li>
+								<li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+						<!-- Add Contact Information Section -->
+						<div class="col-6 col-sm-6 col-md-4">
+							<ul class="list-unstyled">
+								<li><i class="fas fa-map-marker-alt me-2"></i>6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</li>
+								<li><i class="fas fa-phone me-2"></i>+91 893 916 7316</li>
+								<li><i class="fas fa-envelope me-2"></i>info@genoasis.com</li>
+							</ul>
+						</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> GenOasis | All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="js/recaptcha.js"></script>
+    <div class="popup-overlay"></div>
+    <div class="image-popup">
+        <div class="popup-close"></div>
+        <img src="" alt="Product detail image">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryImages = document.querySelectorAll('.gallery-img');
+            const popup = document.querySelector('.image-popup');
+            const popupImg = popup.querySelector('img');
+            const overlay = document.querySelector('.popup-overlay');
+            const closeButton = document.querySelector('.popup-close');
+
+            function closePopup() {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+            }
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    popupImg.src = this.src;
+                    popup.style.display = 'block';
+                    overlay.style.display = 'block';
+                });
+            });
+
+            closeButton.addEventListener('click', closePopup);
+            overlay.addEventListener('click', closePopup);
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closePopup();
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapseButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
+            
+            collapseButtons.forEach(button => {
+                const showMoreText = button.querySelector('.show-more');
+                const showLessText = button.querySelector('.show-less');
+                
+                button.addEventListener('click', function() {
+                    const isCollapsed = this.getAttribute('aria-expanded') === 'true';
+                    showMoreText.classList.toggle('d-none', !isCollapsed);
+                    showLessText.classList.toggle('d-none', isCollapsed);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
