@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RPG7M7CLBF');
+    </script>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/tiny-slider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Add AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .product-category .category-title {
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .product-types {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+
+        .product-types li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .product-types li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+        }
+
+        .e-con-boxed {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .e-con-inner {
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            margin: 0;
+        }
+
+        .content-column {
+            padding: 40px;
+            width: 66.666%;
+            background-color: #f8f9fa;
+        }
+
+        .image-column {
+            width: 33.333%;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .content-column,
+            .image-column {
+                width: 100%;
+            }
+            
+            .image-column {
+                min-height: 300px;
+            }
+        }
+
+        .elementor-icon-list-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .elementor-icon-list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .elementor-icon-list-icon {
+            margin-right: 10px;
+        }
+
+        .elementor-spacer {
+            height: 20px;
+        }
+
+        .product-category .category-container {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .product-types li:before {
+            content: "\f061"; /* FontAwesome arrow right */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #333;
+        }
+
+        /* Add these image-specific styles */
+        .e-con-boxed .image-container {
+            height: 300px; /* Fixed height for consistency */
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .e-con-boxed .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This ensures the image covers the area without distortion */
+            object-position: center;
+        }
+
+        /* For responsive design */
+        @media (max-width: 768px) {
+            .e-con-boxed .image-container {
+                height: 250px; /* Slightly smaller on tablets */
+                margin-top: 20px; /* Add some space between text and image on mobile */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .e-con-boxed .image-container {
+                height: 200px; /* Even smaller on mobile phones */
+            }
+        }
+
+        .content-column {
+            padding: 40px;
+        }
+
+        .image-column {
+            padding: 0;
+            position: relative;
+        }
+
+        .image-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        @media (max-width: 768px) {
+            .image-column {
+                position: relative;
+                height: 300px;
+            }
+            .image-container {
+                position: relative;
+            }
+            .content-column {
+                padding: 30px;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .content-column,
+            .image-column {
+                width: 100%;
+            }
+            
+            .image-column {
+                height: 300px;
+            }
+        }
+
+        /* List styles */
+        .elementor-icon-list-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .elementor-icon-list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .elementor-icon-list-icon {
+            margin-right: 10px;
+        }
+
+        /* Title and text styles */
+        .category-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+            }
+            
+            .content-column,
+            .image-column {
+                width: 100%;
+            }
+            
+            .image-column {
+                height: 300px;
+            }
+        }
+
+        /* Add these new styles */
+        .image-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            max-width: 800px;
+            max-height: 800px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .image-popup img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 999;
+            cursor: pointer;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .popup-close:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .popup-close::before,
+        .popup-close::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 2px;
+            background-color: white;
+        }
+
+        .popup-close::before {
+            transform: rotate(45deg);
+        }
+
+        .popup-close::after {
+            transform: rotate(-45deg);
+        }
+
+        .image-column {
+            cursor: pointer;
+        }
+
+        @media (max-width: 992px) {
+            .image-popup {
+                max-width: 600px;
+                max-height: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .image-popup {
+                max-width: 400px;
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .image-popup {
+                max-width: 90%;
+                max-height: 90vh;
+            }
+        }
+
+        .products-section {
+            background-color: #fff;
+        }
+
+        .product-item {
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(35, 161, 220, 0.7);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-item:hover .product-name {
+            background: rgba(0,0,0,0.9);
+        }
+
+        @media (max-width: 768px) {
+            .product-item img {
+                height: 200px;
+            }
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .product-description p,
+        .lead,
+        .feature-list li,
+        table td,
+        table th {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .table {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .table th {
+            font-weight: 600;
+        }
+
+        .table td {
+            font-weight: 400;
+        }
+
+        .product-description {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-list li {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .lead {
+            font-weight: 400;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .table {
+                font-size: 0.85rem;
+            }
+            
+            .lead {
+                font-size: 1.05rem;
+            }
+            
+            p {
+                font-size: 0.95rem;
+            }
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .collapse {
+            transition: all 0.3s ease;
+        }
+    </style>
+    <title>GenOasis - Disinfectants</title>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
+</head>
+	<!-- Start Top Bar -->
+	<div class="top-bar py-2">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="d-flex justify-content-end">
+						<a href="tel:+918939167316" class="me-3 text-decoration-none text-dark">
+							<i class="fas fa-phone"></i> +91 893 916 7316
+						</a>
+						<a href="mailto:info@genoasis.com" class="text-decoration-none text-dark">
+							<i class="fas fa-envelope"></i> info@genoasis.com
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Top Bar -->
+<body>
+    <!-- Start Header/Navigation -->
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="GenOasis navigation bar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenOasis" aria-controls="navbarsGenOasis" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsGenOasis">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="active"><a class="nav-link" href="Products.html">Products</a></li>
+                    <li><a class="nav-link" href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Header/Navigation -->
+    <!-- Start Hero Section -->
+    <div class="hero hero-water-treatment">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-5">
+                    <div class="intro-excerpt">
+                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">Instrumentation & Lab Apparatus</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Hero Section -->
+
+    <div class="py-2"></div>  <!-- Added spacing -->
+
+
+    <!-- Instrumentation Solutions Section -->
+    <div class="container">
+        <div class="row mb-5 align-items-center">
+            <!-- Text Content Column -->
+            <div class="col-lg-7">
+                <h2 class="mb-4">Instrumentation Solutions</h2>
+                <p class="lead mb-4">
+                    We offer a wide selection of sensors, transmitters, and automated control systems to monitor, regulate, and optimize water and wastewater treatment processes. Our instrumentation solutions are designed to ensure accuracy and reliability in every phase of water treatment.
+                </p>
+
+                <h3 class="mb-3">Water Quality Sensors</h3>
+                <ul class="feature-list mb-4">
+                    <li>TDS (Total Dissolved Solids)</li>
+                    <li>pH, Conductivity, ORP (Oxidation-Reduction Potential)</li>
+                    <li>Chlorine, Dissolved Oxygen (DO), Hydrogen Sulfide (H2S) Sensor</li>
+                </ul>
+
+                <h3 class="mb-3">Flow Measurement Solutions</h3>
+                <ul class="feature-list mb-4">
+                    <li>Flow Meters</li>
+                    <li>Rotameters</li>
+                    <li>Online Monitoring Systems</li>
+                </ul>
+
+                <h3 class="mb-3">Pressure & Temperature Control Systems</h3>
+                <ul class="feature-list mb-4">
+                    <li>Pressure Switches</li>
+                    <li>Pressure Transmitters</li>
+                    <li>Temperature Switches</li>
+                    <li>Temperature Transmitters</li>
+                    <li>Differential Pressure Switches</li>
+                </ul>
+            </div>
+            
+            <!-- Image Column -->
+            <div class="col-lg-5">
+                <img src="images/apparatus.jpg" alt="Instrumentation Solutions" class="gallery-img rounded" style="width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Lab Apparatus Section -->
+    <div class="container">
+        <div class="row mb-5 align-items-center">
+            <!-- Text Content Column -->
+            <div class="col-lg-7">
+                <h2 class="mb-4">Lab Apparatus</h2>
+                <p class="lead mb-4">
+                    We provide essential laboratory equipment and chemicals for accurate testing and analysis, supporting the quality control and regulatory requirements of water and wastewater treatment.
+                </p>
+
+                <h3 class="mb-3">Glassware & Chemicals</h3>
+                <ul class="feature-list mb-4">
+                    <li>Lab Glassware</li>
+                    <li>Laboratory Chemicals</li>
+                </ul>
+
+                <h3 class="mb-3">Testing Equipment</h3>
+                <ul class="feature-list mb-4">
+                    <li>pH Analyzers</li>
+                    <li>ORP Analyzers</li>
+                    <li>Online Monitoring Systems</li>
+                </ul>
+
+                <h3 class="mb-3">Heating & Drying Equipment</h3>
+                <ul class="feature-list mb-4">
+                    <li>Muffle Furnaces</li>
+                    <li>Hot Ovens</li>
+                    <li>Hot Air Ovens</li>
+                </ul>
+            </div>
+            
+            <!-- Image Column -->
+            <div class="col-lg-5">
+                <img src="images/apparatus2.jpg" alt="Lab Apparatus" class="gallery-img rounded" style="width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Footer Section -->
+    <footer class="footer-section">
+        <div class="container relative">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <div class="mb-4 footer-logo-wrap">
+                        <a href="#" class="footer-logo">
+                            <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
+                        </a>
+                    </div>
+                    <p class="mb-4">Empowering water treatment plants with advanced chemicals and supplies for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
+                    <ul class="list-unstyled custom-social">
+                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+								<li><a href="about.html">About us</a></li>
+								<li><a href="Products.html">Products</a></li>
+								<li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+						<!-- Add Contact Information Section -->
+						<div class="col-6 col-sm-6 col-md-4">
+							<ul class="list-unstyled">
+								<li><i class="fas fa-map-marker-alt me-2"></i>6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</li>
+								<li><i class="fas fa-phone me-2"></i>+91 893 916 7316</li>
+								<li><i class="fas fa-envelope me-2"></i>info@genoasis.com</li>
+							</ul>
+						</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> GenOasis | All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="js/recaptcha.js"></script>
+    <div class="popup-overlay"></div>
+    <div class="image-popup">
+        <div class="popup-close"></div>
+        <img src="" alt="Product detail image">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryImages = document.querySelectorAll('.gallery-img');
+            const popup = document.querySelector('.image-popup');
+            const popupImg = popup.querySelector('img');
+            const overlay = document.querySelector('.popup-overlay');
+            const closeButton = document.querySelector('.popup-close');
+
+            function closePopup() {
+                popup.style.display = 'none';
+                overlay.style.display = 'none';
+            }
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    popupImg.src = this.src;
+                    popup.style.display = 'block';
+                    overlay.style.display = 'block';
+                });
+            });
+
+            closeButton.addEventListener('click', closePopup);
+            overlay.addEventListener('click', closePopup);
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closePopup();
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapseButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
+            
+            collapseButtons.forEach(button => {
+                const showMoreText = button.querySelector('.show-more');
+                const showLessText = button.querySelector('.show-less');
+                
+                button.addEventListener('click', function() {
+                    const isCollapsed = this.getAttribute('aria-expanded') === 'true';
+                    showMoreText.classList.toggle('d-none', !isCollapsed);
+                    showLessText.classList.toggle('d-none', isCollapsed);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
