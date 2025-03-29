@@ -518,6 +518,48 @@
                 padding: 20px;
             }
         }
+
+        .dropdown-menu {
+            background-color: #ffffff;
+            border: none;
+            border-radius: 0;
+            margin-top: 0;
+            padding: 0;
+        }
+
+        .dropdown-item {
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.7rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                background-color: transparent;
+                border: none;
+                padding-left: 1rem;
+            }
+            
+            .dropdown-item {
+                padding: 0.5rem 1rem;
+            }
+        }
+
+        /* Active state for dropdown items */
+        .dropdown-item.active, 
+        .dropdown-item:active {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
     </style>
     <title>GenOasis - Chemicals</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
@@ -557,7 +599,23 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li><a class="nav-link" href="about.html">About us</a></li>
-                    <li class="active"><a class="nav-link" href="Products.html">Products</a></li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="frpmedia.html">RO Pressure Vessels & FRP Filters</a></li>
+                            <li><a class="dropdown-item" href="membranes.html">Membrane Products</a></li>
+                            <li><a class="dropdown-item" href="pumps.html">Pumps</a></li>
+                            <li><a class="dropdown-item" href="filters.html">Filter Cartridges & Housings</a></li>
+                            <li><a class="dropdown-item" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
+                            <li><a class="dropdown-item active" href="chemicals.html">Water Treatment Chemicals</a></li>
+                            <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
+                            <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
+                            <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
+                            <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
+                        </ul>
+                    </li>
                     <li><a class="nav-link" href="contact.html">Contact us</a></li>
                 </ul>
             </div>
