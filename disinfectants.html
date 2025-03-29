@@ -475,19 +475,50 @@
 
         .dropdown-menu {
             background-color: #ffffff;
-            border: none;
-            border-radius: 0;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
             margin-top: 0;
-            padding: 0;
+            padding: 8px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .dropdown-item {
-            color: rgba(255, 255, 255, 0.7);
-            padding: 0.7rem 1.5rem;
-            transition: all 0.3s ease;
+            color: #333333;
+            padding: 8px 20px;
+            transition: background-color 0.3s ease;
         }
 
         .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: #000000;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .nav-item.dropdown > .nav-link {
+            cursor: pointer;
+        }
+
+        /* Active state for dropdown items */
+        .dropdown-item.active, 
+        .dropdown-item:active {
+            background-color: #f8f9fa;
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                border: none;
+                padding-left: 1rem;
+                box-shadow: none;
+            }
+            
+            .dropdown-item {
+                padding: 8px 15px;
+            }
+        }
     </style>
     <title>GenOasis - Disinfectants</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
@@ -527,7 +558,23 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li><a class="nav-link" href="about.html">About us</a></li>
-                    <li class="active"><a class="nav-link" href="Products.html">Products</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="frpmedia.html">RO Pressure Vessels & FRP Filters</a></li>
+                            <li><a class="dropdown-item" href="membranes.html">Membrane Products</a></li>
+                            <li><a class="dropdown-item" href="pumps.html">Pumps</a></li>
+                            <li><a class="dropdown-item" href="filters.html">Filter Cartridges & Housings</a></li>
+                            <li><a class="dropdown-item" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
+                            <li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
+                            <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
+                            <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
+                            <li><a class="dropdown-item active" href="disinfectants.html">Disinfection Products</a></li>
+                            <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
+                        </ul>
+                    </li>
                     <li><a class="nav-link" href="contact.html">Contact us</a></li>
                 </ul>
             </div>
@@ -745,6 +792,18 @@
                     showMoreText.classList.toggle('d-none', !isCollapsed);
                     showLessText.classList.toggle('d-none', isCollapsed);
                 });
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the Products dropdown link
+            const productsLink = document.querySelector('#navbarDropdown');
+            
+            // Add click event listener
+            productsLink.addEventListener('click', function(e) {
+                // Navigate to Products.html
+                window.location.href = 'Products.html';
             });
         });
     </script>
