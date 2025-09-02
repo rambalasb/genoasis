@@ -3,6 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="description" content="Contact Genoasis Water Technologies - Get expert consultation for water treatment solutions, product inquiries, and technical support" />
+  <meta name="keywords" content="contact Genoasis, water treatment consultation, technical support, product inquiry, Genoasis contact" />
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
   <script>
@@ -11,465 +19,651 @@
     gtag('js', new Date());
     gtag('config', 'G-RPG7M7CLBF');
   </script>
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <!-- Add AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <title>Contact Us | Genoasis Water Technologies</title>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
+  
+  <style>
+    .hero-section {
+      background-image: url('images/contact-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
 
-		<!-- Bootstrap CSS -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="css/tiny-slider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<title>Genoasis - Contact Us</title>
-        <script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
-        <style>
-            .catalog-section {
-                background-color: #ffffff;
-                border-top: 1px solid #ffffff;
-            }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
 
-            .catalog-section h2 {
-                color: #333;
-                font-weight: 600;
-            }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
 
-            .catalog-section p {
-                color: #666;
-            }
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: white;
+    }
 
-            .catalog-section .btn-primary {
-                padding: 12px 30px;
-                font-size: 1.1rem;
-                transition: all 0.3s ease;
-            }
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: white;
+      opacity: 0.9;
+    }
 
-            .catalog-section .btn-primary:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            }
+    .hero-section .lead {
+      color: white;
+      opacity: 0.95;
+    }
 
-            .dropdown-menu {
-                background-color: #ffffff;
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                border-radius: 4px;
-                margin-top: 0;
-                padding: 8px 0;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            }
+    .contact-info-section {
+      padding: 80px 0;
+      background-color: #f8f9fa;
+    }
 
-            .dropdown-item {
-                color: #333333;
-                padding: 8px 20px;
-                transition: background-color 0.3s ease;
-            }
+    .contact-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+      text-align: center;
+    }
 
-            .dropdown-item:hover {
-                background-color: #f8f9fa;
-                color: #000000;
-            }
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
 
-            .dropdown:hover .dropdown-menu {
-                display: block;
-            }
+    .contact-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #23a1dc, #1e88c5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 2rem;
+    }
 
-            .nav-item.dropdown > .nav-link {
-                cursor: pointer;
-            }
+    .contact-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 15px;
+    }
 
-            /* Active state for dropdown items */
-            .dropdown-item.active, 
-            .dropdown-item:active {
-                background-color: #f8f9fa;
-                color: #000000;
-            }
+    .contact-text {
+      color: #666;
+      margin: 0;
+      line-height: 1.6;
+    }
 
-            @media (max-width: 768px) {
-                .dropdown-menu {
-                    border: none;
-                    padding-left: 1rem;
-                    box-shadow: none;
-                }
-                
-                .dropdown-item {
-                    padding: 8px 15px;
-                }
-            }
+    .contact-form-section {
+      padding: 80px 0;
+      background: white;
+    }
 
-            /* Mobile Menu Button Styles */
-            .navbar-toggler {
-                border-color: #333333;
-                background-color: transparent;
-                padding: 0.5rem;
-                margin-right: 15px;
-            }
-            
-            .navbar-toggler-icon {
-                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-                width: 1.5em;
-                height: 1.5em;
-            }
+    .form-container {
+      background: #f8f9fa;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
 
-            @media (max-width: 768px) {
-                .navbar-toggler {
-                    margin-right: 15px;
-                }
-                
-                .navbar-collapse {
-                    padding: 1rem 0;
-                }
-                
-                .custom-navbar-nav {
-                    padding: 0.5rem 0;
-                }
-                
-                .nav-item {
-                    padding: 0.5rem 0;
-                }
-                
-                .dropdown-menu {
-                    border: none;
-                    padding-left: 1rem;
-                    margin-top: 0;
-                }
-                
-                .dropdown-item {
-                    padding: 0.5rem 0;
-                }
-            }
-        </style>
-	</head>
+    .form-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .form-subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .form-control {
+      border: 2px solid #e9ecef;
+      border-radius: 10px;
+      padding: 15px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: #23a1dc;
+      box-shadow: 0 0 0 0.2rem rgba(35, 161, 220, 0.25);
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, #23a1dc 0%, #1e88c5 100%);
+      border: none;
+      border-radius: 50px;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(35, 161, 220, 0.3);
+      color: white;
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.7;
+      transform: none;
+    }
+
+    .catalog-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #23a1dc 0%, #1e88c5 100%);
+      color: white;
+    }
+
+    .catalog-section h2 {
+      color: white;
+      font-weight: 600;
+    }
+
+    .catalog-section p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .catalog-section .btn-primary {
+      background: white;
+      color: #23a1dc;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .catalog-section .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      background: #f8f9fa;
+      color: #23a1dc;
+    }
+
+    .alert {
+      border-radius: 10px;
+      border: none;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+    }
+
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .alert-danger {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+
+    .dropdown-menu {
+      background-color: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      margin-top: 0;
+      padding: 8px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-item {
+      color: #333333;
+      padding: 8px 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f8f9fa;
+      color: #000000;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .nav-item.dropdown > .nav-link {
+      cursor: pointer;
+    }
+
+    .dropdown-item.active, 
+    .dropdown-item:active {
+      background-color: #f8f9fa;
+      color: #000000;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .form-container {
+        padding: 30px 20px;
+      }
+      
+      .dropdown-menu {
+        border: none;
+        padding-left: 1rem;
+        box-shadow: none;
+      }
+      
+      .dropdown-item {
+        padding: 8px 15px;
+      }
+    }
+
+    /* Mobile Menu Button Styles */
+    .navbar-toggler {
+      border-color: #333333;
+      background-color: transparent;
+      padding: 0.5rem;
+      margin-right: 15px;
+    }
+    
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-toggler {
+        margin-right: 15px;
+      }
+      
+      .navbar-collapse {
+        padding: 1rem 0;
+      }
+      
+      .custom-navbar-nav {
+        padding: 0.5rem 0;
+      }
+      
+      .nav-item {
+        padding: 0.5rem 0;
+      }
+      
+      .dropdown-menu {
+        border: none;
+        padding-left: 1rem;
+        margin-top: 0;
+      }
+      
+      .dropdown-item {
+        padding: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+
 <!-- Start Top Bar -->
 <div class="top-bar py-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="d-flex justify-content-end">
-                    <a href="tel:+918925883227" class="me-3 text-decoration-none text-dark">
-                        <i class="fas fa-phone"></i> +91 892 588 3227
-                    </a>
-                    <a href="mailto:info@genoasis.com" class="text-decoration-none text-dark">
-                        <i class="fas fa-envelope"></i> info@genoasis.com
-                    </a>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-end">
+          <a href="tel:+918925883227" class="me-3 text-decoration-none text-dark">
+            <i class="fas fa-phone"></i> +91 892 588 3227
+          </a>
+          <a href="mailto:info@genoasis.com" class="text-decoration-none text-dark">
+            <i class="fas fa-envelope"></i> info@genoasis.com
+          </a>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-<!-- End Top Bar -->	
-	<body>
+<!-- End Top Bar -->
 
-		<!-- Start Header/Navigation -->
-		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="GenOasis navigation bar">
+<body>
+  <!-- Start Header/Navigation -->
+  <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Genoasis navigation bar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenoasis" aria-controls="navbarsGenoasis" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-			<div class="container">
-			<a class="navbar-brand" href="index.html">
-				<img src="images/logo.png" alt="Company Logo" style="height: 40px;">
-			</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenOasis" aria-controls="navbarsGenOasis" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+      <div class="collapse navbar-collapse" id="navbarsGenoasis">
+        <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li><a class="nav-link" href="about.html">About us</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button">
+              Products
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="frpmedia.html">RO Pressure Vessels & FRP Filters</a></li>
+              <li><a class="dropdown-item" href="membranes.html">Membrane Products</a></li>
+              <li><a class="dropdown-item" href="pumps.html">Pumps</a></li>
+              <li><a class="dropdown-item" href="filters.html">Filter Cartridges & Housings</a></li>
+              <li><a class="dropdown-item" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
+              <li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
+              <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
+              <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
+              <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
+              <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
+              <li><a class="dropdown-item" href="ozone-systems.html">Industrial Ozone Systems</a></li>
+            </ul>
+          </li>
+          <li class="active"><a class="nav-link" href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Header/Navigation -->
 
-				<div class="collapse navbar-collapse" id="navbarsGenOasis">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li><a class="nav-link" href="about.html">About us</a></li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button">
-								Products
-							</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="frpmedia.html">RO Pressure Vessels & FRP Filters</a></li>
-								<li><a class="dropdown-item" href="membranes.html">Membrane Products</a></li>
-								<li><a class="dropdown-item" href="pumps.html">Pumps</a></li>
-								<li><a class="dropdown-item" href="filters.html">Filter Cartridges & Housings</a></li>
-								<li><a class="dropdown-item" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
-								<li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
-								<li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
-								<li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
-								<li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
-								<li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
-							</ul>
-						</li>
-						<li class="active"><a class="nav-link" href="contact.html">Contact us</a></li>
-					</ul>
-				</div>
-			</div>
-				
-		</nav>
-		<!-- End Header/Navigation -->
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center hero-content">
+          <h1 class="hero-title" data-aos="fade-up">Get In Touch</h1>
+          <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">We're Here to Help with Your Water Treatment Needs</p>
+          <p class="lead" data-aos="fade-up" data-aos-delay="400">Ready to discuss your water treatment requirements? Our team of experts is here to provide personalized solutions, technical support, and product recommendations tailored to your specific needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		<!-- Start Hero Section -->
-		<div class="hero hero-contact">
-			<div class="container">
-				<div class="row justify-content-between">
-					<div class="col-lg-5">
-						<div class="intro-excerpt">
-							<h1 style="font-family: 'Abel', sans-serif; color: black;"></h1>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End Hero Section -->	
+  <!-- Contact Information Section -->
+  <section class="contact-info-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="display-4 fw-bold" data-aos="fade-up">Contact Information</h2>
+          <p class="lead" data-aos="fade-up" data-aos-delay="200">Get in touch with us through any of these channels</p>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3 class="contact-title">Our Location</h3>
+            <p class="contact-text">6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3 class="contact-title">Email Us</h3>
+            <p class="contact-text">info@genoasis.com</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <h3 class="contact-title">Call Us</h3>
+            <p class="contact-text">+91 892 588 3227</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		
-		<!-- Start Contact Form -->
-		<div class="untree_co-section">
-      <div class="container">
-
-        <div class="block">
-          <div class="row justify-content-center">
-
-
-            <div class="col-md-8 col-lg-8 pb-4">
-
-
-              <div class="row mb-5">
-                <div class="col-lg-4">
-                  <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
-                    <div class="service-icon color-1 mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                      </svg>
-                    </div> <!-- /.icon -->
-                    <div class="service-contents">
-                      <p>6, Balaji St, Guduvancherry, Chennai, Tamil Nadu, India</p>
-                    </div> <!-- /.service-contents-->
-                  </div> <!-- /.service -->
+  <!-- Contact Form Section -->
+  <section class="contact-form-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="form-container" data-aos="fade-up">
+            <h2 class="form-title">Send Us a Message</h2>
+            <p class="form-subtitle">Fill out the form below and we'll get back to you as soon as possible</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" onsubmit="submitForm(event)">
+              <!-- Web3Forms Required Fields -->
+              <input type="hidden" name="access_key" value="013fb824-fdc7-447d-bfd2-30ff8c7df89d">
+              <input type="hidden" name="subject" value="New Contact Form Submission - Genoasis">
+              <input type="hidden" name="from_name" value="Genoasis Website">
+              
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label" for="fname">First Name *</label>
+                  <input type="text" class="form-control" id="fname" name="name" required>
                 </div>
-
-                <div class="col-lg-4">
-                  <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
-                    <div class="service-icon color-1 mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
-                      </svg>
-                    </div> <!-- /.icon -->
-                    <div class="service-contents">
-                      <p>info@genoasis.com</p>
-                    </div> <!-- /.service-contents-->
-                  </div> <!-- /.service -->
-                </div>
-
-                <div class="col-lg-4">
-                  <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
-                    <div class="service-icon color-1 mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                      </svg>
-                    </div> <!-- /.icon -->
-                    <div class="service-contents">
-						<p>+91 892 588 3227<br></p>
-                    </div> <!-- /.service-contents-->
-                  </div> <!-- /.service -->
+                <div class="col-md-6 mb-3">
+                  <label class="form-label" for="lname">Last Name *</label>
+                  <input type="text" class="form-control" id="lname" name="lastname" required>
                 </div>
               </div>
+              
+              <div class="mb-3">
+                <label class="form-label" for="email">Email Address *</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
 
-              <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" onsubmit="submitForm(event)">
-                <!-- Web3Forms Required Fields -->
-                <input type="hidden" name="access_key" value="013fb824-fdc7-447d-bfd2-30ff8c7df89d">
-                <input type="hidden" name="subject" value="New Contact Form Submission - GenOasis">
-                <input type="hidden" name="from_name" value="GenOasis Website">
-                
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="fname">First name</label>
-                      <input type="text" class="form-control" id="fname" name="name" required>
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="lname">Last name</label>
-                      <input type="text" class="form-control" id="lname" name="lastname" required>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="text-black" for="email">Email address</label>
-                  <input type="email" class="form-control" id="email" name="email" required>
-                </div>
+              <div class="mb-4">
+                <label class="form-label" for="message">Message *</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Tell us about your water treatment needs, product inquiries, or any questions you may have..."></textarea>
+              </div>
 
-                <div class="form-group mb-5">
-                  <label class="text-black" for="message">Message</label>
-                  <textarea class="form-control" id="message" name="message" cols="30" rows="5" required></textarea>
-                </div>
+              <!-- Success message div -->
+              <div id="successMessage" class="alert alert-success" style="display: none;">
+                <i class="fas fa-check-circle me-2"></i>
+                Thank you for your message! We'll get back to you soon.
+              </div>
 
-                <!-- Success message div -->
-                <div id="successMessage" class="alert alert-success" style="display: none;">
-                  Thank you for your message. We'll get back to you soon!
-                </div>
+              <!-- Error message div -->
+              <div id="errorMessage" class="alert alert-danger" style="display: none;">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                Sorry, there was an error sending your message. Please try again.
+              </div>
 
-                <!-- Error message div -->
-                <div id="errorMessage" class="alert alert-danger" style="display: none;">
-                  Sorry, there was an error sending your message. Please try again.
-                </div>
-
-                <button type="submit" class="btn btn-primary">Send Message</button>
-              </form>
-
-            </div>
-
+              <button type="submit" class="btn btn-submit">
+                <i class="fas fa-paper-plane me-2"></i>Send Message
+              </button>
+            </form>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Catalog Download Section -->
+  <section class="catalog-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <h2 class="mb-4" data-aos="fade-up">Download Our Product Catalog</h2>
+          <p class="mb-4" data-aos="fade-up" data-aos-delay="200">Get comprehensive information about our complete range of water treatment products and solutions</p>
+          <a href="catalogs/Genoasis_catalog.pdf" class="btn btn-primary btn-lg" download data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-download me-2"></i>Download Catalog
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Start Footer Section -->
+  <footer class="footer-section">
+    <div class="container relative">
+      <div class="row g-5 mb-5">
+        <div class="col-lg-4">
+          <div class="mb-4 footer-logo-wrap">
+            <a href="#" class="footer-logo">
+              <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
+            </a>
+          </div>							
+          <p class="mb-4">Empowering water treatment plants with advanced chemicals and supplies for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
+          <ul class="list-unstyled custom-social">
+            <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+            <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+            <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+            <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+          </ul>
         </div>
 
-      </div>
+        <div class="col-lg-8">
+          <div class="row links-wrap">
+            <div class="col-6 col-sm-6 col-md-3">
+              <ul class="list-unstyled">
+                <li><a href="about.html">About us</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+              </ul>
+            </div>
 
-
-    </div>
-  </div>
-
-  <!-- End Contact Form -->
-
-  <!-- Start Catalog Download Section -->
-  <div class="catalog-section py-5 bg-light">
-      <div class="container">
-          <div class="row justify-content-center">
-              <div class="col-md-8 text-center">
-                  <h2 class="mb-4">Download Our Product Catalog</h2>
-                  <p class="mb-4">Get information about our complete range of products in our catalog.</p>
-                  <a href="catalogs/GenOasis_catalogue.pdf" class="btn btn-primary btn-lg" download>
-                      <i class="fas fa-download me-2"></i>Download Catalog
-                  </a>
-              </div>
+            <!-- Add Contact Information Section -->
+            <div class="col-6 col-sm-6 col-md-4">
+              <ul class="list-unstyled">
+                <li><i class="fas fa-map-marker-alt me-2"></i>6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</li>
+                <li><i class="fas fa-phone me-2"></i>+91 892 588 3227</li>
+                <li><a href="mailto:info@genoasis.com"><i class="fas fa-envelope me-2"></i>info@genoasis.com</a></li>
+              </ul>
+            </div>
           </div>
+        </div>
       </div>
-  </div>
-  <!-- End Catalog Download Section -->
 
-		
+      <div class="border-top copyright">
+        <div class="row pt-4">
+          <div class="col-lg-6">
+            <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> Genoasis | All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer Section -->
 
-		<!-- Start Footer Section -->
-		<footer class="footer-section">
-			<div class="container relative">
-				<div class="row g-5 mb-5">
-					<div class="col-lg-4">
-						<div class="mb-4 footer-logo-wrap">
-							<a href="#" class="footer-logo">
-								<img src="images/logo.png" alt="Company Logo" style="height: 40px;">
-							</a>
-						</div>							
-						<p class="mb-4">Empowering water treatment plants with advanced chemicals and supplies for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
-						<ul class="list-unstyled custom-social">
-							<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-							<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-						</ul>
-					</div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/tiny-slider.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+  </script>
+  
+  <script>
+    async function submitForm(e) {
+      e.preventDefault();
+      
+      const form = document.getElementById('contactForm');
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+      const submitButton = form.querySelector('button[type="submit"]');
+      
+      // Clear previous messages
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+      
+      submitButton.disabled = true;
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
 
-					<div class="col-lg-8">
-						<div class="row links-wrap">
-							<div class="col-6 col-sm-6 col-md-3">
-								<ul class="list-unstyled">
-									<li><a href="about.html">About us</a></li>
-									<li><a href="Products.html">Products</a></li>
-									<li><a href="contact.html">Contact us</a></li>
-								</ul>
-							</div>
+      try {
+        const formData = new FormData(form);
+        
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
 
-							<!-- Add Contact Information Section -->
-							<div class="col-6 col-sm-6 col-md-4">
-								<ul class="list-unstyled">
-									<li><i class="fas fa-map-marker-alt me-2"></i>6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</li>
-									<li><i class="fas fa-phone me-2"></i>+91 892 588 3227</li>
-									<li><i class="fas fa-envelope me-2"></i>info@genoasis.com</li>
-								</ul>
-							</div>
+        const data = await response.json();
+        console.log('Response:', data); // For debugging
 
-						</div>
-					</div>
-
-				</div>
-
-				<div class="border-top copyright">
-					<div class="row pt-4">
-						<div class="col-lg-6">
-							<p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> GenOasis | All Rights Reserved.</p>
-						</div>
-
-
-					</div>
-				</div>
-
-			</div>
-		</footer>
-		<!-- End Footer Section -->	
-
-
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/tiny-slider.js"></script>
-		<script src="js/custom.js"></script>
-		<script>
-		  async function submitForm(e) {
-		    e.preventDefault();
-		    
-		    const form = document.getElementById('contactForm');
-		    const successMessage = document.getElementById('successMessage');
-		    const errorMessage = document.getElementById('errorMessage');
-		    const submitButton = form.querySelector('button[type="submit"]');
-		    
-		    // Clear previous messages
-		    successMessage.style.display = 'none';
-		    errorMessage.style.display = 'none';
-		    
-		    submitButton.disabled = true;
-		    submitButton.innerHTML = 'Sending...';
-
-		    try {
-		      const formData = new FormData(form);
-		      
-		      const response = await fetch('https://api.web3forms.com/submit', {
-		        method: 'POST',
-		        body: formData,
-		        headers: {
-		          'Accept': 'application/json'
-		        }
-		      });
-
-		      const data = await response.json();
-		      console.log('Response:', data); // For debugging
-
-		      if (data.success) {
-		        successMessage.style.display = 'block';
-		        form.reset();
-		        window.scrollTo({ top: successMessage.offsetTop - 100, behavior: 'smooth' });
-		      } else {
-		        throw new Error(data.message || 'Form submission failed');
-		      }
-		    } catch (error) {
-		      console.error('Form submission error:', error);
-		      errorMessage.textContent = 'Sorry, there was an error sending your message. Please try again. ' + error.message;
-		      errorMessage.style.display = 'block';
-		      window.scrollTo({ top: errorMessage.offsetTop - 100, behavior: 'smooth' });
-		    } finally {
-		      submitButton.disabled = false;
-		      submitButton.innerHTML = 'Send Message';
-		    }
-		  }
-		</script>
-		<script src="js/recaptcha.js"></script>
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				// Get the Products dropdown link
-				const productsLink = document.querySelector('#navbarDropdown');
-				
-				// Add click event listener
-				productsLink.addEventListener('click', function(e) {
-					// Navigate to Products.html
-					window.location.href = 'Products.html';
-				});
-			});
-		</script>
-	</body>
-
+        if (data.success) {
+          successMessage.style.display = 'block';
+          form.reset();
+          window.scrollTo({ top: successMessage.offsetTop - 100, behavior: 'smooth' });
+        } else {
+          throw new Error(data.message || 'Form submission failed');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        errorMessage.textContent = 'Sorry, there was an error sending your message. Please try again. ' + error.message;
+        errorMessage.style.display = 'block';
+        window.scrollTo({ top: errorMessage.offsetTop - 100, behavior: 'smooth' });
+      } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Message';
+      }
+    }
+  </script>
+  
+  <script src="js/recaptcha.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get the Products dropdown link
+      const productsLink = document.querySelector('#navbarDropdown');
+      
+      // Add click event listener
+      productsLink.addEventListener('click', function(e) {
+        // Navigate to Products.html
+        window.location.href = 'Products.html';
+      });
+    });
+  </script>
+</body>
 </html>
 

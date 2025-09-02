@@ -26,7 +26,429 @@
 		<link href="css/tiny-slider.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+		<!-- Add AOS CSS -->
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<style>
+			/* Hero Section Styles */
+			.hero-section {
+				background-image: url('images/products-banner.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				color: white;
+				padding: 80px 0;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.hero-section::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.4);
+				z-index: 1;
+			}
+
+			.hero-content {
+				position: relative;
+				z-index: 2;
+			}
+
+			.hero-title {
+				font-size: 3.5rem;
+				font-weight: 700;
+				margin-bottom: 1rem;
+				color: white;
+			}
+
+			.hero-subtitle {
+				font-size: 1.5rem;
+				font-weight: 300;
+				margin-bottom: 2rem;
+				opacity: 0.9;
+			}
+
+			/* About Content Section */
+			.about-content-section {
+				background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+			}
+
+			.about-card {
+				background: white;
+				border-radius: 20px;
+				padding: 50px;
+				box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+				position: relative;
+				overflow: hidden;
+			}
+
+
+
+			.section-title {
+				font-size: 2.8rem;
+				font-weight: 700;
+				color: #333;
+				margin-bottom: 1.5rem;
+				line-height: 1.2;
+			}
+
+			.section-subtitle {
+				font-size: 1.2rem;
+				color: #666;
+				margin-bottom: 2rem;
+			}
+
+			/* Content Highlights */
+			.content-highlights {
+				display: flex;
+				flex-direction: column;
+				gap: 25px;
+				height: 100%;
+				justify-content: center;
+			}
+
+			.highlight-section {
+				background: white;
+				border-radius: 15px;
+				padding: 25px;
+				box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+				transition: all 0.3s ease;
+				border-left: 4px solid transparent;
+			}
+
+			.highlight-section:hover {
+				transform: translateX(5px);
+				box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+				border-left-color: #23a1dc;
+			}
+
+			.highlight-title {
+				font-size: 1.2rem;
+				font-weight: 700;
+				color: #333;
+				margin-bottom: 12px;
+				transition: color 0.3s ease;
+			}
+
+			.highlight-section:hover .highlight-title {
+				color: #23a1dc;
+			}
+
+			.highlight-text {
+				color: #666;
+				line-height: 1.6;
+				font-size: 1rem;
+				margin: 0;
+			}
+
+			/* Modern Info Cards */
+			.modern-info-card {
+				background: white;
+				border-radius: 15px;
+				padding: 30px;
+				box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+				transition: all 0.4s ease;
+				height: 100%;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.modern-info-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 3px;
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				transform: scaleX(0);
+				transition: transform 0.3s ease;
+			}
+
+			.modern-info-card:hover::before {
+				transform: scaleX(1);
+			}
+
+			.modern-info-card:hover {
+				transform: translateY(-8px);
+				box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+			}
+
+			.card-header {
+				display: flex;
+				align-items: center;
+				margin-bottom: 25px;
+			}
+
+			.icon-wrapper {
+				position: relative;
+				margin-right: 20px;
+			}
+
+			.icon-circle {
+				width: 70px;
+				height: 70px;
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-size: 1.8rem;
+				position: relative;
+				z-index: 2;
+				transition: transform 0.3s ease;
+			}
+
+			.icon-glow {
+				position: absolute;
+				top: -5px;
+				left: -5px;
+				right: -5px;
+				bottom: -5px;
+				background: linear-gradient(135deg, rgba(35, 161, 220, 0.3), rgba(30, 136, 197, 0.3));
+				border-radius: 50%;
+				z-index: 1;
+				transform: scale(0);
+				transition: transform 0.3s ease;
+			}
+
+			.modern-info-card:hover .icon-circle {
+				transform: scale(1.1);
+			}
+
+			.modern-info-card:hover .icon-glow {
+				transform: scale(1);
+			}
+
+			.card-title {
+				font-size: 1.5rem;
+				font-weight: 700;
+				color: #333;
+				margin: 0;
+				transition: color 0.3s ease;
+			}
+
+			.modern-info-card:hover .card-title {
+				color: #23a1dc;
+			}
+
+			.card-text {
+				color: #666;
+				line-height: 1.7;
+				margin-bottom: 25px;
+				font-size: 1rem;
+			}
+
+			.card-features {
+				border-top: 1px solid #eee;
+				padding-top: 20px;
+			}
+
+			.feature-item {
+				display: flex;
+				align-items: center;
+				margin-bottom: 12px;
+				padding: 8px 0;
+			}
+
+			.feature-item:last-child {
+				margin-bottom: 0;
+			}
+
+			.feature-item i {
+				color: #23a1dc;
+				font-size: 1.1rem;
+				margin-right: 12px;
+				flex-shrink: 0;
+			}
+
+			.feature-item span {
+				color: #555;
+				font-weight: 500;
+				font-size: 0.95rem;
+			}
+
+			/* Purpose Section */
+			.purpose-section {
+				background: white;
+			}
+
+			.purpose-card {
+				background: white;
+				border-radius: 15px;
+				padding: 30px;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				height: 100%;
+				text-align: center;
+			}
+
+			.purpose-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+			}
+
+			.purpose-icon {
+				width: 80px;
+				height: 80px;
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 20px;
+				color: white;
+				font-size: 2rem;
+			}
+
+			.purpose-title {
+				font-size: 1.3rem;
+				font-weight: 600;
+				color: #333;
+				margin-bottom: 15px;
+			}
+
+			.purpose-text {
+				color: #666;
+				line-height: 1.6;
+			}
+
+			.values-list {
+				text-align: left;
+			}
+
+			.value-item {
+				margin-bottom: 20px;
+			}
+
+			.value-item h5 {
+				color: #23a1dc;
+				font-weight: 600;
+				margin-bottom: 10px;
+			}
+
+			.value-item ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			.value-item li {
+				padding: 5px 0;
+				color: #666;
+				position: relative;
+				padding-left: 20px;
+			}
+
+			.value-item li:before {
+				content: "✓";
+				position: absolute;
+				left: 0;
+				color: #23a1dc;
+				font-weight: bold;
+			}
+
+			/* Why Choose Us Section */
+			.why-choose-section {
+				background-color: #f8f9fa;
+			}
+
+			.why-choose-content {
+				background: white;
+				border-radius: 15px;
+				padding: 40px;
+				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+			}
+
+			.feature-card {
+				background: #f8f9fa;
+				border-radius: 10px;
+				padding: 25px;
+				height: 100%;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.feature-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+			}
+
+			.feature-icon {
+				width: 60px;
+				height: 60px;
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 20px;
+			}
+
+			.feature-icon img {
+				width: 30px;
+				height: 30px;
+				filter: brightness(0) invert(1);
+			}
+
+			.feature-title {
+				font-size: 1.2rem;
+				font-weight: 600;
+				color: #333;
+				margin-bottom: 15px;
+			}
+
+			.feature-text {
+				color: #666;
+				line-height: 1.6;
+				font-size: 0.95rem;
+			}
+
+			.why-choose-image {
+				text-align: center;
+			}
+
+			.image-container {
+				border-radius: 15px;
+				overflow: hidden;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+			}
+
+			.image-container img {
+				transition: transform 0.3s ease;
+			}
+
+			.image-container:hover img {
+				transform: scale(1.05);
+			}
+
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.hero-title {
+					font-size: 2.5rem;
+				}
+				
+				.hero-subtitle {
+					font-size: 1.2rem;
+				}
+				
+				.section-title {
+					font-size: 2rem;
+				}
+				
+				.about-card,
+				.why-choose-content {
+					padding: 30px 20px;
+				}
+				
+				.purpose-card {
+					padding: 25px 20px;
+				}
+			}
+
 			.feature h3 {
 				font-weight: 600;
 				font-size: 1.5rem;
@@ -144,16 +566,16 @@
 	<body>
 
 		<!-- Start Header/Navigation -->
-		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="GenOasis navigation bar">
+		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Genoasis navigation bar">
 			<div class="container">
 				<a class="navbar-brand" href="index.html">
 					<img src="images/logo.png" alt="Company Logo" style="height: 40px;">
 				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenOasis" aria-controls="navbarsGenOasis" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenoasis" aria-controls="navbarsGenoasis" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="collapse navbar-collapse" id="navbarsGenOasis">
+				<div class="collapse navbar-collapse" id="navbarsGenoasis">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
 						<li class="nav-item">
 							<a class="nav-link" href="index.html">Home</a>
@@ -172,8 +594,9 @@
 								<li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
 								<li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
 								<li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
-								<li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
-								<li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
+								                            <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
+                            <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
+                            <li><a class="dropdown-item" href="ozone-systems.html">Industrial Ozone Systems</a></li>
 							</ul>
 						</li>
 						<li><a class="nav-link" href="contact.html">Contact us</a></li>
@@ -184,86 +607,159 @@
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->
-		<div class="hero hero-about">
+		<section class="hero-section">
 			<div class="container">
-				<div class="row justify-content-between">
-					<div class="col-lg-5">
-						<div class="intro-excerpt">
-							<h1 style="font-family: 'Abel', sans-serif;">About Us</h1>
-						</div>
+				<div class="row">
+					<div class="col-lg-8 mx-auto text-center hero-content">
+						<h1 class="hero-title" data-aos="fade-up">About Genoasis</h1>
+						<p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Innovative Solutions for a Sustainable Future</p>
+						<p class="lead" data-aos="fade-up" data-aos-delay="400">Driven by innovation to transform industries through cutting-edge water treatment, industrial applications, and laboratory solutions.</p>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 		<!-- End Hero Section -->
 
 
 		<!-- Start Content Section -->
-		<div class="container mt-5">
-			<div class="row">
-				<div class="col-lg-8">
-					<h2 class="mb-4">Innovative Solutions for a Sustainable Future</h2>
-					
-					<p class="mb-4">We are GenOasis. Driven by innovation to transform industries through cutting-edge water treatment, industrial applications, and laboratory solutions. Our dedicated team of experts works tirelessly to deliver sustainable solutions that make a difference in how industries operate and how communities thrive.</p>
-
-					<h3 class="mb-3">Who We Are</h3>
-					<p class="mb-4">At GenOasis, we stand at the forefront of industrial innovation, providing comprehensive solutions in water treatment, industrial processes, and laboratory equipment. From essential water treatment chemicals to advanced filtration systems and high-precision lab equipment, we're committed to delivering excellence that drives industrial progress while protecting our environment.</p>
-
-					<h3 class="mb-3">What We Stand For</h3>
-					<p class="mb-4">Every industrial challenge is an opportunity to innovate and create sustainable solutions. Our decisions, products, and partnerships are guided by our commitment to excellence, environmental responsibility, and the advancement of industrial capabilities.</p>
-
-					<!-- <p class="mt-4"><a href="Products.html" class="btn btn-secondary me-2">Explore Our Products</a><a href="contact.html" class="btn btn-white-outline">Contact Us</a></p> -->
-				</div>	
-			</div>
-		</div>
-		<!-- End Content Section -->
-
-		<!-- First, right after your hero section and before the content section -->
-		<div class="purpose-tabs-container">
+		<section class="about-content-section py-5">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-8">
-						<div class="purpose-tabs">
-							<a href="#purpose" class="tab-item active" data-tab="purpose">OUR PURPOSE</a>
-							<a href="#mission" class="tab-item" data-tab="mission">OUR MISSION</a>
-							<a href="#vision" class="tab-item" data-tab="vision">OUR VISION</a>
-							<a href="#values" class="tab-item" data-tab="values">OUR VALUES</a>
+					<div class="col-lg-10 mx-auto">
+						<div class="about-card" data-aos="fade-up">
+							<div class="row">
+								<div class="col-12 text-center">
+									<h2 class="section-title mb-4">Innovative Solutions for a Sustainable Future</h2>
+									<p class="lead mb-5">We are Genoasis. Driven by innovation to transform industries through cutting-edge water treatment, industrial applications, and laboratory solutions. Our dedicated team of experts works tirelessly to deliver sustainable solutions that make a difference in how industries operate and how communities thrive.</p>
+								</div>
+							</div>
+
+							<div class="row g-4">
+								<div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+									<div class="modern-info-card">
+										<div class="card-header">
+											<div class="icon-wrapper">
+												<div class="icon-circle">
+													<i class="fas fa-users"></i>
+												</div>
+												<div class="icon-glow"></div>
+											</div>
+											<h3 class="card-title">Who We Are</h3>
+										</div>
+										<div class="card-body">
+											<p class="card-text">At Genoasis, we stand at the forefront of industrial innovation, providing comprehensive solutions in water treatment, industrial processes, and laboratory equipment. From essential water treatment chemicals to advanced filtration systems and high-precision lab equipment, we're committed to delivering excellence that drives industrial progress while protecting our environment.</p>
+											<div class="card-features">
+												<div class="feature-item">
+													<i class="fas fa-check-circle"></i>
+													<span>Industrial Innovation</span>
+												</div>
+												<div class="feature-item">
+													<i class="fas fa-check-circle"></i>
+													<span>Comprehensive Solutions</span>
+												</div>
+												<div class="feature-item">
+													<i class="fas fa-check-circle"></i>
+													<span>Environmental Protection</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+									<div class="modern-info-card">
+										<div class="card-header">
+											<div class="icon-wrapper">
+												<div class="icon-circle">
+													<i class="fas fa-bullseye"></i>
+												</div>
+												<div class="icon-glow"></div>
+											</div>
+											<h3 class="card-title">What We Stand For</h3>
+										</div>
+										<div class="card-body">
+											<p class="card-text">Every industrial challenge is an opportunity to innovate and create sustainable solutions. Our decisions, products, and partnerships are guided by our commitment to excellence, environmental responsibility, and the advancement of industrial capabilities.</p>
+											<div class="card-features">
+												<div class="feature-item">
+													<i class="fas fa-check-circle"></i>
+													<span>Sustainable Solutions</span>
+												</div>
+												<div class="feature-item">
+													<i class="fas fa-check-circle"></i>
+													<span>Environmental Responsibility</span>
+												</div>
+												<div class="feature-item">
+													<i class="fas fa-check-circle"></i>
+													<span>Industrial Advancement</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
+					</div>	
 				</div>
 			</div>
-		</div>
-<!-- Then modify your content section to include the IDs -->
-		<div class="purpose-section">
-			<div class="container mt-5">
+		</section>
+		<!-- End Content Section -->
+
+		<!-- Purpose Section -->
+		<section class="purpose-section py-5">
+			<div class="container">
 				<div class="row">
-					<div class="col-lg-8">
-						<!-- Your intro paragraphs here -->
-						
-						<div id="purpose" class="section tab-content active">
-							<p>To revolutionize industrial processes through innovative, sustainable solutions that benefit both industry and environment.</p>
+					<div class="col-12 text-center mb-5">
+						<h2 class="section-title" data-aos="fade-up">Our Core Principles</h2>
+					</div>
+				</div>
+				
+				<div class="row g-4">
+					<div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+						<div class="purpose-card">
+							<div class="purpose-icon">
+								<i class="fas fa-rocket"></i>
+							</div>
+							<h4 class="purpose-title">Our Purpose</h4>
+							<p class="purpose-text">To revolutionize industrial processes through innovative, sustainable solutions that benefit both industry and environment.</p>
 						</div>
-						
-						<div id="mission" class="section tab-content">
-							<p>To lead in delivering innovative, sustainable solutions across water treatment, industrial applications, and laboratory equipment.</p>
+					</div>
+					
+					<div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+						<div class="purpose-card">
+							<div class="purpose-icon">
+								<i class="fas fa-flag-checkered"></i>
+							</div>
+							<h4 class="purpose-title">Our Mission</h4>
+							<p class="purpose-text">To lead in delivering innovative, sustainable solutions across water treatment, industrial applications, and laboratory equipment.</p>
 						</div>
-						
-						<div id="vision" class="section tab-content">
-							<p>To be a global leader in providing advanced, eco-friendly industrial solutions that shape a sustainable future.</p>
+					</div>
+					
+					<div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+						<div class="purpose-card">
+							<div class="purpose-icon">
+								<i class="fas fa-eye"></i>
+							</div>
+							<h4 class="purpose-title">Our Vision</h4>
+							<p class="purpose-text">To be a global leader in providing advanced, eco-friendly industrial solutions that shape a sustainable future.</p>
 						</div>
-						
-						<div id="values" class="section tab-content">
-							<div class="row">
-								<div class="col-6">
-									<h4>Excellence</h4>
+					</div>
+					
+					<div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+						<div class="purpose-card">
+							<div class="purpose-icon">
+								<i class="fas fa-heart"></i>
+							</div>
+							<h4 class="purpose-title">Our Values</h4>
+							<div class="values-list">
+								<div class="value-item">
+									<h5>Excellence</h5>
 									<ul>
 										<li>Innovation First</li>
 										<li>Quality Commitment</li>
 										<li>Sustainable Progress</li>
 									</ul>
 								</div>
-								<div class="col-6">
-									<h4>Integrity</h4>
+								<div class="value-item">
+									<h5>Integrity</h5>
 									<ul>
 										<li>Environmental Care</li>
 										<li>Collaborative Spirit</li>
@@ -275,72 +771,76 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 		<!-- Start Why Choose Us Section -->
-		<div class="why-choose-section">
+		<section class="why-choose-section py-5">
 			<div class="container">
-				<div class="row justify-content-between align-items-center">
+				<div class="row">
+					<div class="col-12 text-center mb-5">
+						<h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
+						<p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Choosing Genoasis means partnering with a company committed to excellence, innovation, and sustainability.</p>
+					</div>
+				</div>
+				
+				<div class="row align-items-center">
+					<div class="col-lg-6 mb-5">
+						<div class="why-choose-content" data-aos="fade-right">
+							<p class="lead mb-4">Our comprehensive range of high-quality products is designed to meet the stringent demands of water treatment, industrial applications, and laboratory environments, ensuring exceptional performance and reliability. We offer customized solutions tailored to your unique needs, backed by a dedicated team of experts ready to support you every step of the way. At Genoasis, we don't just provide products—we deliver solutions that empower your operations and contribute to a sustainable future.</p>
+
+							<div class="row g-4">
+								<div class="col-md-6 mb-4">
+									<div class="feature-card">
+										<div class="feature-icon">
+											<img src="images/truck.svg" alt="High Quality" class="img-fluid">
+										</div>
+										<h4 class="feature-title">High-Quality Products</h4>
+										<p class="feature-text">We prioritize quality in every product, ensuring durability, reliability, and compliance with international standards. From water treatment chemicals to lab furnaces, our products are crafted to deliver exceptional performance.</p>
+									</div>
+								</div>
+
+								<div class="col-md-6 mb-4">
+									<div class="feature-card">
+										<div class="feature-icon">
+											<img src="images/bag.svg" alt="Customized Solutions" class="img-fluid">
+										</div>
+										<h4 class="feature-title">Customized Solutions</h4>
+										<p class="feature-text">We understand that each client's needs are unique. Our team works closely with you to provide tailored solutions that align with your specific requirements, ensuring optimal results and maximum efficiency.</p>
+									</div>
+								</div>
+
+								<div class="col-md-6 mb-4">
+									<div class="feature-card">
+										<div class="feature-icon">
+											<img src="images/support.svg" alt="Expert Support" class="img-fluid">
+										</div>
+										<h4 class="feature-title">Expert Support and Service</h4>
+										<p class="feature-text">Our knowledgeable team offers comprehensive support at every stage, from product selection to after-sales service. With Genoasis, you can count on responsive, expert assistance whenever you need it.</p>
+									</div>
+								</div>
+
+								<div class="col-md-6 mb-4">
+									<div class="feature-card">
+										<div class="feature-icon">
+											<img src="images/return.svg" alt="Sustainability" class="img-fluid">
+										</div>
+										<h4 class="feature-title">Commitment to Sustainability</h4>
+										<p class="feature-text">We are dedicated to eco-friendly practices, providing sustainable products that minimize environmental impact. Our solutions are designed to support your goals while promoting a cleaner, healthier planet.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
 					<div class="col-lg-6">
-						<h2 class="section-title">Why Choose Us</h2>
-						<p style="color: black;">Choosing GenOasis means partnering with a company committed to excellence, innovation, and sustainability. Our comprehensive range of high-quality products is designed to meet the stringent demands of water treatment, industrial applications, and laboratory environments, ensuring exceptional performance and reliability. We offer customized solutions tailored to your unique needs, backed by a dedicated team of experts ready to support you every step of the way. At GenOasis, we don't just provide products—we deliver solutions that empower your operations and contribute to a sustainable future.</p>
-
-						<div class="row my-5">
-							<div class="col-6 col-md-6">
-								<div class="feature">
-									<div class="icon">
-										<img src="images/truck.svg" alt="Image" class="imf-fluid">
-									</div>
-									<h3 style="font-weight: 600;">High-Quality Products</h3>
-									<p>We prioritize quality in every product, ensuring durability, reliability, and compliance with international standards. From water treatment chemicals to lab furnaces, our products are crafted to deliver exceptional performance.
-									</p>
-								</div>
+						<div class="why-choose-image" data-aos="fade-left">
+							<div class="image-container">
+								<img src="images/why-choose-us-img.jpg" alt="Why Choose Genoasis" class="img-fluid rounded">
 							</div>
-
-							<div class="col-6 col-md-6">
-								<div class="feature">
-									<div class="icon">
-										<img src="images/bag.svg" alt="Image" class="imf-fluid">
-									</div>
-									<h3 style="font-weight: 600;">Customized Solutions</h3>
-									<p>We understand that each client's needs are unique. Our team works closely with you to provide tailored solutions that align with your specific requirements, ensuring optimal results and maximum efficiency.
-									</p>
-								</div>
-							</div>
-
-							<div class="col-6 col-md-6">
-								<div class="feature">
-									<div class="icon">
-										<img src="images/support.svg" alt="Image" class="imf-fluid">
-									</div>
-									<h3 style="font-weight: 600;">Expert Support and Service</h3>
-									<p>Our knowledgeable team offers comprehensive support at every stage, from product selection to after-sales service. With GenOasis, you can count on responsive, expert assistance whenever you need it.</p>
-								</div>
-							</div>
-
-							<div class="col-6 col-md-6">
-								<div class="feature">
-									<div class="icon">
-										<img src="images/return.svg" alt="Image" class="imf-fluid">
-									</div>
-									<h3 style="font-weight: 600;">Commitment to Sustainability</h3>
-									<p>We are dedicated to eco-friendly practices, providing sustainable products that minimize environmental impact. Our solutions are designed to support your goals while promoting a cleaner, healthier planet.
-									</p>
-								</div>
-							</div>
-
 						</div>
 					</div>
-
-					<div class="col-lg-5">
-						<div class="img-wrap">
-							<img src="images/why-choose-us-img.jpg" alt="Image" class="img-fluid">
-						</div>
-					</div>
-
 				</div>
 			</div>
-		</div>
-		<!-- End Why Choose Us Section -->
+		</section>
 
 		<!-- Start Footer Section -->
 		<footer class="footer-section">
@@ -388,7 +888,7 @@
 				<div class="border-top copyright">
 					<div class="row pt-4">
 						<div class="col-lg-6">
-							<p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> GenOasis | All Rights Reserved.</p>
+							<p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> Genoasis | All Rights Reserved.</p>
 						</div>
 
 
@@ -403,7 +903,15 @@
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
 		<script src="js/custom.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script src="js/recaptcha.js"></script>
+		<script>
+			AOS.init({
+				duration: 800,
+				once: true,
+				offset: 100
+			});
+		</script>
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
 				// Get the Products dropdown link

@@ -436,7 +436,7 @@
         }
 
         .catalog-section {
-            background-color: #f8f9fa;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-top: 1px solid #dee2e6;
         }
 
@@ -450,14 +450,18 @@
         }
 
         .catalog-section .btn-primary {
-            padding: 12px 30px;
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            border: none;
             font-size: 1.1rem;
+            font-weight: 600;
             transition: all 0.3s ease;
+            border-radius: 50px;
         }
 
         .catalog-section .btn-primary:hover {
+            background: linear-gradient(135deg, #1e88c5, #1976d2);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(35, 161, 220, 0.3);
         }
 
         .dropdown-menu {
@@ -536,8 +540,147 @@
                 padding: 0.5rem 0;
             }
         }
+
+        /* New Hero Section Styles */
+        .hero-section {
+            background-image: url('images/products-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* New Product Card Styles */
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(35, 161, 220, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .product-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .product-image {
+                height: 200px;
+            }
+            
+            .product-content {
+                padding: 20px;
+            }
+            
+            .product-title {
+                font-size: 1.2rem;
+            }
+        }
     </style>
-    <title>GenOasis - Products</title>
+    <title>Genoasis - Products</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
 </head>
 	<!-- Start Top Bar -->
@@ -560,16 +703,16 @@
 	<!-- End Top Bar -->
 <body>
     <!-- Start Header/Navigation -->
-    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="GenOasis navigation bar">
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Genoasis navigation bar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenOasis" aria-controls="navbarsGenOasis" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenoasis" aria-controls="navbarsGenoasis" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarsGenOasis">
+            <div class="collapse navbar-collapse" id="navbarsGenoasis">
                 <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
@@ -590,6 +733,8 @@
                             <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
                             <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
                             <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
+                            <li><a class="dropdown-item" href="ozone-systems.html">Industrial Ozone Systems</a></li>
+                            <li><a class="dropdown-item" href="nanobubble-technology.html">Nanobubble Technology</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link" href="contact.html">Contact us</a></li>
@@ -599,132 +744,263 @@
     </nav>
     <!-- End Header/Navigation -->
 
-    <!-- Start Hero Section -->
-    <div class="hero hero-products">
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-5">
-                    <div class="intro-excerpt">
-                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">Products</h1>
-                    </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center hero-content">
+                    <h1 class="hero-title" data-aos="fade-up">Complete Water Treatment Solutions</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Comprehensive Range of Products for Industrial & Commercial Applications</p>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="400">From RO systems to chemicals, pumps to instruments - Genoasis provides everything you need for efficient water treatment and purification across all industries.</p>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Hero Section -->
+    </section>
 
-    <!-- Start Products Grid Section -->
-    <div class="products-section py-5">
-        <div class="container">            
+    <!-- Products Grid Section -->
+    <section class="products-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold" data-aos="fade-up">Our Product Categories</h2>
+                    <p class="lead text-muted" data-aos="fade-up" data-aos-delay="200">Explore our comprehensive range of water treatment solutions</p>
+                </div>
+            </div>
+            
             <div class="row g-4">
-                <!-- Grid items -->
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                <!-- RO Pressure Vessels & FRP Filters -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <a href="frpmedia.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/pressure-vessels.jpg" alt="RO Pressure Vessels & FRP Filters">
-                            <div class="product-name">RO Pressure Vessels & FRP Filters</div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/pressure-vessels.jpg" alt="RO Pressure Vessels & FRP Filters">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">RO Pressure Vessels & FRP Filters</h4>
+                                <p class="product-description">High-quality pressure vessels and FRP filters for reverse osmosis systems</p>
+                            </div>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                <!-- Membrane Products -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <a href="membranes.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/ro-membranes.jpg" alt="Membrane Products">
-                            <div class="product-name">Membrane Products</div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/ro-membranes.jpg" alt="Membrane Products">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Membrane Products</h4>
+                                <p class="product-description">Advanced membrane technology for water purification and filtration</p>
+                            </div>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
-                    <a href="pumps.html" class="text-decoration-none">                   
-                        <div class="product-item">
-                            <img src="images/pumps.jpg" alt="Pumps">
-                            <div class="product-name">Pumps</div>
+                <!-- Pumps -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <a href="pumps.html" class="text-decoration-none">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/pumps.jpg" alt="Pumps">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Pumps</h4>
+                                <p class="product-description">Reliable pumping solutions for water treatment applications</p>
+                            </div>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                <!-- Filter Cartridges & Housings -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
                     <a href="filters.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/filters.jpg" alt="Filter Cartridges & Housings">
-                            <div class="product-name">Filter Cartridges & Housings</div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/filters.jpg" alt="Filter Cartridges & Housings">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Filter Cartridges & Housings</h4>
+                                <p class="product-description">Complete filtration solutions for various water treatment needs</p>
+                            </div>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                <!-- Sand Media & Ion Exchange Resins -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
                     <a href="sandmedia.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/multimedia.jpg" alt="Sand Media & Ion Exchange Resins">
-                            <div class="product-name">Sand Media & Ion Exchange Resins</div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/multimedia.jpg" alt="Sand Media & Ion Exchange Resins">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Sand Media & Ion Exchange Resins</h4>
+                                <p class="product-description">Advanced media solutions for water softening and purification</p>
+                            </div>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                <!-- Water Treatment Chemicals -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
                     <a href="chemicals.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/chemicals.jpg" alt="Water Treatment Chemicals">
-                            <div class="product-name">Water Treatment Chemicals</div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/chemicals.jpg" alt="Water Treatment Chemicals">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Water Treatment Chemicals</h4>
+                                <p class="product-description">Specialized chemicals for water treatment and purification</p>
+                            </div>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                <!-- Waste Water Equipments -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="700">
                     <a href="Wastewater.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/wastewater.jpg" alt="Waste Water Equipments">
-                            <div class="product-name">Waste Water Equipments</div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/wastewater.jpg" alt="Waste Water Equipments">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Waste Water Equipments</h4>
+                                <p class="product-description">Complete wastewater treatment and management solutions</p>
+                            </div>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                <!-- Instruments & Lab Apparatus -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="800">
                     <a href="instruments.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/instruments.jpg" alt="Instruments & Lab Apparatus">
-                            <div class="product-name">Instruments & Lab Apparatus</div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/instruments.jpg" alt="Instruments & Lab Apparatus">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Instruments & Lab Apparatus</h4>
+                                <p class="product-description">Precision instruments for water quality monitoring and analysis</p>
+                            </div>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                <!-- Disinfection Products -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="900">
                     <a href="disinfectants.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/disinfection.jpg" alt="Disinfectants">
-                            <div class="product-name">Disinfection Products</div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/disinfection.jpg" alt="Disinfection Products">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Disinfection Products</h4>
+                                <p class="product-description">Advanced disinfection solutions for water treatment</p>
+                            </div>
                         </div>
                     </a>
                 </div>
 
-                <div class="col-md-6 col-sm-6" style="flex: 0 0 20%; max-width: 20%;">
+                <!-- Valves, Couplings & Fittings -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1000">
                     <a href="valves.html" class="text-decoration-none">
-                        <div class="product-item">
-                            <img src="images/valves.jpg" alt="Valves, Couplings & Fittings">
-                            <div class="product-name">Valves, Couplings & Fittings</div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/valves.jpg" alt="Valves, Couplings & Fittings">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Valves, Couplings & Fittings</h4>
+                                <p class="product-description">Complete range of valves and fittings for water systems</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Industrial Ozone Systems -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1100">
+                    <a href="ozone-systems.html" class="text-decoration-none">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/ozone-system.jpg" alt="Industrial Ozone Systems" onerror="this.src='images/chemicals.jpg'">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Industrial Ozone Systems</h4>
+                                <p class="product-description">Advanced ozone generation systems for water purification</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Nanobubble Technology -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="1200">
+                    <a href="nanobubble-technology.html" class="text-decoration-none">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/nanobubble.jpg" alt="Nanobubble Technology" onerror="this.src='images/chemicals.jpg'">
+                                <div class="product-overlay">
+                                    <i class="fas fa-arrow-right"></i>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Nanobubble Technology</h4>
+                                <p class="product-description">Breakthrough nanobubble solutions with 10X greater efficiency</p>
+                            </div>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- After the products grid section and before the footer -->
-    <div class="catalog-section py-5 bg-light">
+    <!-- Catalog Section -->
+    <section class="catalog-section py-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <h2 class="mb-4">Download Our Product Catalog</h2>
-                    <p class="mb-4">Get information about our complete range of products in our catalog.</p>
-                    <a href="catalogs/Genoasis_catalog.pdf" class="btn btn-primary btn-lg" download>
+                <div class="col-lg-8 text-center" data-aos="fade-up">
+                    <h2 class="display-4 fw-bold mb-4">Download Our Product Catalog</h2>
+                    <p class="lead text-muted mb-4">Get comprehensive information about our complete range of water treatment products and solutions.</p>
+                    <a href="catalogs/Genoasis_catalog.pdf" class="btn btn-primary btn-lg px-5 py-3" download>
                         <i class="fas fa-download me-2"></i>Download Catalog
                     </a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Start Footer Section -->
     <footer class="footer-section">
@@ -769,7 +1045,7 @@
             <div class="border-top copyright">
                 <div class="row pt-4">
                     <div class="col-lg-6">
-                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> GenOasis | All Rights Reserved.</p>
+                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> Genoasis | All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

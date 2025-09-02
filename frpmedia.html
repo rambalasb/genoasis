@@ -26,232 +26,348 @@
     <!-- Add AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        .product-category .category-title {
-            color: #333;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .product-types {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 1rem;
-        }
-
-        .product-types li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
+        /* Hero Section Styles */
+        .hero-section {
+            background-image: url('images/products-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 80px 0;
             position: relative;
-        }
-
-        .product-types li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #333;
-        }
-
-        .e-con-boxed {
-            background-color: #f8f9fa;
-            border-radius: 8px;
             overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            background-color: #f8f9fa;
+        }
+
+        .intro-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .intro-header {
+            text-align: center;
             margin-bottom: 30px;
         }
 
-        .e-con-inner {
-            width: 100%;
-        }
-
-        .row {
-            display: flex;
-            margin: 0;
-        }
-
-        .content-column {
-            padding: 40px;
-            width: 66.666%;
-            background-color: #f8f9fa;
-        }
-
-        .image-column {
-            width: 33.333%;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            min-height: 400px;
-        }
-
-        @media (max-width: 768px) {
-            .row {
-                flex-direction: column;
-            }
-            
-            .content-column,
-            .image-column {
-                width: 100%;
-            }
-            
-            .image-column {
-                min-height: 300px;
-            }
-        }
-
-        .elementor-icon-list-items {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .elementor-icon-list-item {
+        .intro-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            border-radius: 50%;
             display: flex;
             align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .intro-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+        }
+
+        .intro-content {
+            text-align: center;
+        }
+
+        .intro-highlights {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+            justify-content: flex-start;
+        }
+
+        .highlight-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            flex: 0 0 auto;
+            width: calc(25% - 8px);
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(35, 161, 220, 0.2);
+            border-color: #23a1dc;
+        }
+
+        .highlight-item i {
+            color: #23a1dc;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-item span {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: white;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .subsection-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Applications Grid */
+        .applications-grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: flex-start;
+        }
+
+        .app-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            flex: 0 0 auto;
+            width: calc(20% - 8px);
+        }
+
+        .app-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(35, 161, 220, 0.2);
+            border-color: #23a1dc;
+        }
+
+        .app-item i {
+            font-size: 2rem;
+            color: #23a1dc;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .app-item span {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Series Grid */
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .series-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .series-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .series-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .series-content h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
             margin-bottom: 10px;
         }
 
-        .elementor-icon-list-icon {
-            margin-right: 10px;
+        .series-content p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
         }
 
-        .elementor-spacer {
-            height: 20px;
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        .product-category .category-container {
-            background-color: #f8f9fa;
-            padding: 40px;
-            border-radius: 8px;
-            margin-bottom: 30px;
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
         }
 
-        .product-types li:before {
-            content: "\f061"; /* FontAwesome arrow right */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
+        .feature-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-item i {
+            color: #23a1dc;
+            font-size: 1.2rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .feature-item span {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Specs Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .spec-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .spec-title {
+            font-size: 1.2rem;
+            font-weight: 700;
             color: #333;
+            margin-bottom: 15px;
         }
 
-        /* Add these image-specific styles */
-        .e-con-boxed .image-container {
-            height: 300px; /* Fixed height for consistency */
-            overflow: hidden;
-            border-radius: 8px;
+        .spec-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
         }
 
-        .e-con-boxed .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* This ensures the image covers the area without distortion */
-            object-position: center;
+        .spec-content i {
+            color: #23a1dc;
+            font-size: 1.2rem;
+            margin-top: 2px;
+            flex-shrink: 0;
         }
 
-        /* For responsive design */
-        @media (max-width: 768px) {
-            .e-con-boxed .image-container {
-                height: 250px; /* Slightly smaller on tablets */
-                margin-top: 20px; /* Add some space between text and image on mobile */
-            }
+        .spec-content span {
+            color: #555;
+            line-height: 1.6;
         }
 
-        @media (max-width: 576px) {
-            .e-con-boxed .image-container {
-                height: 200px; /* Even smaller on mobile phones */
-            }
-        }
-
-        .content-column {
-            padding: 40px;
-        }
-
-        .image-column {
-            padding: 0;
-            position: relative;
+        /* Image Section */
+        .image-section {
+            background-color: #f8f9fa;
         }
 
         .image-container {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            height: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
         }
 
-        .image-container img {
+        .image-container:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
+            height: auto;
+            transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
-        @media (max-width: 768px) {
-            .image-column {
-                position: relative;
-                height: 300px;
-            }
-            .image-container {
-                position: relative;
-            }
-            .content-column {
-                padding: 30px;
-            }
+        .gallery-img:hover {
+            transform: scale(1.02);
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .row {
-                flex-direction: column;
-            }
-            
-            .content-column,
-            .image-column {
-                width: 100%;
-            }
-            
-            .image-column {
-                height: 300px;
-            }
-        }
-
-        /* List styles */
-        .elementor-icon-list-items {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .elementor-icon-list-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .elementor-icon-list-icon {
-            margin-right: 10px;
-        }
-
-        /* Title and text styles */
-        .category-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .row {
-                flex-direction: column;
-            }
-            
-            .content-column,
-            .image-column {
-                width: 100%;
-            }
-            
-            .image-column {
-                height: 300px;
-            }
-        }
-
-        /* Add these new styles */
+        /* Image Popup */
         .image-popup {
             display: none;
             position: fixed;
@@ -320,159 +436,60 @@
             transform: rotate(-45deg);
         }
 
-        .image-column {
-            cursor: pointer;
-        }
-
-        @media (max-width: 992px) {
-            .image-popup {
-                max-width: 600px;
-                max-height: 600px;
-            }
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .image-popup {
-                max-width: 400px;
-                max-height: 400px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .image-popup {
-                max-width: 90%;
-                max-height: 90vh;
-            }
-        }
-
-        .products-section {
-            background-color: #fff;
-        }
-
-        .product-item {
-            position: relative;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .product-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .product-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .product-name {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(35, 161, 220, 0.7);
-            color: white;
-            padding: 10px;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .product-item:hover .product-name {
-            background: rgba(0,0,0,0.9);
-        }
-
-        @media (max-width: 768px) {
-            .product-item img {
-                height: 200px;
-            }
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .product-description p,
-        .lead,
-        .feature-list li,
-        table td,
-        table th {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .table {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 0.95rem;
-        }
-
-        .table th {
-            font-weight: 600;
-        }
-
-        .table td {
-            font-weight: 400;
-        }
-
-        .product-description {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .feature-list li {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 0.75rem;
-        }
-
-        .lead {
-            font-weight: 400;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .table {
-                font-size: 0.85rem;
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .lead {
-                font-size: 1.05rem;
+            .hero-subtitle {
+                font-size: 1.2rem;
             }
             
-            p {
-                font-size: 0.95rem;
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .intro-title {
+                font-size: 1.5rem;
+            }
+            
+            .content-card,
+            .intro-card {
+                padding: 30px 20px;
+            }
+            
+            .intro-highlights {
+                gap: 15px;
+            }
+            
+            .highlight-item {
+                width: calc(50% - 5px);
+            }
+            
+            .app-item {
+                width: calc(50% - 5px);
+            }
+            
+            .applications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .series-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .specs-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        .collapse {
-            transition: all 0.3s ease;
-        }
-
+        /* Dropdown Menu Styles */
         .dropdown-menu {
             background-color: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.1);
@@ -501,23 +518,47 @@
             cursor: pointer;
         }
 
-        /* Active state for dropdown items */
         .dropdown-item.active, 
         .dropdown-item:active {
             background-color: #f8f9fa;
             color: #000000;
         }
 
-        @media (max-width: 768px) {
-            .dropdown-menu {
-                border: none;
-                padding-left: 1rem;
-                box-shadow: none;
-            }
-            
-            .dropdown-item {
-                padding: 8px 15px;
-            }
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #23a1dc 0%, #1e88c5 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background: white;
+            color: #23a1dc;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            color: #23a1dc;
         }
 
         /* Mobile Menu Button Styles */
@@ -585,16 +626,16 @@
 	<!-- End Top Bar -->
 <body>
     <!-- Start Header/Navigation -->
-    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="GenOasis navigation bar">
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Genoasis navigation bar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenOasis" aria-controls="navbarsGenOasis" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenoasis" aria-controls="navbarsGenoasis" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarsGenOasis">
+            <div class="collapse navbar-collapse" id="navbarsGenoasis">
                 <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
@@ -615,6 +656,8 @@
                             <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
                             <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
                             <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
+                            <li><a class="dropdown-item" href="ozone-systems.html">Industrial Ozone Systems</a></li>
+                            <li><a class="dropdown-item" href="nanobubble-technology.html">Nanobubble Technology</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link" href="contact.html">Contact us</a></li>
@@ -624,137 +667,268 @@
     </nav>
     <!-- End Header/Navigation -->
     <!-- Start Hero Section -->
-    <div class="hero hero-water-treatment">
+    <section class="hero-section">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-lg-5">
-                    <div class="intro-excerpt">
-                        <h1 style="font-family: 'Abel', sans-serif; white-space: nowrap;">RO Pressure Vessels & FRP Media Filter Solutions</h1>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center hero-content">
+                    <h1 class="hero-title" data-aos="fade-up">RO Pressure Vessels & FRP Media Filter Solutions</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Premium Solutions for Commercial & Industrial Water Treatment</p>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="400">Leading supplier of premium RO pressure vessels and FRP media filters, engineered for cost-effective, continuous, and long-term use in various operating conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero Section -->
+    
+    <!-- Introduction -->
+    <section class="intro-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="intro-card" data-aos="fade-up">
+                        <div class="intro-header mb-4">
+                            <div class="intro-icon">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <h3 class="intro-title">Premium Water Treatment Solutions</h3>
+                        </div>
+                        <div class="intro-content">
+                            <p class="lead mb-4">
+                                We are a leading supplier and trader of premium RO pressure vessels and FRP media filters, designed to meet the demands of various commercial and industrial water treatment applications.
+                            </p>
+                            <div class="intro-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Cost-effective & Continuous Operation</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Optimal Performance in All Conditions</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-industry"></i>
+                                    <span>Municipal, Industrial & Residential Solutions</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Highest Level of Performance & Durability</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Hero Section -->
-    
-    <!-- Introduction -->
-    <div class="container mt-5">
-        <div class="row mb-5">
-            <div class="col-12">
-                <p class="lead mb-4">
-                    We are a leading supplier and trader of premium RO pressure vessels and FRP media filters, designed to meet the demands of various commercial and industrial water treatment applications. Our solutions are engineered for cost-effective, continuous, and long-term use, offering optimal performance in a variety of operating conditions. At Genoasis Technologies, we offer a wide range of RO pressure vessels and FRP media filters designed to meet your specific water treatment needs. Whether you are handling municipal, industrial, or residential water treatment, our solutions are engineered to provide the highest level of performance and durability.
-                </p>
-            </div>
-        </div>
-    </div>
+    </section>
     
     <!-- RO Membrane Housings -->
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12">
-                <h2 class="mb-4">RO Membrane Housings</h2>
-                <p class="lead mb-4">
-                    Our RO membrane housings are the perfect solution for a wide range of applications, including:
-                </p>
-                <ul class="feature-list mb-4">
-                    <li>Municipal water treatment</li>
-                    <li>Power generation</li>
-                    <li>Food and beverage processing</li>
-                    <li>Ultra-pure water production</li>
-                    <li>Oil & Gas</li>
-                </ul>
-                <p>These membrane housings are constructed from fibre-reinforced epoxy/glass composites and can accommodate up to 8 membrane elements. They are designed to handle a wide range of operating pressures, including 150 psi, 300 psi, 450 psi, 600 psi, 1000 psi, and 1200 psi. Our RO vessels are highly compatible for brackish, high brackish, and seawater applications.</p>
-                <p>Membrane housings with 8" and 4" diameters are the most commonly used worldwide across a variety of water treatment projects.</p>
+    <section class="content-section pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="content-card" data-aos="fade-up">
+                        <h2 class="section-title mb-4">RO Membrane Housings</h2>
+                        <p class="lead mb-4">
+                            Our RO membrane housings are the perfect solution for a wide range of applications, including:
+                        </p>
+                        <div class="applications-grid mb-4">
+                            <div class="app-item">
+                                <i class="fas fa-city"></i>
+                                <span>Municipal water treatment</span>
+                            </div>
+                            <div class="app-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>Power generation</span>
+                            </div>
+                            <div class="app-item">
+                                <i class="fas fa-utensils"></i>
+                                <span>Food and beverage processing</span>
+                            </div>
+                            <div class="app-item">
+                                <i class="fas fa-tint"></i>
+                                <span>Ultra-pure water production</span>
+                            </div>
+                            <div class="app-item">
+                                <i class="fas fa-industry"></i>
+                                <span>Oil & Gas</span>
+                            </div>
+                        </div>
+                        <p>These membrane housings are constructed from fibre-reinforced epoxy/glass composites and can accommodate up to 8 membrane elements. They are designed to handle a wide range of operating pressures, including 150 psi, 300 psi, 450 psi, 600 psi, 1000 psi, and 1200 psi. Our RO vessels are highly compatible for brackish, high brackish, and seawater applications.</p>
+                        <p>Membrane housings with 8" and 4" diameters are the most commonly used worldwide across a variety of water treatment projects.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- 8-Inch Side Entry Pressure Vessel -->
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12">
-                <h2 class="mb-4">8-Inch Side Entry Pressure Vessel</h2>
-                <p class="lead mb-4">
-                    Our 8-inch side entry membrane housings are available in a wide operating pressure range from 150 to 1200 psi. The multi-port design allows vessel-to-vessel connection, minimizing the need for costly manifolds. Patented OCTA technology uses side ports mounted on flat sealing surfaces for easy servicing.
-                </p>
-                <ul class="feature-list mb-4">
-                    <li>80S Series: Available with side-port options of 1.5, 2.0, and 2.5-inch IPS grooved.</li>
-                    <li>80H Series: Available with side-port options of 3.0-inch IPS grooved.</li>
-                    <li>80U Series: Available with side-port options of 4.0-inch IPS grooved.</li>
-                </ul>
-                <p>Our 8-inch end entry membrane housings are also available in operating pressures of 300, 450, 600, 1000, and 1200 psi.</p>
+    <section class="content-section pt-3 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="content-card" data-aos="fade-up">
+                        <h2 class="section-title mb-4">8-Inch Side Entry Pressure Vessel</h2>
+                        <p class="lead mb-4">
+                            Our 8-inch side entry membrane housings are available in a wide operating pressure range from 150 to 1200 psi. The multi-port design allows vessel-to-vessel connection, minimizing the need for costly manifolds. Patented OCTA technology uses side ports mounted on flat sealing surfaces for easy servicing.
+                        </p>
+                        <div class="series-grid mb-4">
+                            <div class="series-item">
+                                <div class="series-icon">
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                                <div class="series-content">
+                                    <h4>80S Series</h4>
+                                    <p>Available with side-port options of 1.5, 2.0, and 2.5-inch IPS grooved.</p>
+                                </div>
+                            </div>
+                            <div class="series-item">
+                                <div class="series-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="series-content">
+                                    <h4>80H Series</h4>
+                                    <p>Available with side-port options of 3.0-inch IPS grooved.</p>
+                                </div>
+                            </div>
+                            <div class="series-item">
+                                <div class="series-icon">
+                                    <i class="fas fa-wrench"></i>
+                                </div>
+                                <div class="series-content">
+                                    <h4>80U Series</h4>
+                                    <p>Available with side-port options of 4.0-inch IPS grooved.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Our 8-inch end entry membrane housings are also available in operating pressures of 300, 450, 600, 1000, and 1200 psi.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- 4-Inch Side Entry Pressure Vessel -->
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12">
-                <h2 class="mb-4">4-Inch Side Entry Pressure Vessel</h2>
-                <p class="lead mb-4">
-                    Our 4-inch side entry membrane housings are available in operating pressures of 300 psi, 450 psi, and 600 psi. The multi-port feature in 4-inch membrane housings enables vessel-to-vessel connections, reducing the need for costly manifolds. Additionally, 4-inch end-entry membrane housings are available in operating pressures of 300, 600, and 1000 psi, designed to accommodate any standard 40-inch-long membrane.
-                </p>
+    <!-- 4-Inch Side Entry Pressure Vessel with Image -->
+    <section class="content-section pt-3 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="content-card" data-aos="fade-up">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <h2 class="section-title mb-4">4-Inch Side Entry Pressure Vessel</h2>
+                                <p class="lead mb-4">
+                                    Our 4-inch side entry membrane housings are available in operating pressures of 300 psi, 450 psi, and 600 psi. The multi-port feature in 4-inch membrane housings enables vessel-to-vessel connections, reducing the need for costly manifolds. Additionally, 4-inch end-entry membrane housings are available in operating pressures of 300, 600, and 1000 psi, designed to accommodate any standard 40-inch-long membrane.
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="image-container" data-aos="fade-left">
+                                    <img src="images/pressurevessels.jpg" alt="RO Pressure Vessels" class="gallery-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- First Image -->
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12 text-center">
-                <img src="images/pressurevessels.jpg" alt="RO Pressure Vessels" class="gallery-img" style="max-width: 800px; width: 100%; height: auto;">
+    <!-- Composite Pressure Vessels with Image -->
+    <section class="content-section pt-3 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="content-card" data-aos="fade-up">
+                        <div class="row align-items-center mb-5">
+                            <div class="col-lg-6">
+                                <h2 class="section-title mb-4">Composite Pressure Vessels for Softening and Filtration Applications</h2>
+                                <p class="lead mb-4">
+                                    Our composite pressure vessels are perfect for residential, light commercial, and industrial water treatment applications. These vessels offer excellent flexibility and are easy to handle and install, providing superior performance and durability for long-term use in various treatment systems.
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="image-container" data-aos="fade-left">
+                                    <img src="images/pressurevessels1.jpg" alt="Composite Pressure Vessels" class="gallery-img">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="features-section mb-5">
+                            <h3 class="subsection-title">Features and Benefits:</h3>
+                            <div class="features-grid">
+                                <div class="feature-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Constructed with standard polyester or chemical-resistant vinyl ester, depending on the application.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-tools"></i>
+                                    <span>Easy to handle and install.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Residential Tanks (6"-16" diameter) are Certified to NSF 44.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-award"></i>
+                                    <span>Commercial Tanks (18"-63" diameter) are Certified to NSF 61.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-database"></i>
+                                    <span>Available in capacities up to 1,600 gallons.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-layer-group"></i>
+                                    <span>100% composite fiberglass construction for maximum durability.</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-flask"></i>
+                                    <span>Outstanding performance even in harsh chemical environments.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="specs-grid">
+                            <div class="spec-card">
+                                <h4 class="spec-title">Material of Construction</h4>
+                                <div class="spec-content">
+                                    <i class="fas fa-cube"></i>
+                                    <span>Polyethylene inner shell for enhanced resistance.</span>
+                                </div>
+                            </div>
+                            
+                            <div class="spec-card">
+                                <h4 class="spec-title">Design Parameters</h4>
+                                <div class="spec-content">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>Safety factor of 4:1. Minimum burst pressure at 600 psi.</span>
+                                </div>
+                            </div>
+                            
+                            <div class="spec-card">
+                                <h4 class="spec-title">Operating Parameters</h4>
+                                <div class="spec-content">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <span>Maximum operating pressure: 150 psi. Maximum operating temperature: 120°F (threaded); 150°F (flanged).</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Composite Pressure Vessels -->
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12">
-                <h2 class="mb-4">Composite Pressure Vessels for Softening and Filtration Applications</h2>
-                <p class="lead mb-4">
-                    Our composite pressure vessels are perfect for residential, light commercial, and industrial water treatment applications. These vessels offer excellent flexibility and are easy to handle and install, providing superior performance and durability for long-term use in various treatment systems.
-                </p>
-                <h3>Features and Benefits:</h3>
-                <ul class="feature-list mb-4">
-                    <li>Constructed with standard polyester or chemical-resistant vinyl ester, depending on the application.</li>
-                    <li>Easy to handle and install.</li>
-                    <li>Residential Tanks (6"-16" diameter) are Certified to NSF 44.</li>
-                    <li>Commercial Tanks (18"-63" diameter) are Certified to NSF 61.</li>
-                    <li>Available in capacities up to 1,600 gallons.</li>
-                    <li>100% composite fiberglass construction for maximum durability.</li>
-                    <li>Outstanding performance even in harsh chemical environments.</li>
-                </ul>
-
-                <h3>Material of Construction:</h3>
-                <ul class="feature-list mb-4">
-                    <li>Polyethylene inner shell for enhanced resistance.</li>
-                </ul>
-
-                <h3>Design Parameters:</h3>
-                <ul class="feature-list mb-4">
-                    <li>Safety factor of 4:1.</li>
-                    <li>Minimum burst pressure at 600 psi.</li>
-                </ul>
-
-                <h3>Operating Parameters:</h3>
-                <ul class="feature-list mb-4">
-                    <li>Maximum operating pressure: 150 psi.</li>
-                    <li>Maximum operating temperature: 120°F (threaded); 150°F (flanged).</li>
-                </ul>
+    <!-- CTA Section -->
+    <section class="cta-section pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="cta-title" data-aos="fade-up">Ready to Transform Your Water Treatment?</h2>
+                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts today to discuss your RO pressure vessel and FRP filter requirements and get a customized solution for your facility.</p>
+                    <a href="contact.html" class="btn-cta" data-aos="fade-up" data-aos-delay="400">Get Expert Consultation</a>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Second Image -->
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12 text-center">
-                <img src="images/pressurevessels1.jpg" alt="Composite Pressure Vessels" class="gallery-img" style="max-width: 800px; width: 100%; height: auto;">
-            </div>
-        </div>
-    </div>
+    </section>
 
     <!-- Start Footer Section -->
     <footer class="footer-section">
@@ -799,7 +973,7 @@
             <div class="border-top copyright">
                 <div class="row pt-4">
                     <div class="col-lg-6">
-                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> GenOasis | All Rights Reserved.</p>
+                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> Genoasis | All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="description" content="Industrial Ozone Generation Systems by Genoasis - Cutting-edge ozonation solutions for water purification with 99.9% pathogen destruction" />
+    <meta name="keywords" content="ozone generation, industrial ozone, water purification, ozonation systems, Genoasis" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RPG7M7CLBF');
+    </script>
+    
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="css/tiny-slider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Add AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #23a1dc 0%, #1e88c5 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .features-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #23a1dc;
+            font-weight: bold;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .applications-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .application-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #23a1dc;
+            transition: all 0.3s ease;
+        }
+
+        .application-item:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .application-icon {
+            color: #23a1dc;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .table-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .custom-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .custom-table .table {
+            margin-bottom: 0;
+        }
+
+        .custom-table .table thead th {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white;
+            border: none;
+            padding: 20px 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .custom-table .table tbody td {
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            vertical-align: middle;
+        }
+
+        .custom-table .table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .custom-table .table tbody tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        .model-badge {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .results-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .result-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .result-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .result-description {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #23a1dc 0%, #1e88c5 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background: white;
+            color: #23a1dc;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            color: #23a1dc;
+        }
+
+        .dropdown-menu {
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            margin-top: 0;
+            padding: 8px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-item {
+            color: #333333;
+            padding: 8px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: #000000;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .nav-item.dropdown > .nav-link {
+            cursor: pointer;
+        }
+
+        .dropdown-item.active, 
+        .dropdown-item:active {
+            background-color: #f8f9fa;
+            color: #000000;
+        }
+
+        .navbar-toggler {
+            border-color: #333333;
+            background-color: transparent;
+            padding: 0.5rem;
+            margin-right: 15px;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+            width: 1.5em;
+            height: 1.5em;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .navbar-toggler {
+                margin-right: 15px;
+            }
+            
+            .navbar-collapse {
+                padding: 1rem 0;
+            }
+            
+            .custom-navbar-nav {
+                padding: 0.5rem 0;
+            }
+            
+            .nav-item {
+                padding: 0.5rem 0;
+            }
+            
+            .dropdown-menu {
+                border: none;
+                padding-left: 1rem;
+                margin-top: 0;
+            }
+            
+            .dropdown-item {
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+    
+    <title>Industrial Ozone Generation Systems | Genoasis Water Technologies</title>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
+</head>
+
+<body>
+    <!-- Start Top Bar -->
+    <div class="top-bar py-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-end">
+                        <a href="tel:+918925883227" class="me-3 text-decoration-none text-dark">
+                            <i class="fas fa-phone"></i> +91 892 588 3227
+                        </a>
+                        <a href="mailto:info@genoasis.com" class="text-decoration-none text-dark">
+                            <i class="fas fa-envelope"></i> info@genoasis.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Bar -->
+
+    <!-- Start Header/Navigation -->
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Genoasis navigation bar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Company Logo" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenoasis" aria-controls="navbarsGenoasis" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsGenoasis">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="frpmedia.html">RO Pressure Vessels & FRP Filters</a></li>
+                            <li><a class="dropdown-item" href="membranes.html">Membrane Products</a></li>
+                            <li><a class="dropdown-item" href="pumps.html">Pumps</a></li>
+                            <li><a class="dropdown-item" href="filters.html">Filter Cartridges & Housings</a></li>
+                            <li><a class="dropdown-item" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
+                            <li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
+                            <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
+                            <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
+                            <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
+                            <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
+                            <li><a class="dropdown-item" href="ozone-systems.html">Industrial Ozone Systems</a></li>
+                            <li><a class="dropdown-item" href="nanobubble-technology.html">Nanobubble Technology</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link" href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Header/Navigation -->
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center hero-content">
+                    <h1 class="hero-title" data-aos="fade-up">Industrial Ozone Generation Systems</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Cutting-Edge Ozonation Solutions for Water Purification</p>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="400">As leading industrial ozone generator manufacturers, Genoasis designs high-output ozonation systems that deliver 99.9% pathogen destruction across municipal water treatment plants, pharmaceutical pure water systems, food processing facilities, and wastewater reuse applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold" data-aos="fade-up">Genoasis Ozone Technology Advantages</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <h3 class="feature-title">Unmatched Disinfection Performance</h3>
+                        <ul class="feature-list">
+                            <li>0.5-10 g/h ozone output range for all scales</li>
+                            <li>5-log virus inactivation at 0.3ppm residual</li>
+                            <li>Simultaneous oxidation of organics/chloramines</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="feature-title">Engineered for Industrial Demands</h3>
+                        <ul class="feature-list">
+                            <li>Corona discharge systems with 30,000hr lifespan</li>
+                            <li>VFD-controlled generators for precise dosing</li>
+                            <li>316L stainless steel contact chambers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-title">Smart Monitoring & Control</h3>
+                        <ul class="feature-list">
+                            <li>ORP/pH integrated systems</li>
+                            <li>OzoneSafe™ leak detection</li>
+                            <li>Cloud-based performance tracking</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="applications-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold" data-aos="fade-up">Application-Specific Solutions</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="application-item">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-industry application-icon"></i>
+                            <div>
+                                <h5 class="mb-1">Municipal Water Treatment Plants</h5>
+                                <p class="mb-0">Large-scale ozone systems for public water supply disinfection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="application-item">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-pills application-icon"></i>
+                            <div>
+                                <h5 class="mb-1">Pharmaceutical Pure Water Systems</h5>
+                                <p class="mb-0">High-purity ozone treatment for pharmaceutical applications</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="application-item">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-utensils application-icon"></i>
+                            <div>
+                                <h5 class="mb-1">Food Processing Facilities</h5>
+                                <p class="mb-0">Ozone systems for food safety and processing water treatment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="application-item">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-recycle application-icon"></i>
+                            <div>
+                                <h5 class="mb-1">Wastewater Reuse Applications</h5>
+                                <p class="mb-0">Advanced oxidation for wastewater treatment and reuse</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table Section -->
+    <section class="table-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold" data-aos="fade-up">System Specifications</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="custom-table">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>System Type</th>
+                                    <th>Genoasis Model</th>
+                                    <th>Capacity</th>
+                                    <th>Applications</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Water Treatment Ozonators</strong></td>
+                                    <td><span class="model-badge">AquaO3-500G</span></td>
+                                    <td>500 GPD @ 0.5ppm residual</td>
+                                    <td>Municipal water treatment, drinking water purification</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Industrial Ozone Generators</strong></td>
+                                    <td><span class="model-badge">IndusO3-10K</span></td>
+                                    <td>10 kg/hr output</td>
+                                    <td>Large-scale industrial applications, wastewater treatment</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Compact Ozone Purifiers</strong></td>
+                                    <td><span class="model-badge">NanoO3-20</span></td>
+                                    <td>20LPM residential units</td>
+                                    <td>Small-scale applications, point-of-use systems</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wastewater Ozone Systems</strong></td>
+                                    <td><span class="model-badge">BioO3-ETP</span></td>
+                                    <td>5 ppm for COD reduction</td>
+                                    <td>Wastewater treatment, effluent polishing</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold text-dark" data-aos="fade-up">Proven Industry Results</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <h4 class="result-title">Beverage Plant</h4>
+                        <p class="result-description">Achieved 0 CFU/ml in rinse water (FDA compliant)</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <h4 class="result-title">Hospital Water</h4>
+                        <p class="result-description">Eliminated 100% of Legionella risk</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h4 class="result-title">Municipal STP</h4>
+                        <p class="result-description">40% reduction in chlorine usage</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="cta-title" data-aos="fade-up">Ready to Transform Your Water Treatment?</h2>
+                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts today to discuss your ozone generation requirements and get a customized solution for your facility.</p>
+                    <a href="contact.html" class="btn-cta" data-aos="fade-up" data-aos-delay="400">Get Expert Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Start Footer Section -->
+    <footer class="footer-section">
+        <div class="container relative">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <div class="soi-img">
+                        <img src="images/logo.png" alt="Image" class="img-fluid" style="max-height: 60px;">
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-4">Empowering water treatment plants with advanced ozone generation systems and cutting-edge ozonation solutions for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
+                        <ul class="list-unstyled custom-social">
+                            <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                            <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                            <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row links-wrap">
+                        <div class="col-6 col-sm-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="about.html">About us</a></li>
+                                <li><a href="Products.html">Products</a></li>
+                                <li><a href="contact.html">Contact us</a></li>
+                            </ul>
+                        </div>
+                        <!-- Add Contact Information Section -->
+                        <div class="col-6 col-sm-6 col-md-4">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-map-marker-alt me-2"></i>6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</li>
+                                <li><i class="fas fa-phone me-2"></i>+91 892 588 3227</li>
+                                <li><i class="fas fa-envelope me-2"></i>info@genoasis.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-top copyright">
+                <div class="row pt-4">
+                    <div class="col-lg-6">
+                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> Genoasis | All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <script src="js/recaptcha.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the Products dropdown link
+            const productsLink = document.querySelector('#navbarDropdown');
+            
+            // Add click event listener
+            productsLink.addEventListener('click', function(e) {
+                // Navigate to Products.html
+                window.location.href = 'Products.html';
+            });
+        });
+    </script>
+</body>
+</html>
