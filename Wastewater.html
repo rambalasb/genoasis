@@ -393,6 +393,252 @@
         .collapse {
             transition: all 0.3s ease;
         }
+
+        /* Products Grid Styles */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(35, 161, 220, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .read-more {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .read-more-text {
+            color: #23a1dc;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .read-more-text:hover {
+            color: #1e88c5;
+            text-decoration: none;
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .product-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Product Modal Styles */
+        .product-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            margin: 5% auto;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #23a1dc 0%, #1e88c5 100%);
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .modal-body {
+            padding: 30px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .modal-body .lead {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .modal-body .features-grid {
+            margin-top: 20px;
+        }
+
+        .modal-body .feature-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .modal-body .feature-item i {
+            color: #23a1dc;
+            margin-right: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .product-image {
+                height: 200px;
+            }
+
+            .product-content {
+                padding: 20px;
+            }
+
+            .product-title {
+                font-size: 1.2rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                max-height: 85vh;
+            }
+
+            .modal-header {
+                padding: 20px;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+        }
     </style>
     <title>Wastewater Treatment Equipment | Genoasis Water Technologies</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
@@ -471,8 +717,8 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section pt-5">
+    <!-- Products Grid Section -->
+    <section class="product-section py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
@@ -480,521 +726,164 @@
                 </div>
             </div>
             
-            <div class="row">
-                <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-water"></i>
+            <!-- Products Grid -->
+            <div class="products-grid">
+                <!-- MBBR Media & Biofilters -->
+                <div class="product-card" data-aos="fade-up" data-product="mbbr-media">
+                    <div class="product-image">
+                        <img src="images/mbbrmedia.jpg" alt="MBBR Media & Biofilters">
+                        <div class="product-overlay">
+                            <span class="read-more">Read More</span>
                         </div>
-                        <h3 class="feature-title">MBBR Media & Biofilters</h3>
-                        <ul class="feature-list">
-                            <li>High-performance MBBR biofilter media</li>
-                            <li>Exceptional mechanical properties and impact strength</li>
-                            <li>Optimal density and hydrophilic performance</li>
-                            <li>Long service life with excellent biofilm growth</li>
-                        </ul>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">MBBR Media & Biofilters</h3>
+                        <p class="product-description">High-performance MBBR biofilter media with exceptional mechanical properties, optimal density, and excellent biofilm growth for efficient wastewater treatment. <a href="#" class="read-more-text">>> Read More</a></p>
                     </div>
                 </div>
-                
-                <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-wind"></i>
+
+                <!-- Aeration & Diffuser Systems -->
+                <div class="product-card" data-aos="fade-up" data-product="aeration-diffusers">
+                    <div class="product-image">
+                        <img src="images/finebubble.jpg" alt="Aeration & Diffuser Systems">
+                        <div class="product-overlay">
+                            <span class="read-more">Read More</span>
                         </div>
-                        <h3 class="feature-title">Aeration & Diffuser Systems</h3>
-                        <ul class="feature-list">
-                            <li>Fine and coarse bubble diffusers</li>
-                            <li>Tube and panel diffuser systems</li>
-                            <li>High oxygen transfer efficiency</li>
-                            <li>Energy-efficient aeration solutions</li>
-                        </ul>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Aeration & Diffuser Systems</h3>
+                        <p class="product-description">Fine and coarse bubble diffusers, tube and panel systems with high oxygen transfer efficiency and energy-efficient aeration solutions. <a href="#" class="read-more-text">>> Read More</a></p>
+                    </div>
+                </div>
+
+                <!-- BIO-BLOK Filter Media -->
+                <div class="product-card" data-aos="fade-up" data-product="bio-block">
+                    <div class="product-image">
+                        <img src="images/bioblock.jpg" alt="BIO-BLOK Filter Media">
+                        <div class="product-overlay">
+                            <span class="read-more">Read More</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">BIO-BLOK Filter Media</h3>
+                        <p class="product-description">High specific surface area filter media that increases system efficiency, reduces footprint, and provides optimal conditions for biofilm growth. <a href="#" class="read-more-text">>> Read More</a></p>
+                    </div>
+                </div>
+
+                <!-- Bio Chip Technology -->
+                <div class="product-card" data-aos="fade-up" data-product="bio-chip">
+                    <div class="product-image">
+                        <img src="images/biochip.jpg" alt="Bio Chip Technology">
+                        <div class="product-overlay">
+                            <span class="read-more">Read More</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Bio Chip Technology</h3>
+                        <p class="product-description">Small Boss MBBR biofilter media with excellent mechanical properties, high impact strength, and optimal density for wastewater treatment applications. <a href="#" class="read-more-text">>> Read More</a></p>
+                    </div>
+                </div>
+
+                <!-- Lamella Tube Settler -->
+                <div class="product-card" data-aos="fade-up" data-product="lamella-settler">
+                    <div class="product-image">
+                        <img src="images/tubesettler.jpg" alt="Lamella Tube Settler Media">
+                        <div class="product-overlay">
+                            <span class="read-more">Read More</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Lamella Tube Settler Media</h3>
+                        <p class="product-description">Tubular settlers and parallel plates that improve settling capacity by reducing vertical distance for flocculated particles in clarifiers and settling tanks. <a href="#" class="read-more-text">>> Read More</a></p>
+                    </div>
+                </div>
+
+                <!-- Coarse Bubble Diffusers -->
+                <div class="product-card" data-aos="fade-up" data-product="coarse-bubble">
+                    <div class="product-image">
+                        <img src="images/coarsebubble.jpg" alt="Coarse Bubble Diffusers">
+                        <div class="product-overlay">
+                            <span class="read-more">Read More</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Coarse Bubble Diffusers</h3>
+                        <p class="product-description">Crafted using latest technology for wastewater treatment plants with PP body, 30% GPR support, and 20-25% oxygen efficiency. <a href="#" class="read-more-text">>> Read More</a></p>
+                    </div>
+                </div>
+
+                <!-- Fine Bubble Disc Diffuser -->
+                <div class="product-card" data-aos="fade-up" data-product="fine-bubble">
+                    <div class="product-image">
+                        <img src="images/finebubble.jpg" alt="Fine Bubble Disc Diffuser">
+                        <div class="product-overlay">
+                            <span class="read-more">Read More</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Fine Bubble Disc Diffuser</h3>
+                        <p class="product-description">Three-part disc diffusers with EPDM membranes, suitable for retractable systems, and warranting 35-45% oxygen efficiency. <a href="#" class="read-more-text">>> Read More</a></p>
+                    </div>
+                </div>
+
+                <!-- Tube Diffusers -->
+                <div class="product-card" data-aos="fade-up" data-product="tube-diffusers">
+                    <div class="product-image">
+                        <img src="images/tubediffuser.jpg" alt="Tube Diffusers">
+                        <div class="product-overlay">
+                            <span class="read-more">Read More</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Tube Diffusers</h3>
+                        <p class="product-description">Best solution for long and narrow aeration tanks with different material options, connection threads, and sizes for various wastewater types. <a href="#" class="read-more-text">>> Read More</a></p>
+                    </div>
+                </div>
+
+                <!-- Panel Diffuser -->
+                <div class="product-card" data-aos="fade-up" data-product="panel-diffuser">
+                    <div class="product-image">
+                        <img src="images/paneldiffuser.jpg" alt="Panel Diffuser">
+                        <div class="product-overlay">
+                            <span class="read-more">Read More</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Panel Diffuser</h3>
+                        <p class="product-description">High-capacity diffusers with higher oxygen transfer efficiency, unique membrane diversity, and strong body for large treatment systems. <a href="#" class="read-more-text">>> Read More</a></p>
+                    </div>
+                </div>
+
+                <!-- Dewatering Bags -->
+                <div class="product-card" data-aos="fade-up" data-product="dewatering-bags">
+                    <div class="product-image">
+                        <img src="images/dewatering1.jpg" alt="Dewatering Bags">
+                        <div class="product-overlay">
+                            <span class="read-more">Read More</span>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Dewatering Bags</h3>
+                        <p class="product-description">High-strength geotextile bags for effective dewatering of silt, sediment, sludge, and contaminated waste in all weather conditions. <a href="#" class="read-more-text">>> Read More</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MBBR Media Section -->
-    <section class="solutions-section pt-5">
-        <div class="container">
-            <div class="row mb-5 align-items-center">
-                <div class="col-lg-7">
-                    <h2 class="display-5 fw-bold mb-4" data-aos="fade-right">MBBR Media Technology</h2>
-                    <p class="lead mb-4" data-aos="fade-right" data-aos-delay="200">
-                        The Genoasis Small Boss MBBR biofilter media is designed with exceptional mechanical properties and high impact strength. It features optimal density, excellent hydrophilic performance, and a long service life. This media provides an ideal growing environment for anaerobic microorganisms, offering numerous advantages for efficient wastewater treatment.
-                    </p>
-                    
-                    <h3 class="h5 mb-3" data-aos="fade-right" data-aos-delay="300">Key Features</h3>
-                    <ul class="feature-list mb-4" data-aos="fade-right" data-aos-delay="400">
-                        <li>Special design of surface, stronger bio-film growth capacity</li>
-                        <li>Large specific surface area, high voidage, the more periphyton biomass</li>
-                        <li>Unique design of structure and shape according to hydromechanics</li>
-                        <li>Adding hydrophilic groups and other trace elements</li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-5" data-aos="fade-left" data-aos-delay="400">
-                    <div class="image-container">
-                        <img src="images/mbbrmedia.jpg" alt="MBBR Media" class="img-fluid w-100">
-                    </div>
-                </div>
+    <!-- Product Detail Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated by JavaScript -->
             </div>
         </div>
-    </section>
-
-    <!-- BIO-BLOK Section -->
-    <section class="solutions-section alt-bg pt-5">
-        <div class="container">
-            <div class="row mb-5 align-items-center">
-                <div class="col-lg-5 order-lg-2" data-aos="fade-right" data-aos-delay="400">
-                    <div class="image-container">
-                        <img src="images/bioblock.jpg" alt="BIO-BLOK Filter Media" class="img-fluid w-100">
-                    </div>
-                </div>
-                
-                <div class="col-lg-7 order-lg-1">
-                    <h2 class="display-5 fw-bold mb-4" data-aos="fade-left">BIO-BLOK Filter Media</h2>
-                    <p class="lead mb-4" data-aos="fade-left" data-aos-delay="200">
-                        BIO-BLOK filter media helps increasing the surface area in your system to improve the efficiency and reducing the footprint. BIO-BLOK® is used for most wastewater treatment applications, in aquaculture and for stormwater management.
-                    </p>
-
-                    <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="300">Features & Benefits</h3>
-                    <ul class="feature-list mb-4" data-aos="fade-left" data-aos-delay="400">
-                        <li>High specific surface area</li>
-                        <li>High void space</li>
-                        <li>Optimal conditions for biofilm growth</li>
-                        <li>Strong and durable construction</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bio Chip Section -->
-    <section class="solutions-section pt-5">
-        <div class="container">
-            <div class="row mb-5 align-items-center">
-                <div class="col-lg-7">
-                    <h2 class="display-5 fw-bold mb-4" data-aos="fade-right">Bio Chip Technology</h2>
-                    <p class="lead mb-4" data-aos="fade-right" data-aos-delay="200">
-                        Small Boss MBBR biofilter media has excellent mechanical property, high impact strength, suitable density, good hydrophilic performance, long service life, good growing environment for Anaerbic and many other advantages.
-                    </p>
-                    
-                                         <h3 class="h5 mb-3" data-aos="fade-right" data-aos-delay="300">Technical Specifications</h3>
-                     <ul class="feature-list mb-4" data-aos="fade-right" data-aos-delay="400">
-                         <li>Material: High-quality PP/PE</li>
-                         <li>Specific surface area: >500m²/m³</li>
-                         <li>Void ratio: >90%</li>
-                         <li>Service life: >15 years</li>
-                     </ul>
-                     
-                     <div class="table-responsive mt-4" data-aos="fade-right" data-aos-delay="500">
-                         <table class="table table-hover custom-table">
-                             <thead class="table-dark">
-                                 <tr>
-                                     <th>Parameter</th>
-                                     <th>Specification</th>
-                                     <th>Unit</th>
-                                 </tr>
-                             </thead>
-                             <tbody>
-                                 <tr>
-                                     <td><strong>Specific Surface Area</strong></td>
-                                     <td>500-800</td>
-                                     <td>m²/m³</td>
-                                 </tr>
-                                 <tr>
-                                     <td><strong>Void Ratio</strong></td>
-                                     <td>90-95</td>
-                                     <td>%</td>
-                                 </tr>
-                                 <tr>
-                                     <td><strong>Density</strong></td>
-                                     <td>0.95-1.05</td>
-                                     <td>g/cm³</td>
-                                 </tr>
-                                 <tr>
-                                     <td><strong>Service Life</strong></td>
-                                     <td>15-20</td>
-                                     <td>years</td>
-                                 </tr>
-                                 <tr>
-                                     <td><strong>Temperature Range</strong></td>
-                                     <td>-40 to +80</td>
-                                     <td>°C</td>
-                                 </tr>
-                             </tbody>
-                         </table>
-                     </div>
-                </div>
-                
-                <div class="col-lg-5" data-aos="fade-left" data-aos-delay="400">
-                    <div class="image-container">
-                        <img src="images/biochip.jpg" alt="Bio Chip" class="img-fluid w-100">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-         <!-- Lamella Tube Settler Media Section -->
-     <section class="solutions-section pt-5">
-         <div class="container">
-             <div class="row mb-5 align-items-center">
-                 <div class="col-lg-7">
-                     <h2 class="display-5 fw-bold mb-4" data-aos="fade-right">Lamella Tube Settler Media</h2>
-                     <p class="lead mb-4" data-aos="fade-right" data-aos-delay="200">
-                         Tubular settlers and parallel plates improve the settling capacity of circular clarifiers and/or rectangular settling tanks by reducing the vertical distance that flocculated particles must settle before they coalesce to form larger particles.
-                     </p>
-                     
-                     <h3 class="h5 mb-3" data-aos="fade-right" data-aos-delay="300">Applications</h3>
-                     <ul class="feature-list mb-4" data-aos="fade-right" data-aos-delay="400">
-                         <li>Circular clarifiers and rectangular settling tanks</li>
-                         <li>Industrial wastewater treatment</li>
-                         <li>Municipal water treatment</li>
-                         <li>Chemical and process industries</li>
-                     </ul>
-                 </div>
-                 
-                 <div class="col-lg-5" data-aos="fade-left" data-aos-delay="400">
-                     <div class="image-container">
-                         <img src="images/tubesettler.jpg" alt="Lamella Tube Settler Media" class="img-fluid w-100">
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-     <!-- Diffuser Systems Section -->
-     <section class="solutions-section alt-bg pt-5">
-         <div class="container">
-             <div class="row mb-5 align-items-center">
-                 <div class="col-12">
-                     <h2 class="display-5 fw-bold mb-4 text-center" data-aos="fade-up">Advanced Diffuser Systems</h2>
-                     <p class="lead mb-4 text-center" data-aos="fade-up" data-aos-delay="200">
-                         Our comprehensive range of diffusers includes fine and coarse bubble systems, tube diffusers, and panel diffusers. Each system is engineered for maximum oxygen transfer efficiency and minimal energy consumption.
-                     </p>
-
-                     
-                     <div class="table-responsive mt-4" data-aos="fade-up" data-aos-delay="500">
-                         <table class="table table-hover custom-table">
-                             <thead class="table-dark">
-                                 <tr>
-                                     <th>Diffuser Type</th>
-                                     <th>Oxygen Efficiency</th>
-                                     <th>Air Flow Rate</th>
-                                     <th>Applications</th>
-                                 </tr>
-                             </thead>
-                             <tbody>
-                                 <tr>
-                                     <td><strong>Fine Bubble Disc</strong></td>
-                                     <td>35-45%</td>
-                                     <td>2-4 m³/h</td>
-                                     <td>Municipal WWTP, Industrial</td>
-                                 </tr>
-                                 <tr>
-                                     <td><strong>Coarse Bubble</strong></td>
-                                     <td>20-25%</td>
-                                     <td>4-8 m³/h</td>
-                                     <td>Mixing, Equalization</td>
-                                 </tr>
-                                 <tr>
-                                     <td><strong>Tube Diffuser</strong></td>
-                                     <td>35-45%</td>
-                                     <td>3-6 m³/h</td>
-                                     <td>Long Tanks, Retractable</td>
-                                 </tr>
-                                 <tr>
-                                     <td><strong>Panel Diffuser</strong></td>
-                                     <td>40-50%</td>
-                                     <td>5-10 m³/h</td>
-                                     <td>High Capacity Systems</td>
-                                 </tr>
-                             </tbody>
-                         </table>
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-     <!-- Coarse Bubble Diffusers Section -->
-     <section class="solutions-section alt-bg pt-5">
-         <div class="container">
-             <div class="row mb-5 align-items-center">
-                 <div class="col-lg-5 order-lg-2" data-aos="fade-right" data-aos-delay="400">
-                     <div class="image-container">
-                         <img src="images/coarsebubble.jpg" alt="Coarse Bubble Diffusers" class="img-fluid w-100">
-                     </div>
-                 </div>
-                 
-                 <div class="col-lg-7 order-lg-1">
-                     <h2 class="display-5 fw-bold mb-4" data-aos="fade-left">Coarse Bubble Diffusers</h2>
-                     <p class="lead mb-4" data-aos="fade-left" data-aos-delay="200">
-                         The Genoasis diffusers are crafted using the latest technology and are specifically designed for use in wastewater treatment plants. Each diffuser's projection is the result of extensive Research and Development, tailored to meet the unique needs of wastewater treatment facilities.
-                     </p>
-
-                     <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="300">Key Features</h3>
-                     <ul class="feature-list mb-4" data-aos="fade-left" data-aos-delay="400">
-                         <li>Coarse Bubble Disc Diffusers can be installed to HDPE, PVC or stainless-steel pipes by PP Saddles</li>
-                         <li>Connections are 3/4" male</li>
-                         <li>Material of body part is PP (polypropylene) and supported with 30% GPR for UV rays and different chemical processes</li>
-                         <li>Standard material of diffuser membranes are EPDM</li>
-                         <li>Membrane hole diameter is 4 mm and distributed equally around the membrane</li>
-                         <li>It warrants between 20%-25% oxygen efficiency</li>
-                         <li>It holds energy costs very low because of minimum pressure loss</li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-     <!-- Fine Bubble Disc Diffuser Section -->
-     <section class="solutions-section pt-5">
-         <div class="container">
-             <div class="row mb-5 align-items-center">
-                 <div class="col-lg-7">
-                     <h2 class="display-5 fw-bold mb-4" data-aos="fade-right">Fine Bubble Disc Diffuser</h2>
-                     <p class="lead mb-4" data-aos="fade-right" data-aos-delay="200">
-                         Disc diffusers have 3 parts as lower part, frame and membrane. Disc Diffusers can be installed to HDPE, PVC or stainless steel pipes by PP Saddles. Material of frame and lower part is PP (polypropylene) and supported with 30% GPR for UV rays and different chemical processes.
-                     </p>
-                     
-                     <h3 class="h5 mb-3" data-aos="fade-right" data-aos-delay="300">Key Features</h3>
-                     <ul class="feature-list mb-4" data-aos="fade-right" data-aos-delay="400">
-                         <li>Connections are 3/4" or 1" male</li>
-                         <li>Diffusers are suitable for retractable systems</li>
-                         <li>Standard material of diffuser membranes are EPDM</li>
-                         <li>When the air flow is stopped, the gaps on the membrane close themselves because of its conic structure</li>
-                         <li>Maximum oxygen efficiency is aimed while different production techniques with carefully chosen materials</li>
-                         <li>It warrants between 35%-45% oxygen efficiency</li>
-                         <li>It holds energy costs very low because of minimum pressure loss</li>
-                     </ul>
-                 </div>
-                 
-                 <div class="col-lg-5" data-aos="fade-left" data-aos-delay="400">
-                     <div class="image-container">
-                         <img src="images/finebubble.jpg" alt="Fine Bubble Disc Diffuser" class="img-fluid w-100">
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-     <!-- Tube Diffusers Section -->
-     <section class="solutions-section alt-bg pt-5">
-         <div class="container">
-             <div class="row mb-5 align-items-center">
-                 <div class="col-lg-5 order-lg-2" data-aos="fade-right" data-aos-delay="400">
-                     <div class="image-container">
-                         <img src="images/tubediffuser.jpg" alt="Tube Diffusers" class="img-fluid w-100">
-                     </div>
-                 </div>
-                 
-                 <div class="col-lg-7 order-lg-1">
-                     <h2 class="display-5 fw-bold mb-4" data-aos="fade-left">Tube Diffusers</h2>
-                     <p class="lead mb-4" data-aos="fade-left" data-aos-delay="200">
-                         Genoasis tube diffusers are best solution for long and narrow aeration tanks. Opportunity to choose different material, connection thread, and size makes Genoasis tube diffusers fit to any type of waste water.
-                     </p>
-
-                     <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="300">Key Features</h3>
-                     <ul class="feature-list mb-4" data-aos="fade-left" data-aos-delay="400">
-                         <li>Genoasis Tube Diffusers can be installed to stainless steel box profiles by stainless steel long nipples</li>
-                         <li>Also, Tube Diffusers can be installed to HDPE, PVC or Stainless Steel pipes by PP Saddles with stainless steel short nipples</li>
-                         <li>Connections are 3/4" or 1" female. Also male options are available</li>
-                         <li>It is very suitable to be used in moving (retractable) systems</li>
-                         <li>Material of pipe part is PP (polypropylene) and supported with 30% GPR for UV rays and different chemical processes</li>
-                         <li>It warrants between 35%-45% oxygen efficiency</li>
-                         <li>It holds energy costs very low because of minimum pressure loss</li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-     <!-- Stainless Steel Coarse Bubble Section -->
-     <section class="solutions-section pt-5">
-         <div class="container">
-             <div class="row mb-5 align-items-center">
-                 <div class="col-lg-7">
-                     <h2 class="display-5 fw-bold mb-4" data-aos="fade-right">Stainless Steel Coarse Bubble Tube Diffuser</h2>
-                     <p class="lead mb-4" data-aos="fade-right" data-aos-delay="200">
-                         Genoasis Coarse Bubble Tube Diffuser is used to provide a homogeneous mixture in chemical preservation units, equalization tanks, chemical mixing and oil separation of wastewater treatment plants.
-                     </p>
-                     
-                     <h3 class="h5 mb-3" data-aos="fade-right" data-aos-delay="300">Key Features</h3>
-                     <ul class="feature-list mb-4" data-aos="fade-right" data-aos-delay="400">
-                         <li>Installation locations of coarse bubble tube diffusers are combined with welding method by TIG (Tungsten Inert Gas) process</li>
-                         <li>It can be installed easily to stainless steel pipes</li>
-                         <li>Material of product is Stainless Steel. According to the requirements of customers, material of product can be AISI304 or AISI316 Stainless Steel</li>
-                         <li>It warrants between 20%-25% oxygen efficiency</li>
-                         <li>It holds energy costs very low because of minimum pressure loss</li>
-                     </ul>
-                 </div>
-                 
-                 <div class="col-lg-5" data-aos="fade-left" data-aos-delay="400">
-                     <div class="image-container">
-                         <img src="images/steelcoarse.jpg" alt="Stainless Steel Coarse Bubble Tube Diffuser" class="img-fluid w-100">
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-     <!-- Plate Diffuser Section -->
-     <section class="solutions-section alt-bg pt-5">
-         <div class="container">
-             <div class="row mb-5 align-items-center">
-                 <div class="col-lg-5 order-lg-2" data-aos="fade-right" data-aos-delay="400">
-                     <div class="image-container">
-                         <img src="images/platediffuser.jpg" alt="Plate Diffuser" class="img-fluid w-100">
-                     </div>
-                 </div>
-                 
-                 <div class="col-lg-7 order-lg-1">
-                     <h2 class="display-5 fw-bold mb-4" data-aos="fade-left">Plate Diffuser</h2>
-                     <p class="lead mb-4" data-aos="fade-left" data-aos-delay="200">
-                         Generally these types of diffusers are chosen for high capacities. There are proper mounting options according to pipe or box sections.
-                     </p>
-
-                     <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="300">Key Features</h3>
-                     <ul class="feature-list mb-4" data-aos="fade-left" data-aos-delay="400">
-                         <li>They can be mounted easily with the help of AISI304 or AISI316 plate and bolt pin to the Stainless box section</li>
-                         <li>They can be also mounted to the HDPE, PVC or Steel Pipes with the help of saddle</li>
-                         <li>Body and frame material of diffusers is (PP) polypropylene. And using 30% CFR (fiberglass) its production to increase the strength of the material to different chemicals and high temperatures and harmful UV rays</li>
-                         <li>It's pretty suitable for using at movable (Up and Down) systems</li>
-                         <li>The membrane of plate diffusers are EPDM as standard. However, according to biological process it can be different as Silicon, PTFE (Teflon) covered</li>
-                         <li>It warrants between 35%-45% oxygen efficiency</li>
-                         <li>It holds energy costs very low because of minimum pressure loss</li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-     <!-- Panel Diffuser Section -->
-     <section class="solutions-section pt-5">
-         <div class="container">
-             <div class="row mb-5 align-items-center">
-                 <div class="col-lg-7">
-                     <h2 class="display-5 fw-bold mb-4" data-aos="fade-right">Panel Diffuser</h2>
-                     <p class="lead mb-4" data-aos="fade-right" data-aos-delay="200">
-                         Genoasis Panel Diffusers operate with higher oxygen transfer efficiency, unique membrane diversity and strong body with different structure and higher air capacity than other diffusers.
-                     </p>
-                     
-                     <h3 class="h5 mb-3" data-aos="fade-right" data-aos-delay="300">Key Features</h3>
-                     <ul class="feature-list mb-4" data-aos="fade-right" data-aos-delay="400">
-                         <li>Membranes of the panel diffusers have so special hole design</li>
-                         <li>The shape of Genoasis Panel diffuser support high oxygen transfer efficiency</li>
-                         <li>Panel Diffusers are designed to the aeration tank 60-65% density</li>
-                         <li>The Panel Diffusers target maximum SOTE and minimum pressure losses because of their holes on the surface of the membranes are microporus</li>
-                         <li>All Genoasis Panel Diffuser are made of first-class membranes which are carefully selected with Membrane Technology and special formulization</li>
-                         <li>Genoasis Panel diffusers are used in industrial and municipal treatment plants as well as in Garbage Leachate waste water treatment plants</li>
-                         <li>With its integrated check valve feature, it prevents backflow of water or different particulate matter to the diffuser and pipe</li>
-                     </ul>
-                 </div>
-                 
-                 <div class="col-lg-5" data-aos="fade-left" data-aos-delay="400">
-                     <div class="image-container">
-                         <img src="images/paneldiffuser.jpg" alt="Panel Diffuser" class="img-fluid w-100">
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-     <!-- PP Saddle Section -->
-     <section class="solutions-section alt-bg pt-5">
-         <div class="container">
-             <div class="row mb-5 align-items-center">
-                 <div class="col-lg-5 order-lg-2" data-aos="fade-right" data-aos-delay="400">
-                     <div class="image-container">
-                         <img src="images/ppsaddle.jpg" alt="PP Saddle" class="img-fluid w-100">
-                     </div>
-                 </div>
-                 
-                 <div class="col-lg-7 order-lg-1">
-                     <h2 class="display-5 fw-bold mb-4" data-aos="fade-left">PP Saddle</h2>
-                     <p class="lead mb-4" data-aos="fade-left" data-aos-delay="200">
-                         PP Saddles are used to connect diffusers to HDPE, PVC or stainless steel pipes. They are manufactured from polypropylene material which is resistant to UV rays and chemical processes.
-                     </p>
-
-                     <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="300">Features & Benefits</h3>
-                     <ul class="feature-list mb-4" data-aos="fade-left" data-aos-delay="400">
-                         <li>Material: Polypropylene (PP)</li>
-                         <li>UV resistant</li>
-                         <li>Chemical process resistant</li>
-                         <li>Easy installation</li>
-                         <li>Long service life</li>
-                         <li>Available in various sizes</li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-     <!-- Grommets Section -->
-     <section class="solutions-section pt-5">
-         <div class="container">
-             <div class="row mb-5 align-items-center">
-                 <div class="col-lg-7">
-                     <h2 class="display-5 fw-bold mb-4" data-aos="fade-right">Grommets</h2>
-                     <p class="lead mb-4" data-aos="fade-right" data-aos-delay="200">
-                         Genoasis accessories and spare parts are designed to be used on products made by Genoasis or products made by other producers. Installation of Genoasis accessories and spare parts is extremely simple and can be done without any complicated and expensive equipment needed, performance, on the other hand, reaches highest level.
-                     </p>
-                     
-                     <p class="mb-4" data-aos="fade-right" data-aos-delay="300">
-                         Genoasis accessories and spare parts are great and economical solution for old treatment plants and applications where only some parts of equipment has to be replaced.
-                     </p>
-                 </div>
-                 
-                 <div class="col-lg-5" data-aos="fade-left" data-aos-delay="400">
-                     <div class="image-container">
-                         <img src="images/grommed.jpg" alt="Grommed" class="img-fluid w-100">
-                     </div>
-                 </div>
-             </div>
-         </div>
-     </section>
-
-     <!-- Dewatering Bag Section -->
-     <section class="solutions-section alt-bg pt-5">
-         <div class="container">
-             <div class="row mb-5 align-items-center">
-                 <div class="col-lg-5 order-lg-2" data-aos="fade-right" data-aos-delay="400">
-                     <div class="d-flex flex-column align-items-center">
-                         <div class="image-container mb-4">
-                             <img src="images/dewatering1.jpg" alt="Dewatering Bag 1" class="img-fluid w-100">
-                         </div>
-                         <div class="image-container">
-                             <img src="images/dewatering2.jpg" alt="Dewatering Bag 2" class="img-fluid w-100">
-                         </div>
-                     </div>
-                 </div>
-                 
-                 <div class="col-lg-7 order-lg-1">
-                     <h2 class="display-5 fw-bold mb-4" data-aos="fade-left">Dewatering Bag</h2>
-                     <p class="lead mb-4" data-aos="fade-left" data-aos-delay="200">
-                         Geobags are also known as dewatering bags, geotextile tubes, geocontainers, soil tubes, geosynthetic tubes or desludging bags.
-                     </p>
-
-                     <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="300">Features & Benefits</h3>
-                     <ul class="feature-list mb-4" data-aos="fade-left" data-aos-delay="400">
-                         <li>High strength woven geotextile</li>
-                         <li>Length up to 100 meters; Circumference up to 36 meters</li>
-                         <li>Effectively drains out silt, sediment, sludge, and contaminated waste</li>
-                         <li>Reliable using in all weather conditions</li>
-                         <li>Reduces risks in operational safety</li>
-                         <li>Designed for large dewatering projects</li>
-                         <li>Custom size fits applications of structures and dewatering area</li>
-                         <li>After weeks to fairly dry, It's easy removal and disposal of solids</li>
-                         <li>Environmental friendly reduces carbon footprint</li>
-                         <li>Cost effective and low maintenance</li>
-                     </ul>
-                 </div>
-             </div>
-         </div>
-          </section>
+    </div>
 
      <!-- Product Comparison Table Section -->
      <section class="table-section pt-5">
@@ -1170,6 +1059,370 @@
             productsLink.addEventListener('click', function(e) {
                 // Navigate to Products.html
                 window.location.href = 'Products.html';
+            });
+
+            // Product modal functionality
+            const productCards = document.querySelectorAll('.product-card');
+            const modal = document.getElementById('productModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            const modalClose = document.getElementById('modalClose');
+            const modalOverlay = document.querySelector('.modal-overlay');
+
+            // Product data for modal content
+            const productData = {
+                'mbbr-media': {
+                    title: 'MBBR Media & Biofilters',
+                    content: `
+                        <p class="lead">The Genoasis Small Boss MBBR biofilter media is designed with exceptional mechanical properties and high impact strength. It features optimal density, excellent hydrophilic performance, and a long service life. This media provides an ideal growing environment for anaerobic microorganisms, offering numerous advantages for efficient wastewater treatment.</p>
+                        <h3 class="h5 mb-3">Key Features</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Special design of surface, stronger bio-film growth capacity</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Large specific surface area, high voidage, the more periphyton biomass</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Unique design of structure and shape according to hydromechanics</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Adding hydrophilic groups and other trace elements</span>
+                            </div>
+                        </div>
+                    `
+                },
+                'aeration-diffusers': {
+                    title: 'Aeration & Diffuser Systems',
+                    content: `
+                        <p class="lead">Our comprehensive range of diffusers includes fine and coarse bubble systems, tube diffusers, and panel diffusers. Each system is engineered for maximum oxygen transfer efficiency and minimal energy consumption.</p>
+                        <div class="table-responsive mt-4">
+                            <table class="table table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Diffuser Type</th>
+                                        <th>Oxygen Efficiency</th>
+                                        <th>Air Flow Rate</th>
+                                        <th>Applications</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Fine Bubble Disc</strong></td>
+                                        <td>35-45%</td>
+                                        <td>2-4 m³/h</td>
+                                        <td>Municipal WWTP, Industrial</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Coarse Bubble</strong></td>
+                                        <td>20-25%</td>
+                                        <td>4-8 m³/h</td>
+                                        <td>Mixing, Equalization</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Tube Diffuser</strong></td>
+                                        <td>35-45%</td>
+                                        <td>3-6 m³/h</td>
+                                        <td>Long Tanks, Retractable</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Panel Diffuser</strong></td>
+                                        <td>40-50%</td>
+                                        <td>5-10 m³/h</td>
+                                        <td>High Capacity Systems</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    `
+                },
+                'bio-block': {
+                    title: 'BIO-BLOK Filter Media',
+                    content: `
+                        <p class="lead">BIO-BLOK filter media helps increasing the surface area in your system to improve the efficiency and reducing the footprint. BIO-BLOK® is used for most wastewater treatment applications, in aquaculture and for stormwater management.</p>
+                        <h3 class="h5 mb-3">Features & Benefits</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>High specific surface area</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>High void space</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Optimal conditions for biofilm growth</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Strong and durable construction</span>
+                            </div>
+                        </div>
+                    `
+                },
+                'bio-chip': {
+                    title: 'Bio Chip Technology',
+                    content: `
+                        <p class="lead">Small Boss MBBR biofilter media has excellent mechanical property, high impact strength, suitable density, good hydrophilic performance, long service life, good growing environment for Anaerbic and many other advantages.</p>
+                        <h3 class="h5 mb-3">Technical Specifications</h3>
+                        <div class="table-responsive mt-4">
+                            <table class="table table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Specification</th>
+                                        <th>Unit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Specific Surface Area</strong></td>
+                                        <td>500-800</td>
+                                        <td>m²/m³</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Void Ratio</strong></td>
+                                        <td>90-95</td>
+                                        <td>%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Density</strong></td>
+                                        <td>0.95-1.05</td>
+                                        <td>g/cm³</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Service Life</strong></td>
+                                        <td>15-20</td>
+                                        <td>years</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Temperature Range</strong></td>
+                                        <td>-40 to +80</td>
+                                        <td>°C</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    `
+                },
+                'lamella-settler': {
+                    title: 'Lamella Tube Settler Media',
+                    content: `
+                        <p class="lead">Tubular settlers and parallel plates improve the settling capacity of circular clarifiers and/or rectangular settling tanks by reducing the vertical distance that flocculated particles must settle before they coalesce to form larger particles.</p>
+                        <h3 class="h5 mb-3">Applications</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Circular clarifiers and rectangular settling tanks</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Industrial wastewater treatment</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Municipal water treatment</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Chemical and process industries</span>
+                            </div>
+                        </div>
+                    `
+                },
+                'coarse-bubble': {
+                    title: 'Coarse Bubble Diffusers',
+                    content: `
+                        <p class="lead">The Genoasis diffusers are crafted using the latest technology and are specifically designed for use in wastewater treatment plants. Each diffuser's projection is the result of extensive Research and Development, tailored to meet the unique needs of wastewater treatment facilities.</p>
+                        <h3 class="h5 mb-3">Key Features</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Can be installed to HDPE, PVC or stainless-steel pipes by PP Saddles</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Connections are 3/4" male</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Material of body part is PP (polypropylene) and supported with 30% GPR</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Standard material of diffuser membranes are EPDM</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Membrane hole diameter is 4 mm and distributed equally around the membrane</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Warrants between 20%-25% oxygen efficiency</span>
+                            </div>
+                        </div>
+                    `
+                },
+                'fine-bubble': {
+                    title: 'Fine Bubble Disc Diffuser',
+                    content: `
+                        <p class="lead">Disc diffusers have 3 parts as lower part, frame and membrane. Disc Diffusers can be installed to HDPE, PVC or stainless steel pipes by PP Saddles. Material of frame and lower part is PP (polypropylene) and supported with 30% GPR for UV rays and different chemical processes.</p>
+                        <h3 class="h5 mb-3">Key Features</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Connections are 3/4" or 1" male</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Diffusers are suitable for retractable systems</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Standard material of diffuser membranes are EPDM</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>When the air flow is stopped, the gaps on the membrane close themselves</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Warrants between 35%-45% oxygen efficiency</span>
+                            </div>
+                        </div>
+                    `
+                },
+                'tube-diffusers': {
+                    title: 'Tube Diffusers',
+                    content: `
+                        <p class="lead">Genoasis tube diffusers are best solution for long and narrow aeration tanks. Opportunity to choose different material, connection thread, and size makes Genoasis tube diffusers fit to any type of waste water.</p>
+                        <h3 class="h5 mb-3">Key Features</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Can be installed to stainless steel box profiles by stainless steel long nipples</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Can be installed to HDPE, PVC or Stainless Steel pipes by PP Saddles</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Connections are 3/4" or 1" female. Also male options are available</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Very suitable to be used in moving (retractable) systems</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Warrants between 35%-45% oxygen efficiency</span>
+                            </div>
+                        </div>
+                    `
+                },
+                'panel-diffuser': {
+                    title: 'Panel Diffuser',
+                    content: `
+                        <p class="lead">Genoasis Panel Diffusers operate with higher oxygen transfer efficiency, unique membrane diversity and strong body with different structure and higher air capacity than other diffusers.</p>
+                        <h3 class="h5 mb-3">Key Features</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Membranes have special hole design</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Shape supports high oxygen transfer efficiency</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Designed for aeration tank 60-65% density</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Target maximum SOTE and minimum pressure losses</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Made of first-class membranes with special formulization</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Integrated check valve feature prevents backflow</span>
+                            </div>
+                        </div>
+                    `
+                },
+                'dewatering-bags': {
+                    title: 'Dewatering Bags',
+                    content: `
+                        <p class="lead">Geobags are also known as dewatering bags, geotextile tubes, geocontainers, soil tubes, geosynthetic tubes or desludging bags.</p>
+                        <h3 class="h5 mb-3">Features & Benefits</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>High strength woven geotextile</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Length up to 100 meters; Circumference up to 36 meters</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Effectively drains out silt, sediment, sludge, and contaminated waste</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Reliable using in all weather conditions</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Reduces risks in operational safety</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Environmental friendly reduces carbon footprint</span>
+                            </div>
+                        </div>
+                    `
+                }
+            };
+
+            // Add click event listeners to product cards
+            productCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const productType = this.getAttribute('data-product');
+                    const product = productData[productType];
+                    
+                    if (product) {
+                        modalTitle.textContent = product.title;
+                        modalBody.innerHTML = product.content;
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            // Close modal functionality
+            function closeModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+
+            modalClose.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', closeModal);
+
+            // Close modal with ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    closeModal();
+                }
             });
         });
     </script>
