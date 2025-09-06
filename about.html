@@ -29,6 +29,41 @@
 		<!-- Add AOS CSS -->
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<style>
+			/* Simple Top Bar Styles */
+			.top-bar {
+				background: white;
+				font-size: 1rem;
+				border-bottom: 1px solid #e9ecef;
+				padding: 12px 0;
+			}
+
+			.top-bar a {
+				color: #495057;
+				transition: color 0.3s ease;
+				font-weight: 500;
+				font-size: 1.1rem;
+			}
+
+			.top-bar a:hover {
+				color: #23a1dc !important;
+			}
+
+			.top-bar i {
+				font-size: 1rem;
+				margin-right: 6px;
+			}
+
+			/* Mobile Responsive */
+			@media (max-width: 768px) {
+				.top-bar {
+					text-align: center;
+				}
+				
+				.d-flex {
+					justify-content: center !important;
+				}
+			}
+
 			/* Hero Section Styles */
 			.hero-section {
 				background-image: url('images/products-banner.jpg');
@@ -79,7 +114,7 @@
 			.about-card {
 				background: white;
 				border-radius: 20px;
-				padding: 50px;
+				padding: 30px;
 				box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 				position: relative;
 				overflow: hidden;
@@ -148,7 +183,7 @@
 			.modern-info-card {
 				background: white;
 				border-radius: 15px;
-				padding: 30px;
+				padding: 20px;
 				box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 				transition: all 0.4s ease;
 				height: 100%;
@@ -180,7 +215,7 @@
 			.card-header {
 				display: flex;
 				align-items: center;
-				margin-bottom: 25px;
+				margin-bottom: 15px;
 			}
 
 			.icon-wrapper {
@@ -280,7 +315,7 @@
 			.purpose-card {
 				background: white;
 				border-radius: 15px;
-				padding: 30px;
+				padding: 20px;
 				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 				transition: transform 0.3s ease, box-shadow 0.3s ease;
 				height: 100%;
@@ -354,20 +389,42 @@
 
 			/* Why Choose Us Section */
 			.why-choose-section {
-				background-color: #f8f9fa;
+				background-image: url('images/why-choose-us-img.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				position: relative;
+				overflow: hidden;
+				min-height: 500px;
+			}
+
+			.why-choose-section::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.4);
+				z-index: 1;
 			}
 
 			.why-choose-content {
-				background: white;
+				background: rgba(255, 255, 255, 0.98);
 				border-radius: 15px;
-				padding: 40px;
-				box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+				padding: 30px;
+				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+				position: relative;
+				z-index: 3;
+				backdrop-filter: blur(10px);
+				margin-top: 20px;
 			}
 
 			.feature-card {
 				background: #f8f9fa;
 				border-radius: 10px;
-				padding: 25px;
+				padding: 15px;
 				height: 100%;
 				transition: transform 0.3s ease, box-shadow 0.3s ease;
 			}
@@ -407,22 +464,14 @@
 				font-size: 0.95rem;
 			}
 
-			.why-choose-image {
-				text-align: center;
+			.why-choose-section .section-title {
+				color: white !important;
+				text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 			}
 
-			.image-container {
-				border-radius: 15px;
-				overflow: hidden;
-				box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-			}
-
-			.image-container img {
-				transition: transform 0.3s ease;
-			}
-
-			.image-container:hover img {
-				transform: scale(1.05);
+			.why-choose-section .section-subtitle {
+				color: rgba(255, 255, 255, 0.95) !important;
+				text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 			}
 
 			/* Responsive Design */
@@ -441,11 +490,11 @@
 				
 				.about-card,
 				.why-choose-content {
-					padding: 30px 20px;
+					padding: 20px 15px;
 				}
 				
 				.purpose-card {
-					padding: 25px 20px;
+					padding: 15px 10px;
 				}
 			}
 
@@ -500,27 +549,341 @@
 				}
 			}
 
+			/* Quality Policy Section Styles */
+			.quality-policy-section {
+				background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+			}
+
+			.quality-policy-card {
+				background: white;
+				border-radius: 20px;
+				padding: 30px;
+				box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.quality-intro {
+				text-align: center;
+				margin-bottom: 25px;
+				padding-bottom: 20px;
+				border-bottom: 2px solid #e9ecef;
+			}
+
+			.principle-card {
+				background: #f8f9fa;
+				border-radius: 15px;
+				padding: 20px;
+				height: 100%;
+				transition: all 0.3s ease;
+				border-left: 4px solid transparent;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.principle-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				height: 3px;
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				transform: scaleX(0);
+				transition: transform 0.3s ease;
+			}
+
+			.principle-card:hover::before {
+				transform: scaleX(1);
+			}
+
+			.principle-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+				border-left-color: #23a1dc;
+			}
+
+			.principle-header {
+				display: flex;
+				align-items: center;
+				margin-bottom: 20px;
+			}
+
+			.principle-icon {
+				width: 60px;
+				height: 60px;
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-right: 20px;
+				color: white;
+				font-size: 1.5rem;
+				flex-shrink: 0;
+				transition: transform 0.3s ease;
+			}
+
+			.principle-card:hover .principle-icon {
+				transform: scale(1.1);
+			}
+
+			.principle-header h4 {
+				font-size: 1.3rem;
+				font-weight: 700;
+				color: #333;
+				margin: 0;
+				transition: color 0.3s ease;
+			}
+
+			.principle-card:hover .principle-header h4 {
+				color: #23a1dc;
+			}
+
+			.principle-content p {
+				color: #666;
+				line-height: 1.6;
+				margin-bottom: 15px;
+				font-size: 1rem;
+			}
+
+			.principle-content ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+			.principle-content li {
+				padding: 8px 0;
+				color: #555;
+				position: relative;
+				padding-left: 25px;
+				font-size: 0.95rem;
+				line-height: 1.5;
+			}
+
+			.principle-content li:before {
+				content: "✓";
+				position: absolute;
+				left: 0;
+				color: #23a1dc;
+				font-weight: bold;
+				font-size: 1.1rem;
+			}
+
+			.quality-footer {
+				text-align: center;
+				margin-top: 40px;
+				padding-top: 30px;
+				border-top: 2px solid #e9ecef;
+			}
+
+			.quality-footer p {
+				color: #666;
+				font-style: italic;
+				font-size: 0.95rem;
+			}
+
+			/* Modern Navigation Styles */
+			.custom-navbar-nav .nav-link {
+				font-size: 1.1rem;
+				font-weight: 600;
+				padding: 12px 20px !important;
+				margin: 0 8px;
+				border-radius: 8px;
+				transition: all 0.3s ease;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.custom-navbar-nav .nav-link::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: -100%;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				transition: left 0.3s ease;
+				z-index: -1;
+			}
+
+			.custom-navbar-nav .nav-link:hover::before {
+				left: 0;
+			}
+
+			.custom-navbar-nav .nav-link:hover {
+				color: white !important;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(35, 161, 220, 0.3);
+			}
+
+			/* Home and Contact buttons specific hover - black text */
+			.custom-navbar-nav .nav-link[href="index.html"]:hover,
+			.custom-navbar-nav .nav-link[href="contact.html"]:hover {
+				color: #333 !important;
+				background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+			}
+
+			.custom-navbar-nav .nav-link.active {
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				color: white !important;
+				box-shadow: 0 4px 12px rgba(35, 161, 220, 0.3);
+			}
+
+			.custom-navbar-nav .nav-link.active::before {
+				display: none;
+			}
+
+			/* Dropdown Arrow Styling */
+			.dropdown-toggle::after {
+				transition: transform 0.3s ease;
+				font-size: 0.8rem;
+			}
+
+			.dropdown:hover .dropdown-toggle::after {
+				transform: rotate(180deg);
+			}
+
+			.dropdown.show .dropdown-toggle::after {
+				transform: rotate(180deg);
+			}
+
+			/* Dropdown Container */
+			.dropdown {
+				position: relative;
+			}
+
+			/* Dropdown Styling */
+			.dropdown-menu {
+				background: white;
+				border: none;
+				border-radius: 12px;
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+				padding: 8px 0;
+				margin-top: 8px;
+				min-width: 220px;
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(-10px);
+				transition: all 0.3s ease;
+				position: absolute;
+				z-index: 9999;
+			}
+
+			.dropdown-menu.show {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+
+			.dropdown-item {
+				padding: 12px 20px;
+				font-size: 1rem;
+				font-weight: 500;
+				color: #333;
+				transition: all 0.3s ease;
+				border-radius: 6px;
+				margin: 2px 8px;
+				text-decoration: none;
+			}
+
+			.dropdown-item * {
+				color: inherit;
+			}
+
+			.dropdown-item:hover {
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				color: white !important;
+				transform: translateX(5px);
+			}
+
+			.dropdown-item:focus {
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				color: white !important;
+			}
+
+			.dropdown-item:active {
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				color: white !important;
+			}
+
+			/* Override Bootstrap defaults */
+			.dropdown-menu .dropdown-item:hover,
+			.dropdown-menu .dropdown-item:focus,
+			.dropdown-menu .dropdown-item:active {
+				background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
+				color: white !important;
+			}
+
+			/* Products Link Hover Effect */
+			.dropdown-toggle:hover {
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				color: white !important;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(35, 161, 220, 0.3);
+			}
+
+			.dropdown-toggle:hover::before {
+				display: none;
+			}
+
+			/* Navbar Brand Styling */
+			.navbar-brand {
+				transition: transform 0.3s ease;
+			}
+
+			.navbar-brand:hover {
+				transform: scale(1.05);
+			}
+
+			/* Navbar Container */
+			.custom-navbar {
+				backdrop-filter: blur(10px);
+				box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+				position: relative;
+				z-index: 1000;
+			}
+
 			/* Mobile Menu Button Styles */
 			.navbar-toggler {
-				border-color: #333333;
+				border: 2px solid #23a1dc;
 				background-color: transparent;
-				padding: 0.5rem;
+				padding: 8px 12px;
 				margin-right: 15px;
+				border-radius: 8px;
+				transition: all 0.3s ease;
+			}
+
+			.navbar-toggler:hover {
+				background: linear-gradient(135deg, #23a1dc, #1e88c5);
+				transform: scale(1.05);
 			}
 			
 			.navbar-toggler-icon {
-				background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-				width: 1.5em;
-				height: 1.5em;
+				background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(35, 161, 220, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+				width: 1.8em;
+				height: 1.8em;
 			}
 
 			@media (max-width: 768px) {
+				.custom-navbar-nav .nav-link {
+					font-size: 1rem;
+					padding: 10px 16px !important;
+					margin: 4px 0;
+					text-align: center;
+				}
+
 				.navbar-toggler {
 					margin-right: 15px;
 				}
 				
 				.navbar-collapse {
 					padding: 1rem 0;
+					background: rgba(255, 255, 255, 0.95);
+					border-radius: 12px;
+					margin-top: 10px;
+					backdrop-filter: blur(10px);
 				}
 				
 				.custom-navbar-nav {
@@ -528,17 +891,51 @@
 				}
 				
 				.nav-item {
-					padding: 0.5rem 0;
+					padding: 0.25rem 0;
 				}
 				
 				.dropdown-menu {
 					border: none;
+					box-shadow: none;
+					background: rgba(248, 249, 250, 0.95);
 					padding-left: 1rem;
 					margin-top: 0;
+					border-radius: 8px;
+					opacity: 1;
+					visibility: visible;
+					transform: none;
+					position: static;
+				}
+
+				.dropdown-menu.show {
+					display: block;
 				}
 				
 				.dropdown-item {
-					padding: 0.5rem 0;
+					padding: 8px 16px;
+					font-size: 0.95rem;
+				}
+
+				.quality-policy-card {
+					padding: 20px 15px;
+				}
+
+				.principle-card {
+					padding: 15px;
+				}
+
+				.principle-header {
+					flex-direction: column;
+					text-align: center;
+				}
+
+				.principle-icon {
+					margin-right: 0;
+					margin-bottom: 15px;
+				}
+
+				.principle-header h4 {
+					font-size: 1.1rem;
 				}
 			}
 		</style>
@@ -551,10 +948,10 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="d-flex justify-content-end">
-							<a href="tel:+918925883227" class="me-3 text-decoration-none text-dark">
+							<a href="tel:+918925883227" class="me-3 text-decoration-none">
 								<i class="fas fa-phone"></i> +91 892 588 3227
 							</a>
-							<a href="mailto:info@genoasis.com" class="text-decoration-none text-dark">
+							<a href="mailto:info@genoasis.com" class="text-decoration-none">
 								<i class="fas fa-envelope"></i> info@genoasis.com
 							</a>
 						</div>
@@ -562,7 +959,7 @@
 				</div>
 			</div>
 		</div>
-	<!-- End Top Bar -->
+		<!-- End Top Bar -->
 	<body>
 
 		<!-- Start Header/Navigation -->
@@ -582,7 +979,7 @@
 						</li>
 						<li class="active"><a class="nav-link" href="about.html">About us</a></li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button">
+							<a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Products
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -594,9 +991,9 @@
 								<li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
 								<li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
 								<li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
-								                            <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
-                            <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
-                            <li><a class="dropdown-item" href="atmospheric-water-generators.html">Atmospheric Water Generators</a></li>
+								<li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
+								<li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
+								<li><a class="dropdown-item" href="atmospheric-water-generators.html">Atmospheric Water Generators</a></li>
 							</ul>
 						</li>
 						<li><a class="nav-link" href="contact.html">Contact us</a></li>
@@ -622,20 +1019,20 @@
 
 
 		<!-- Start Content Section -->
-		<section class="about-content-section py-5">
+		<section class="about-content-section py-4">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
 						<div class="about-card" data-aos="fade-up">
 							<div class="row">
 								<div class="col-12 text-center">
-									<h2 class="section-title mb-4">Innovative Solutions for a Sustainable Future</h2>
-									<p class="lead mb-5">We are Genoasis. Driven by innovation to transform industries through cutting-edge water treatment, industrial applications, and laboratory solutions. Our dedicated team of experts works tirelessly to deliver sustainable solutions that make a difference in how industries operate and how communities thrive.</p>
+									<h2 class="section-title mb-3">Innovative Solutions for a Sustainable Future</h2>
+									<p class="lead mb-4">We are Genoasis. Driven by innovation to transform industries through cutting-edge water treatment, industrial applications, and laboratory solutions. Our dedicated team of experts works tirelessly to deliver sustainable solutions that make a difference in how industries operate and how communities thrive.</p>
 								</div>
 							</div>
 
-							<div class="row g-4">
-								<div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+							<div class="row g-3">
+								<div class="col-lg-6 mb-3" data-aos="fade-up" data-aos-delay="100">
 									<div class="modern-info-card">
 										<div class="card-header">
 											<div class="icon-wrapper">
@@ -665,7 +1062,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+								<div class="col-lg-6 mb-3" data-aos="fade-up" data-aos-delay="200">
 									<div class="modern-info-card">
 										<div class="card-header">
 											<div class="icon-wrapper">
@@ -776,65 +1173,207 @@
 		<section class="why-choose-section py-5">
 			<div class="container">
 				<div class="row">
-					<div class="col-12 text-center mb-5">
+					<div class="col-12 text-center mb-5" style="position: relative; z-index: 2;">
 						<h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
-						<p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Choosing Genoasis means partnering with a company committed to excellence, innovation, and sustainability.</p>
+						<p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Choosing Genoasis means partnering with a leader in cutting-edge innovation, and sustainability</p>
 					</div>
 				</div>
 				
-				<div class="row align-items-center">
-					<div class="col-lg-6 mb-5">
-						<div class="why-choose-content" data-aos="fade-right">
+				<div class="row">
+					<div class="col-12">
+						<div class="why-choose-content" data-aos="fade-up">
 							<p class="lead mb-4">Our comprehensive range of high-quality products is designed to meet the stringent demands of water treatment, industrial applications, and laboratory environments, ensuring exceptional performance and reliability. We offer customized solutions tailored to your unique needs, backed by a dedicated team of experts ready to support you every step of the way. At Genoasis, we don't just provide products—we deliver solutions that empower your operations and contribute to a sustainable future.</p>
 
-							<div class="row g-4">
-								<div class="col-md-6 mb-4">
+							<div class="row g-3">
+								<div class="col-lg-3 col-md-6 mb-3">
 									<div class="feature-card">
 										<div class="feature-icon">
 											<img src="images/truck.svg" alt="High Quality" class="img-fluid">
 										</div>
 										<h4 class="feature-title">High-Quality Products</h4>
-										<p class="feature-text">We prioritize quality in every product, ensuring durability, reliability, and compliance with international standards. From water treatment chemicals to lab furnaces, our products are crafted to deliver exceptional performance.</p>
+										<p class="feature-text">We prioritize quality in every product, ensuring durability, reliability, and compliance with international standards.</p>
 									</div>
 								</div>
 
-								<div class="col-md-6 mb-4">
+								<div class="col-lg-3 col-md-6 mb-3">
 									<div class="feature-card">
 										<div class="feature-icon">
 											<img src="images/bag.svg" alt="Customized Solutions" class="img-fluid">
 										</div>
 										<h4 class="feature-title">Customized Solutions</h4>
-										<p class="feature-text">We understand that each client's needs are unique. Our team works closely with you to provide tailored solutions that align with your specific requirements, ensuring optimal results and maximum efficiency.</p>
+										<p class="feature-text">We understand that each client's needs are unique. Our team works closely with you to provide tailored solutions.</p>
 									</div>
 								</div>
 
-								<div class="col-md-6 mb-4">
+								<div class="col-lg-3 col-md-6 mb-3">
 									<div class="feature-card">
 										<div class="feature-icon">
 											<img src="images/support.svg" alt="Expert Support" class="img-fluid">
 										</div>
 										<h4 class="feature-title">Expert Support and Service</h4>
-										<p class="feature-text">Our knowledgeable team offers comprehensive support at every stage, from product selection to after-sales service. With Genoasis, you can count on responsive, expert assistance whenever you need it.</p>
+										<p class="feature-text">Our knowledgeable team offers comprehensive support at every stage, from product selection to after-sales service.</p>
 									</div>
 								</div>
 
-								<div class="col-md-6 mb-4">
+								<div class="col-lg-3 col-md-6 mb-3">
 									<div class="feature-card">
 										<div class="feature-icon">
 											<img src="images/return.svg" alt="Sustainability" class="img-fluid">
 										</div>
 										<h4 class="feature-title">Commitment to Sustainability</h4>
-										<p class="feature-text">We are dedicated to eco-friendly practices, providing sustainable products that minimize environmental impact. Our solutions are designed to support your goals while promoting a cleaner, healthier planet.</p>
+										<p class="feature-text">We are dedicated to eco-friendly practices, providing sustainable products that minimize environmental impact.</p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</section>
 
-					<div class="col-lg-6">
-						<div class="why-choose-image" data-aos="fade-left">
-							<div class="image-container">
-								<img src="images/why-choose-us-img.jpg" alt="Why Choose Genoasis" class="img-fluid rounded">
+		<!-- Quality Policy Section -->
+		<section id="quality-policy" class="quality-policy-section py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 text-center mb-5">
+						<h2 class="section-title" data-aos="fade-up">Our Quality Policy</h2>
+						<p class="section-subtitle" data-aos="fade-up" data-aos-delay="200">Committed to delivering excellence in every product and service we provide</p>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-12">
+						<div class="quality-policy-card" data-aos="fade-up">
+							<div class="quality-intro">
+								<p class="lead mb-4">At Genoasis, delivering superior water treatment solutions and exceptional consulting services to our customers is fundamental to our success. As a leading trading and consulting company, we are committed to exceeding customer expectations through expert guidance, quality products, and comprehensive support in water treatment and industrial applications.</p>
+							</div>
+
+							<div class="quality-principles">
+								<div class="row g-4">
+									<div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+										<div class="principle-card">
+											<div class="principle-header">
+												<div class="principle-icon">
+													<i class="fas fa-users"></i>
+												</div>
+												<h4>Customer-Centric Excellence</h4>
+											</div>
+											<div class="principle-content">
+												<p>We place our customers at the heart of every decision and action. We deliver high-quality water treatment chemicals, equipment, and services that consistently meet or exceed requirements by:</p>
+												<ul>
+													<li>Continuously identifying risks and opportunities that impact product and service conformity</li>
+													<li>Understanding customer needs and applicable regulatory requirements</li>
+													<li>Providing innovative solutions that ensure maximum customer satisfaction</li>
+													<li>Maintaining transparent communication throughout every project lifecycle</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+										<div class="principle-card">
+											<div class="principle-header">
+												<div class="principle-icon">
+													<i class="fas fa-handshake"></i>
+												</div>
+												<h4>Supply Chain & Trading Excellence</h4>
+											</div>
+											<div class="principle-content">
+												<p>We maintain world-class standards through our strategic partnerships and rigorous supplier selection processes. Our commitment includes:</p>
+												<ul>
+													<li>Partnering only with certified, high-quality manufacturers and suppliers</li>
+													<li>Ensuring seamless product flow from global suppliers to our customers</li>
+													<li>Implementing systematic quality checks and verification processes</li>
+													<li>Maintaining competitive pricing and reliable delivery timelines</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+										<div class="principle-card">
+											<div class="principle-header">
+												<div class="principle-icon">
+													<i class="fas fa-user-tie"></i>
+												</div>
+												<h4>Expert Consulting & Advisory Services</h4>
+											</div>
+											<div class="principle-content">
+												<p>Our consulting expertise drives value for clients through specialized knowledge and industry insights. We achieve this by:</p>
+												<ul>
+													<li>Maintaining deep technical expertise in water treatment and industrial applications</li>
+													<li>Providing tailored solutions based on comprehensive needs assessment</li>
+													<li>Offering ongoing technical support and project guidance</li>
+													<li>Staying current with industry trends and regulatory requirements</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+										<div class="principle-card">
+											<div class="principle-header">
+												<div class="principle-icon">
+													<i class="fas fa-chart-line"></i>
+												</div>
+												<h4>Performance & Continuous Improvement</h4>
+											</div>
+											<div class="principle-content">
+												<p>We are dedicated to advancing our trading operations and consulting services through:</p>
+												<ul>
+													<li>Systematic evaluation of supplier performance and product quality</li>
+													<li>Regular client feedback collection and service enhancement</li>
+													<li>Continuous learning from market trends and client requirements</li>
+													<li>Embracing both successes and challenges as opportunities for growth</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+										<div class="principle-card">
+											<div class="principle-header">
+												<div class="principle-icon">
+													<i class="fas fa-leaf"></i>
+												</div>
+												<h4>Environmental Responsibility</h4>
+											</div>
+											<div class="principle-content">
+												<p>Recognizing our role in environmental stewardship, we are committed to:</p>
+												<ul>
+													<li>Promoting eco-friendly products and sustainable water treatment solutions</li>
+													<li>Advising clients on environmentally responsible practices and compliance</li>
+													<li>Partnering with suppliers who share our environmental values</li>
+													<li>Supporting green initiatives and sustainable business practices</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+										<div class="principle-card">
+											<div class="principle-header">
+												<div class="principle-icon">
+													<i class="fas fa-award"></i>
+												</div>
+												<h4>Our Quality Promise</h4>
+											</div>
+											<div class="principle-content">
+												<p>By implementing this comprehensive quality management model, Genoasis will:</p>
+												<ul>
+													<li>Strengthen our position as a trusted trading and consulting partner</li>
+													<li>Continuously enhance customer satisfaction through expert guidance</li>
+													<li>Achieve recognition as a leading supplier of quality water treatment solutions</li>
+													<li>Contribute to sustainable water management through informed consulting</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="quality-footer">
+								<p class="text-center mb-0"><em>This policy is reviewed annually and approved by the Genoasis management team, serving as the foundation for our trading and consulting operations.</em></p>
 							</div>
 						</div>
 					</div>
@@ -868,6 +1407,7 @@
 									<li><a href="about.html">About us</a></li>
 									<li><a href="Products.html">Products</a></li>
 									<li><a href="contact.html">Contact us</a></li>
+									<li><a href="#quality-policy">Quality Policy</a></li>
 								</ul>
 							</div>
 
@@ -914,14 +1454,44 @@
 		</script>
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
-				// Get the Products dropdown link
+				// Get the Products dropdown link and menu
 				const productsLink = document.querySelector('#navbarDropdown');
+				const dropdownMenu = document.querySelector('.dropdown-menu');
+				const dropdown = document.querySelector('.dropdown');
 				
-				// Add click event listener
+				// Handle click on Products link
 				productsLink.addEventListener('click', function(e) {
-					// Navigate to Products.html
-					window.location.href = 'Products.html';
+					// If clicking on the arrow or if dropdown is already open, toggle dropdown
+					if (e.target.classList.contains('dropdown-arrow') || dropdown.classList.contains('show')) {
+						e.preventDefault();
+						dropdown.classList.toggle('show');
+						dropdownMenu.classList.toggle('show');
+					} else {
+						// If clicking on the text part, navigate to Products page
+						window.location.href = 'Products.html';
+					}
 				});
+				
+				// Close dropdown when clicking outside
+				document.addEventListener('click', function(e) {
+					if (!dropdown.contains(e.target)) {
+						dropdown.classList.remove('show');
+						dropdownMenu.classList.remove('show');
+					}
+				});
+				
+				// Handle hover for desktop
+				if (window.innerWidth > 768) {
+					dropdown.addEventListener('mouseenter', function() {
+						dropdown.classList.add('show');
+						dropdownMenu.classList.add('show');
+					});
+					
+					dropdown.addEventListener('mouseleave', function() {
+						dropdown.classList.remove('show');
+						dropdownMenu.classList.remove('show');
+					});
+				}
 			});
 		</script>
 	</body>

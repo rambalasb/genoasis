@@ -99,8 +99,12 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); 
             border: 1px solid #e9ecef; 
             margin-bottom: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
+            transition: all 0.3s ease;
+            height: 200px;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
         
         .chemical-card:hover {
@@ -110,10 +114,39 @@
         
         .chemical-card h3 {
             color: #007bff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.3;
+            flex-shrink: 0;
+        }
+        
+        .chemical-card .card-summary {
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 10px;
+            flex-grow: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+        
+        .chemical-card .card-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .chemical-card.expanded .card-details {
+            max-height: 1000px;
+        }
+        
+        .chemical-card.expanded {
+            height: auto;
+            min-height: 200px;
         }
         
         .chemical-details {
@@ -145,6 +178,20 @@
             font-size: 0.8rem;
             line-height: 1.4;
             margin-bottom: 8px;
+        }
+        
+        .expand-indicator {
+            text-align: center;
+            color: #007bff;
+            font-size: 0.8rem;
+            margin-top: auto;
+            padding-top: 5px;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .chemical-card.expanded .expand-indicator {
+            transform: rotate(180deg);
         }
 
         /* Image Sections */
@@ -276,10 +323,15 @@
             .chemical-card { 
                 padding: 12px; 
                 margin-bottom: 10px;
+                height: 180px;
             }
             .chemical-card h3 {
-                font-size: 1rem;
-                margin-bottom: 8px;
+                font-size: 0.9rem;
+                margin-bottom: 6px;
+            }
+            .chemical-card .card-summary {
+                font-size: 0.75rem;
+                -webkit-line-clamp: 3;
             }
             .chemical-card p, .chemical-card li {
                 font-size: 0.75rem;
@@ -290,6 +342,13 @@
             }
             .chemical-details p {
                 font-size: 0.7rem;
+            }
+            .expand-indicator {
+                font-size: 0.7rem;
+            }
+            .chemical-card.expanded {
+                height: auto;
+                min-height: 180px;
             }
         }
 
@@ -615,98 +674,116 @@
                     
                                          <div class="row g-2">
                          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>RO Antiscalants</h3>
-                                <p>High-performance antiscalants designed to prevent scale formation in reverse osmosis systems, ensuring optimal membrane performance and extending system life.</p>
-                                <ul>
-                                    <li>Prevents calcium carbonate, calcium sulfate, and barium sulfate scaling</li>
-                                    <li>Compatible with all major RO membrane types</li>
-                                    <li>Reduces cleaning frequency and maintenance costs</li>
-                                    <li>Improves system recovery rates and water production</li>
-                                    <li>Long-lasting protection against scale formation</li>
-                                    <li>Effective in high-recovery RO systems</li>
-                                    <li>Compatible with various feedwater chemistries</li>
-                                </ul>
+                                <p class="card-summary">High-performance antiscalants designed to prevent scale formation in reverse osmosis systems, ensuring optimal membrane performance and extending system life.</p>
+                                <div class="card-details">
+                                    <ul>
+                                        <li>Prevents calcium carbonate, calcium sulfate, and barium sulfate scaling</li>
+                                        <li>Compatible with all major RO membrane types</li>
+                                        <li>Reduces cleaning frequency and maintenance costs</li>
+                                        <li>Improves system recovery rates and water production</li>
+                                        <li>Long-lasting protection against scale formation</li>
+                                        <li>Effective in high-recovery RO systems</li>
+                                        <li>Compatible with various feedwater chemistries</li>
+                                    </ul>
+                                </div>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
                         
                                                  <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>RO Cleaners</h3>
-                                <p>Specialized cleaning solutions for reverse osmosis membranes, effectively removing fouling, scaling, and organic deposits to restore optimal performance.</p>
-                                <ul>
-                                    <li>High and low pH cleaning formulations</li>
-                                    <li>Effective against organic, inorganic, and biological fouling</li>
-                                    <li>Safe for all membrane types and materials</li>
-                                    <li>Restores membrane flux and rejection rates</li>
-                                    <li>Extends membrane life and reduces replacement costs</li>
-                                    <li>Removes iron, manganese, and silica deposits</li>
-                                    <li>Compatible with automated cleaning systems</li>
-                                </ul>
+                                <p class="card-summary">Specialized cleaning solutions for reverse osmosis membranes, effectively removing fouling, scaling, and organic deposits to restore optimal performance.</p>
+                                <div class="card-details">
+                                    <ul>
+                                        <li>High and low pH cleaning formulations</li>
+                                        <li>Effective against organic, inorganic, and biological fouling</li>
+                                        <li>Safe for all membrane types and materials</li>
+                                        <li>Restores membrane flux and rejection rates</li>
+                                        <li>Extends membrane life and reduces replacement costs</li>
+                                        <li>Removes iron, manganese, and silica deposits</li>
+                                        <li>Compatible with automated cleaning systems</li>
+                                    </ul>
+                                </div>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
                         
                                                  <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>Cleaners for MF/UF Applications</h3>
-                                <p>Specially formulated for microfiltration and ultrafiltration, these cleaners are designed to remove common fouling such as organic fouling, metal fouling, and particulate fouling in a cost-effective manner.</p>
-                                <ul>
-                                    <li>Specially formulated for microfiltration and ultrafiltration</li>
-                                    <li>Removes organic, metal, and particulate fouling</li>
-                                    <li>Cost-effective cleaning solutions</li>
-                                    <li>Compatible with MF/UF membrane materials</li>
-                                    <li>Restores optimal membrane performance</li>
-                                    <li>Effective against biofouling and scaling</li>
-                                    <li>Maintains membrane integrity and flux rates</li>
-                                </ul>
+                                <p class="card-summary">Specially formulated for microfiltration and ultrafiltration, these cleaners are designed to remove common fouling such as organic fouling, metal fouling, and particulate fouling in a cost-effective manner.</p>
+                                <div class="card-details">
+                                    <ul>
+                                        <li>Specially formulated for microfiltration and ultrafiltration</li>
+                                        <li>Removes organic, metal, and particulate fouling</li>
+                                        <li>Cost-effective cleaning solutions</li>
+                                        <li>Compatible with MF/UF membrane materials</li>
+                                        <li>Restores optimal membrane performance</li>
+                                        <li>Effective against biofouling and scaling</li>
+                                        <li>Maintains membrane integrity and flux rates</li>
+                                    </ul>
+                                </div>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
                         
                                                  <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>Chlorine Scavengers</h3>
-                                <p>Chlorine in feedwater can cause irreversible damage to membranes, leading to premature failure. Our chlorine scavengers help protect membranes, extending their lifespan and reducing replacement costs.</p>
-                                <ul>
-                                    <li>Prevents irreversible membrane damage from chlorine</li>
-                                    <li>Extends membrane lifespan significantly</li>
-                                    <li>Reduces replacement costs and downtime</li>
-                                    <li>Compatible with all membrane types</li>
-                                    <li>Essential for feedwater pretreatment</li>
-                                    <li>Neutralizes free chlorine and chloramines</li>
-                                    <li>Maintains optimal membrane performance</li>
-                                </ul>
+                                <p class="card-summary">Chlorine in feedwater can cause irreversible damage to membranes, leading to premature failure. Our chlorine scavengers help protect membranes, extending their lifespan and reducing replacement costs.</p>
+                                <div class="card-details">
+                                    <ul>
+                                        <li>Prevents irreversible membrane damage from chlorine</li>
+                                        <li>Extends membrane lifespan significantly</li>
+                                        <li>Reduces replacement costs and downtime</li>
+                                        <li>Compatible with all membrane types</li>
+                                        <li>Essential for feedwater pretreatment</li>
+                                        <li>Neutralizes free chlorine and chloramines</li>
+                                        <li>Maintains optimal membrane performance</li>
+                                    </ul>
+                                </div>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="500">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>CATIONIC POLYACRYLAMIDE (PAM)</h3>
-                                <p>Cationic PAM is a linear organic polymer, copolymerized with cationic monomers and acrylamide, offering excellent water solubility and used primarily as a flocculant in solid-liquid separation processes.</p>
-                                <ul>
-                                    <li>Linear organic polymer with excellent water solubility</li>
-                                    <li>Used as flocculant in solid-liquid separation processes</li>
-                                    <li>Effective in sewage treatment and paper manufacturing</li>
-                                    <li>Dry strength agent and retention aid in paper industry</li>
-                                    <li>Oil field applications for wastewater treatment</li>
-                                    <li>Anti-clay swelling and acidification applications</li>
-                                    <li>Reliable and efficient flocculation with minimal dosage</li>
-                                </ul>
+                                <p class="card-summary">Cationic PAM is a linear organic polymer, copolymerized with cationic monomers and acrylamide, offering excellent water solubility and used primarily as a flocculant in solid-liquid separation processes.</p>
+                                <div class="card-details">
+                                    <ul>
+                                        <li>Linear organic polymer with excellent water solubility</li>
+                                        <li>Used as flocculant in solid-liquid separation processes</li>
+                                        <li>Effective in sewage treatment and paper manufacturing</li>
+                                        <li>Dry strength agent and retention aid in paper industry</li>
+                                        <li>Oil field applications for wastewater treatment</li>
+                                        <li>Anti-clay swelling and acidification applications</li>
+                                        <li>Reliable and efficient flocculation with minimal dosage</li>
+                                    </ul>
+                                </div>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="600">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>ANIONIC POLYACRYLAMIDE</h3>
-                                <p>Soluble in water, exhibiting high polymer electrolyte characteristics in neutral and alkaline mediums, widely used in drilling mud additives, mining, coal washing, paper manufacturing, and wastewater treatment.</p>
-                                <ul>
-                                    <li>High polymer electrolyte characteristics in neutral/alkaline mediums</li>
-                                    <li>Used in drilling mud additives and mining applications</li>
-                                    <li>Effective in coal washing and paper manufacturing</li>
-                                    <li>Enhances water treatment and liquid clarification</li>
-                                    <li>Reduces energy costs and improves process efficiency</li>
-                                    <li>Improves paper quality and manufacturing processes</li>
-                                    <li>Provides reliable and consistent performance for diverse industrial applications</li>
-                                </ul>
+                                <p class="card-summary">Soluble in water, exhibiting high polymer electrolyte characteristics in neutral and alkaline mediums, widely used in drilling mud additives, mining, coal washing, paper manufacturing, and wastewater treatment.</p>
+                                <div class="card-details">
+                                    <ul>
+                                        <li>High polymer electrolyte characteristics in neutral/alkaline mediums</li>
+                                        <li>Used in drilling mud additives and mining applications</li>
+                                        <li>Effective in coal washing and paper manufacturing</li>
+                                        <li>Enhances water treatment and liquid clarification</li>
+                                        <li>Reduces energy costs and improves process efficiency</li>
+                                        <li>Improves paper quality and manufacturing processes</li>
+                                        <li>Provides reliable and consistent performance for diverse industrial applications</li>
+                                    </ul>
+                                </div>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
                     </div>
@@ -724,333 +801,405 @@
                     
                                          <div class="row g-2">
                          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="100">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>ALUMINIUM SULPHATE</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> Al₂(SO₄)₃</p>
-                                    <p><strong>CAS Number:</strong> CID 24850</p>
-                                    <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                <p class="card-summary">Premium-quality chemical compound with versatile applications in water treatment, paper manufacturing, and textile industries.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> Al₂(SO₄)₃</p>
+                                        <p><strong>CAS Number:</strong> CID 24850</p>
+                                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                    </div>
+                                    <ul>
+                                        <li>Premium-quality chemical compound</li>
+                                        <li>Versatile applications in water treatment, paper manufacturing, and textile industries</li>
+                                        <li>Highly effective water treatment agent</li>
+                                        <li>Enhances paper strength and improves ink absorption</li>
+                                        <li>Delivers reliable and consistent results</li>
+                                    </ul>
+                                    <p><strong>Applications:</strong></p>
+                                    <ol>
+                                        <li>Water treatment</li>
+                                        <li>Paper manufacturing</li>
+                                        <li>Textile processing</li>
+                                        <li>pH regulation</li>
+                                        <li>Dyeing and printing</li>
+                                    </ol>
                                 </div>
-                                <ul>
-                                    <li>Premium-quality chemical compound</li>
-                                    <li>Versatile applications in water treatment, paper manufacturing, and textile industries</li>
-                                    <li>Highly effective water treatment agent</li>
-                                    <li>Enhances paper strength and improves ink absorption</li>
-                                    <li>Delivers reliable and consistent results</li>
-                                </ul>
-                                <p><strong>Applications:</strong></p>
-                                <ol>
-                                    <li>Water treatment</li>
-                                    <li>Paper manufacturing</li>
-                                    <li>Textile processing</li>
-                                    <li>pH regulation</li>
-                                    <li>Dyeing and printing</li>
-                                </ol>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                                                  <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>CALCIUM HYPOCHLORITE</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> Ca(ClO)₂</p>
-                                    <p><strong>CAS Number:</strong> 7778-54-3</p>
-                                    <p><strong>Packaging:</strong> 45 KG DRUMS</p>
+                                <p class="card-summary">High-quality compound used as a powerful disinfectant and sanitizer, effective in water treatment, swimming pool maintenance, and cleaning applications.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> Ca(ClO)₂</p>
+                                        <p><strong>CAS Number:</strong> 7778-54-3</p>
+                                        <p><strong>Packaging:</strong> 45 KG DRUMS</p>
+                                    </div>
+                                    <ul>
+                                        <li>High-quality compound, used as a powerful disinfectant and sanitizer</li>
+                                        <li>Effective in water treatment, swimming pool maintenance, and cleaning applications</li>
+                                        <li>Provides efficient chlorination and oxidation properties</li>
+                                        <li>Consistent and reliable results for maintaining hygiene and sanitation</li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li>High-quality compound, used as a powerful disinfectant and sanitizer</li>
-                                    <li>Effective in water treatment, swimming pool maintenance, and cleaning applications</li>
-                                    <li>Provides efficient chlorination and oxidation properties</li>
-                                    <li>Consistent and reliable results for maintaining hygiene and sanitation</li>
-                                </ul>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>CHLORINE TABLET</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> C₃Cl₃N₃O₃</p>
-                                    <p><strong>CAS Number:</strong> 87-90-1</p>
-                                    <p><strong>Packaging:</strong> 50 KG DRUMS</p>
+                                <p class="card-summary">High-quality tablet form of chlorine compound, widely used in water disinfection and purification, highly effective in eliminating bacteria, viruses, and other harmful pathogens.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> C₃Cl₃N₃O₃</p>
+                                        <p><strong>CAS Number:</strong> 87-90-1</p>
+                                        <p><strong>Packaging:</strong> 50 KG DRUMS</p>
+                                    </div>
+                                    <ul>
+                                        <li>High-quality tablet form of chlorine compound</li>
+                                        <li>Widely used in water disinfection and purification</li>
+                                        <li>Highly effective in eliminating bacteria, viruses, and other harmful pathogens</li>
+                                        <li>Ideal for swimming pools, water tanks, and sanitation systems</li>
+                                        <li>Consistent and reliable performance for maintaining clean and safe water</li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li>High-quality tablet form of chlorine compound</li>
-                                    <li>Widely used in water disinfection and purification</li>
-                                    <li>Highly effective in eliminating bacteria, viruses, and other harmful pathogens</li>
-                                    <li>Ideal for swimming pools, water tanks, and sanitation systems</li>
-                                    <li>Consistent and reliable performance for maintaining clean and safe water</li>
-                                </ul>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>CITRIC ACID ANHYDROUS</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> C₆H₈O₇</p>
-                                    <p><strong>CAS Number:</strong> 77-92-9</p>
-                                    <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                <p class="card-summary">High-quality organic acid compound with versatile applications across food, beverages, and personal care industries, used as an acidifier, flavor enhancer, and preservative.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> C₆H₈O₇</p>
+                                        <p><strong>CAS Number:</strong> 77-92-9</p>
+                                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                    </div>
+                                    <ul>
+                                        <li>High-quality organic acid compound</li>
+                                        <li>Versatile applications across food, beverages, and personal care industries</li>
+                                        <li>Used as an acidifier, flavor enhancer, and preservative</li>
+                                        <li>Provides tartness, freshness, and effective pH adjustment in formulations</li>
+                                        <li>Reliable and consistent results for achieving desired product characteristics</li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li>High-quality organic acid compound</li>
-                                    <li>Versatile applications across food, beverages, and personal care industries</li>
-                                    <li>Used as an acidifier, flavor enhancer, and preservative</li>
-                                    <li>Provides tartness, freshness, and effective pH adjustment in formulations</li>
-                                    <li>Reliable and consistent results for achieving desired product characteristics</li>
-                                </ul>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="500">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>DBNPA (DIBROMO-3-NITRILOPROPIONAMIDE)</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> C₃H₂Br₂N₂O</p>
-                                    <p><strong>CAS Number:</strong> 10222-01-2</p>
-                                    <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                <p class="card-summary">Premium-quality biocide and preservative with versatile applications in water treatment, paints, and personal care products, effective for controlling microbial growth.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> C₃H₂Br₂N₂O</p>
+                                        <p><strong>CAS Number:</strong> 10222-01-2</p>
+                                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                    </div>
+                                    <ul>
+                                        <li>Premium-quality biocide and preservative</li>
+                                        <li>Versatile applications in water treatment, paints, and personal care products</li>
+                                        <li>Effective for controlling microbial growth</li>
+                                        <li>Used as a disinfectant and antimicrobial agent</li>
+                                        <li>Provides reliable and consistent microbial control</li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li>Premium-quality biocide and preservative</li>
-                                    <li>Versatile applications in water treatment, paints, and personal care products</li>
-                                    <li>Effective for controlling microbial growth</li>
-                                    <li>Used as a disinfectant and antimicrobial agent</li>
-                                    <li>Provides reliable and consistent microbial control</li>
-                                </ul>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="600">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>FERRIC CHLORIDE</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> FeCl₃·H₂O</p>
-                                    <p><strong>CAS Number:</strong> 231-729-4</p>
-                                    <p><strong>Packaging:</strong> 300 KG DRUMS</p>
+                                <p class="card-summary">High-quality inorganic compound suitable for a wide range of applications in water treatment, electronics, and metal finishing, used as a coagulant, etchant, and flocculant.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> FeCl₃·H₂O</p>
+                                        <p><strong>CAS Number:</strong> 231-729-4</p>
+                                        <p><strong>Packaging:</strong> 300 KG DRUMS</p>
+                                    </div>
+                                    <ul>
+                                        <li>High-quality inorganic compound</li>
+                                        <li>Suitable for a wide range of applications in water treatment, electronics, and metal finishing</li>
+                                        <li>Used as a coagulant, etchant, and flocculant</li>
+                                        <li>Highly effective in removing impurities and contaminants</li>
+                                        <li>Reliable and consistent results for water purification and metal treatment</li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li>High-quality inorganic compound</li>
-                                    <li>Suitable for a wide range of applications in water treatment, electronics, and metal finishing</li>
-                                    <li>Used as a coagulant, etchant, and flocculant</li>
-                                    <li>Highly effective in removing impurities and contaminants</li>
-                                    <li>Reliable and consistent results for water purification and metal treatment</li>
-                                </ul>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="700">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>HYDRAZINE HYDRATE</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> N₂H₅OH</p>
-                                    <p><strong>CAS Number:</strong> 7803-57-8</p>
-                                    <p><strong>Packaging:</strong> 200 KG DRUMS</p>
+                                <p class="card-summary">High-quality inorganic compound with versatile applications in industries such as chemicals, pharmaceuticals, and water treatment, used as a reducing agent and oxygen scavenger.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> N₂H₅OH</p>
+                                        <p><strong>CAS Number:</strong> 7803-57-8</p>
+                                        <p><strong>Packaging:</strong> 200 KG DRUMS</p>
+                                    </div>
+                                    <ul>
+                                        <li>High-quality inorganic compound</li>
+                                        <li>Versatile applications in industries such as chemicals, pharmaceuticals, and water treatment</li>
+                                        <li>Used as a reducing agent, oxygen scavenger, and chemical intermediate</li>
+                                        <li>Highly effective in oxygen removal and stabilization processes</li>
+                                        <li>Provides consistent and reliable results for chemical processes</li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li>High-quality inorganic compound</li>
-                                    <li>Versatile applications in industries such as chemicals, pharmaceuticals, and water treatment</li>
-                                    <li>Used as a reducing agent, oxygen scavenger, and chemical intermediate</li>
-                                    <li>Highly effective in oxygen removal and stabilization processes</li>
-                                    <li>Provides consistent and reliable results for chemical processes</li>
-                                </ul>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="800">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>POLY ALUMINIUM CHLORIDE (PAC)</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> Al₂Cl(OH)₅</p>
-                                    <p><strong>CAS Number:</strong> 1327-41-9</p>
-                                    <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                <p class="card-summary">Premium-quality inorganic compound, commonly known as PAC, with versatile applications in water treatment, paper manufacturing, and wastewater management.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> Al₂Cl(OH)₅</p>
+                                        <p><strong>CAS Number:</strong> 1327-41-9</p>
+                                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                    </div>
+                                    <ul>
+                                        <li>Premium-quality inorganic compound, commonly known as PAC</li>
+                                        <li>Versatile applications in water treatment, paper manufacturing, and wastewater management</li>
+                                        <li>Used as a coagulant, flocculant, and clarifying agent</li>
+                                        <li>Highly effective in water purification and solid-liquid separation</li>
+                                        <li>Reliable and consistent performance for effective treatment processes</li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li>Premium-quality inorganic compound, commonly known as PAC</li>
-                                    <li>Versatile applications in water treatment, paper manufacturing, and wastewater management</li>
-                                    <li>Used as a coagulant, flocculant, and clarifying agent</li>
-                                    <li>Highly effective in water purification and solid-liquid separation</li>
-                                    <li>Reliable and consistent performance for effective treatment processes</li>
-                                </ul>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="900">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>SODA ASH LIGHT – Sodium Carbonate Light</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> Na₂CO₃</p>
-                                    <p><strong>CAS Number:</strong> 497-19-8</p>
-                                    <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                <p class="card-summary">Premium-quality inorganic compound, also known as light sodium carbonate, suitable for various industries such as glass manufacturing, water treatment, and chemicals.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> Na₂CO₃</p>
+                                        <p><strong>CAS Number:</strong> 497-19-8</p>
+                                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                    </div>
+                                    <ul>
+                                        <li>Premium-quality inorganic compound, also known as light sodium carbonate</li>
+                                        <li>Suitable for various industries such as glass manufacturing, water treatment, and chemicals</li>
+                                        <li>Used as a pH regulator, flux, and buffering agent</li>
+                                        <li>Effective for chemical reactions and alkalinity control</li>
+                                        <li>Reliable and consistent results across industrial applications</li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li>Premium-quality inorganic compound, also known as light sodium carbonate</li>
-                                    <li>Suitable for various industries such as glass manufacturing, water treatment, and chemicals</li>
-                                    <li>Used as a pH regulator, flux, and buffering agent</li>
-                                    <li>Effective for chemical reactions and alkalinity control</li>
-                                    <li>Reliable and consistent results across industrial applications</li>
-                                </ul>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="1000">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>SODIUM BICARBONATE</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> NaHCO₃</p>
-                                    <p><strong>CAS Number:</strong> 144-55-8</p>
-                                    <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                <p class="card-summary">High-quality inorganic compound, commonly known as baking soda, used across various industries including food, pharmaceuticals, and personal care.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> NaHCO₃</p>
+                                        <p><strong>CAS Number:</strong> 144-55-8</p>
+                                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                    </div>
+                                    <ul>
+                                        <li>High-quality inorganic compound, commonly known as baking soda</li>
+                                        <li>Used across various industries including food, pharmaceuticals, and personal care</li>
+                                        <li>Effective as a leavening agent, pH regulator, and cleaning agent</li>
+                                        <li>Provides superior buffering and odor-neutralizing properties</li>
+                                        <li>Delivers consistent and reliable results for various formulations</li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li>High-quality inorganic compound, commonly known as baking soda</li>
-                                    <li>Used across various industries including food, pharmaceuticals, and personal care</li>
-                                    <li>Effective as a leavening agent, pH regulator, and cleaning agent</li>
-                                    <li>Provides superior buffering and odor-neutralizing properties</li>
-                                    <li>Delivers consistent and reliable results for various formulations</li>
-                                </ul>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="1100">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>SODIUM BISULPHITE</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> NaHSO₃</p>
-                                    <p><strong>CAS Number:</strong> 7631-90-5</p>
-                                    <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                <p class="card-summary">Premium-quality inorganic compound widely used in industries such as food processing, water treatment, and photography, functions as a preservative, reducing agent, and antioxidant.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> NaHSO₃</p>
+                                        <p><strong>CAS Number:</strong> 7631-90-5</p>
+                                        <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                    </div>
+                                    <ul>
+                                        <li>Premium-quality inorganic compound</li>
+                                        <li>Widely used in industries such as food processing, water treatment, and photography</li>
+                                        <li>Functions as a preservative, reducing agent, and antioxidant</li>
+                                        <li>Effective for antimicrobial control and oxidation prevention</li>
+                                        <li>Consistent and reliable results for product preservation and quality</li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li>Premium-quality inorganic compound</li>
-                                    <li>Widely used in industries such as food processing, water treatment, and photography</li>
-                                    <li>Functions as a preservative, reducing agent, and antioxidant</li>
-                                    <li>Effective for antimicrobial control and oxidation prevention</li>
-                                    <li>Consistent and reliable results for product preservation and quality</li>
-                                </ul>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                         <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="1200">
-                            <div class="chemical-card">
+                            <div class="chemical-card" onclick="toggleCard(this)">
                                 <h3>SODIUM METABISULPHITE</h3>
-                                <div class="chemical-details">
-                                    <p><strong>Formula:</strong> Na₂S₂O₅</p>
-                                    <p><strong>CAS Number:</strong> 7681-57-4</p>
-                                    <p><strong>Packaging:</strong> 25 KG BAGS (Powder) & 1 TON IBC (Liquid)</p>
+                                <p class="card-summary">High-quality inorganic compound commonly used in food processing, photography, and water treatment industries, functions as a preservative, antioxidant, and sterilizing agent.</p>
+                                <div class="card-details">
+                                    <div class="chemical-details">
+                                        <p><strong>Formula:</strong> Na₂S₂O₅</p>
+                                        <p><strong>CAS Number:</strong> 7681-57-4</p>
+                                        <p><strong>Packaging:</strong> 25 KG BAGS (Powder) & 1 TON IBC (Liquid)</p>
+                                    </div>
+                                    <ul>
+                                        <li>High-quality inorganic compound</li>
+                                        <li>Commonly used in food processing, photography, and water treatment industries</li>
+                                        <li>Functions as a preservative, antioxidant, and sterilizing agent</li>
+                                        <li>Effective for antimicrobial control and oxidation prevention</li>
+                                        <li>Reliable and consistent results for product preservation</li>
+                                    </ul>
                                 </div>
-                                <ul>
-                                    <li>High-quality inorganic compound</li>
-                                    <li>Commonly used in food processing, photography, and water treatment industries</li>
-                                    <li>Functions as a preservative, antioxidant, and sterilizing agent</li>
-                                    <li>Effective for antimicrobial control and oxidation prevention</li>
-                                    <li>Reliable and consistent results for product preservation</li>
-                                </ul>
+                                <div class="expand-indicator">▼</div>
                             </div>
                         </div>
 
                                                  <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="1300">
-                             <div class="chemical-card">
+                             <div class="chemical-card" onclick="toggleCard(this)">
                                  <h3>SODIUM TRIPOLYPHOSPHATE – STPP</h3>
-                                 <div class="chemical-details">
-                                     <p><strong>Formula:</strong> Na₅P₃O₁₀</p>
-                                     <p><strong>CAS Number:</strong> 7758-29-4</p>
-                                     <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                 <p class="card-summary">High-quality inorganic compound widely used in detergent manufacturing, water treatment, and ceramics, serves as a builder, sequestrant, and emulsifier.</p>
+                                 <div class="card-details">
+                                     <div class="chemical-details">
+                                         <p><strong>Formula:</strong> Na₅P₃O₁₀</p>
+                                         <p><strong>CAS Number:</strong> 7758-29-4</p>
+                                         <p><strong>Packaging:</strong> 25 KG BAGS</p>
+                                     </div>
+                                     <ul>
+                                         <li>High-quality inorganic compound</li>
+                                         <li>Widely used in detergent manufacturing, water treatment, and ceramics</li>
+                                         <li>Serves as a builder, sequestrant, and emulsifier</li>
+                                         <li>Provides excellent water softening and soil suspension properties</li>
+                                         <li>Consistent and reliable results for effective cleaning and formulation processes</li>
+                                     </ul>
                                  </div>
-                                 <ul>
-                                     <li>High-quality inorganic compound</li>
-                                     <li>Widely used in detergent manufacturing, water treatment, and ceramics</li>
-                                     <li>Serves as a builder, sequestrant, and emulsifier</li>
-                                     <li>Provides excellent water softening and soil suspension properties</li>
-                                     <li>Consistent and reliable results for effective cleaning and formulation processes</li>
-                                 </ul>
+                                 <div class="expand-indicator">▼</div>
                              </div>
                          </div>
 
                          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="1400">
-                             <div class="chemical-card">
+                             <div class="chemical-card" onclick="toggleCard(this)">
                                  <h3>SODIUM HYPOCHLORITE</h3>
-                                 <div class="chemical-details">
-                                     <p><strong>Formula:</strong> NaClO</p>
-                                     <p><strong>CAS Number:</strong> 7681-52-9</p>
-                                     <p><strong>Packaging:</strong> 25 KG DRUMS / 1 TON IBC</p>
+                                 <p class="card-summary">Primary disinfectant for drinking water treatment, more stable and commonly used than calcium hypochlorite, effective for swimming pool sanitization and wastewater disinfection.</p>
+                                 <div class="card-details">
+                                     <div class="chemical-details">
+                                         <p><strong>Formula:</strong> NaClO</p>
+                                         <p><strong>CAS Number:</strong> 7681-52-9</p>
+                                         <p><strong>Packaging:</strong> 25 KG DRUMS / 1 TON IBC</p>
+                                     </div>
+                                     <ul>
+                                         <li>Primary disinfectant for drinking water treatment</li>
+                                         <li>More stable and commonly used than calcium hypochlorite</li>
+                                         <li>Effective for swimming pool sanitization and wastewater disinfection</li>
+                                         <li>Used as bleaching agent in various industries</li>
+                                         <li>Reliable and consistent disinfection performance</li>
+                                     </ul>
                                  </div>
-                                 <ul>
-                                     <li>Primary disinfectant for drinking water treatment</li>
-                                     <li>More stable and commonly used than calcium hypochlorite</li>
-                                     <li>Effective for swimming pool sanitization and wastewater disinfection</li>
-                                     <li>Used as bleaching agent in various industries</li>
-                                     <li>Reliable and consistent disinfection performance</li>
-                                 </ul>
+                                 <div class="expand-indicator">▼</div>
                              </div>
                          </div>
 
                          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="1500">
-                             <div class="chemical-card">
+                             <div class="chemical-card" onclick="toggleCard(this)">
                                  <h3>HYDROGEN PEROXIDE</h3>
-                                 <div class="chemical-details">
-                                     <p><strong>Formula:</strong> H₂O₂</p>
-                                     <p><strong>CAS Number:</strong> 7722-84-1</p>
-                                     <p><strong>Packaging:</strong> 30 KG DRUMS / 1 TON IBC</p>
+                                 <p class="card-summary">Essential for advanced oxidation processes, highly effective for iron and manganese removal, used for odor control and biocide applications.</p>
+                                 <div class="card-details">
+                                     <div class="chemical-details">
+                                         <p><strong>Formula:</strong> H₂O₂</p>
+                                         <p><strong>CAS Number:</strong> 7722-84-1</p>
+                                         <p><strong>Packaging:</strong> 30 KG DRUMS / 1 TON IBC</p>
+                                     </div>
+                                     <ul>
+                                         <li>Essential for advanced oxidation processes</li>
+                                         <li>Highly effective for iron and manganese removal</li>
+                                         <li>Used for odor control and biocide applications</li>
+                                         <li>Critical for sludge treatment and disinfection</li>
+                                         <li>Versatile oxidizing agent for water treatment</li>
+                                     </ul>
                                  </div>
-                                 <ul>
-                                     <li>Essential for advanced oxidation processes</li>
-                                     <li>Highly effective for iron and manganese removal</li>
-                                     <li>Used for odor control and biocide applications</li>
-                                     <li>Critical for sludge treatment and disinfection</li>
-                                     <li>Versatile oxidizing agent for water treatment</li>
-                                 </ul>
+                                 <div class="expand-indicator">▼</div>
                              </div>
                          </div>
 
                          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="1600">
-                             <div class="chemical-card">
+                             <div class="chemical-card" onclick="toggleCard(this)">
                                  <h3>POTASSIUM PERMANGANATE</h3>
-                                 <div class="chemical-details">
-                                     <p><strong>Formula:</strong> KMnO₄</p>
-                                     <p><strong>CAS Number:</strong> 7722-64-7</p>
-                                     <p><strong>Packaging:</strong> 25 KG DRUMS</p>
+                                 <p class="card-summary">Critical for iron and manganese removal, effective for taste and odor control, used for algae control and disinfection, powerful oxidizing agent for water treatment.</p>
+                                 <div class="card-details">
+                                     <div class="chemical-details">
+                                         <p><strong>Formula:</strong> KMnO₄</p>
+                                         <p><strong>CAS Number:</strong> 7722-64-7</p>
+                                         <p><strong>Packaging:</strong> 25 KG DRUMS</p>
+                                     </div>
+                                     <ul>
+                                         <li>Critical for iron and manganese removal</li>
+                                         <li>Effective for taste and odor control</li>
+                                         <li>Used for algae control and disinfection</li>
+                                         <li>Powerful oxidizing agent for water treatment</li>
+                                         <li>Reliable performance in various treatment processes</li>
+                                     </ul>
                                  </div>
-                                 <ul>
-                                     <li>Critical for iron and manganese removal</li>
-                                     <li>Effective for taste and odor control</li>
-                                     <li>Used for algae control and disinfection</li>
-                                     <li>Powerful oxidizing agent for water treatment</li>
-                                     <li>Reliable performance in various treatment processes</li>
-                                 </ul>
+                                 <div class="expand-indicator">▼</div>
                              </div>
                          </div>
 
                          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="1700">
-                             <div class="chemical-card">
+                             <div class="chemical-card" onclick="toggleCard(this)">
                                  <h3>SODIUM HYDROXIDE</h3>
-                                 <div class="chemical-details">
-                                     <p><strong>Formula:</strong> NaOH</p>
-                                     <p><strong>CAS Number:</strong> 1310-73-2</p>
-                                     <p><strong>Packaging:</strong> 25 KG BAGS / 1 TON IBC</p>
+                                 <p class="card-summary">Fundamental for pH adjustment and neutralization, used as coagulation aid and in softening processes, essential for membrane cleaning applications.</p>
+                                 <div class="card-details">
+                                     <div class="chemical-details">
+                                         <p><strong>Formula:</strong> NaOH</p>
+                                         <p><strong>CAS Number:</strong> 1310-73-2</p>
+                                         <p><strong>Packaging:</strong> 25 KG BAGS / 1 TON IBC</p>
+                                     </div>
+                                     <ul>
+                                         <li>Fundamental for pH adjustment and neutralization</li>
+                                         <li>Used as coagulation aid and in softening processes</li>
+                                         <li>Essential for membrane cleaning applications</li>
+                                         <li>Critical for sludge conditioning and treatment</li>
+                                         <li>Versatile alkali for various water treatment processes</li>
+                                     </ul>
                                  </div>
-                                 <ul>
-                                     <li>Fundamental for pH adjustment and neutralization</li>
-                                     <li>Used as coagulation aid and in softening processes</li>
-                                     <li>Essential for membrane cleaning applications</li>
-                                     <li>Critical for sludge conditioning and treatment</li>
-                                     <li>Versatile alkali for various water treatment processes</li>
-                                 </ul>
+                                 <div class="expand-indicator">▼</div>
                              </div>
                          </div>
 
                          <div class="col-lg-2 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="1800">
-                             <div class="chemical-card">
+                             <div class="chemical-card" onclick="toggleCard(this)">
                                  <h3>MAGNESIUM HYDROXIDE</h3>
-                                 <div class="chemical-details">
-                                     <p><strong>Formula:</strong> Mg(OH)₂</p>
-                                     <p><strong>CAS Number:</strong> 1309-42-8</p>
-                                     <p><strong>Packaging:</strong> 25 KG BAGS / 1 TON IBC</p>
+                                 <p class="card-summary">Excellent for pH control and buffering, highly effective for heavy metal removal, critical for phosphorus removal in wastewater.</p>
+                                 <div class="card-details">
+                                     <div class="chemical-details">
+                                         <p><strong>Formula:</strong> Mg(OH)₂</p>
+                                         <p><strong>CAS Number:</strong> 1309-42-8</p>
+                                         <p><strong>Packaging:</strong> 25 KG BAGS / 1 TON IBC</p>
+                                     </div>
+                                     <ul>
+                                         <li>Excellent for pH control and buffering</li>
+                                         <li>Highly effective for heavy metal removal</li>
+                                         <li>Critical for phosphorus removal in wastewater</li>
+                                         <li>Improves sludge conditioning and dewatering</li>
+                                         <li>Provides superior corrosion control protection</li>
+                                     </ul>
                                  </div>
-                                 <ul>
-                                     <li>Excellent for pH control and buffering</li>
-                                     <li>Highly effective for heavy metal removal</li>
-                                     <li>Critical for phosphorus removal in wastewater</li>
-                                     <li>Improves sludge conditioning and dewatering</li>
-                                     <li>Provides superior corrosion control protection</li>
-                                 </ul>
+                                 <div class="expand-indicator">▼</div>
                              </div>
                          </div>
                     </div>
@@ -1099,6 +1248,7 @@
 								<li><a href="about.html">About us</a></li>
 								<li><a href="Products.html">Products</a></li>
 								<li><a href="contact.html">Contact us</a></li>
+								<li><a href="about.html#quality-policy">Quality Policy</a></li>
                             </ul>
                         </div>
 						<!-- Add Contact Information Section -->
@@ -1200,6 +1350,11 @@
                 window.location.href = 'Products.html';
             });
         });
+
+        // Function to toggle card expansion
+        function toggleCard(card) {
+            card.classList.toggle('expanded');
+        }
     </script>
 </body>
 </html>
