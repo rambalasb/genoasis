@@ -26,6 +26,249 @@
     <!-- Add AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        /* Modern Navigation Styles */
+        .top-bar {
+            background: white;
+            font-size: 1rem;
+            border-bottom: 1px solid #e9ecef;
+            padding: 12px 0;
+        }
+
+        .top-bar a {
+            color: #495057;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .top-bar a:hover {
+            color: #23a1dc !important;
+        }
+
+        .top-bar i {
+            font-size: 1rem;
+            margin-right: 6px;
+        }
+
+        .custom-navbar-nav .nav-link {
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 12px 20px !important;
+            margin: 0 8px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .custom-navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .custom-navbar-nav .nav-link:hover::before {
+            left: 0;
+        }
+
+        .custom-navbar-nav .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(35, 161, 220, 0.3);
+        }
+
+        .custom-navbar-nav .nav-link.active {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white !important;
+            box-shadow: 0 4px 12px rgba(35, 161, 220, 0.3);
+        }
+
+        .custom-navbar-nav .nav-link.active::before {
+            display: none;
+        }
+
+        /* Home, About, and Contact buttons specific hover - black text */
+        .custom-navbar-nav .nav-link[href="index.html"]:hover,
+        .custom-navbar-nav .nav-link[href="about.html"]:hover,
+        .custom-navbar-nav .nav-link[href="contact.html"]:hover {
+            color: #333 !important;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .dropdown-toggle::after {
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .dropdown:hover .dropdown-toggle::after {
+            transform: rotate(180deg);
+        }
+
+        .dropdown.show .dropdown-toggle::after {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            padding: 8px 0;
+            margin-top: 8px;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            position: absolute;
+            z-index: 9999;
+        }
+
+        .dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #333;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+            margin: 2px 8px;
+            text-decoration: none;
+        }
+
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white !important;
+            transform: translateX(5px);
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus,
+        .dropdown-item:active {
+            color: white !important;
+            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
+        }
+
+        .dropdown-menu .dropdown-item:hover,
+        .dropdown-menu .dropdown-item:focus,
+        .dropdown-menu .dropdown-item:active {
+            color: white !important;
+            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
+            text-decoration: none;
+        }
+
+        .dropdown-item * {
+            color: inherit;
+        }
+
+        .dropdown-toggle:hover {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(35, 161, 220, 0.3);
+        }
+
+        .dropdown-toggle:hover::before {
+            display: none;
+        }
+
+        .navbar-brand {
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .custom-navbar {
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .navbar-toggler {
+            border: 2px solid #23a1dc;
+            background-color: transparent;
+            padding: 8px 12px;
+            margin-right: 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:hover {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            transform: scale(1.05);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(35, 161, 220, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+            width: 1.8em;
+            height: 1.8em;
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                text-align: center;
+            }
+            
+            .d-flex {
+                justify-content: center !important;
+            }
+
+            .custom-navbar-nav .nav-link {
+                font-size: 1rem;
+                padding: 10px 16px !important;
+                margin: 4px 0;
+                text-align: center;
+            }
+
+            .navbar-collapse {
+                padding: 1rem 0;
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 12px;
+                margin-top: 10px;
+                backdrop-filter: blur(10px);
+            }
+            
+            .dropdown-menu {
+                border: none;
+                box-shadow: none;
+                background: rgba(248, 249, 250, 0.95);
+                padding-left: 1rem;
+                margin-top: 0;
+                border-radius: 8px;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                position: static;
+            }
+
+            .dropdown-menu.show {
+                display: block;
+            }
+            
+            .dropdown-item {
+                padding: 8px 16px;
+                font-size: 0.95rem;
+            }
+        }
+
         /* Hero Section Styles */
         .hero-section {
             background-image: url('images/products-banner.jpg');
@@ -791,10 +1034,10 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="d-flex justify-content-end">
-						<a href="tel:+918925883227" class="me-3 text-decoration-none text-dark">
+						<a href="tel:+918925883227" class="me-3 text-decoration-none">
 							<i class="fas fa-phone"></i> +91 892 588 3227
 						</a>
-						<a href="mailto:info@genoasis.com" class="text-decoration-none text-dark">
+						<a href="mailto:info@genoasis.com" class="text-decoration-none">
 							<i class="fas fa-envelope"></i> info@genoasis.com
 						</a>
 					</div>
@@ -821,7 +1064,7 @@
                     </li>
                     <li><a class="nav-link" href="about.html">About us</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button">
+                        <a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Products
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -1187,14 +1430,46 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Get the Products dropdown link
+            // Get the Products dropdown link and menu
             const productsLink = document.querySelector('#navbarDropdown');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            const dropdown = document.querySelector('.dropdown');
             
-            // Add click event listener
-            productsLink.addEventListener('click', function(e) {
-                // Navigate to Products.html
-                window.location.href = 'Products.html';
-            });
+            if (productsLink && dropdownMenu && dropdown) {
+                // Handle click on Products link
+                productsLink.addEventListener('click', function(e) {
+                    // If clicking on the arrow or if dropdown is already open, toggle dropdown
+                    if (e.target.classList.contains('dropdown-arrow') || dropdown.classList.contains('show')) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('show');
+                        dropdownMenu.classList.toggle('show');
+                    } else {
+                        // If clicking on the text part, navigate to Products page
+                        window.location.href = 'Products.html';
+                    }
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('show');
+                        dropdownMenu.classList.remove('show');
+                    }
+                });
+                
+                // Handle hover for desktop
+                if (window.innerWidth > 768) {
+                    dropdown.addEventListener('mouseenter', function() {
+                        dropdown.classList.add('show');
+                        dropdownMenu.classList.add('show');
+                    });
+                    
+                    dropdown.addEventListener('mouseleave', function() {
+                        dropdown.classList.remove('show');
+                        dropdownMenu.classList.remove('show');
+                    });
+                }
+            }
 
             // Product modal functionality
             const productCards = document.querySelectorAll('.product-card');

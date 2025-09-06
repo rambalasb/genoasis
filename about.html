@@ -718,8 +718,9 @@
 				box-shadow: 0 4px 12px rgba(35, 161, 220, 0.3);
 			}
 
-			/* Home and Contact buttons specific hover - black text */
+			/* Home, About Us, and Contact buttons specific hover - black text */
 			.custom-navbar-nav .nav-link[href="index.html"]:hover,
+			.custom-navbar-nav .nav-link[href="about.html"]:hover,
 			.custom-navbar-nav .nav-link[href="contact.html"]:hover {
 				color: #333 !important;
 				background: linear-gradient(135deg, #f8f9fa, #e9ecef);
@@ -792,11 +793,30 @@
 				color: inherit;
 			}
 
-			.dropdown-item:hover {
-				background: linear-gradient(135deg, #23a1dc, #1e88c5);
-				color: white !important;
-				transform: translateX(5px);
-			}
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white !important;
+            transform: translateX(5px);
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus,
+        .dropdown-item:active {
+            color: white !important;
+            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
+        }
+
+        .dropdown-menu .dropdown-item:hover,
+        .dropdown-menu .dropdown-item:focus,
+        .dropdown-menu .dropdown-item:active {
+            color: white !important;
+            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
+            text-decoration: none;
+        }
+
+        .dropdown-item * {
+            color: inherit;
+        }
 
 			.dropdown-item:focus {
 				background: linear-gradient(135deg, #23a1dc, #1e88c5);
