@@ -1026,6 +1026,7 @@
                         </div>
                         
                         <div class="product-item">
+                            <img src="images/vertical-multistage-pumps.jpg" alt="Vertical Multistage Pumps" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                             <h5>Vertical Multistage Pumps</h5>
                             <p>Our Vertical Multistage Pumps are reliable, technologically advanced solutions for various applications such as boiler feed systems, pressure boosting, irrigation, and water treatment. These pumps are designed for high pressure and high-temperature fluids and are equipped with IE3 standard motors for energy efficiency.</p>
                             <ul class="product-specs">
@@ -1038,6 +1039,7 @@
                         </div>
                         
                         <div class="product-item">
+                            <img src="images/submersible-pumps.jpg" alt="Submersible Pumps" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                             <h5>Submersible Pumps</h5>
                             <p>Durable submersible pumps for wastewater and industrial applications. These pumps are designed for reliable operation in challenging environments with waterproof construction and high head capacity.</p>
                             <ul class="product-specs">
@@ -1050,6 +1052,7 @@
                         </div>
                         
                         <div class="product-item">
+                            <img src="images/borewell-pumps.jpg" alt="Borewell Pumps" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                             <h5>Borewell Pumps</h5>
                             <p>Deep well borewell pumps designed for reliable water extraction from deep wells. These pumps are built for durability and efficiency in challenging underground conditions.</p>
                             <ul class="product-specs">
@@ -1062,6 +1065,7 @@
                         </div>
                         
                         <div class="product-item">
+                            <img src="images/progressive-cavity-pumps.jpg" alt="Progressive Cavity Pumps" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                             <h5>Progressive Cavity Pumps</h5>
                             <p>Progressive Cavity Pumps are ideal for handling highly viscous, abrasive, and shear-sensitive fluids. These pumps provide a smooth and pulsation-free flow and are excellent for applications requiring precise fluid movement.</p>
                             <ul class="product-specs">
@@ -1074,6 +1078,7 @@
                         </div>
                         
                         <div class="product-item">
+                            <img src="images/aodd-pumps.jpg" alt="AODD Pumps" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                             <h5>AODD Pumps</h5>
                             <p>Air Operated Diaphragm Pumps (AODD) are versatile pumps that can handle a wide range of fluids including corrosive, abrasive, and viscous materials. They are ideal for applications where electrical power is not available or safe to use.</p>
                             <ul class="product-specs">
@@ -1086,6 +1091,7 @@
                         </div>
                         
                         <div class="product-item">
+                            <img src="images/sea-water-frp-pumps.jpg" alt="Sea Water FRP Pumps" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                             <h5>Sea Water FRP Pumps</h5>
                             <p>FRP pumps specifically designed for seawater applications. These pumps feature corrosion-resistant materials and are ideal for desalination plants, offshore applications, and marine environments.</p>
                             <ul class="product-specs">
@@ -1098,6 +1104,7 @@
                         </div>
                         
                         <div class="product-item">
+                            <img src="images/sea-water-super-duplex-pumps.jpg" alt="Sea Water Super Duplex Pumps" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                             <h5>Sea Water Super Duplex Pumps</h5>
                             <p>Super duplex pumps designed for the most demanding seawater applications. These pumps feature advanced metallurgy for superior corrosion resistance and are ideal for high-pressure seawater systems.</p>
                             <ul class="product-specs">
@@ -1110,6 +1117,7 @@
                         </div>
                         
                         <div class="product-item">
+                            <img src="images/swimming-pool-pumps.jpg" alt="Swimming Pool Pumps" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                             <h5>Swimming Pool Pumps</h5>
                             <p>Comprehensive range for both residential and commercial pool applications. Designed for energy-efficient operation, optimized filtration quality, and low noise levels.</p>
                             <ul class="product-specs">
@@ -1122,6 +1130,7 @@
                         </div>
                         
                         <div class="product-item">
+                            <img src="images/end-suction-pumps.jpg" alt="End Suction Pumps" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                             <h5>End Suction Pumps</h5>
                             <p>End suction centrifugal pumps designed for general-purpose applications. These pumps offer reliable performance and easy maintenance for various industrial and commercial uses.</p>
                             <ul class="product-specs">
@@ -1182,6 +1191,7 @@
                         </div>
                         
                         <div class="product-item">
+                            <img src="images/metering-dosing-pumps.jpg" alt="Metering & Dosing Pumps" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
                             <h5>Metering & Dosing Pumps</h5>
                             <p>Precision metering and dosing pumps designed for accurate chemical injection and fluid dosing applications across various industries including water treatment, food processing, and chemical manufacturing.</p>
                             <ul class="product-specs">
@@ -1877,6 +1887,21 @@
                 const targetGrid = document.getElementById(category + '-products');
                 if (targetGrid) {
                     targetGrid.style.display = 'grid';
+                }
+                
+                // Scroll to top of products panel
+                const productsPanel = document.querySelector('.products-panel');
+                if (productsPanel) {
+                    // Get the position of the products panel relative to the viewport
+                    const panelRect = productsPanel.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const targetPosition = panelRect.top + scrollTop - 100; // 100px offset for header
+                    
+                    // Smooth scroll to the products panel
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
