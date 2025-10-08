@@ -1,0 +1,3715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genoasis - Contact Database</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .filters {
+            background: #f8f9fa;
+            padding: 20px 40px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filter-item label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .filter-item select,
+        .filter-item input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .table-container {
+            padding: 40px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white;
+            padding: 15px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 13px;
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        tr:nth-child(even):hover {
+            background-color: #f0f0f0;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .contact-info strong {
+            color: #23a1dc;
+            font-weight: 600;
+        }
+
+        .contact-info .email {
+            color: #1e88c5;
+            text-decoration: none;
+        }
+
+        .contact-info .email:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info .phone {
+            color: #28a745;
+        }
+
+        .contact-info .website {
+            color: #dc3545;
+            text-decoration: none;
+        }
+
+        .contact-info .website:hover {
+            text-decoration: underline;
+        }
+
+        .company-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .company-info strong {
+            color: #23a1dc;
+            font-weight: 600;
+        }
+
+        .location-info {
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .role-info {
+            background: #e3f2fd;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #1976d2;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .phone-column {
+            text-align: center;
+            min-width: 120px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .filter-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .table-container {
+                padding: 20px;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 8px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-address-book"></i> Genoasis Contact Database</h1>
+            <p>Comprehensive contact information for procurement and business development</p>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <div class="filter-item">
+                    <label for="countryFilter">Country:</label>
+                    <select id="countryFilter">
+                        <option value="">All Countries</option>
+                        <option value="UAE">UAE</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Mozambique">Mozambique</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label for="roleFilter">Role:</label>
+                    <select id="roleFilter">
+                        <option value="">All Roles</option>
+                        <option value="Procurement">Procurement</option>
+                        <option value="Buyer">Buyer</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Engineer">Engineer</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label for="searchFilter">Search:</label>
+                    <input type="text" id="searchFilter" placeholder="Search by name or company...">
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="contactsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role/Position</th>
+                        <th>Company</th>
+                        <th>Address</th>
+                        <th>City/State</th>
+                        <th>Country</th>
+                        <th>Phone 1</th>
+                        <th>Phone 2</th>
+                        <th>Phone 3</th>
+                        <th>Email</th>
+                        <th>Website</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Hyder E.</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Buyer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>ZABEEL FEED</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Exit 37, Dubai - Al Ain Road, Next to Sanad Academy, Margham</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 282 7491</td>
+                        <td class="phone-column">+971 50 9233399</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Dilkkash.Hyder@zabeelfeed.ae" class="email">Dilkkash.Hyder@zabeelfeed.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Temitayo Olayiwola</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Senior Water Quality Analyst</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>ACTION</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O.Box 86987, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4814 9304</td>
+                        <td class="phone-column">+971 56 548 6901</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:temitayo.olayiwola@Action-is.com" class="email">temitayo.olayiwola@Action-is.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.action-is.com" class="website" target="_blank">www.action-is.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Ravish Faheem</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Assistant Manager Procurement</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Mai Dubai LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O.Box 2530, Yalayas, D63, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 709 5217</td>
+                        <td class="phone-column">+971 589823890</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:ravish.f@maidubaiwater.com" class="email">ravish.f@maidubaiwater.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Sheik Imtiaz</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Assistant Manager- Technical</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Mai Dubai LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O.Box 2530, Yalayas, D63, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 505097444</td>
+                        <td class="phone-column">+971 47095168</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:sheik.imtiaz@maidubaiwater.com" class="email">sheik.imtiaz@maidubaiwater.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Vysakh Krishnakumar</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">CIPP/CIPM/CISCP/CISCM - Procurement Department</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>ELITE GROUP OF COMPANIES</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 65278845</td>
+                        <td class="phone-column">+971 588159861</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:vysakh@elitegroupuae.com" class="email">vysakh@elitegroupuae.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.elitegroupuae.com" class="website" target="_blank">www.elitegroupuae.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Srividya Sivaprasadaiah</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Executive</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Al Shirawi Contracting Co LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P O Box 282711, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 340 9595 x240</td>
+                        <td class="phone-column">+971 50 382 9891</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:srividya.s@alshirawicontracting.com" class="email">srividya.s@alshirawicontracting.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.alshirawicontracting.com" class="website" target="_blank">www.alshirawicontracting.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Jmal Azeez</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Assistant Officer - Material Planning</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Emirates Global Aluminium</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 109111, Abu Dhabi, United Arab Emirates</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 2 509 4444</td>
+                        <td class="phone-column">+971 504961235</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:aazeez@ega.ae" class="email">aazeez@ega.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Shakeel Mohammad</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Direct materials procurement Officer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>GYMA FOOD INDUSTRIES LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Bayara Building, street 27, Dubai Investment Park-2</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 565263568</td>
+                        <td class="phone-column">+971 48857478</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:mshakeel@savola.com" class="email">mshakeel@savola.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.savola.com" class="website" target="_blank">www.savola.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Nur M. Mohideen</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Head of Projects</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>INAYA</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P. 87074, Dubai, United Arab Emirates</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 882 7001</td>
+                        <td class="phone-column">+971 54 5862951</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Nurmuhammed.Mohideen@inaya.ae" class="email">Nurmuhammed.Mohideen@inaya.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.inaya.ae" class="website" target="_blank">www.inaya.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Bilal Wani</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Manager Infrastructure</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>IDAMA</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box: 500388, 7th floor, Vision Tower, Al Khaleej Al Tejari 1 Street, Business Bay</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 52 170 8565</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Bilal.Wani@idama.ae" class="email">Bilal.Wani@idama.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Haroon Rasheed</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Executive</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Ejadah</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box: 500388, 7th floor, Vision Tower, Al Khaleej Al Tejari 1 Street, Business Bay</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 435 1472</td>
+                        <td class="phone-column">+971 52 106 4360</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Haroon.Rasheed@ejadah.ae" class="email">Haroon.Rasheed@ejadah.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Naseela Mohammed</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Senior Executive - Procurement</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Ejadah</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box: 500388, 7th floor, Vision Tower, Al Khaleej Al Tejari 1 Street, Business Bay</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 208 1563</td>
+                        <td class="phone-column">+971 55 1927297</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Naseela.Mohammed@ejadah.ae" class="email">Naseela.Mohammed@ejadah.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Orlean</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Supply Chain Dept.</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>OSE INDUSTRIES LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box 126344, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 44534864</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:supplychain@oseindustries.com" class="email">supplychain@oseindustries.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.oseindustries.com" class="website" target="_blank">www.oseindustries.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Mr. Bienvenido Santos</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Executive</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>OSE Industries LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box 126344, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 44534864 ext. 119</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:purchase@oseindustries.com" class="email">purchase@oseindustries.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.oseindustries.com" class="website" target="_blank">www.oseindustries.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Muhammad Shoaib Afzal</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Supply Chain Manager</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>SAPIN United Arab Emirates L.L.C.</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">National Industries Park Jebel Ali, P.O.Box 115132 Dubai - U.A.E.</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 880 9555 Ext.: 441</td>
+                        <td class="phone-column">+971 56 627 5719</td>
+                        <td class="phone-column">+971 4 880 9649</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:shoaib@sapinuae.ae" class="email">shoaib@sapinuae.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.sapin.com.sa" class="website" target="_blank">www.sapin.com.sa</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Kashif Javed Chaudhary</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Store Keeper</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>SAPIN United Arab Emirates L.L.C.</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">National Industries Park Jebel Ali, P.O.Box 115132 Dubai - U.A.E.</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4880 9555 Ext:.442</td>
+                        <td class="phone-column">+971 50 436 3157</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Kashif@sapinuae.ae" class="email">Kashif@sapinuae.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.sapin.com.sa" class="website" target="_blank">www.sapin.com.sa</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Kuldip Singh</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Purchase Officer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Fabtech International</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O.Box : 61015, Jebel Ali FZ, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 48108200</td>
+                        <td class="phone-column">+971 8838833</td>
+                        <td class="phone-column">+971 48108263</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:info@fabtech.ae" class="email">info@fabtech.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.fabtechint.com" class="website" target="_blank">www.fabtechint.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Prasad N. Shetty</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Sr. Procurement Officer Operations</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Ducab</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 11529, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 54 7931768</td>
+                        <td class="phone-column">+971 4 8158197</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:prasad.shetty@ducab.com" class="email">prasad.shetty@ducab.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://ducab.com" class="website" target="_blank">ducab.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Dilu Paul Devassy</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Purchasing & PRO</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>SOUNBULA MILLS FZE.</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O.Box - 261551, Jebel Ali, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971-4-881-2880</td>
+                        <td class="phone-column">+971 561349680</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:dilu.devassy@sounbulamills.com" class="email">dilu.devassy@sounbulamills.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Mohammad Mehtab Mahfooz</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Purchase Officer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Emirates Extrusion Factory LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">NIP, Dubai, UAE, P.O.Box : 235561</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 48807768 Ext 107</td>
+                        <td class="phone-column">+971 504995303</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:mehtab.m@emiratesextrusion.com" class="email">mehtab.m@emiratesextrusion.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.emiratesextrusion.com" class="website" target="_blank">www.emiratesextrusion.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Abdul KUNHI, BALEHITHU</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Administrator</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>BAINUNA MECHANICAL ELECTRICAL EQUIPMENT AND OILFIELD SERVICES</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Electra Street, Abu Dhabi, U.A.E</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">026393303</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:sales@bainuna-uae.com" class="email">sales@bainuna-uae.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.bainuna-uae.com" class="website" target="_blank">www.bainuna-uae.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Sultan Jehan</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Cristal Plastic Industrial LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O Box .13224, Plot No. 73SR37, ICAD III, Musaffah, Abu Dhabi- UAE.</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">056 4652712</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Vijay Anand</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Engineer - Detailed Engineering</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Clear Water Solutions LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 10983, Dubai, UAE - Solutions for Water and Wastewater</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 576 6399</td>
+                        <td class="phone-column">+971 58595 3460</td>
+                        <td class="phone-column">0504302553</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:vijay.anand@clearwatersolutions.ae" class="email">vijay.anand@clearwatersolutions.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.clearwatersolutions.ae" class="website" target="_blank">www.clearwatersolutions.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Diplomat Group of Companies</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Diplomat Group of Companies</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 40469, Sharjah, UAE. PO Box 26409, Dubai.</div>
+                        </td>
+                        <td>Sharjah/Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 42510970</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:estimation.mep@diplomatgroup.org" class="email">estimation.mep@diplomatgroup.org</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.diplomatgroup.org" class="website" target="_blank">www.diplomatgroup.org</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Mr. RODEL SARMIENTO</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Controller</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Hyundai Engineering & Construction Co. Ltd</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O Box. 8198, DUBAI, United Arab Emirates</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971-50-2139501</td>
+                        <td class="phone-column">+971-4-325-5508</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:f0800144@hdec.co" class="email">f0800144@hdec.co</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>CCC (Underwater Engineering)</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>CCC (Underwater Engineering) S.A.L.</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box 38522, Mussafah Industrial Area, Abu Dhabi, United Arab Emirates</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 2 555 3656</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.cccuwe.ae" class="website" target="_blank">www.cccuwe.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Red Sea Housing Services</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Red Sea Housing Services</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 17365, Jebel Ali Free Zone, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 883 8589 ext. 442</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Mr. Riyaz Ahmed</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Gulf Extrusion</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO BOX 5598, Jebel Ali Industrial Area, Dubai, United Arab Emirates</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 503856699</td>
+                        <td class="phone-column">+971 4 8846146</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:rahmmed@gulfex.com" class="email">rahmmed@gulfex.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Tayyab Nadir</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Dept.</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>NATIONAL FOOD PRODUCTS COMPANY</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O Box: 61130, Dubai - United Arab Emirates</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 52 9052019</td>
+                        <td class="phone-column">+971 4 8018000 Ext. 3418</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:tayyab.nadir@nfpc.net" class="email">tayyab.nadir@nfpc.net</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.nfpcgroup.com" class="website" target="_blank">www.nfpcgroup.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Zaheer Surve</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>OSMOFLO</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, U.A.E.</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 50 237 7917</td>
+                        <td class="phone-column">+971 4 564 83 77</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:zaheer.surve@osmoflo.com" class="email">zaheer.surve@osmoflo.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.osmoflo.com" class="website" target="_blank">www.osmoflo.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Shafi Shaikh</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Purchasing Team Manager</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Diamond Meat Processing LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 286 0382 Ext : 512</td>
+                        <td class="phone-column">+971 50 456 8225</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:sshaikh@siniorafood.com" class="email">sshaikh@siniorafood.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.siniorafood.com" class="website" target="_blank">www.siniorafood.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Praveen</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Purchase Coordinator</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Al Khaleej Steels</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box: 91380, Abu Dhabi, UAE</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 567 628 136</td>
+                        <td class="phone-column">+971 2 673 2010/11 Ext:-621</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:purchase@alkhaleejsteels.com" class="email">purchase@alkhaleejsteels.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.alkhaleejsteels.com" class="website" target="_blank">www.alkhaleejsteels.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Vysakh Krishnakumar</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">CIPP/CIPM/CISCP/CISCM - PROCUREMENT DEPARTMENT</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>ELITE GROUP OF COMPANIES</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 65278845</td>
+                        <td class="phone-column">+971 588159861</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:vysakh@elitegroupuae.com" class="email">vysakh@elitegroupuae.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.elitegroupuae.com" class="website" target="_blank">www.elitegroupuae.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Aadhil Ibrahim</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>ITALIAN PLANTERS LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Integrated Solution for Landscape & Irrigation Services - QMS 9001:2015 | EMS 14001:2015 | OH&S 45001:2018</div>
+                        </td>
+                        <td>UAE</td>
+                        <td>UAE</td>
+                        <td class="phone-column">0528480153</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Ahmed Tolba</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Quality Manager</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>GULFA</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Al Jurf Industrial Area 1, Ajman, U.A.E, P.O. Box 2016</div>
+                        </td>
+                        <td>Ajman</td>
+                        <td>UAE</td>
+                        <td class="phone-column">0559661222</td>
+                        <td class="phone-column">+971 6 7668111</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:tolba@gulfa.ae" class="email">tolba@gulfa.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.gulfa.ae" class="website" target="_blank">www.gulfa.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Vishnu Nair</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Purchase Executive - Procurement</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Al Abbar Group</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box, 1626, Dubai, United Arab Emirates</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 801 2000</td>
+                        <td class="phone-column">0543606736</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:vishnun@alabbargroup.com" class="email">vishnun@alabbargroup.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.alabbargroup.com" class="website" target="_blank">www.alabbargroup.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Reham Ali</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Lead Chemist</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Fujairah F2 O&M</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Fujairah, UAE</div>
+                        </td>
+                        <td>Fujairah</td>
+                        <td>UAE</td>
+                        <td class="phone-column">092086130</td>
+                        <td class="phone-column">+971-56-4726099</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.fapco.ae" class="website" target="_blank">www.fapco.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Sreerag B</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Engineer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Viprotech FZC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Office: 124, Al Zarooni Building, Damascus Street, Al Qusais Industrial Area 2, Dubai – United Arab Emirates, PO Box: 127199</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">052 87 35 109</td>
+                        <td class="phone-column">04354 75 05</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:procurment@viprotech.ae" class="email">procurment@viprotech.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Michael</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>One UltraTech - Star Super Cement Industries LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P. O. Box: 37608, B-233 Jebel Ali, Industrial Area-2, Dubai, UAE.</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+97148018756</td>
+                        <td class="phone-column">+971 561147429</td>
+                        <td class="phone-column">CUG-0523037165</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:michael.jose@star.adityabirla.com" class="email">michael.jose@star.adityabirla.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.starcement.ae" class="website" target="_blank">www.starcement.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Ginoop Narayanan</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Projects Manager</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Landmark Engineering and Contracting LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">056 862 4809</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Andrews Chinnappan</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Water Treatment Engineer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Leaders Oil-Field Equipment LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Mussafah MW5, P.O. Box 41971, Abu Dhabi, U.A.E.</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+97150-6667350</td>
+                        <td class="phone-column">+971 2 55 111 52</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:ro@leadersofe.ae" class="email">ro@leadersofe.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.leadersofe.ae" class="website" target="_blank">www.leadersofe.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Buddhika</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Compass powered by Dar Al Arkan</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">1001 Centro Capital Centre Tower, Al Khaleej Al Tejari St, Abu Dhabi</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">0552297437</td>
+                        <td class="phone-column">+971 2 644 2119</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:buddhika.hewageegana@compass-pc.com" class="email">buddhika.hewageegana@compass-pc.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Shaju Daniel</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>ADYARD</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Musaffah Industrial Area MW-2, Plot 10, PO Box 7604, Abu Dhabi, United Arab Emirates</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 2 6526856</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:shaju.daniel@altrad.com" class="email">shaju.daniel@altrad.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.adyardabudhabi.com" class="website" target="_blank">www.adyardabudhabi.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Nambirajan Ganesan</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Officer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Shuweihat Asia Power Company PJSC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">S-3 IPP|SAPCO/SAOM| P.O.Box No.26756, Al Ruwais, Abu Dhabi, UAE</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971-50-621 5706</td>
+                        <td class="phone-column">+971-2-8014728-Ext:234</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.sapco.ae" class="website" target="_blank">www.sapco.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Manickavasakam. V</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>TSI Metal Industries LLC.</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Plot No-83HR13,84HR13,85HR13, ICAD II, Musaffah, P.O.Box:31165, Abu Dhabi - UAE</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 2 550 8848</td>
+                        <td class="phone-column">+971 52 295 0741</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Manickavasakam.v@tsim-industries.com" class="email">Manickavasakam.v@tsim-industries.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Shabbar Saifuddin</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Officer Procurement</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>EDIBLE OIL CO (D)</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">UAE</div>
+                        </td>
+                        <td>UAE</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971504227966</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Shabbar.Saifuddin@Al-Ghurair.Com" class="email">Shabbar.Saifuddin@Al-Ghurair.Com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Jacob Pattamukkil Chacko</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Project Manager</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Emarat Aloula Contracting Co - Sole Proprietorship LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Abu Dhabi, UAE</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+9712 5130 513 EXT:8203</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:jacob.chacko@emarataloula.com" class="email">jacob.chacko@emarataloula.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.emarataloula.com" class="website" target="_blank">www.emarataloula.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Allan Dayrit</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Union Cement Company PJSC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Ras Al Khaimah, UAE</div>
+                        </td>
+                        <td>Ras Al Khaimah</td>
+                        <td>UAE</td>
+                        <td class="phone-column">07-2028423</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:allan.dayrit@uccrak.com" class="email">allan.dayrit@uccrak.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.uccrak.com" class="website" target="_blank">www.uccrak.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Vipinraj R Nair</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Project Engineer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>FTV Proclad L.L.C</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">National Industries Park, P.O. Box 123776, Dubai, U.A.E</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+97148704100 (Ext-4484)</td>
+                        <td class="phone-column">+971501990185</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Bhavin Jariwala</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Sr. Procurement Engineer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>FTV PROCLAD LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O.BOX 123776, National Industries Park (Techno Park), Jebel Ali, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">00971 56 6442312</td>
+                        <td class="phone-column">00971 4 870 4077</td>
+                        <td class="phone-column">00971 4 870 4100</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:b.jariwala@ftvproclad.com" class="email">b.jariwala@ftvproclad.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.proclad.com" class="website" target="_blank">www.proclad.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Saadah Khameis Aamer Alyileili</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Department</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Sembcorp Gulf O&M Co. Ltd</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Fujairah Water & Power Plant 1, PO Box: 3020, Qidfa, Fujairah, U.A.E</div>
+                        </td>
+                        <td>Fujairah</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 9 2088840</td>
+                        <td class="phone-column">+97156 533 5327</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Richelle Misalang</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement officer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Fujairah F2 O&M</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+9719 2086129</td>
+                        <td class="phone-column">+971582881349</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.fapco.ae" class="website" target="_blank">www.fapco.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Abdulla Aldhanhani</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Officer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Fujairah F2 O&M</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+97192086301</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.fapco.ae" class="website" target="_blank">www.fapco.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Peter Anthony Menaling</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Coordinator</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>ACTION</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4814 9300</td>
+                        <td class="phone-column">+971 56 218 7740</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Peter.Menaling@Action-is.com" class="email">Peter.Menaling@Action-is.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Bernardino Abas</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Accountant & Purchase Supervisor</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Etex Middle East LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 123945, Plot No. 597-921, Dubai Investment Park 2, Dubai, United Arab Emirates</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971562169588</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:dino.abas@etexgroup.com" class="email">dino.abas@etexgroup.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.promat.com" class="website" target="_blank">www.promat.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Mohamed Kaddura</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Manager Drilling Fluids</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Emirates Western Oil Well Drilling & Maint. Co. LLC.</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Post Box 8107, Abu Dhabi, United Arab Emirates</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 2 6725637</td>
+                        <td class="phone-column">+971 50 2375076</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:mkaddura@ewpsco.ae" class="email">mkaddura@ewpsco.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.ewpsco.ae" class="website" target="_blank">www.ewpsco.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>KULDIP SINGH</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">PURCHASE OFFICER</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>FABTECH INTERNATIONAL LTD</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 61015, Jebel Ali Free Zone, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 810 8263</td>
+                        <td class="phone-column">+971 4 810 8200</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.fabtech-group.com" class="website" target="_blank">www.fabtech-group.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Arun Varghese</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Purchase Department</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Oman Fasteners Company</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Plot No. B055R02 Jebel Ali Freezone, Dubai U.A.E, P.O. Box: 18094</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+97148811868</td>
+                        <td class="phone-column">+971566039947</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:arun.varghese@omanfasteners.com" class="email">arun.varghese@omanfasteners.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.omanfasteners.com" class="website" target="_blank">www.omanfasteners.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Myra del Castillo</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Secretary - Import & Local Purchasing Department</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>-</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P O Box - 5558 Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 3059 (924)</td>
+                        <td class="phone-column">+971 56 6076160</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Irshad Mohammed Ali</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Purchase Assistant</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>VERTIV | POWERBAR GULF</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Al Ghail Industrial Park, Ras Al Khaimah, 13229, United Arab Emirates</div>
+                        </td>
+                        <td>Ras Al Khaimah</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 541 1800 (Ext 84758)</td>
+                        <td class="phone-column">+971 55 8100361</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Isfak Uddin</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Environmental International Consultants</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">104, Tower A, Al Hamsa Office Towers, Karama, Dubai</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 3574844</td>
+                        <td class="phone-column">+971 56 8657 595</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:isfak.eic@gmail.com" class="email">isfak.eic@gmail.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.eic-global.com" class="website" target="_blank">www.eic-global.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>AJMAL AZEEZ</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Assistant Officer - Material Planning</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Emirates Global Aluminium</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 109111, Abu Dhabi, United Arab Emirates</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 2 509 4444</td>
+                        <td class="phone-column">+97148222806</td>
+                        <td class="phone-column">+971504961235</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Abuobaida Fagir</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">HOD Procurement</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>White Spot</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box:6034, Dubai, United Arab Emirates</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Abuobaida.Fagir@whitespot.ae" class="email">Abuobaida.Fagir@whitespot.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.whitespot.ae" class="website" target="_blank">www.whitespot.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Emirates Rebar Lady</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Kerala Tamil Speaking AMC for 3000 Gal</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>EMIRATES REBAR - AMC- 3000 gal stp – Al mousa - 12500</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">TECHNICAL SUPPORT, chemical & consumable spares, free zone certificate</div>
+                        </td>
+                        <td>UAE</td>
+                        <td>UAE</td>
+                        <td class="phone-column">04 883 9267</td>
+                        <td class="phone-column">050 681 4889</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>N.Muthupandi</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Document Controller/Procurement</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Eversendai Engineering LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">29th Floor, Vision Tower, Al Khaleej Al Tejari St 1, Business Bay, P.Box.29537, Dubai, United Arab Emirates</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 4539881</td>
+                        <td class="phone-column">+971 562162724</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.eversendai.com" class="website" target="_blank">www.eversendai.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Balkis</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Team Lead/Sales</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Global Reach Electro Mechanical Equipment LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Po Box: 112576, Mussafah M-43, Abu Dhabi, UAE</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">0565212750</td>
+                        <td class="phone-column">025512937</td>
+                        <td class="phone-column">0509409624</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:sales@globalreachme.com" class="email">sales@globalreachme.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Eng. George DAVID</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Department</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>ENERTEC Group</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO BOX: 126228 Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971-4-458 6159</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:g.david@enertec-co.com" class="email">g.david@enertec-co.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.enertec-co.com" class="website" target="_blank">www.enertec-co.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Omar Saqallah</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Senior Specialist Procurement</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Julphar</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 997, RAK, United Arab Emirates</div>
+                        </td>
+                        <td>Ras Al Khaimah</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971562341067</td>
+                        <td class="phone-column">+971 7 2461461 Ext : 5789</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.julphar.net" class="website" target="_blank">www.julphar.net</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Mohammed Siyan</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Manager</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>PPI UAE</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 338 1786</td>
+                        <td class="phone-column">+971 50 3506593</td>
+                        <td class="phone-column">+97158368840</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:mohamedsi@ppiuae.net" class="email">mohamedsi@ppiuae.net</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.ppiuae.net" class="website" target="_blank">www.ppiuae.net</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>SENTHIL KUMAR RAMANUJAM</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Mechanical Head</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Green Cement Factory LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Plot no 5333 563, Saih Shuaib 4, Dubai Industrial City, PO box 115828, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 52 416 4329</td>
+                        <td class="phone-column">+971-4- 435-6967</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:senthil.kumar@greencem.ae" class="email">senthil.kumar@greencem.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.greencem.ae" class="website" target="_blank">www.greencem.ae</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Mufaddal Ali</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Local Purchaser</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Conares</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P. O. Box 2854, Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 883 5111</td>
+                        <td class="phone-column">+971 55 304 1980</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:mufaddal.ali@conares.com" class="email">mufaddal.ali@conares.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.conares.com" class="website" target="_blank">www.conares.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Mark Anthony Aquino</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Electrical Engineer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>RemCon Electrical Co. LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O Box No. : 29497, AbuDhabi-UAE</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 2 4458030</td>
+                        <td class="phone-column">+971565840944</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:mark.anthony@remcon.ae" class="email">mark.anthony@remcon.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://remconuae.com" class="website" target="_blank">remconuae.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Gokul Rajendran</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Engineer - Procurement</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>GPS International</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Media One Tower, Level 37, Media City, PO Box 30593, Dubai, United Arab Emirates</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 448 6800 EXT 252</td>
+                        <td class="phone-column">+971 52 4171248</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Gokul.Rajendran@gps-intl.com" class="email">Gokul.Rajendran@gps-intl.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Renjith Ponnupillai</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Senior Executive Facilities Management</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>DUBAI HOLDING MANAGEMENT</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">00971 4 3911111</td>
+                        <td class="phone-column">+971 4 887 7135</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://dubaiholding.com" class="website" target="_blank">dubaiholding.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Sabir Hussain</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Buyer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Gulf Extrusions | Al Ghurair Group</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box 136036, Plot A3, KIZAD, Abu Dhabi, United Arab Emirates</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 2 506 2811</td>
+                        <td class="phone-column">+971 56 507 5564</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:sabir.hussain@gulfex.com" class="email">sabir.hussain@gulfex.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.gulfex.com" class="website" target="_blank">www.gulfex.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>WAQAS ASLAM</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Buyer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Emrill</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971-4-2488614</td>
+                        <td class="phone-column">+971 4 308 9600</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://emrill.com" class="website" target="_blank">emrill.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Ganesh Kumar</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Purchase Manager</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Caesars Dubai</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. BOX 36555 Bluewaters Island, Dubai, United Arab Emirates</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 54 586 5002</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:ganesh.kumar@caesarsdubai.ae" class="email">ganesh.kumar@caesarsdubai.ae</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.caesars.com/dubai" class="website" target="_blank">www.caesars.com/dubai</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Maher Chidiac</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>MDINA DMCC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box: 393582, Jumairah Bay X2, Office 3503, JLT DUBAI, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 379 4475</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Maher@Mdinadmcc.com" class="email">Maher@Mdinadmcc.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Syed Azhar Uddin</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Mechanical Estimation Engineer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Al Geemi Contracting</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Abu Dhabi, UAE</div>
+                        </td>
+                        <td>Abu Dhabi</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 559952790</td>
+                        <td class="phone-column">+971 2 6948 300 Ext 404</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.algeemi.com" class="website" target="_blank">www.algeemi.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>NISSAR ALIKUTTY</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Purchase Officer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>NATIONAL FOOD PRODUCTS COMPANY</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box: 61130, Dubai - United Arab Emirates</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 52 9036389</td>
+                        <td class="phone-column">+971 4 8845588 Ext. 1517</td>
+                        <td class="phone-column">+971 4 8845587</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:nissar.alikutty@nfpc.net" class="email">nissar.alikutty@nfpc.net</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.nfpcgroup.com" class="website" target="_blank">www.nfpcgroup.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="UAE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Prasanga</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Administrator</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Hydrojet Technical Services & Contracting L.L.C</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Dubai, UAE</div>
+                        </td>
+                        <td>Dubai</td>
+                        <td>UAE</td>
+                        <td class="phone-column">+971 4 2577174</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Manoj Kumar</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Assistant Manager - Sales</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>North Zone International LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box : 3377, PC 112, Ruwi</div>
+                        </td>
+                        <td>Muscat</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968-24750889</td>
+                        <td class="phone-column">+968-95332627</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:sales@northzoneoman.com" class="email">sales@northzoneoman.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.northzoneoman.com" class="website" target="_blank">www.northzoneoman.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Harisankar KSB</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Project Manager - Bakery</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Salalah Mills. Co (S.A.O.G)</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Khazaen Economic City – Sultanate of Oman</div>
+                        </td>
+                        <td>Salalah</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968-92573353</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:bakery.pm@salalah-mills.com" class="email">bakery.pm@salalah-mills.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.salalah-mills.com" class="website" target="_blank">www.salalah-mills.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Mohan Lal</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">General Manager</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>New Creative Trading & Contracting Company</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box: 353, PC:111, CPO Sultanate of Oman</div>
+                        </td>
+                        <td>Muscat</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968 93218572</td>
+                        <td class="phone-column">+968 22016710</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:mohan.lal@newcreativegroup.com" class="email">mohan.lal@newcreativegroup.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.newcreative-group.com" class="website" target="_blank">www.newcreative-group.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Prakash N</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Modern Explorer Company LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Post Box # 2677, PC 211 Sultanate of Oman</div>
+                        </td>
+                        <td>Muscat</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968 99180042</td>
+                        <td class="phone-column">+968 23214700</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:prakash@ees-oman.com" class="email">prakash@ees-oman.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.ees-oman.com" class="website" target="_blank">www.ees-oman.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Francis Waytan</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Officer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Oman Aluminium Rolling Company SPC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Suhar Industrial Estate, Phase 6, Plot No: 603</div>
+                        </td>
+                        <td>Suhar, Oman</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968 26942488</td>
+                        <td class="phone-column">+968 93385992</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:francis.brian@oman-arc.com" class="email">francis.brian@oman-arc.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Shuwana Al Sumri</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement & Inbound Logistic Department</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Vale</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O. Box 208, P.C. 322, Falaj Al-Qabail, Sohar, Sultanate of Oman</div>
+                        </td>
+                        <td>Sohar</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968 91966759</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.vale.com" class="website" target="_blank">www.vale.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Vinoth.K</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Sr. Planning Engineer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Special Technical Services L.L.C.</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 307, PC 118, Al Harthy Complex, Sultanate of Oman</div>
+                        </td>
+                        <td>Muscat</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968 24647100 Ext 222</td>
+                        <td class="phone-column">+968 95638944</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:epcc.sohar.pe@stsoman.com" class="email">epcc.sohar.pe@stsoman.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.stsoman.com" class="website" target="_blank">www.stsoman.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Augustine V Manuel</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Projects & Maintenance Manager</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Salalah Mills. Co (S.A.O.G)</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Salalah, Sultanate of Oman</div>
+                        </td>
+                        <td>Salalah</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968 22 99 6245</td>
+                        <td class="phone-column">+968 927 899 29</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:augustine@salalah-mills.com" class="email">augustine@salalah-mills.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.salalah-mills.com" class="website" target="_blank">www.salalah-mills.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>SHIHAB AL-IBRAHIM</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Purchases accountant</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Salalah mills co.</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Raysut Industrial area, Salalah, sultanate of Oman</div>
+                        </td>
+                        <td>Salalah</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968 71777782</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Shihab</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Manager- Sales Division</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Reliable International LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Industrial Area, Mabelah, Sultanate of Oman</div>
+                        </td>
+                        <td>Mabelah</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968-90668751</td>
+                        <td class="phone-column">+968-24460656</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:shihab@reliableintllc.com" class="email">shihab@reliableintllc.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.reliableintllc.com" class="website" target="_blank">www.reliableintllc.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Muhammed Faizal</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement officer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Nafal Cont. & Trading Co LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">-</div>
+                        </td>
+                        <td>Oman</td>
+                        <td>Oman</td>
+                        <td class="phone-column">24594300/Ext-116</td>
+                        <td class="phone-column">24594400</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Zahra Al Riyami</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement team leader</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>HCF Oman</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 29, PC. Qurum City Centre 102, Muscat, Sultanate of Oman</div>
+                        </td>
+                        <td>Muscat</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968 24398622</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:zahra.riyami@hcfoman.com" class="email">zahra.riyami@hcfoman.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.hcfoman.com" class="website" target="_blank">www.hcfoman.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Aryaaf Al Shidi</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">CPL Team</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>HCF Oman</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">PO Box 29, PC. Qurum City Centre 102, Muscat, Sultanate of Oman</div>
+                        </td>
+                        <td>Muscat</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968 24398621</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:aryaaf.shidi@hcfoman.com" class="email">aryaaf.shidi@hcfoman.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.hcfoman.com" class="website" target="_blank">www.hcfoman.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>JOIES JOSEPH</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Production & Maintenance Dept.</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Alpha Fishco LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Special Economic Zone, Duqm, Sultanate of Oman</div>
+                        </td>
+                        <td>Duqm</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968-91371121</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Shoyab Mohamed Shelly</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">-</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Alpha Fishco L.L.C</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Plot No.03, Block No.03, Fisheries Zone, Special Economic Zone, Duqm, Sultanate of Oman</div>
+                        </td>
+                        <td>Duqm</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968 92107895</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:stores@alphafish.co" class="email">stores@alphafish.co</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.alphafish.co" class="website" target="_blank">www.alphafish.co</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Balaji Asaithambi</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Senior Procurement Engineer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>B-ENGINEERING</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Villa No.3965, Street 248, Way 4864, Azaiba, P.O Box 2760, PC 130, Muscat, Sultanate of Oman</div>
+                        </td>
+                        <td>Muscat</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968 71179363</td>
+                        <td class="phone-column">+968 24613834</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:balaji@beengineeringweb.com" class="email">balaji@beengineeringweb.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.beengineeringweb.com" class="website" target="_blank">www.beengineeringweb.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Sandeep Jajawara</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Senior Engineer Instrumentation</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Global Gypsum Board Co. LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Salalah Free Zone, P.O.Box 485, Postal Code: 211, Raysut Industrial Area, Salalah, Sultanate of Oman</div>
+                        </td>
+                        <td>Salalah</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+96891479511</td>
+                        <td class="phone-column">+968 23219444,EX NO:650</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>NOUFAL NAZAR</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Incharge</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Ahjar Al Andalus Co LLC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Street 81, Misfah Industrial Area, Muscat, Sultanate of Oman</div>
+                        </td>
+                        <td>Muscat</td>
+                        <td>Oman</td>
+                        <td class="phone-column">24437157</td>
+                        <td class="phone-column">95217202</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:Noufal@ahjartech.com" class="email">Noufal@ahjartech.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.ahjartech.com" class="website" target="_blank">www.ahjartech.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Aziza Al Barwani</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Al Khazain Oilfield Services SAOC</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Al-Assalah Building, 6th Floor, Office No.608, Ghubra, Muscat, Sultanate of Oman</div>
+                        </td>
+                        <td>Muscat</td>
+                        <td>Oman</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:aziza.albarwani@khazain.om" class="email">aziza.albarwani@khazain.om</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                -
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="OMAN">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Sultan Al Moqbali</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Senior purchase Officer</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Mawarid Mining</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Sohar, Sultanate of Oman</div>
+                        </td>
+                        <td>Sohar</td>
+                        <td>Oman</td>
+                        <td class="phone-column">+968-91380057</td>
+                        <td class="phone-column">-</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:sultan@mawaridmining.com" class="email">sultan@mawaridmining.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.mawaridmining.com" class="website" target="_blank">www.mawaridmining.com</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="SAUDI ARABIA">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Mr. Ayaz Alam</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Manager</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Abdullah Nasser Al-Mousa Est</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">P.O.Box 30973, Riyadh 11487, KSA</div>
+                        </td>
+                        <td>Riyadh</td>
+                        <td>Saudi Arabia</td>
+                        <td class="phone-column">+966 11 290 0000 Ext: 111</td>
+                        <td class="phone-column">+966 542598780</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:a.alam@al-mousagroup.com" class="email">a.alam@al-mousagroup.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.elmousa.com.sa" class="website" target="_blank">www.elmousa.com.sa</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="MOZAMBIQUE">
+                        <td>
+                            <div class="contact-info">
+                                <strong>Prakash Nayee</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="role-info">Procurement Manager</div>
+                        </td>
+                        <td>
+                            <div class="company-info">
+                                <strong>Midal Cables International Lda.</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="location-info">Parque Industrial Beluluane, Lote 2, Maputo, Mozambique</div>
+                        </td>
+                        <td>Maputo</td>
+                        <td>Mozambique</td>
+                        <td class="phone-column">+258 21 737 400</td>
+                        <td class="phone-column">+258 84 336 6026</td>
+                        <td class="phone-column">-</td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="mailto:ppssupervisor.mz@midalcable.com" class="email">ppssupervisor.mz@midalcable.com</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="contact-info">
+                                <a href="http://www.midalcable.com" class="website" target="_blank">www.midalcable.com</a>
+                            </div>
+                        </td>
+                    </tr>
+</tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Filter functionality
+        document.getElementById('countryFilter').addEventListener('change', filterTable);
+        document.getElementById('roleFilter').addEventListener('change', filterTable);
+        document.getElementById('searchFilter').addEventListener('input', filterTable);
+
+        function filterTable() {
+            const countryFilter = document.getElementById('countryFilter').value;
+            const roleFilter = document.getElementById('roleFilter').value;
+            const searchFilter = document.getElementById('searchFilter').value.toLowerCase();
+            
+            const rows = document.querySelectorAll('#contactsTable tbody tr');
+            
+            rows.forEach(row => {
+                const country = row.getAttribute('data-country') || '';
+                const roleText = row.cells[1].textContent.toLowerCase();
+                const searchText = row.textContent.toLowerCase();
+                
+                const countryMatch = !countryFilter || country === countryFilter;
+                const roleMatch = !roleFilter || roleText.includes(roleFilter.toLowerCase());
+                const searchMatch = !searchFilter || searchText.includes(searchFilter);
+                
+                if (countryMatch && roleMatch && searchMatch) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        // Add hover effects
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.backgroundColor = '#e3f2fd';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.backgroundColor = '';
+            });
+        });
+    </script>
+</body>
+</html>
