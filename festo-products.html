@@ -93,7 +93,6 @@
             display: none;
         }
 
-        /* Home, About, and Contact buttons specific hover - black text */
         .custom-navbar-nav .nav-link[href="index.html"]:hover,
         .custom-navbar-nav .nav-link[href="about.html"]:hover,
         .custom-navbar-nav .nav-link[href="contact.html"]:hover {
@@ -154,9 +153,21 @@
         .dropdown-item:hover,
         .dropdown-item:focus,
         .dropdown-item:active {
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
             color: white !important;
             transform: translateX(5px);
+        }
+
+        .dropdown-menu .dropdown-item:hover,
+        .dropdown-menu .dropdown-item:focus,
+        .dropdown-menu .dropdown-item:active {
+            color: white !important;
+            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
+            text-decoration: none;
+        }
+
+        .dropdown-item * {
+            color: inherit;
         }
 
         .dropdown-toggle:hover {
@@ -247,95 +258,87 @@
             opacity: 0.9;
         }
 
-        /* Category Section */
-        .category-section {
-            padding: 60px 0;
+        /* Category Cards Section */
+        .categories-section {
+            padding: 80px 0;
+            background: #f8f9fa;
         }
 
-        .category-section:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        .category-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .category-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        /* Product Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .product-card {
+        .category-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             cursor: pointer;
+            margin-bottom: 30px;
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
 
-        .product-image {
+        .category-image {
             position: relative;
-            height: 250px;
+            height: 300px;
             overflow: hidden;
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
         }
 
-        .product-image img {
+        .category-image img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             transition: transform 0.3s ease;
         }
 
-        .product-card:hover .product-image img {
+        .category-card:hover .category-image img {
             transform: scale(1.1);
         }
 
-        .product-info {
-            padding: 20px;
-            background: white;
-            border-top: 3px solid #23a1dc;
-        }
-
-        .product-name {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #333;
-            margin: 0;
-            line-height: 1.4;
-            min-height: 44px;
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(35,161,220,0.8));
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            transition: all 0.3s ease;
         }
 
-        /* Image Modal */
-        .image-modal {
+        .category-card:hover .category-overlay {
+            background: linear-gradient(to bottom, rgba(35,161,220,0.7), rgba(30,136,197,0.9));
+        }
+
+        .category-info {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .category-count {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        /* Products Modal */
+        .products-modal {
             display: none;
             position: fixed;
             z-index: 10000;
@@ -345,6 +348,7 @@
             height: 100%;
             background-color: rgba(0,0,0,0.9);
             animation: fadeIn 0.3s;
+            overflow-y: auto;
         }
 
         @keyframes fadeIn {
@@ -352,42 +356,111 @@
             to { opacity: 1; }
         }
 
-        .modal-content {
+        .modal-content-wrapper {
             position: relative;
-            margin: auto;
-            padding: 20px;
+            margin: 50px auto;
+            padding: 40px;
             width: 90%;
-            max-width: 900px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .modal-content img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
+            max-width: 1200px;
+            background: white;
+            border-radius: 15px;
         }
 
         .modal-close {
             position: absolute;
-            top: 10px;
-            right: 25px;
-            color: white;
+            top: 20px;
+            right: 30px;
+            color: #333;
             font-size: 40px;
             font-weight: bold;
             cursor: pointer;
             z-index: 10001;
+            transition: color 0.3s ease;
         }
 
         .modal-close:hover {
             color: #23a1dc;
         }
 
-        .modal-title {
-            color: white;
+        .modal-header {
             text-align: center;
-            margin-top: 20px;
-            font-size: 1.5rem;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #23a1dc;
+        }
+
+        .modal-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .modal-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .products-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .product-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-item-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .product-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover .product-item-image img {
+            transform: scale(1.1);
+        }
+
+        .product-item-info {
+            padding: 15px;
+            background: white;
+            border-top: 3px solid #23a1dc;
+            text-align: center;
+        }
+
+        .product-item-name {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+            line-height: 1.4;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         @media (max-width: 768px) {
@@ -444,17 +517,36 @@
                 font-size: 1.2rem;
             }
 
+            .category-image {
+                height: 250px;
+            }
+
             .category-title {
+                font-size: 1.5rem;
+            }
+
+            .modal-content-wrapper {
+                width: 95%;
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+
+            .modal-title {
                 font-size: 2rem;
             }
 
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 20px;
+            .products-list {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
             }
 
-            .product-image {
-                height: 200px;
+            .product-item-image {
+                height: 150px;
+            }
+
+            .product-item-name {
+                font-size: 0.85rem;
+                min-height: 35px;
             }
         }
     </style>
@@ -530,717 +622,131 @@
                 <div class="col-lg-10 mx-auto text-center hero-content">
                     <h1 class="hero-title" data-aos="fade-up">Festo Products</h1>
                     <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Complete Range of Pneumatic Components & Systems</p>
-                    <p class="lead" data-aos="fade-up" data-aos-delay="400">Industry-leading pneumatic cylinders, valves, fittings, and air preparation equipment for precision automation and control.</p>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="400">Click on any category to explore our comprehensive range of Festo products</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pneumatic Fittings & Valves Section -->
-    <section class="category-section">
+    <!-- Categories Section -->
+    <section class="categories-section">
         <div class="container">
-            <h2 class="category-title" data-aos="fade-up">Pneumatic Fittings & Valves</h2>
-            <p class="category-subtitle" data-aos="fade-up" data-aos-delay="100">Comprehensive selection of connectors, valves, and accessories for pneumatic systems</p>
-            
-            <div class="product-grid">
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal(this)" data-image="images/festo/FestoSilencer.jpg" data-name="Festo Silencer">
-                    <div class="product-image">
-                        <img src="images/festo/FestoSilencer.jpg" alt="Festo Silencer">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Silencer</p>
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold" data-aos="fade-up">Product Categories</h2>
+                    <p class="lead text-muted" data-aos="fade-up" data-aos-delay="200">Select a category to view all available products</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Pneumatic Fittings & Valves -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="category-card" onclick="openProductsModal('valves')">
+                        <div class="category-image">
+                            <img src="images/festo/FestoVUVSSolenoidValve.jpg" alt="Pneumatic Fittings & Valves">
+                            <div class="category-overlay">
+                                <div class="category-info">
+                                    <i class="fas fa-cogs category-icon"></i>
+                                    <h3 class="category-title">Pneumatic Fittings & Valves</h3>
+                                    <p class="category-count">16 Products</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-aos="fade-up" data-aos-delay="150" onclick="openModal(this)" data-image="images/festo/FestoVUVSSolenoidValve.jpg" data-name="Festo VUVS Solenoid Valve">
-                    <div class="product-image">
-                        <img src="images/festo/FestoVUVSSolenoidValve.jpg" alt="Festo VUVS Solenoid Valve">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo VUVS Solenoid Valve</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal(this)" data-image="images/festo/ConedBrass&SinteredBronzeSilencers-7040SeriesMaleThreadBSPP.png" data-name="Coned Brass & Sintered Bronze Silencers - 7040 Series Male Thread BSPP">
-                    <div class="product-image">
-                        <img src="images/festo/ConedBrass&SinteredBronzeSilencers-7040SeriesMaleThreadBSPP.png" alt="Coned Brass & Sintered Bronze Silencers">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Coned Brass & Sintered Bronze Silencers - 7040 Series Male Thread BSPP</p>
+                <!-- Push-In Fittings -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="category-card" onclick="openProductsModal('fittings')">
+                        <div class="category-image">
+                            <img src="images/festo/FestoEqualPush-InConnector.jpg" alt="Push-In Fittings">
+                            <div class="category-overlay">
+                                <div class="category-info">
+                                    <i class="fas fa-link category-icon"></i>
+                                    <h3 class="category-title">Push-In Fittings</h3>
+                                    <p class="category-count">27 Products</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-aos="fade-up" data-aos-delay="250" onclick="openModal(this)" data-image="images/festo/FestoMSSDFieldWirePlug.jpg" data-name="Festo MSSD Field Wire Plug">
-                    <div class="product-image">
-                        <img src="images/festo/FestoMSSDFieldWirePlug.jpg" alt="Festo MSSD Field Wire Plug">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo MSSD Field Wire Plug</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal(this)" data-image="images/festo/FestoRollerLeverValve.jpg" data-name="Festo Roller Lever Valve">
-                    <div class="product-image">
-                        <img src="images/festo/FestoRollerLeverValve.jpg" alt="Festo Roller Lever Valve">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Roller Lever Valve</p>
+                <!-- DFM Guided Cylinders -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="category-card" onclick="openProductsModal('dfm')">
+                        <div class="category-image">
+                            <img src="images/festo/Festo32mmDFMGuidedCylinder.jpg" alt="DFM Guided Cylinders">
+                            <div class="category-overlay">
+                                <div class="category-info">
+                                    <i class="fas fa-ruler-horizontal category-icon"></i>
+                                    <h3 class="category-title">DFM Guided Cylinders</h3>
+                                    <p class="category-count">8 Products</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-aos="fade-up" data-aos-delay="350" onclick="openModal(this)" data-image="images/festo/FestoVZWFBrassSolenoidValves.jpg" data-name="Festo VZWF Brass Solenoid Valves">
-                    <div class="product-image">
-                        <img src="images/festo/FestoVZWFBrassSolenoidValves.jpg" alt="Festo VZWF Brass Solenoid Valves">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo VZWF Brass Solenoid Valves</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="400" onclick="openModal(this)" data-image="images/festo/DomedBrass&SinteredBronzeSilencers-7020Series-MaleThreadMetric&BSPP.png" data-name="Domed Brass & Sintered Bronze Silencers - 7020 Series - Male Thread Metric & BSPP">
-                    <div class="product-image">
-                        <img src="images/festo/DomedBrass&SinteredBronzeSilencers-7020Series-MaleThreadMetric&BSPP.png" alt="Domed Brass & Sintered Bronze Silencers">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Domed Brass & Sintered Bronze Silencers - 7020 Series</p>
+                <!-- ADN Compact Cylinders -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="category-card" onclick="openProductsModal('adn')">
+                        <div class="category-image">
+                            <img src="images/festo/Festo32mmADN-32CompactCylinder.jpg" alt="ADN Compact Cylinders">
+                            <div class="category-overlay">
+                                <div class="category-info">
+                                    <i class="fas fa-compress category-icon"></i>
+                                    <h3 class="category-title">ADN Compact Cylinders</h3>
+                                    <p class="category-count">9 Products</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-aos="fade-up" data-aos-delay="450" onclick="openModal(this)" data-image="images/festo/FlushBrassNutSilencers-1200SeriesMaleBSPP.jpg" data-name="Flush Brass Nut Silencers - 1200 Series Male BSPP">
-                    <div class="product-image">
-                        <img src="images/festo/FlushBrassNutSilencers-1200SeriesMaleBSPP.jpg" alt="Flush Brass Nut Silencers">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Flush Brass Nut Silencers - 1200 Series Male BSPP</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="500" onclick="openModal(this)" data-image="images/festo/FestoVFOEOne-wayFlowControlValve.jpg" data-name="Festo VFOE One-way Flow Control Valve">
-                    <div class="product-image">
-                        <img src="images/festo/FestoVFOEOne-wayFlowControlValve.jpg" alt="Festo VFOE One-way Flow Control Valve">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo VFOE One-way Flow Control Valve</p>
+                <!-- DSNU & DSBC Cylinders -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="category-card" onclick="openProductsModal('dsnu')">
+                        <div class="category-image">
+                            <img src="images/festo/Festo32mmDSBCCylinder.jpg" alt="DSNU & DSBC Cylinders">
+                            <div class="category-overlay">
+                                <div class="category-info">
+                                    <i class="fas fa-circle category-icon"></i>
+                                    <h3 class="category-title">DSNU & DSBC Cylinders</h3>
+                                    <p class="category-count">7 Products</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="product-card" data-aos="fade-up" data-aos-delay="550" onclick="openModal(this)" data-image="images/festo/FestoM8:M12ConnectingCables.jpg" data-name="Festo M8/M12 Connecting Cables">
-                    <div class="product-image">
-                        <img src="images/festo/FestoM8:M12ConnectingCables.jpg" alt="Festo M8/M12 Connecting Cables">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo M8/M12 Connecting Cables</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="600" onclick="openModal(this)" data-image="images/festo/FestoPlug&Lead.jpg" data-name="Festo Plug & Lead">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPlug&Lead.jpg" alt="Festo Plug & Lead">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Plug & Lead</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="650" onclick="openModal(this)" data-image="images/festo/FestoNEBVPlugs:LeadsforVUVGValves.jpg" data-name="Festo NEBV Plugs / Leads for VUVG Valves">
-                    <div class="product-image">
-                        <img src="images/festo/FestoNEBVPlugs:LeadsforVUVGValves.jpg" alt="Festo NEBV Plugs / Leads for VUVG Valves">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo NEBV Plugs / Leads for VUVG Valves</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="700" onclick="openModal(this)" data-image="images/festo/FestoVUVGSolenoidValve24vDC.jpg" data-name="Festo VUVG Solenoid Valve 24vDC">
-                    <div class="product-image">
-                        <img src="images/festo/FestoVUVGSolenoidValve24vDC.jpg" alt="Festo VUVG Solenoid Valve 24vDC">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo VUVG Solenoid Valve 24vDC</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="750" onclick="openModal(this)" data-image="images/festo/FestoHGLPilotOperatedCheckValve.jpg" data-name="Festo HGL Pilot Operated Check Valve">
-                    <div class="product-image">
-                        <img src="images/festo/FestoHGLPilotOperatedCheckValve.jpg" alt="Festo HGL Pilot Operated Check Valve">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo HGL Pilot Operated Check Valve</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="800" onclick="openModal(this)" data-image="images/festo/FestoOneWayFlowControlValve-MeterOut.jpg" data-name="Festo One Way Flow Control Valve - Meter Out">
-                    <div class="product-image">
-                        <img src="images/festo/FestoOneWayFlowControlValve-MeterOut.jpg" alt="Festo One Way Flow Control Valve - Meter Out">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo One Way Flow Control Valve - Meter Out</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="850" onclick="openModal(this)" data-image="images/festo/FestoOneWayFlowControlValve-MeterIn.jpg" data-name="Festo One Way Flow Control Valve - Meter In">
-                    <div class="product-image">
-                        <img src="images/festo/FestoOneWayFlowControlValve-MeterIn.jpg" alt="Festo One Way Flow Control Valve - Meter In">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo One Way Flow Control Valve - Meter In</p>
+                <!-- Air Preparation -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="category-card" onclick="openProductsModal('air')">
+                        <div class="category-image">
+                            <img src="images/festo/FestoMS4SeriesAirPreparation.jpg" alt="Air Preparation">
+                            <div class="category-overlay">
+                                <div class="category-info">
+                                    <i class="fas fa-wind category-icon"></i>
+                                    <h3 class="category-title">Air Preparation</h3>
+                                    <p class="category-count">4 Products</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Push-In Fittings Section -->
-    <section class="category-section">
-        <div class="container">
-            <h2 class="category-title" data-aos="fade-up">Push-In Fittings & Accessories</h2>
-            <p class="category-subtitle" data-aos="fade-up" data-aos-delay="100">Quick-connect fittings for fast and reliable pneumatic connections</p>
-            
-            <div class="product-grid">
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal(this)" data-image="images/festo/FestoPolyurethanePneumaticTube.jpg" data-name="Festo Polyurethane Pneumatic Tube">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPolyurethanePneumaticTube.jpg" alt="Festo Polyurethane Pneumatic Tube">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Polyurethane Pneumatic Tube</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="150" onclick="openModal(this)" data-image="images/festo/FestoEqualPush-InConnector.jpg" data-name="Festo Equal Push-In Connector">
-                    <div class="product-image">
-                        <img src="images/festo/FestoEqualPush-InConnector.jpg" alt="Festo Equal Push-In Connector">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Equal Push-In Connector</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal(this)" data-image="images/festo/FestoPush-InBlank.jpg" data-name="Festo Push-In Blank">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InBlank.jpg" alt="Festo Push-In Blank">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Blank</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="250" onclick="openModal(this)" data-image="images/festo/FestoPush-InParallelMaleStudElbow.jpg" data-name="Festo Push-In Parallel Male Stud Elbow">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InParallelMaleStudElbow.jpg" alt="Festo Push-In Parallel Male Stud Elbow">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Parallel Male Stud Elbow</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal(this)" data-image="images/festo/FestoPush-InReducingConnector.jpg" data-name="Festo Push-In Reducing Connector">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InReducingConnector.jpg" alt="Festo Push-In Reducing Connector">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Reducing Connector</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="350" onclick="openModal(this)" data-image="images/festo/FestoPush-InEqualTee.jpg" data-name="Festo Push-In Equal Tee">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InEqualTee.jpg" alt="Festo Push-In Equal Tee">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Equal Tee</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="400" onclick="openModal(this)" data-image="images/festo/FestoPush-InParallelMaleStudStraight(External).jpg" data-name="Festo Push-In Parallel Male Stud Straight (External)">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InParallelMaleStudStraight(External).jpg" alt="Festo Push-In Parallel Male Stud Straight (External)">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Parallel Male Stud Straight (External)</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="450" onclick="openModal(this)" data-image="images/festo/FestoPush-InTaperMaleStudStraight(External).jpg" data-name="Festo Push-In Taper Male Stud Straight (External)">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InTaperMaleStudStraight(External).jpg" alt="Festo Push-In Taper Male Stud Straight (External)">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Taper Male Stud Straight (External)</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="500" onclick="openModal(this)" data-image="images/festo/FestoPush-InTaperMaleStudElbow.jpg" data-name="Festo Push-In Taper Male Stud Elbow">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InTaperMaleStudElbow.jpg" alt="Festo Push-In Taper Male Stud Elbow">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Taper Male Stud Elbow</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="550" onclick="openModal(this)" data-image="images/festo/FestoPush-InEqualYPiece.jpg" data-name="Festo Push-In Equal Y Piece">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InEqualYPiece.jpg" alt="Festo Push-In Equal Y Piece">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Equal Y Piece</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="600" onclick="openModal(this)" data-image="images/festo/FestoPush-InEqualElbow.jpg" data-name="Festo Push-In Equal Elbow">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InEqualElbow.jpg" alt="Festo Push-In Equal Elbow">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Equal Elbow</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="650" onclick="openModal(this)" data-image="images/festo/FestoPush-InBulkheadConnector.jpg" data-name="Festo Push-In Bulkhead Connector">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InBulkheadConnector.jpg" alt="Festo Push-In Bulkhead Connector">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Bulkhead Connector</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="700" onclick="openModal(this)" data-image="images/festo/FestoPush-InFemaleStudStraight.jpg" data-name="Festo Push-In Female Stud Straight">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InFemaleStudStraight.jpg" alt="Festo Push-In Female Stud Straight">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Female Stud Straight</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="750" onclick="openModal(this)" data-image="images/festo/FestoPush-InParallelMaleStudStraight(Internal).jpg" data-name="Festo Push-In Parallel Male Stud Straight (Internal)">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InParallelMaleStudStraight(Internal).jpg" alt="Festo Push-In Parallel Male Stud Straight (Internal)">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Parallel Male Stud Straight (Internal)</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="800" onclick="openModal(this)" data-image="images/festo/FestoPush-InReducingTee.jpg" data-name="Festo Push-In Reducing Tee">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InReducingTee.jpg" alt="Festo Push-In Reducing Tee">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Reducing Tee</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="850" onclick="openModal(this)" data-image="images/festo/FestoPush-InTaperMaleStudBranchTee.jpg" data-name="Festo Push-In Taper Male Stud Branch Tee">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InTaperMaleStudBranchTee.jpg" alt="Festo Push-In Taper Male Stud Branch Tee">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Taper Male Stud Branch Tee</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="900" onclick="openModal(this)" data-image="images/festo/FestoPush-InStemReducer.jpg" data-name="Festo Push-In Stem Reducer">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InStemReducer.jpg" alt="Festo Push-In Stem Reducer">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Stem Reducer</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="950" onclick="openModal(this)" data-image="images/festo/FestoPush-InTaperMaleStudYPieceElbow.jpg" data-name="Festo Push-In Taper Male Stud Y Piece Elbow">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InTaperMaleStudYPieceElbow.jpg" alt="Festo Push-In Taper Male Stud Y Piece Elbow">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Taper Male Stud Y Piece Elbow</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="1000" onclick="openModal(this)" data-image="images/festo/FestoPush-InParallelBanjo.jpg" data-name="Festo Push-In Parallel Banjo">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InParallelBanjo.jpg" alt="Festo Push-In Parallel Banjo">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Parallel Banjo</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="1050" onclick="openModal(this)" data-image="images/festo/FestoPush-InEqualStemElbow.jpg" data-name="Festo Push-In Equal Stem Elbow">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InEqualStemElbow.jpg" alt="Festo Push-In Equal Stem Elbow">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Equal Stem Elbow</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="1100" onclick="openModal(this)" data-image="images/festo/FestoPush-InFittingsAssortmentKit-194Pieces(KIT1).jpg" data-name="Festo Push-In Fittings Assortment Kit - 194 Pieces (KIT 1)">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InFittingsAssortmentKit-194Pieces(KIT1).jpg" alt="Festo Push-In Fittings Assortment Kit">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Fittings Assortment Kit - 194 Pieces (KIT 1)</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="1150" onclick="openModal(this)" data-image="images/festo/FestoPush-InReducingYPiece.jpg" data-name="Festo Push-In Reducing Y Piece">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InReducingYPiece.jpg" alt="Festo Push-In Reducing Y Piece">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Reducing Y Piece</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="1200" onclick="openModal(this)" data-image="images/festo/FestoPush-InFemaleStudElbow.jpg" data-name="Festo Push-In Female Stud Elbow">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InFemaleStudElbow.jpg" alt="Festo Push-In Female Stud Elbow">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Female Stud Elbow</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="1250" onclick="openModal(this)" data-image="images/festo/FestoPush-InTaperMaleStudYPieceStraight.jpg" data-name="Festo Push-In Taper Male Stud Y Piece Straight">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InTaperMaleStudYPieceStraight.jpg" alt="Festo Push-In Taper Male Stud Y Piece Straight">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Taper Male Stud Y Piece Straight</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="1300" onclick="openModal(this)" data-image="images/festo/FestoPush-InTaperMaleStudStraight(Internal).jpg" data-name="Festo Push-In Taper Male Stud Straight (Internal)">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InTaperMaleStudStraight(Internal).jpg" alt="Festo Push-In Taper Male Stud Straight (Internal)">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Taper Male Stud Straight (Internal)</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="1350" onclick="openModal(this)" data-image="images/festo/FestoPush-InTaperMaleStudRunningTee.jpg" data-name="Festo Push-In Taper Male Stud Running Tee">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InTaperMaleStudRunningTee.jpg" alt="Festo Push-In Taper Male Stud Running Tee">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Taper Male Stud Running Tee</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="1400" onclick="openModal(this)" data-image="images/festo/FestoPush-InTaperExtendedMaleStudElbow.jpg" data-name="Festo Push-In Taper Extended Male Stud Elbow">
-                    <div class="product-image">
-                        <img src="images/festo/FestoPush-InTaperExtendedMaleStudElbow.jpg" alt="Festo Push-In Taper Extended Male Stud Elbow">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo Push-In Taper Extended Male Stud Elbow</p>
-                    </div>
-                </div>
+    <!-- Products Modal -->
+    <div id="productsModal" class="products-modal" onclick="closeModal(event)">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal(event)">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <p id="modalSubtitle" class="modal-subtitle"></p>
             </div>
-        </div>
-    </section>
-
-    <!-- DFM Guided Cylinders Section -->
-    <section class="category-section">
-        <div class="container">
-            <h2 class="category-title" data-aos="fade-up">DFM Guided Cylinders</h2>
-            <p class="category-subtitle" data-aos="fade-up" data-aos-delay="100">Precision guided pneumatic cylinders for accurate linear motion</p>
-            
-            <div class="product-grid">
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal(this)" data-image="images/festo/Festo12mmDFMGuidedCylinder.jpg" data-name="Festo 12mm DFM Guided Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo12mmDFMGuidedCylinder.jpg" alt="Festo 12mm DFM Guided Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 12mm DFM Guided Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="150" onclick="openModal(this)" data-image="images/festo/Festo16mmDFMGuidedCylinder.jpg" data-name="Festo 16mm DFM Guided Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo16mmDFMGuidedCylinder.jpg" alt="Festo 16mm DFM Guided Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 16mm DFM Guided Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal(this)" data-image="images/festo/Festo20mmDFMGuidedCylinder.jpg" data-name="Festo 20mm DFM Guided Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo20mmDFMGuidedCylinder.jpg" alt="Festo 20mm DFM Guided Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 20mm DFM Guided Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="250" onclick="openModal(this)" data-image="images/festo/Festo25mmDFMGuidedCylinder.jpg" data-name="Festo 25mm DFM Guided Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo25mmDFMGuidedCylinder.jpg" alt="Festo 25mm DFM Guided Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 25mm DFM Guided Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal(this)" data-image="images/festo/Festo32mmDFMGuidedCylinder.jpg" data-name="Festo 32mm DFM Guided Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo32mmDFMGuidedCylinder.jpg" alt="Festo 32mm DFM Guided Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 32mm DFM Guided Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="350" onclick="openModal(this)" data-image="images/festo/Festo40mmDFMGuidedCylinder.jpg" data-name="Festo 40mm DFM Guided Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo40mmDFMGuidedCylinder.jpg" alt="Festo 40mm DFM Guided Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 40mm DFM Guided Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="400" onclick="openModal(this)" data-image="images/festo/Festo50mmDFMGuidedCylinder.jpg" data-name="Festo 50mm DFM Guided Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo50mmDFMGuidedCylinder.jpg" alt="Festo 50mm DFM Guided Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 50mm DFM Guided Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="450" onclick="openModal(this)" data-image="images/festo/Festo63mmDFMGuidedCylinder.jpg" data-name="Festo 63mm DFM Guided Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo63mmDFMGuidedCylinder.jpg" alt="Festo 63mm DFM Guided Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 63mm DFM Guided Cylinder</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ADN Compact Cylinders Section -->
-    <section class="category-section">
-        <div class="container">
-            <h2 class="category-title" data-aos="fade-up">ADN Compact Cylinders</h2>
-            <p class="category-subtitle" data-aos="fade-up" data-aos-delay="100">Space-saving compact pneumatic cylinders for tight installations</p>
-            
-            <div class="product-grid">
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal(this)" data-image="images/festo/Festo12mmADN-12CompactCylinder.jpg" data-name="Festo 12mm ADN-12 Compact Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo12mmADN-12CompactCylinder.jpg" alt="Festo 12mm ADN-12 Compact Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 12mm ADN-12 Compact Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="150" onclick="openModal(this)" data-image="images/festo/Festo16mmADN-16CompactCylinder.jpg" data-name="Festo 16mm ADN-16 Compact Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo16mmADN-16CompactCylinder.jpg" alt="Festo 16mm ADN-16 Compact Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 16mm ADN-16 Compact Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal(this)" data-image="images/festo/Festo20mmADN-20CompactCylinder.jpg" data-name="Festo 20mm ADN-20 Compact Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo20mmADN-20CompactCylinder.jpg" alt="Festo 20mm ADN-20 Compact Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 20mm ADN-20 Compact Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="250" onclick="openModal(this)" data-image="images/festo/Festo25mmADN-25CompactCylinder.jpg" data-name="Festo 25mm ADN-25 Compact Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo25mmADN-25CompactCylinder.jpg" alt="Festo 25mm ADN-25 Compact Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 25mm ADN-25 Compact Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal(this)" data-image="images/festo/Festo32mmADN-32CompactCylinder.jpg" data-name="Festo 32mm ADN-32 Compact Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo32mmADN-32CompactCylinder.jpg" alt="Festo 32mm ADN-32 Compact Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 32mm ADN-32 Compact Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="350" onclick="openModal(this)" data-image="images/festo/Festo40mmADN-40CompactCylinder.jpg" data-name="Festo 40mm ADN-40 Compact Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo40mmADN-40CompactCylinder.jpg" alt="Festo 40mm ADN-40 Compact Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 40mm ADN-40 Compact Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="400" onclick="openModal(this)" data-image="images/festo/Festo50mmADN-50CompactCylinder.jpg" data-name="Festo 50mm ADN-50 Compact Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo50mmADN-50CompactCylinder.jpg" alt="Festo 50mm ADN-50 Compact Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 50mm ADN-50 Compact Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="450" onclick="openModal(this)" data-image="images/festo/Festo63mmADN-63DoubleActingCompactCylinder.jpg" data-name="Festo 63mm ADN-63 Double Acting Compact Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo63mmADN-63DoubleActingCompactCylinder.jpg" alt="Festo 63mm ADN-63 Double Acting Compact Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 63mm ADN-63 Double Acting Compact Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="500" onclick="openModal(this)" data-image="images/festo/Festo80mmboreADNCompactCylinder.jpg" data-name="Festo 80mm bore ADN Compact Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo80mmboreADNCompactCylinder.jpg" alt="Festo 80mm bore ADN Compact Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 80mm bore ADN Compact Cylinder</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- DSNU Round Cylinders & DSBC Cylinders Section -->
-    <section class="category-section">
-        <div class="container">
-            <h2 class="category-title" data-aos="fade-up">DSNU Round & DSBC Cylinders</h2>
-            <p class="category-subtitle" data-aos="fade-up" data-aos-delay="100">Standard pneumatic cylinders for general industrial applications</p>
-            
-            <div class="product-grid">
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal(this)" data-image="images/festo/Festo12mmDSNURoundCylinder.jpg" data-name="Festo 12mm DSNU Round Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo12mmDSNURoundCylinder.jpg" alt="Festo 12mm DSNU Round Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 12mm DSNU Round Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="150" onclick="openModal(this)" data-image="images/festo/Festo16mmDSNURoundCylinder.jpg" data-name="Festo 16mm DSNU Round Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo16mmDSNURoundCylinder.jpg" alt="Festo 16mm DSNU Round Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 16mm DSNU Round Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal(this)" data-image="images/festo/Festo20mmDSNURoundCylinder.jpg" data-name="Festo 20mm DSNU Round Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo20mmDSNURoundCylinder.jpg" alt="Festo 20mm DSNU Round Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 20mm DSNU Round Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="250" onclick="openModal(this)" data-image="images/festo/Festo25mmDSNURoundCylinder.jpg" data-name="Festo 25mm DSNU Round Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo25mmDSNURoundCylinder.jpg" alt="Festo 25mm DSNU Round Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 25mm DSNU Round Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="300" onclick="openModal(this)" data-image="images/festo/Festo32mmDSBCCylinder.jpg" data-name="Festo 32mm DSBC Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo32mmDSBCCylinder.jpg" alt="Festo 32mm DSBC Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 32mm DSBC Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="350" onclick="openModal(this)" data-image="images/festo/Festo40mmDSBCCylinder.jpg" data-name="Festo 40mm DSBC Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo40mmDSBCCylinder.jpg" alt="Festo 40mm DSBC Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 40mm DSBC Cylinder</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="400" onclick="openModal(this)" data-image="images/festo/Festo50mmDSBCCylinder.jpg" data-name="Festo 50mm DSBC Cylinder">
-                    <div class="product-image">
-                        <img src="images/festo/Festo50mmDSBCCylinder.jpg" alt="Festo 50mm DSBC Cylinder">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo 50mm DSBC Cylinder</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Air Preparation Section -->
-    <section class="category-section">
-        <div class="container">
-            <h2 class="category-title" data-aos="fade-up">Air Preparation Equipment</h2>
-            <p class="category-subtitle" data-aos="fade-up" data-aos-delay="100">Filters, regulators, and service units for clean, regulated compressed air</p>
-            
-            <div class="product-grid">
-                <div class="product-card" data-aos="fade-up" data-aos-delay="100" onclick="openModal(this)" data-image="images/festo/FestoMS4SeriesAirPreparation.jpg" data-name="Festo MS4 Series Air Preparation">
-                    <div class="product-image">
-                        <img src="images/festo/FestoMS4SeriesAirPreparation.jpg" alt="Festo MS4 Series Air Preparation">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo MS4 Series Air Preparation</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="150" onclick="openModal(this)" data-image="images/festo/FestoMSBBoxSets.jpg" data-name="Festo MSB Box Sets">
-                    <div class="product-image">
-                        <img src="images/festo/FestoMSBBoxSets.jpg" alt="Festo MSB Box Sets">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo MSB Box Sets</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="200" onclick="openModal(this)" data-image="images/festo/FestoMS6SeriesAirPreparation.jpg" data-name="Festo MS6 Series Air Preparation">
-                    <div class="product-image">
-                        <img src="images/festo/FestoMS6SeriesAirPreparation.jpg" alt="Festo MS6 Series Air Preparation">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo MS6 Series Air Preparation</p>
-                    </div>
-                </div>
-
-                <div class="product-card" data-aos="fade-up" data-aos-delay="250" onclick="openModal(this)" data-image="images/festo/FestoLRPPrecisionPressureRegulator.jpg" data-name="Festo LRP Precision Pressure Regulator">
-                    <div class="product-image">
-                        <img src="images/festo/FestoLRPPrecisionPressureRegulator.jpg" alt="Festo LRP Precision Pressure Regulator">
-                    </div>
-                    <div class="product-info">
-                        <p class="product-name">Festo LRP Precision Pressure Regulator</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Image Modal -->
-    <div id="imageModal" class="image-modal" onclick="closeModal()">
-        <span class="modal-close">&times;</span>
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <img id="modalImage" src="" alt="Product Image">
-            <h3 id="modalTitle" class="modal-title"></h3>
+            <div id="productsListContainer" class="products-list"></div>
         </div>
     </div>
 
@@ -1272,7 +778,6 @@
                                 <li><a href="contact.html">Contact us</a></li>
                             </ul>
                         </div>
-                        <!-- Add Contact Information Section -->
                         <div class="col-6 col-sm-6 col-md-4">
                             <ul class="list-unstyled">
                                 <li><i class="fas fa-map-marker-alt me-2"></i>6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</li>
@@ -1305,24 +810,155 @@
             once: true,
             offset: 100
         });
-    </script>
-    <script>
-        function openModal(element) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
+
+        // Products data
+        const productsData = {
+            valves: {
+                title: "Pneumatic Fittings & Valves",
+                subtitle: "Comprehensive selection of connectors, valves, and accessories",
+                products: [
+                    { name: "Festo Silencer", image: "images/festo/FestoSilencer.jpg" },
+                    { name: "Festo VUVS Solenoid Valve", image: "images/festo/FestoVUVSSolenoidValve.jpg" },
+                    { name: "Coned Brass & Sintered Bronze Silencers - 7040 Series Male Thread BSPP", image: "images/festo/ConedBrass&SinteredBronzeSilencers-7040SeriesMaleThreadBSPP.png" },
+                    { name: "Festo MSSD Field Wire Plug", image: "images/festo/FestoMSSDFieldWirePlug.jpg" },
+                    { name: "Festo Roller Lever Valve", image: "images/festo/FestoRollerLeverValve.jpg" },
+                    { name: "Festo VZWF Brass Solenoid Valves", image: "images/festo/FestoVZWFBrassSolenoidValves.jpg" },
+                    { name: "Domed Brass & Sintered Bronze Silencers - 7020 Series", image: "images/festo/DomedBrass&SinteredBronzeSilencers-7020Series-MaleThreadMetric&BSPP.png" },
+                    { name: "Flush Brass Nut Silencers - 1200 Series Male BSPP", image: "images/festo/FlushBrassNutSilencers-1200SeriesMaleBSPP.jpg" },
+                    { name: "Festo VFOE One-way Flow Control Valve", image: "images/festo/FestoVFOEOne-wayFlowControlValve.jpg" },
+                    { name: "Festo M8/M12 Connecting Cables", image: "images/festo/FestoM8:M12ConnectingCables.jpg" },
+                    { name: "Festo Plug & Lead", image: "images/festo/FestoPlug&Lead.jpg" },
+                    { name: "Festo NEBV Plugs / Leads for VUVG Valves", image: "images/festo/FestoNEBVPlugs:LeadsforVUVGValves.jpg" },
+                    { name: "Festo VUVG Solenoid Valve 24vDC", image: "images/festo/FestoVUVGSolenoidValve24vDC.jpg" },
+                    { name: "Festo HGL Pilot Operated Check Valve", image: "images/festo/FestoHGLPilotOperatedCheckValve.jpg" },
+                    { name: "Festo One Way Flow Control Valve - Meter Out", image: "images/festo/FestoOneWayFlowControlValve-MeterOut.jpg" },
+                    { name: "Festo One Way Flow Control Valve - Meter In", image: "images/festo/FestoOneWayFlowControlValve-MeterIn.jpg" }
+                ]
+            },
+            fittings: {
+                title: "Push-In Fittings & Accessories",
+                subtitle: "Quick-connect fittings for fast and reliable pneumatic connections",
+                products: [
+                    { name: "Festo Polyurethane Pneumatic Tube", image: "images/festo/FestoPolyurethanePneumaticTube.jpg" },
+                    { name: "Festo Equal Push-In Connector", image: "images/festo/FestoEqualPush-InConnector.jpg" },
+                    { name: "Festo Push-In Blank", image: "images/festo/FestoPush-InBlank.jpg" },
+                    { name: "Festo Push-In Parallel Male Stud Elbow", image: "images/festo/FestoPush-InParallelMaleStudElbow.jpg" },
+                    { name: "Festo Push-In Reducing Connector", image: "images/festo/FestoPush-InReducingConnector.jpg" },
+                    { name: "Festo Push-In Equal Tee", image: "images/festo/FestoPush-InEqualTee.jpg" },
+                    { name: "Festo Push-In Parallel Male Stud Straight (External)", image: "images/festo/FestoPush-InParallelMaleStudStraight(External).jpg" },
+                    { name: "Festo Push-In Taper Male Stud Straight (External)", image: "images/festo/FestoPush-InTaperMaleStudStraight(External).jpg" },
+                    { name: "Festo Push-In Taper Male Stud Elbow", image: "images/festo/FestoPush-InTaperMaleStudElbow.jpg" },
+                    { name: "Festo Push-In Equal Y Piece", image: "images/festo/FestoPush-InEqualYPiece.jpg" },
+                    { name: "Festo Push-In Equal Elbow", image: "images/festo/FestoPush-InEqualElbow.jpg" },
+                    { name: "Festo Push-In Bulkhead Connector", image: "images/festo/FestoPush-InBulkheadConnector.jpg" },
+                    { name: "Festo Push-In Female Stud Straight", image: "images/festo/FestoPush-InFemaleStudStraight.jpg" },
+                    { name: "Festo Push-In Parallel Male Stud Straight (Internal)", image: "images/festo/FestoPush-InParallelMaleStudStraight(Internal).jpg" },
+                    { name: "Festo Push-In Reducing Tee", image: "images/festo/FestoPush-InReducingTee.jpg" },
+                    { name: "Festo Push-In Taper Male Stud Branch Tee", image: "images/festo/FestoPush-InTaperMaleStudBranchTee.jpg" },
+                    { name: "Festo Push-In Stem Reducer", image: "images/festo/FestoPush-InStemReducer.jpg" },
+                    { name: "Festo Push-In Taper Male Stud Y Piece Elbow", image: "images/festo/FestoPush-InTaperMaleStudYPieceElbow.jpg" },
+                    { name: "Festo Push-In Parallel Banjo", image: "images/festo/FestoPush-InParallelBanjo.jpg" },
+                    { name: "Festo Push-In Equal Stem Elbow", image: "images/festo/FestoPush-InEqualStemElbow.jpg" },
+                    { name: "Festo Push-In Fittings Assortment Kit - 194 Pieces (KIT 1)", image: "images/festo/FestoPush-InFittingsAssortmentKit-194Pieces(KIT1).jpg" },
+                    { name: "Festo Push-In Reducing Y Piece", image: "images/festo/FestoPush-InReducingYPiece.jpg" },
+                    { name: "Festo Push-In Female Stud Elbow", image: "images/festo/FestoPush-InFemaleStudElbow.jpg" },
+                    { name: "Festo Push-In Taper Male Stud Y Piece Straight", image: "images/festo/FestoPush-InTaperMaleStudYPieceStraight.jpg" },
+                    { name: "Festo Push-In Taper Male Stud Straight (Internal)", image: "images/festo/FestoPush-InTaperMaleStudStraight(Internal).jpg" },
+                    { name: "Festo Push-In Taper Male Stud Running Tee", image: "images/festo/FestoPush-InTaperMaleStudRunningTee.jpg" },
+                    { name: "Festo Push-In Taper Extended Male Stud Elbow", image: "images/festo/FestoPush-InTaperExtendedMaleStudElbow.jpg" }
+                ]
+            },
+            dfm: {
+                title: "DFM Guided Cylinders",
+                subtitle: "Precision guided pneumatic cylinders for accurate linear motion",
+                products: [
+                    { name: "Festo 12mm DFM Guided Cylinder", image: "images/festo/Festo12mmDFMGuidedCylinder.jpg" },
+                    { name: "Festo 16mm DFM Guided Cylinder", image: "images/festo/Festo16mmDFMGuidedCylinder.jpg" },
+                    { name: "Festo 20mm DFM Guided Cylinder", image: "images/festo/Festo20mmDFMGuidedCylinder.jpg" },
+                    { name: "Festo 25mm DFM Guided Cylinder", image: "images/festo/Festo25mmDFMGuidedCylinder.jpg" },
+                    { name: "Festo 32mm DFM Guided Cylinder", image: "images/festo/Festo32mmDFMGuidedCylinder.jpg" },
+                    { name: "Festo 40mm DFM Guided Cylinder", image: "images/festo/Festo40mmDFMGuidedCylinder.jpg" },
+                    { name: "Festo 50mm DFM Guided Cylinder", image: "images/festo/Festo50mmDFMGuidedCylinder.jpg" },
+                    { name: "Festo 63mm DFM Guided Cylinder", image: "images/festo/Festo63mmDFMGuidedCylinder.jpg" }
+                ]
+            },
+            adn: {
+                title: "ADN Compact Cylinders",
+                subtitle: "Space-saving compact pneumatic cylinders for tight installations",
+                products: [
+                    { name: "Festo 12mm ADN-12 Compact Cylinder", image: "images/festo/Festo12mmADN-12CompactCylinder.jpg" },
+                    { name: "Festo 16mm ADN-16 Compact Cylinder", image: "images/festo/Festo16mmADN-16CompactCylinder.jpg" },
+                    { name: "Festo 20mm ADN-20 Compact Cylinder", image: "images/festo/Festo20mmADN-20CompactCylinder.jpg" },
+                    { name: "Festo 25mm ADN-25 Compact Cylinder", image: "images/festo/Festo25mmADN-25CompactCylinder.jpg" },
+                    { name: "Festo 32mm ADN-32 Compact Cylinder", image: "images/festo/Festo32mmADN-32CompactCylinder.jpg" },
+                    { name: "Festo 40mm ADN-40 Compact Cylinder", image: "images/festo/Festo40mmADN-40CompactCylinder.jpg" },
+                    { name: "Festo 50mm ADN-50 Compact Cylinder", image: "images/festo/Festo50mmADN-50CompactCylinder.jpg" },
+                    { name: "Festo 63mm ADN-63 Double Acting Compact Cylinder", image: "images/festo/Festo63mmADN-63DoubleActingCompactCylinder.jpg" },
+                    { name: "Festo 80mm bore ADN Compact Cylinder", image: "images/festo/Festo80mmboreADNCompactCylinder.jpg" }
+                ]
+            },
+            dsnu: {
+                title: "DSNU Round & DSBC Cylinders",
+                subtitle: "Standard pneumatic cylinders for general industrial applications",
+                products: [
+                    { name: "Festo 12mm DSNU Round Cylinder", image: "images/festo/Festo12mmDSNURoundCylinder.jpg" },
+                    { name: "Festo 16mm DSNU Round Cylinder", image: "images/festo/Festo16mmDSNURoundCylinder.jpg" },
+                    { name: "Festo 20mm DSNU Round Cylinder", image: "images/festo/Festo20mmDSNURoundCylinder.jpg" },
+                    { name: "Festo 25mm DSNU Round Cylinder", image: "images/festo/Festo25mmDSNURoundCylinder.jpg" },
+                    { name: "Festo 32mm DSBC Cylinder", image: "images/festo/Festo32mmDSBCCylinder.jpg" },
+                    { name: "Festo 40mm DSBC Cylinder", image: "images/festo/Festo40mmDSBCCylinder.jpg" },
+                    { name: "Festo 50mm DSBC Cylinder", image: "images/festo/Festo50mmDSBCCylinder.jpg" }
+                ]
+            },
+            air: {
+                title: "Air Preparation Equipment",
+                subtitle: "Filters, regulators, and service units for clean, regulated compressed air",
+                products: [
+                    { name: "Festo MS4 Series Air Preparation", image: "images/festo/FestoMS4SeriesAirPreparation.jpg" },
+                    { name: "Festo MSB Box Sets", image: "images/festo/FestoMSBBoxSets.jpg" },
+                    { name: "Festo MS6 Series Air Preparation", image: "images/festo/FestoMS6SeriesAirPreparation.jpg" },
+                    { name: "Festo LRP Precision Pressure Regulator", image: "images/festo/FestoLRPPrecisionPressureRegulator.jpg" }
+                ]
+            }
+        };
+
+        function openProductsModal(category) {
+            const modal = document.getElementById('productsModal');
             const modalTitle = document.getElementById('modalTitle');
+            const modalSubtitle = document.getElementById('modalSubtitle');
+            const productsListContainer = document.getElementById('productsListContainer');
+
+            const categoryData = productsData[category];
             
-            const imageSrc = element.getAttribute('data-image');
-            const productName = element.getAttribute('data-name');
+            modalTitle.textContent = categoryData.title;
+            modalSubtitle.textContent = categoryData.subtitle;
             
+            productsListContainer.innerHTML = '';
+            categoryData.products.forEach(product => {
+                const productItem = document.createElement('div');
+                productItem.className = 'product-item';
+                productItem.innerHTML = `
+                    <div class="product-item-image">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="product-item-info">
+                        <p class="product-item-name">${product.name}</p>
+                    </div>
+                `;
+                productsListContainer.appendChild(productItem);
+            });
+
             modal.style.display = 'block';
-            modalImg.src = imageSrc;
-            modalTitle.textContent = productName;
+            document.body.style.overflow = 'hidden';
         }
 
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
+        function closeModal(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            const modal = document.getElementById('productsModal');
             modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
         // Close modal when pressing Escape key
@@ -1372,4 +1008,3 @@
     </script>
 </body>
 </html>
-
