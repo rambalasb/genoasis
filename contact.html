@@ -124,6 +124,7 @@
       color: #666;
       margin: 0;
       line-height: 1.6;
+      white-space: nowrap;
     }
 
     .contact-form-section {
@@ -317,6 +318,15 @@
       height: 1.5em;
     }
 
+    /* Prevent phone number line breaks */
+    .footer-section li {
+      white-space: nowrap;
+    }
+
+    .top-bar a {
+      white-space: nowrap;
+    }
+
     @media (max-width: 768px) {
       .navbar-toggler {
         margin-right: 15px;
@@ -342,6 +352,15 @@
       
       .dropdown-item {
         padding: 0.5rem 0;
+      }
+
+      /* Allow line breaks on mobile for better readability */
+      .footer-section li {
+        white-space: normal;
+      }
+
+      .top-bar a {
+        white-space: normal;
       }
     }
 
@@ -597,14 +616,11 @@
       <div class="col-12">
         <div class="d-flex justify-content-end">
           <a href="tel:+918925883227" class="me-3 text-decoration-none">
-            <i class="fas fa-phone"></i> +91 892 588 3227
+            🇮🇳 <i class="fas fa-phone"></i> +91 892 588 3227
           </a>
-          <a href="tel:+971503571340" class="me-3 text-decoration-none">
-            <i class="fas fa-phone"></i> +971 50 357 1340
-          </a>
-          <a href="tel:+971504973835" class="me-3 text-decoration-none">
-            <i class="fas fa-phone"></i> +971 50 497 3835
-          </a>
+          <span class="me-3">
+            🇦🇪 <i class="fas fa-phone"></i> <a href="tel:+971503571340" class="text-decoration-none">+971 50 357 1340</a> / <a href="tel:+971504973835" class="text-decoration-none">+971 50 497 3835</a>
+          </span>
           <a href="mailto:info@genoasis.com" class="text-decoration-none">
             <i class="fas fa-envelope"></i> info@genoasis.com
           </a>
@@ -724,7 +740,7 @@
               <i class="fas fa-phone"></i>
             </div>
             <h3 class="contact-title">Call Us</h3>
-            <p class="contact-text"><strong>India:</strong> +91 892 588 3227<br><strong>UAE:</strong> +971 50 357 1340<br><strong>UAE:</strong> +971 50 497 3835</p>
+            <p class="contact-text"><strong>🇮🇳 India:</strong> +91 892 588 3227<br><strong>🇦🇪 UAE:</strong> +971 50 357 1340 / +971 50 497 3835</p>
           </div>
         </div>
       </div>
@@ -837,9 +853,8 @@
             <div class="col-6 col-sm-6 col-md-4">
               <ul class="list-unstyled">
                 <li><i class="fas fa-map-marker-alt me-2"></i>6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</li>
-                <li><i class="fas fa-phone me-2"></i>+91 892 588 3227</li>
-                <li><i class="fas fa-phone me-2"></i>+971 50 357 1340</li>
-                <li><i class="fas fa-phone me-2"></i>+971 50 497 3835</li>
+                <li>🇮🇳 <i class="fas fa-phone me-2"></i>+91 892 588 3227</li>
+                <li>🇦🇪 <i class="fas fa-phone me-2"></i>+971 50 357 1340 / +971 50 497 3835</li>
                 <li><a href="mailto:info@genoasis.com"><i class="fas fa-envelope me-2"></i>info@genoasis.com</a></li>
               </ul>
             </div>
