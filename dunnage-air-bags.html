@@ -8,8 +8,8 @@
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 	<link rel="manifest" href="/site.webmanifest" />
-    <meta name="description" content="Advanced Instrumentation & Lab Apparatus by Genoasis - Precision sensors, transmitters, and control systems for water treatment optimization" />
-    <meta name="keywords" content="water quality sensors, flow meters, lab apparatus, instrumentation, Genoasis" />
+    <meta name="description" content="High-quality Dunnage Air Bags. Genoasis offers durable air bags for containers, trucks, and ships with various sizes and custom solutions." />
+    <meta name="keywords" content="dunnage air bags, cargo protection, shipping containers, load securement, Genoasis" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
     <script>
@@ -248,8 +248,9 @@
             }
         }
 
+        /* Hero Section Styles */
         .hero-section {
-            background-image: url('images/apparatus.jpg');
+            background-image: url('images/dunnage-bag.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -270,187 +271,103 @@
             z-index: 1;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-title { font-size: 3.0rem; font-weight: 700; margin-bottom: 1rem; color: #fff; }
+        .hero-subtitle { font-size: 1.2rem; font-weight: 300; opacity: 0.95; }
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .features-section {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-        }
-
-        .feature-card {
-            background: white;
+        /* Modern Content Sections */
+        .content-section { background: #fff; }
+        .content-card {
+            background: #fff;
             border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
+            padding: 40px;
+            box-shadow: none;
+            border: 1px solid #e9ecef;
         }
+        .section-title { font-size: 2.2rem; font-weight: 700; color: #333; margin-bottom: 1.25rem; }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
+        /* Features Grid */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+        .feature-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: #f8f9fa; border-radius: 10px; }
+        .feature-item i { color: #23a1dc; font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
+        .feature-item span { color: #555; line-height: 1.6; }
 
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: white;
-            font-size: 2rem;
-        }
-
-        .feature-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .feature-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-            position: relative;
-            padding-left: 25px;
-        }
-
-        .feature-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #23a1dc;
-            font-weight: bold;
-        }
-
-        .feature-list li:last-child {
-            border-bottom: none;
-        }
-
-        .solutions-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .solutions-section.alt-bg {
-            background-color: #f8f9fa;
-        }
-
-        .solution-item {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid #23a1dc;
-            transition: all 0.3s ease;
-        }
-
-        .solution-item:hover {
-            background: #e3f2fd;
-            transform: translateX(5px);
-        }
-
-        .solution-icon {
-            color: #23a1dc;
-            font-size: 1.5rem;
-            margin-right: 15px;
-        }
-
+        /* Image Sections */
+        .image-section { background: #fff; }
         .image-container {
             border-radius: 15px;
             overflow: hidden;
-            transition: transform 0.3s ease;
+            box-shadow: none;
+            height: 500px; /* Fixed height for both images to be equal */
         }
-
-        .image-container:hover {
-            transform: translateY(-5px);
-        }
-
-        .image-container img {
+        .gallery-img {
             width: 100%;
-            height: 400px;
-            object-fit: cover;
+            height: 100%;
+            object-fit: cover; /* Cover the container while maintaining aspect ratio */
+            cursor: pointer;
             transition: transform 0.3s ease;
         }
+        .gallery-img:hover { transform: scale(1.02); }
 
-        .image-container:hover img {
-            transform: scale(1.05);
-        }
 
-        .table-section {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-        }
-
-        .custom-table {
-            background: white;
+        /* Size Chart Styles */
+        .size-chart {
+            background: #f8f9fa;
             border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .size-chart h3 {
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .size-table {
+            background: white;
+            border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .custom-table .table {
-            margin-bottom: 0;
+        .size-table table {
+            width: 100%;
+            margin: 0;
         }
 
-        .custom-table .table thead th {
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+        .size-table th {
+            background: #23a1dc;
             color: white;
-            border: none;
-            padding: 20px 15px;
+            padding: 15px;
             font-weight: 600;
             text-align: center;
         }
 
-        .custom-table .table tbody td {
+        .size-table td {
             padding: 15px;
-            border: 1px solid #dee2e6;
-            vertical-align: middle;
-        }
-
-        .custom-table .table tbody tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        .custom-table .table tbody tr:hover {
-            background-color: #e3f2fd;
-        }
-
-        .model-badge {
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
             font-weight: 500;
         }
 
+        .size-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .size-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .content-card { padding: 28px 20px; }
+            .section-title { font-size: 1.8rem; }
+            .size-chart { padding: 20px; }
+        }
+
+        /* CTA Section */
         .cta-section {
             padding: 80px 0;
             background: linear-gradient(135deg, #23a1dc 0%, #1e88c5 100%);
@@ -487,97 +404,6 @@
             color: #23a1dc;
         }
 
-        .dropdown-menu {
-            background-color: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            margin-top: 0;
-            padding: 8px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .dropdown-item {
-            color: #333333;
-            padding: 8px 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-item:hover {
-            background-color: #f8f9fa;
-            color: #000000;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .nav-item.dropdown > .nav-link {
-            cursor: pointer;
-        }
-
-        .dropdown-item.active, 
-        .dropdown-item:active {
-            background-color: #f8f9fa;
-            color: #000000;
-        }
-
-        .navbar-toggler {
-            border-color: #333333;
-            background-color: transparent;
-            padding: 0.5rem;
-            margin-right: 15px;
-        }
-        
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-            width: 1.5em;
-            height: 1.5em;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .cta-title {
-                font-size: 2rem;
-            }
-            
-            .navbar-toggler {
-                margin-right: 15px;
-            }
-            
-            .navbar-collapse {
-                padding: 1rem 0;
-            }
-            
-            .custom-navbar-nav {
-                padding: 0.5rem 0;
-            }
-            
-            .nav-item {
-                padding: 0.5rem 0;
-            }
-            
-            .dropdown-menu {
-                border: none;
-                padding-left: 1rem;
-                margin-top: 0;
-            }
-            
-            .dropdown-item {
-                padding: 0.5rem 0;
-            }
-
-            .image-container img {
-                height: 300px;
-            }
-        }
-
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
@@ -588,19 +414,6 @@
         table td,
         table th {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .table {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 0.95rem;
-        }
-
-        .table th {
-            font-weight: 600;
-        }
-
-        .table td {
-            font-weight: 400;
         }
 
         .product-description {
@@ -626,37 +439,8 @@
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
-
-        @media (max-width: 768px) {
-            .table {
-                font-size: 0.85rem;
-            }
-            
-            .lead {
-                font-size: 1.05rem;
-            }
-            
-            p {
-                font-size: 0.95rem;
-            }
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        .collapse {
-            transition: all 0.3s ease;
-        }
     </style>
-    <title>Instrumentation & Lab Apparatus | Genoasis Water Technologies</title>
+    <title>Genoasis - Dunnage Air Bags</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
 </head>
 	<!-- Start Top Bar -->
@@ -712,13 +496,13 @@
                             <li><a class="dropdown-item" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
                             <li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
                             <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
-                            <li><a class="dropdown-item active" href="instruments.html">Instruments & Lab Apparatus</a></li>
+                            <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
                             <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
                             <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
                             <li><a class="dropdown-item" href="festo-products.html">Festo Products</a></li>
                             <li><a class="dropdown-item" href="atmospheric-water-generators.html">Atmospheric Water Generators</a></li>
                             <li><a class="dropdown-item" href="nanobubble-technology.html">Nanobubble Technology</a></li>
-                            <li><a class="dropdown-item" href="dunnage-air-bags.html">Dunnage Air Bags</a></li>
+                            <li><a class="dropdown-item active" href="dunnage-air-bags.html">Dunnage Air Bags</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link" href="contact.html">Contact us</a></li>
@@ -727,206 +511,131 @@
         </div>
     </nav>
     <!-- End Header/Navigation -->
-
-    <!-- Hero Section -->
+    
+    <!-- Start Hero Section -->
     <section class="hero-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center hero-content">
-                    <h1 class="hero-title" data-aos="fade-up">Instrumentation & Lab Apparatus</h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Precision Sensors & Control Systems for Water Treatment</p>
-                    <p class="lead" data-aos="fade-up" data-aos-delay="400">We offer a comprehensive range of sensors, transmitters, and automated control systems to monitor, regulate, and optimize water and wastewater treatment processes. Our instrumentation solutions ensure accuracy and reliability in every phase of water treatment.</p>
+                    <h1 class="hero-title" data-aos="fade-up">Dunnage Air Bags</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">High-quality, durable air bags</p>
                 </div>
             </div>
         </div>
     </section>
+    <!-- End Hero Section -->
 
-    <!-- Features Section -->
-    <section class="features-section pt-5">
+    <!-- Dunnage Air Bags Overview -->
+    <section class="content-section pt-5 pb-3">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="display-4 fw-bold" data-aos="fade-up">Advanced Instrumentation Solutions</h2>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-tint"></i>
-                        </div>
-                        <h3 class="feature-title">Water Quality Sensors</h3>
-                        <ul class="feature-list">
-                            <li>TDS (Total Dissolved Solids)</li>
-                            <li>pH, Conductivity, ORP (Oxidation-Reduction Potential)</li>
-                            <li>Chlorine, Dissolved Oxygen (DO), Hydrogen Sulfide (H2S) Sensor</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-water"></i>
-                        </div>
-                        <h3 class="feature-title">Flow Measurement Solutions</h3>
-                        <ul class="feature-list">
-                            <li>Flow Meters</li>
-                            <li>Rotameters</li>
-                            <li>Online Monitoring Systems</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-thermometer-half"></i>
-                        </div>
-                        <h3 class="feature-title">Pressure & Temperature Control</h3>
-                        <ul class="feature-list">
-                            <li>Pressure Switches & Transmitters</li>
-                            <li>Temperature Switches & Transmitters</li>
-                            <li>Differential Pressure Switches</li>
-                        </ul>
+                <div class="col-12">
+                    <div class="content-card" data-aos="fade-up">
+                        <h2 class="section-title mb-3">Dunnage Air Bags</h2>
+                        <p class="lead mb-4">Genoasis offers high-quality, cost-effective dunnage air bags designed for safe and secure transportation of goods. Our professional staff ensures that your materials are safely transported and properly installed at your facility.</p>
+                        
+                        <p class="mb-4">Dunnage air bags play a crucial role in securing and stabilizing cargo within containers, closed rail cars, trucks, and ships. Unlike traditional wood blocking and bracing, they effectively prevent both lateral and longitudinal movements during transit. Choosing the right dunnage bag depends on several factors including void size, cargo height, and specific shipping needs.</p>
+
+                        <p class="mb-4">At Genoasis, we offer a diverse range of sizes to cater to various requirements.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Instrumentation Solutions with Image Section -->
-    <section class="solutions-section pt-5">
+
+
+    <!-- Benefits Section -->
+    <section class="content-section pt-3 pb-3">
         <div class="container">
-            <div class="row mb-5 align-items-center">
-                <div class="col-lg-7">
-                    <h2 class="display-5 fw-bold mb-4" data-aos="fade-right">Instrumentation Solutions</h2>
-                    <p class="lead mb-4" data-aos="fade-right" data-aos-delay="200">
-                        We offer a wide selection of sensors, transmitters, and automated control systems to monitor, regulate, and optimize water and wastewater treatment processes. Our instrumentation solutions are designed to ensure accuracy and reliability in every phase of water treatment.
-                    </p>
-                    
-                    <h3 class="h5 mb-3" data-aos="fade-right" data-aos-delay="300">Water Quality Sensors</h3>
-                    <ul class="feature-list mb-4" data-aos="fade-right" data-aos-delay="400">
-                        <li>TDS (Total Dissolved Solids)</li>
-                        <li>pH, Conductivity, ORP (Oxidation-Reduction Potential)</li>
-                        <li>Chlorine, Dissolved Oxygen (DO), Hydrogen Sulfide (H2S) Sensor</li>
-                    </ul>
-
-                    <h3 class="h5 mb-3" data-aos="fade-right" data-aos-delay="500">Flow Measurement Solutions</h3>
-                    <ul class="feature-list mb-4" data-aos="fade-right" data-aos-delay="600">
-                        <li>Flow Meters</li>
-                        <li>Rotameters</li>
-                        <li>Online Monitoring Systems</li>
-                    </ul>
-
-                    <h3 class="h5 mb-3" data-aos="fade-right" data-aos-delay="700">Pressure & Temperature Control Systems</h3>
-                    <ul class="feature-list mb-4" data-aos="fade-right" data-aos-delay="800">
-                        <li>Pressure Switches</li>
-                        <li>Pressure Transmitters</li>
-                        <li>Temperature Switches</li>
-                        <li>Temperature Transmitters</li>
-                        <li>Differential Pressure Switches</li>
-                    </ul>
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-card" data-aos="fade-up">
+                        <h2 class="section-title mb-3">Features of Container Dunnage Air Bags</h2>
+                        <div class="features-grid mb-4">
+                            <div class="feature-item"><i class="fas fa-cube"></i><span><strong>Material:</strong> Made from durable materials such as polyethylene (PE) or woven polypropylene (PP), providing strength and resistance to punctures and tears</span></div>
+                            <div class="feature-item"><i class="fas fa-wind"></i><span><strong>Inflation:</strong> Inflated using compressed air through valves or ports. Can be inflated quickly and easily with manual or pneumatic pumps</span></div>
+                            <div class="feature-item"><i class="fas fa-expand-arrows-alt"></i><span><strong>Size Variety:</strong> Available in various sizes and shapes to fit different void spaces within shipping containers, tailored to specific cargo requirements</span></div>
+                            <div class="feature-item"><i class="fas fa-shield-alt"></i><span><strong>Strength and Load Support:</strong> Designed to withstand substantial pressure and forces from cargo shifting during transport, providing effective load securing</span></div>
+                            <div class="feature-item"><i class="fas fa-recycle"></i><span><strong>Reusable:</strong> PP bags are reusable, allowing for multiple shipments before replacement. Can be deflated, compacted, and stored for future use</span></div>
+                            <div class="feature-item"><i class="fas fa-handshake"></i><span><strong>Compatibility:</strong> Compatible with various types of cargo, including fragile or irregularly shaped items, providing versatile protection</span></div>
+                            <div class="feature-item"><i class="fas fa-leaf"></i><span><strong>Environmental Impact:</strong> Generally more environmentally friendly compared to alternatives like wood, as they are recyclable and reduce deforestation</span></div>
+                            <div class="feature-item"><i class="fas fa-tachometer-alt"></i><span><strong>Quick Installation:</strong> Easy and fast installation process that reduces loading time and improves operational efficiency compared to traditional blocking methods</span></div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="col-lg-5" data-aos="fade-left" data-aos-delay="400">
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Chart Section -->
+    <section class="content-section pt-3 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-card" data-aos="fade-up">
+                        <div class="size-chart">
+                            <h3 class="mb-4">Standard Dunnage Air Bag Sizes</h3>
+                            <div class="size-table">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Size (Width x Length)</th>
+                                            <th>Application</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>60 x 120 cm</strong></td>
+                                            <td>Suitable for small to medium voids in containers</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>90 x 120 cm</strong></td>
+                                            <td>Ideal for standard cargo gaps</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>90 x 150 cm</strong></td>
+                                            <td>Perfect for medium-sized cargo spaces</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>90 x 180 cm</strong></td>
+                                            <td>Excellent for larger gaps between cargo</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>90 x 225 cm</strong></td>
+                                            <td>Designed for extended cargo spaces</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>120 x 180 cm</strong></td>
+                                            <td>Used for securing heavy loads</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>120 x 225 cm</strong></td>
+                                            <td>Ideal for oversized cargo spaces</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="text-center mt-4 mb-0"><em>Custom sizes available upon request. Contact our experts for personalized recommendations.</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Images Side by Side Section -->
+    <section class="image-section pt-3 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4" data-aos="fade-up">
                     <div class="image-container">
-                        <img src="images/apparatus.jpg" alt="Instrumentation Solutions" class="img-fluid w-100">
+                        <img src="images/dunnage-bag.png" alt="Dunnage Air Bags" class="gallery-img">
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lab Apparatus Section -->
-    <section class="solutions-section alt-bg pt-5">
-        <div class="container">
-            <div class="row mb-5 align-items-center">
-                <div class="col-lg-5 order-lg-2" data-aos="fade-right" data-aos-delay="400">
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="image-container">
-                        <img src="images/apparatus2.jpg" alt="Lab Apparatus" class="img-fluid w-100">
-                    </div>
-                </div>
-                
-                <div class="col-lg-7 order-lg-1">
-                    <h2 class="display-5 fw-bold mb-4" data-aos="fade-left">Lab Apparatus</h2>
-                    <p class="lead mb-4" data-aos="fade-left" data-aos-delay="200">
-                        We provide essential laboratory equipment and chemicals for accurate testing and analysis, supporting the quality control and regulatory requirements of water and wastewater treatment.
-                    </p>
-
-                    <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="300">Glassware & Chemicals</h3>
-                    <ul class="feature-list mb-4" data-aos="fade-left" data-aos-delay="400">
-                        <li>Lab Glassware</li>
-                        <li>Laboratory Chemicals</li>
-                    </ul>
-
-                    <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="500">Testing Equipment</h3>
-                    <ul class="feature-list mb-4" data-aos="fade-left" data-aos-delay="600">
-                        <li>pH Analyzers</li>
-                        <li>ORP Analyzers</li>
-                        <li>Online Monitoring Systems</li>
-                    </ul>
-
-                    <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="700">Heating & Drying Equipment</h3>
-                    <ul class="feature-list mb-4" data-aos="fade-left" data-aos-delay="800">
-                        <li>Muffle Furnaces</li>
-                        <li>Hot Ovens</li>
-                        <li>Hot Air Ovens</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Table Section -->
-    <section class="table-section pt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="display-4 fw-bold" data-aos="fade-up">Product Specifications</h2>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-12" data-aos="fade-up">
-                    <div class="custom-table">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Category</th>
-                                    <th>Product Type</th>
-                                    <th>Specifications</th>
-                                    <th>Applications</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Water Quality Sensors</strong></td>
-                                    <td><span class="model-badge">TDS Sensors</span></td>
-                                    <td>0-2000 ppm, ±2% accuracy</td>
-                                    <td>RO systems, drinking water, industrial processes</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>pH & ORP Systems</strong></td>
-                                    <td><span class="model-badge">pH Analyzers</span></td>
-                                    <td>0-14 pH, ±0.1 accuracy</td>
-                                    <td>Water treatment, chemical dosing, quality control</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Flow Measurement</strong></td>
-                                    <td><span class="model-badge">Flow Meters</span></td>
-                                    <td>0.1-100 LPM, ±1% accuracy</td>
-                                    <td>Process control, dosing systems, monitoring</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Lab Equipment</strong></td>
-                                    <td><span class="model-badge">Muffle Furnaces</span></td>
-                                    <td>Up to 1200°C, programmable</td>
-                                    <td>Sample preparation, testing, research</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <img src="images/dunnage-02.jpg" alt="Dunnage Air Bags" class="gallery-img">
                     </div>
                 </div>
             </div>
@@ -938,8 +647,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="cta-title" data-aos="fade-up">Ready to Optimize Your Water Treatment?</h2>
-                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts today to discuss your instrumentation requirements and get a customized solution for your facility.</p>
+                    <h2 class="cta-title" data-aos="fade-up" style="color: white;">Ready to Secure Your Cargo?</h2>
+                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts today to discuss your dunnage air bag requirements and get a customized solution for your shipping needs.</p>
                     <a href="contact.html" class="btn-cta" data-aos="fade-up" data-aos-delay="400">Get Expert Consultation</a>
                 </div>
             </div>
@@ -1011,7 +720,6 @@
         });
     </script>
     <script src="js/recaptcha.js"></script>
-    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Get the Products dropdown link and menu
