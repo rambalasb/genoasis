@@ -2,18 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <!-- Preconnect to external domains for faster loading -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 	<link rel="manifest" href="/site.webmanifest" />
-    <meta name="description" content="Industrial filter cartridges and housings for pure water systems. Supplier in India and UAE. Get support from our Chennai and Dubai teams." />
-    <meta name="keywords" content="bootstrap, bootstrap4" />
+    <meta name="description" content="Advanced Instrumentation & Lab Apparatus by Genoasis - Precision sensors, transmitters, and control systems for water treatment optimization" />
+    <meta name="keywords" content="sand media, ion exchange resins, silica sand, activated carbon, filtration media, water treatment, India, UAE, Chennai, Dubai" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
     <script>
@@ -25,7 +21,7 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="css/tiny-slider.css" rel="stylesheet" media="print" onload="this.media=\'all\'">
+    <link href="css/tiny-slider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!-- Add AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -293,7 +289,7 @@
         }
 
         .hero-content { position: relative; z-index: 2; }
-        .hero-title { font-size: 3.0rem; font-weight: 700; margin-bottom: 1rem; color: #fff; }
+        .hero-title { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; color: #fff; }
         .hero-subtitle { font-size: 1.2rem; font-weight: 300; opacity: 0.95; }
         
         /* Hero section links styling */
@@ -312,25 +308,55 @@
 
         /* Modern Content Sections */
         .content-section { background: #fff; }
-        .content-card {
-            background: #fff;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: none;
-            border: 1px solid #e9ecef;
+        .content-card { 
+            background: #fff; 
+            border-radius: 15px; 
+            padding: 40px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+            border: 1px solid #e9ecef; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
         .section-title { font-size: 2.2rem; font-weight: 700; color: #333; margin-bottom: 1.25rem; }
 
         /* Features Grid */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
-        .feature-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: #f8f9fa; border-radius: 10px; }
-        .feature-item i { color: #23a1dc; font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
-        .feature-item span { color: #555; line-height: 1.6; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #007bff;
+        }
+        .feature-item i {
+            color: #007bff;
+            margin-right: 1rem;
+            margin-top: 0.2rem;
+            font-size: 1.2rem;
+        }
 
         /* Image Sections */
         .image-section { background: #fff; }
-        .image-container { border-radius: 15px; overflow: hidden; box-shadow: none; }
-        .gallery-img { width: 100%; height: auto; cursor: pointer; transition: transform 0.3s ease; }
+        .image-container { 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .image-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        .gallery-img { width: 100%; height: auto; transition: transform 0.3s ease; cursor: pointer; }
         .gallery-img:hover { transform: scale(1.02); }
 
         @media (max-width: 768px) {
@@ -338,131 +364,44 @@
             .content-card { padding: 28px 20px; }
             .section-title { font-size: 1.8rem; }
         }
-        .product-category .category-title {
-            color: #333;
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #23a1dc 0%, #1e88c5 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            font-weight: bold;
         }
 
-        .product-types {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 1rem;
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
 
-        .product-types li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
+        .btn-cta {
+            background: white;
+            color: #23a1dc;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
-        .product-types li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #333;
+        .btn-cta:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            color: #23a1dc;
         }
-
-        .e-con-boxed {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-
-        .e-con-inner {
-            width: 100%;
-        }
-
-        /* Use Bootstrap's default .row behavior (no overrides) */
-
-        .content-column {
-            padding: 40px;
-            width: 66.666%;
-            background-color: #f8f9fa;
-        }
-
-        .image-column {
-            width: 33.333%;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            min-height: 400px;
-        }
-
-        /* Remove legacy responsive overrides on .row to avoid conflicts */
-
-        .elementor-icon-list-items {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .elementor-icon-list-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .elementor-icon-list-icon {
-            margin-right: 10px;
-        }
-
-        .elementor-spacer {
-            height: 20px;
-        }
-
-        .product-category .category-container {
-            background-color: #f8f9fa;
-            padding: 40px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        .product-types li:before {
-            content: "\f061"; /* FontAwesome arrow right */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            color: #333;
-        }
-
-        /* Add these image-specific styles */
-        .e-con-boxed .image-container {
-            height: 300px; /* Fixed height for consistency */
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .e-con-boxed .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* This ensures the image covers the area without distortion */
-            object-position: center;
-        }
-
-        /* For responsive design */
-        @media (max-width: 768px) {
-            .e-con-boxed .image-container {
-                height: 250px; /* Slightly smaller on tablets */
-                margin-top: 20px; /* Add some space between text and image on mobile */
-            }
-        }
-
-        @media (max-width: 576px) {
-            .e-con-boxed .image-container {
-                height: 200px; /* Even smaller on mobile phones */
-            }
-        }
-
-        .content-column {
-            padding: 40px;
-        }
-
-        .image-column {
-            padding: 0;
-            position: relative;
-        }
-
+        /* Scoped image positioning for specific layouts */
         .image-column .image-container {
             position: absolute;
             top: 0;
@@ -487,37 +426,7 @@
             .image-column .image-container {
                 position: relative;
             }
-            .content-column {
-                padding: 30px;
-            }
         }
-
-        /* (intentionally left empty - Bootstrap handles grid responsiveness) */
-
-        /* List styles */
-        .elementor-icon-list-items {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .elementor-icon-list-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .elementor-icon-list-icon {
-            margin-right: 10px;
-        }
-
-        /* Title and text styles */
-        .category-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        /* (intentionally left empty) */
 
         /* Add these new styles */
         .image-popup {
@@ -741,43 +650,6 @@
             transition: all 0.3s ease;
         }
 
-        /* CTA Section */
-        .cta-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #23a1dc 0%, #1e88c5 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .cta-description {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .btn-cta {
-            background: white;
-            color: #23a1dc;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-cta:hover {
-            background: #f8f9fa;
-            transform: translateY(-2px);
-            color: #23a1dc;
-        }
-
         .dropdown-menu {
             background-color: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.1);
@@ -867,7 +739,7 @@
             }
         }
     </style>
-    <title>Filter Cartridges & Housings – Genoasis India & UAE</title>
+    <title>Sand Media & Ion Exchange Resins – India & UAE | Genoasis</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
 </head>
 	<!-- Start Top Bar -->
@@ -916,8 +788,8 @@
                             <li><a class="dropdown-item" href="frpmedia.html">RO Pressure Vessels & FRP Filters</a></li>
                             <li><a class="dropdown-item" href="membranes.html">Membrane Products</a></li>
                             <li><a class="dropdown-item" href="pumps.html">Pumps</a></li>
-                            <li><a class="dropdown-item active" href="filters.html">Filter Cartridges & Housings</a></li>
-                            <li><a class="dropdown-item" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
+                            <li><a class="dropdown-item" href="filters.html">Filter Cartridges & Housings</a></li>
+                            <li><a class="dropdown-item active" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
                             <li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
                             <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
                             <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
@@ -940,103 +812,303 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center hero-content">
-                    <h1 class="hero-title" data-aos="fade-up">Filter Cartridges & Housings – India & UAE</h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">High‑performance filtration for industrial and commercial applications across India and UAE. Explore our <a href="Products.html">products</a> or <a href="contact.html">contact our Chennai and Dubai teams</a>.</p>
+                    <h1 class="hero-title" data-aos="fade-up">Sand Media & Ion Exchange Resins – India & UAE</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">High‑performance media for municipal and industrial water treatment across India and UAE. Browse our <a href="Products.html">products</a> or <a href="contact.html">contact our Chennai and Dubai teams</a>.</p>
                 </div>
             </div>
         </div>
     </section>
     <!-- End Hero Section -->
-
-    <!-- Filters & Filter Housings -->
+    
+    <!-- Introduction -->
     <section class="content-section pt-5 pb-3">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="content-card" data-aos="fade-up">
-                        <h2 class="section-title mb-3">Filters & Filter Housings</h2>
-                        <p class="lead mb-4">Genoasis supplies replacement cartridges and bag filters for industries such as Oil & Gas, Food & Beverage, and Pharmaceuticals. We offer a complete range of filtration products and systems for pure water purification. To meet restocking needs, we provide competitive supply agreements and express delivery services as needed. We supply across India and UAE from Chennai and Dubai — browse our <a href="Products.html">full product range</a>.</p>
-                        <p class="mb-4">We offer a variety of Filtration Cartridge Housing, including String Wound and Melt Blown Filtration Cartridges, designed to meet the needs of various industrial filtration applications. These cartridges are engineered for superior performance, durability, and efficiency.</p>
-
-                        <h3 class="mb-3">Features & Benefits</h3>
-                        <div class="features-grid mb-4">
-                            <div class="feature-item"><i class="fas fa-industry"></i><span>High-precision cartridge filter made from premium polypropylene yarn and core materials</span></div>
-                            <div class="feature-item"><i class="fas fa-layer-group"></i><span>True gradient density achieved through advanced manufacturing techniques</span></div>
-                            <div class="feature-item"><i class="fas fa-filter"></i><span>Superior filtration with high dirt-holding capacity</span></div>
-                            <div class="feature-item"><i class="fas fa-shield-alt"></i><span>Optimal protection for downstream equipment</span></div>
-                            <div class="feature-item"><i class="fas fa-ruler-combined"></i><span>Micron ratings from 0.5 to 150</span></div>
-                            <div class="feature-item"><i class="fas fa-arrows-alt-v"></i><span>Sizes 10", 20", 30", 40", 50", 70"; diameters 2.5" & 4.5"</span></div>
-                        </div>
-
-                        <h3 class="mb-3">Certifications</h3>
-                        <p class="mb-4">Tested and certified by NSF International to NSF/ANSI Standard 42 for material requirements.</p>
-
-                        <h3 class="mb-3">Materials</h3>
-                        <div class="features-grid mb-4">
-                            <div class="feature-item"><i class="fas fa-cube"></i><span>Filter Media: Polypropylene</span></div>
-                            <div class="feature-item"><i class="fas fa-cube"></i><span>Core: Polypropylene</span></div>
-                            <div class="feature-item"><i class="fas fa-cube"></i><span>End Caps: Polypropylene</span></div>
-                            <div class="feature-item"><i class="fas fa-ring"></i><span>O-ring/Gasket: None</span></div>
-                        </div>
-
-                        <h3 class="mb-3">Operating Conditions</h3>
-                        <div class="features-grid mb-3">
-                            <div class="feature-item"><i class="fas fa-tachometer-alt"></i><span>Change‑out ΔP: 0.14 MPa (1.4 bar; 20.3 psid) @ 21°C</span></div>
-                            <div class="feature-item"><i class="fas fa-thermometer-half"></i><span>Max operating temperature: 70°C (158°F)</span></div>
-                        </div>
-
-                        <p class="mb-0">These cartridges are designed to meet stringent filtration standards, ensuring consistent quality and high performance in a wide range of industries.</p>
+                        <p class="lead mb-0">We are a leading supplier and trader of high‑quality industrial filtration materials, including silica sand, ion‑exchange resins, activated carbon, anthracite, and advanced filter media. Our products are designed to meet the highest standards in water treatment, ensuring optimal performance across a variety of applications, from municipal and industrial water purification to specialized filtration systems. We supply across India & UAE via our Chennai and Dubai teams.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Image Section -->
-    <section class="image-section pt-3 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="image-container" data-aos="fade-up">
-                        <img src="images/filters1.jpg" alt="Filter cartridges and housings supplier India UAE – Genoasis" class="gallery-img" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Filter Bags Section -->
+    <!-- Filtration Silica Sand -->
     <section class="content-section pt-3 pb-3">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="content-card" data-aos="fade-up">
-                        <h2 class="section-title mb-3">Filter Bags & Housing</h2>
-                        <p class="lead mb-4">Filter Bags provide an economical filtration solution for a wide variety of applications. Offering excellent performance and efficiency, these filter bags provide a simple and cost‑effective way to maintain clean liquids by trapping impurities and debris.</p>
-
-                        <h3 class="mb-3">Features</h3>
-                        <div class="features-grid mb-4">
-                            <div class="feature-item"><i class="fas fa-bolt"></i><span>High‑efficiency filtration performance</span></div>
-                            <div class="feature-item"><i class="fas fa-arrows-alt"></i><span>Wide range of sizes to suit various needs</span></div>
-                            <div class="feature-item"><i class="fas fa-tools"></i><span>Engineered construction for superior efficiency</span></div>
-                            <div class="feature-item"><i class="fas fa-tags"></i><span>Lower initial cost than alternative methods</span></div>
-                            <div class="feature-item"><i class="fas fa-stopwatch"></i><span>Fast installation and replacement, minimal downtime</span></div>
+                        <h2 class="section-title mb-3">Filtration Silica Sand</h2>
+                        <p class="lead mb-4">We specialize in processing raw silica sand through multi-stage processes, including washing, attrition, drying, and sieving, to produce high‑purity, well‑graded products. Our silica sand is available in various sizes, meeting US mesh specifications.</p>
+                        <div class="image-container mb-4">
+                            <img src="images/silicasand.jpg" alt="Silica sand supplier India UAE – Genoasis" class="gallery-img">
                         </div>
-
-                        <p class="mb-0">Filter bags are designed to capture dirt and debris, ensuring that only clean liquid passes through the filter, maintaining system integrity.</p>
+                        <div class="table-responsive mt-2">
+                            <table class="table table-striped table-bordered">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Size (mm)</th>
+                                        <th>US Size (mesh)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>&lt; 0.3</td><td>&lt; 50</td></tr>
+                                    <tr><td>&lt; 0.5</td><td>&lt; 35</td></tr>
+                                    <tr><td>0.2–0.5</td><td>35–75</td></tr>
+                                    <tr><td>0.25–1.25</td><td>—</td></tr>
+                                    <tr><td>0.3–0.85</td><td>20–50</td></tr>
+                                    <tr><td>0.425–0.85</td><td>20–40</td></tr>
+                                    <tr><td>0.5–1.5</td><td>18–35</td></tr>
+                                    <tr><td>0.5–1.5</td><td>—</td></tr>
+                                    <tr><td>0.6–1.18</td><td>16–30</td></tr>
+                                    <tr><td>0.71–1.18</td><td>16–25</td></tr>
+                                    <tr><td>0.85–1.7</td><td>12–20</td></tr>
+                                    <tr><td>1.0–2.0</td><td>10–18</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Filtration Gravel -->
+    <section class="content-section pt-3 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-card" data-aos="fade-up">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="section-title mb-3">Filtration Gravel</h2>
+                                <p class="lead mb-0">We supply premium filtration sand and gravel, featuring high silica content (SiO2 ≥ 99%), which meets ANSI/AWWA B‑100‑09 standards. Our filtration sand is precisely graded for both domestic and industrial plants, while our gravel is highly spherical, ensuring smooth water flow and effective distribution in support beds. We are NSF‑2021 certified and comply with NSF/ANSI/CAN 61 standards.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="image-container mt-3 mt-md-0">
+                                    <img src="images/filtrationgravel.jpg" alt="Filtration gravel supplier India UAE – Genoasis" class="gallery-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ion Exchange Resins -->
+    <section class="content-section pt-3 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-card" data-aos="fade-up">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="section-title mb-3">Ion Exchange Resins</h2>
+                                <p class="lead mb-4">We offer a wide variety of ion‑exchange resins for water softening, purification, and high‑purity water production. These resins are produced from an organic polymer substrate and come in different types, based on their functional groups:</p>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-flask"></i>
+                                        <div>
+                                            <strong>Strongly Acidic Resins</strong><br>
+                                            <small class="text-muted">e.g., sodium polystyrene sulfonate</small>
+                                        </div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-atom"></i>
+                                        <div>
+                                            <strong>Strongly Basic Resins</strong><br>
+                                            <small class="text-muted">e.g., trimethylammonium groups</small>
+                                        </div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-vial"></i>
+                                        <div>
+                                            <strong>Weakly Acidic Resins</strong><br>
+                                            <small class="text-muted">e.g., carboxylic acid groups</small>
+                                        </div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-microscope"></i>
+                                        <div>
+                                            <strong>Weakly Basic Resins</strong><br>
+                                            <small class="text-muted">e.g., polyethylene amine</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4 class="mb-3">Uses include:</h4>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-tint"></i>
+                                        <div>Water softening and purification</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-filter"></i>
+                                        <div>High purity water production</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-industry"></i>
+                                        <div>Juice purification and sugar manufacturing</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-pills"></i>
+                                        <div>Pharmaceutical applications</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="image-container mt-3 mt-md-0">
+                                    <img src="images/ionexchangeresins.jpg" alt="Ion exchange resins supplier India UAE – Genoasis" class="gallery-img">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Second Image -->
-    <section class="image-section pt-3 pb-5">
+    <!-- Activated Carbon -->
+    <section class="content-section pt-3 pb-3">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="image-container" data-aos="fade-up">
-                        <img src="images/filters2.jpg" alt="Industrial filter bags and housings supplier India UAE – Genoasis" class="gallery-img" loading="lazy">
+                    <div class="content-card" data-aos="fade-up">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="section-title mb-3">Activated Carbon</h2>
+                                <p class="lead mb-4">We provide activated carbon solutions to municipalities and industries requiring water treatment to ensure safe drinking water. Our activated carbon effectively removes:</p>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-nose"></i>
+                                        <div>Taste and odor components (e.g., MIB and geosmin)</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-bug"></i>
+                                        <div>Pesticides and their metabolites</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-leaf"></i>
+                                        <div>Organic matter (TOC) and disinfection by‑products (DBPs)</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <div>Algae toxins (e.g., cyanotoxins)</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-flask"></i>
+                                        <div>Man‑made chemicals (e.g., PFAS)</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-wind"></i>
+                                        <div>Volatile organic compounds (VOCs)</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-dna"></i>
+                                        <div>Endocrine disrupting compounds (EDCs)</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-pills"></i>
+                                        <div>Pharmaceuticals and personal care products (PPCPs)</div>
+                                    </div>
+                                </div>
+                                <p class="mb-0">All products comply with national regulations and certifications, ensuring high‑quality performance in water purification.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="image-container mt-3 mt-md-0">
+                                    <img src="images/activatedcarbon.jpg" alt="Activated carbon supplier India UAE – Genoasis" class="gallery-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anthracite -->
+    <section class="content-section pt-3 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-card" data-aos="fade-up">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="section-title mb-3">Anthracite</h2>
+                                <p class="lead mb-4">Anthracite is a key media for water filtration, offering multiple advantages such as:</p>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-filter"></i>
+                                        <div>Effective filtration for drinking and industrial water clarification</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        <div>Higher service flow rates and longer filter runs with less head loss</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-palette"></i>
+                                        <div>Odor and color reduction</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-cog"></i>
+                                        <div>Removes residual hardness salts after clarification</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-city"></i>
+                                        <div>Ideal for municipal potable water treatment; less backwashing</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="image-container mt-3 mt-md-0">
+                                    <img src="images/anthracite.jpg" alt="Anthracite filtration media supplier India UAE – Genoasis" class="gallery-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activated Filter Media (AFM) -->
+    <section class="content-section pt-3 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-card" data-aos="fade-up">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h2 class="section-title mb-3">Activated Filter Media (AFM)</h2>
+                                <p class="lead mb-4">Activated Filter Media (AFM) is an advanced filtration medium produced from recycled glass. It undergoes a unique activation process to enhance its physical and catalytic properties, making it an excellent choice for high‑performance filtration. The activated glass has a mesoporous structure with an enormous catalytic surface area of 50,000 m² per m³, 300 times larger than traditional filter media.</p>
+                                <h4 class="mb-3">AFM Sizes:</h4>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-ruler"></i>
+                                        <div><strong>AFM‑00:</strong> 0.25 – 0.5 mm</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-ruler"></i>
+                                        <div><strong>AFM‑01:</strong> 0.5 – 1.0 mm</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-ruler"></i>
+                                        <div><strong>AFM‑02:</strong> 1.0 – 2.0 mm</div>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-ruler"></i>
+                                        <div><strong>AFM‑03:</strong> 2.0 – 4.0 mm</div>
+                                    </div>
+                                </div>
+                                <p class="mb-0">AFM provides exceptional bio‑resistance, high performance, and improved filtration efficiency.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="image-container mt-3 mt-md-0">
+                                    <img src="images/afm.jpg" alt="Activated filter media AFM supplier India UAE – Genoasis" class="gallery-img">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1049,7 +1121,7 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="cta-title" data-aos="fade-up">Ready to Transform Your Water Treatment?</h2>
-                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts today to discuss your filtration requirements and get a customized solution for your facility.</p>
+                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts today to discuss your sand media and ion exchange resin requirements and get a customized solution for your facility.</p>
                     <a href="contact.html" class="btn-cta" data-aos="fade-up" data-aos-delay="400">Get Expert Consultation</a>
                 </div>
             </div>
@@ -1108,9 +1180,9 @@
     </footer>
     <!-- End Footer Section -->
 
-    <script defer src="js/bootstrap.bundle.min.js"></script>
-    <script defer src="js/tiny-slider.js"></script>
-    <script defer src="js/custom.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -1119,7 +1191,7 @@
             offset: 100
         });
     </script>
-    <script defer src="js/recaptcha.js"></script>
+    <script src="js/recaptcha.js"></script>
     <div class="popup-overlay"></div>
     <div class="image-popup">
         <div class="popup-close"></div>

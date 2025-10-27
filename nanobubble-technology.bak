@@ -2,18 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <!-- Preconnect to external domains for faster loading -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 	<link rel="manifest" href="/site.webmanifest" />
-    <meta name="description" content="Valves, pipes and fittings for water treatment: PVC/CPVC pipes, metallic valves, Victaulic couplings. Supplier in India & UAE." />
-    <meta name="keywords" content="valves, pipes, fittings, PVC, CPVC, Victaulic couplings, water treatment, Genoasis" />
+    <meta name="description" content="Nanobubble technology for water treatment: 10X efficiency, wastewater remediation, aquaculture. Supplier in India & UAE. Contact Chennai or Dubai." />
+    <meta name="keywords" content="nanobubble technology, micro bubbles, water treatment, wastewater remediation, aquaculture oxygenation, Genoasis" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://genoasis.com/nanobubble-technology.html" />
+    <meta property="og:title" content="Nanobubble Technology – 10X Efficiency | India & UAE | Genoasis" />
+    <meta property="og:description" content="Nanobubble technology for water treatment: 10X efficiency, wastewater remediation, aquaculture. Supplier in India & UAE. Contact Chennai or Dubai." />
+    <meta property="og:image" content="https://genoasis.com/images/logo.png" />
+    <meta property="og:site_name" content="Genoasis" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://genoasis.com/nanobubble-technology.html" />
+    <meta property="twitter:title" content="Nanobubble Technology – 10X Efficiency | India & UAE | Genoasis" />
+    <meta property="twitter:description" content="Nanobubble technology for water treatment: 10X efficiency, wastewater remediation, aquaculture. Supplier in India & UAE. Contact Chennai or Dubai." />
+    <meta property="twitter:image" content="https://genoasis.com/images/logo.png" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://genoasis.com/nanobubble-technology.html" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
     <script>
@@ -25,7 +39,7 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="css/tiny-slider.css" rel="stylesheet" media="print" onload="this.media=\'all\'">
+    <link href="css/tiny-slider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!-- Add AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -211,7 +225,7 @@
         }
 
         .hero-section {
-            background-image: url('images/fittings1.jpg');
+            background-image: url('images/products-banner.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -237,6 +251,20 @@
             z-index: 2;
         }
 
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
         .hero-section .lead {
             color: white;
             opacity: 0.95;
@@ -256,36 +284,16 @@
             transform: translateY(-1px);
         }
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            color: white;
-            opacity: 0.9;
-        }
-
-        .hero-section .lead {
-            color: white;
-            opacity: 0.95;
-        }
-
         .features-section {
-            padding: 60px 0;
+            padding: 80px 0;
             background-color: #f8f9fa;
         }
 
         .feature-card {
             background: white;
             border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             height: 100%;
@@ -297,23 +305,23 @@
         }
 
         .feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, #23a1dc, #1e88c5);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: white;
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
 
         .feature-title {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: #333;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .feature-list {
@@ -323,12 +331,10 @@
         }
 
         .feature-list li {
-            padding: 4px 0;
+            padding: 8px 0;
             border-bottom: 1px solid #eee;
             position: relative;
-            padding-left: 20px;
-            font-size: 0.9rem;
-            line-height: 1.4;
+            padding-left: 25px;
         }
 
         .feature-list li:before {
@@ -343,16 +349,12 @@
             border-bottom: none;
         }
 
-        .solutions-section {
+        .applications-section {
             padding: 80px 0;
             background: white;
         }
 
-        .solutions-section.alt-bg {
-            background-color: #f8f9fa;
-        }
-
-        .solution-item {
+        .application-item {
             background: #f8f9fa;
             border-radius: 10px;
             padding: 20px;
@@ -361,37 +363,102 @@
             transition: all 0.3s ease;
         }
 
-        .solution-item:hover {
+        .application-item:hover {
             background: #e3f2fd;
             transform: translateX(5px);
         }
 
-        .solution-icon {
+        .application-icon {
             color: #23a1dc;
             font-size: 1.5rem;
             margin-right: 15px;
         }
 
-        .image-container {
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
+        .results-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
         }
 
-        .image-container:hover {
+        .result-card {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .result-card:hover {
             transform: translateY(-5px);
         }
 
-        .image-container img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: contain;
-            transition: transform 0.3s ease;
+        .result-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
 
-        .image-container:hover img {
-            transform: scale(1.05);
+        .result-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .result-description {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .table-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .custom-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .custom-table .table {
+            margin-bottom: 0;
+        }
+
+        .custom-table .table thead th {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white;
+            border: none;
+            padding: 20px 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .custom-table .table tbody td {
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            vertical-align: middle;
+        }
+
+        .custom-table .table tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .custom-table .table tbody tr:hover {
+            background-color: #e3f2fd;
+        }
+
+        .model-badge {
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         .cta-section {
@@ -515,10 +582,6 @@
             .dropdown-item {
                 padding: 0.5rem 0;
             }
-
-            .image-container img {
-                max-height: 300px;
-            }
         }
 
         body {
@@ -599,7 +662,7 @@
             transition: all 0.3s ease;
         }
     </style>
-    <title>Valves, Pipes & Fittings – PVC/CPVC, Victaulic | India & UAE</title>
+    <title>Nanobubble Technology – 10X Efficiency | India & UAE | Genoasis</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
 </head>
 	<!-- Start Top Bar -->
@@ -654,11 +717,10 @@
                             <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
                             <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
                             <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
-                            <li><a class="dropdown-item active" href="valves.html">Valves, Couplings & Fittings</a></li>
+                            <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
                             <li><a class="dropdown-item" href="festo-products.html">Festo Products</a></li>
                             <li><a class="dropdown-item" href="atmospheric-water-generators.html">Atmospheric Water Generators</a></li>
-                            <li><a class="dropdown-item" href="nanobubble-technology.html">Nanobubble Technology</a></li>
-                            <li><a class="dropdown-item" href="dunnage-air-bags.html">Dunnage Air Bags</a></li>
+                            <li><a class="dropdown-item active" href="nanobubble-technology.html">Nanobubble Technology</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link" href="contact.html">Contact us</a></li>
@@ -673,9 +735,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center hero-content">
-                    <h1 class="hero-title" data-aos="fade-up">Valves, Pipes & Fittings – India & UAE</h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">High-quality solutions for water treatment across India and UAE. View <a href="Products.html">products</a> or <a href="contact.html">contact Chennai/Dubai</a>.</p>
-                    <p class="lead" data-aos="fade-up" data-aos-delay="400">Genoasis Technologies offers an extensive range of high-quality pipes, fittings, and valves designed to ensure seamless fluid management in water and wastewater systems. Our products guarantee durability, reliability, and superior performance in all phases of water treatment.</p>
+                    <h1 class="hero-title" data-aos="fade-up">Nanobubble Technology – India & UAE</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Advanced water treatment with 10X efficiency across India and UAE. Explore <a href="Products.html">products</a> or <a href="contact.html">contact Chennai/Dubai</a>.</p>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="400">Genoasis pioneers next-generation nanobubble solutions that revolutionize water treatment efficiency. Our proprietary nano bubble aeration system delivers 10X greater gas transfer efficiency compared to conventional methods, enabling unprecedented performance in wastewater remediation, aquaculture oxygenation, and industrial process water treatment.</p>
                 </div>
             </div>
         </div>
@@ -686,37 +748,49 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="display-4 fw-bold" data-aos="fade-up">Comprehensive Valve & Fitting Solutions</h2>
+                    <h2 class="display-4 fw-bold" data-aos="fade-up">Genoasis Nano Bubble Technology Advantages</h2>
                 </div>
             </div>
             
             <div class="row">
-                <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-tint"></i>
+                            <i class="fas fa-atom"></i>
                         </div>
-                        <h3 class="feature-title">Pipes & Fittings</h3>
+                        <h3 class="feature-title">Unmatched Oxygen Transfer Efficiency</h3>
                         <ul class="feature-list">
-                            <li>PVC and CPVC Pipe and Fittings: Durable solutions for water flow management</li>
-                            <li>Customized Fittings: Tailored to meet the specific needs of each system</li>
-                            <li>High-quality materials for long-term reliability</li>
-                            <li>Easy installation and maintenance</li>
+                            <li>&lt;100nm bubble diameter creates 18,000 m²/m³ interfacial area</li>
+                            <li>Negative surface charge enhances contaminant adsorption</li>
+                            <li>Extended dwell time (hours vs minutes of conventional bubbles)</li>
                         </ul>
                     </div>
                 </div>
                 
-                <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-cogs"></i>
+                            <i class="fas fa-microchip"></i>
                         </div>
-                        <h3 class="feature-title">Metallic Valves</h3>
+                        <h3 class="feature-title">Smart System Integration</h3>
                         <ul class="feature-list">
-                            <li>Ball Valves, Butterfly Valves, Globe Valves</li>
-                            <li>Needle Valves, Gate Valves</li>
-                            <li>Pressure Relief Valves, Non-Return Valves</li>
-                            <li>Built for durability, efficiency, and long-term reliability</li>
+                            <li>Nano-OxySync™ Generators with real-time bubble size modulation</li>
+                            <li>Hybrid ozone-nanobubble systems for dual disinfection/oxidation</li>
+                            <li>IoT-enabled monitoring of dissolved oxygen and oxidation potential</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="feature-title">Eco-Conscious Performance</h3>
+                        <ul class="feature-list">
+                            <li>60% energy savings vs. mechanical aeration</li>
+                            <li>Zero chemical additives required</li>
+                            <li>Carbon-neutral operation possible</li>
                         </ul>
                     </div>
                 </div>
@@ -724,41 +798,212 @@
         </div>
     </section>
 
-    <!-- Main Products Image Section -->
-    <section class="solutions-section pt-5">
+    <!-- Applications Section -->
+    <section class="applications-section pt-5">
         <div class="container">
-            <div class="row mb-5">
-                <div class="col-12 text-center" data-aos="fade-up">
-                    <div class="image-container" style="max-width: 900px; margin: 0 auto;">
-                        <img src="images/fittings1.jpg" alt="Valves pipes and fittings collection supplier India UAE – Genoasis" class="img-fluid w-100">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold" data-aos="fade-up">Revolutionary Performance in Key Applications</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="application-item">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-water application-icon"></i>
+                            <div>
+                                <h5 class="mb-1">Wastewater Remediation</h5>
+                                <p class="mb-0">90% faster BOD reduction with enhanced biological treatment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="application-item">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-fish application-icon"></i>
+                            <div>
+                                <h5 class="mb-1">Aquaculture Oxygenation</h5>
+                                <p class="mb-0">40% improved stock survival rates with optimal DO levels</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="application-item">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-industry application-icon"></i>
+                            <div>
+                                <h5 class="mb-1">Industrial Process Water</h5>
+                                <p class="mb-0">75% chemical dosage reduction with advanced oxidation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="application-item">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-tint application-icon"></i>
+                            <div>
+                                <h5 class="mb-1">RO Membrane Cleaning</h5>
+                                <p class="mb-0">30% longer membrane lifespan with gentle nanobubble cleaning</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Victaulic Couplings Section -->
-    <section class="solutions-section alt-bg pt-5">
+    <!-- Results Section -->
+    <section class="results-section pt-5">
         <div class="container">
-            <div class="row mb-5 align-items-center">
-                <div class="col-lg-5 order-lg-2" data-aos="fade-right" data-aos-delay="400">
-                    <div class="image-container">
-                        <img src="images/fittings2.jpg" alt="Victaulic couplings supplier India UAE – Genoasis" class="img-fluid w-100">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold text-dark" data-aos="fade-up">Documented Performance Results</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="result-title">10X Efficiency</h4>
+                        <p class="result-description">Greater gas transfer efficiency vs conventional methods</p>
                     </div>
                 </div>
                 
-                <div class="col-lg-7 order-lg-1">
-                    <h2 class="display-5 fw-bold mb-4" data-aos="fade-left">Specialized Couplings: Victaulic</h2>
-                    <p class="lead mb-4" data-aos="fade-left" data-aos-delay="200">
-                        We are proud to offer Victaulic couplings, renowned for their high-performance sealing and ease of installation. These couplings are ideal for small to large diameter piping systems and are designed to provide a rigid joint with no expansion, contraction, or linear movement.
-                    </p>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4 class="result-title">90% Faster</h4>
+                        <p class="result-description">BOD reduction in wastewater treatment</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-fish"></i>
+                        </div>
+                        <h4 class="result-title">40% Improvement</h4>
+                        <p class="result-description">Stock survival rates in aquaculture</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="result-card">
+                        <div class="result-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4 class="result-title">60% Energy</h4>
+                        <p class="result-description">Savings vs mechanical aeration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="300">Key Features</h3>
-                    <ul class="feature-list mb-4" data-aos="fade-left" data-aos-delay="400">
-                        <li>Patented Angled Pad Design: Locks housing keys into the groove around the full circumference, creating a rigid connection</li>
-                        <li>Rigid Joint: No flexibility required, making them ideal for mechanical rooms, risers, and other areas where flexibility is not desired</li>
-                        <li>Compliance: Victaulic couplings meet ASME B31.1 Power Piping Code, ASME B31.9 Building Services Piping Code, and NFPA 13 Sprinkler Systems Code</li>
-                    </ul>
+    <!-- Table Section -->
+    <section class="table-section pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold" data-aos="fade-up">Application-Specific Solutions</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="custom-table">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Industry Challenge</th>
+                                    <th>Genoasis Innovation</th>
+                                    <th>Documented Results</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Algae Control in Reservoirs</strong></td>
+                                    <td><span class="model-badge">Nano-Ozone Burst System</span></td>
+                                    <td>99% cyanobacteria reduction in 48hrs</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Aquaculture Oxygenation</strong></td>
+                                    <td><span class="model-badge">AquaNano Bubble Diffusers</span></td>
+                                    <td>5.8ppm DO maintained at 6m depth</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Textile Effluent Decolorization</strong></td>
+                                    <td><span class="model-badge">Oxynano Hybrid Reactor</span></td>
+                                    <td>94% color removal without chemicals</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>RO Membrane Cleaning</strong></td>
+                                    <td><span class="model-badge">NanoFlush Cleaning System</span></td>
+                                    <td>30% longer membrane lifespan</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Industrial Wastewater</strong></td>
+                                    <td><span class="model-badge">NanoOx Industrial System</span></td>
+                                    <td>75% chemical dosage reduction</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Advantages Section -->
+    <section class="features-section pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-4 fw-bold" data-aos="fade-up">Why Our Nanobubble Technology Stands Apart</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3 class="feature-title">Advanced Engineering</h3>
+                        <ul class="feature-list">
+                            <li>Patent-pending nozzle design (50,000hr lifespan)</li>
+                            <li>Moleaer-compatible without foreign dependency</li>
+                            <li>Custom bubble spectra (50-500nm tunable)</li>
+                            <li>Made in India with Japanese precision standards</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Quality & Reliability</h3>
+                        <ul class="feature-list">
+                            <li>ISO 9001:2015 certified manufacturing</li>
+                            <li>Comprehensive 3-year warranty</li>
+                            <li>24/7 technical support network</li>
+                            <li>Proven track record in diverse applications</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -770,7 +1015,7 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="cta-title" data-aos="fade-up">Ready to Transform Your Water Treatment?</h2>
-                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts in Chennai or Dubai to discuss your valve and fitting requirements and get a customized solution.</p>
+                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts in Chennai or Dubai to discuss your nanobubble technology requirements and get a customized solution.</p>
                     <a href="contact.html" class="btn-cta" data-aos="fade-up" data-aos-delay="400">Get Expert Consultation</a>
                 </div>
             </div>
@@ -829,9 +1074,9 @@
     </footer>
     <!-- End Footer Section -->
 
-    <script defer src="js/bootstrap.bundle.min.js"></script>
-    <script defer src="js/tiny-slider.js"></script>
-    <script defer src="js/custom.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -840,7 +1085,7 @@
             offset: 100
         });
     </script>
-    <script defer src="js/recaptcha.js"></script>
+    <script src="js/recaptcha.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {

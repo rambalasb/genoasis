@@ -2,17 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <!-- Preconnect to external domains for faster loading -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 	<link rel="manifest" href="/site.webmanifest" />
-    <meta name="description" content="Industrial filter cartridges and housings for pure water systems. Supplier in India and UAE. Get support from our Chennai and Dubai teams." />
+    <meta name="description" content="Membrane products for RO, NF, UF and MBR systems. Industrial supplier in India and UAE. Get support from Chennai and Dubai teams." />
     <meta name="keywords" content="bootstrap, bootstrap4" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
@@ -25,7 +21,7 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="css/tiny-slider.css" rel="stylesheet" media="print" onload="this.media=\'all\'">
+    <link href="css/tiny-slider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!-- Add AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -292,234 +288,182 @@
             z-index: 1;
         }
 
-        .hero-content { position: relative; z-index: 2; }
-        .hero-title { font-size: 3.0rem; font-weight: 700; margin-bottom: 1rem; color: #fff; }
-        .hero-subtitle { font-size: 1.2rem; font-weight: 300; opacity: 0.95; }
-        
-        /* Hero section links styling */
-        .hero-section a {
-            color: white !important;
-            text-decoration: underline;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .hero-section a:hover {
-            color: #f8f9fa !important;
-            text-decoration: none;
-            transform: translateY(-1px);
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
-        /* Modern Content Sections */
-        .content-section { background: #fff; }
-        .content-card {
-            background: #fff;
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            background-color: #f8f9fa;
+        }
+
+        .intro-card {
+            background: white;
             border-radius: 15px;
             padding: 40px;
-            box-shadow: none;
-            border: 1px solid #e9ecef;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .section-title { font-size: 2.2rem; font-weight: 700; color: #333; margin-bottom: 1.25rem; }
+
+        .intro-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .intro-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #23a1dc, #1e88c5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .intro-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+        }
+
+        .intro-content {
+            text-align: center;
+        }
+
+        .intro-highlights {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+            justify-content: flex-start;
+        }
+
+        .highlight-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            flex: 0 0 auto;
+            width: calc(25% - 8px);
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(35, 161, 220, 0.2);
+            border-color: #23a1dc;
+        }
+
+        .highlight-item i {
+            color: #23a1dc;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-item span {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: white;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
 
         /* Features Grid */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
-        .feature-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: #f8f9fa; border-radius: 10px; }
-        .feature-item i { color: #23a1dc; font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
-        .feature-item span { color: #555; line-height: 1.6; }
-
-        /* Image Sections */
-        .image-section { background: #fff; }
-        .image-container { border-radius: 15px; overflow: hidden; box-shadow: none; }
-        .gallery-img { width: 100%; height: auto; cursor: pointer; transition: transform 0.3s ease; }
-        .gallery-img:hover { transform: scale(1.02); }
-
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .content-card { padding: 28px 20px; }
-            .section-title { font-size: 1.8rem; }
-        }
-        .product-category .category-title {
-            color: #333;
-            margin-bottom: 1rem;
-            font-weight: bold;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
-        .product-types {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 1rem;
-        }
-
-        .product-types li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .product-types li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #333;
-        }
-
-        .e-con-boxed {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-
-        .e-con-inner {
-            width: 100%;
-        }
-
-        /* Use Bootstrap's default .row behavior (no overrides) */
-
-        .content-column {
-            padding: 40px;
-            width: 66.666%;
-            background-color: #f8f9fa;
-        }
-
-        .image-column {
-            width: 33.333%;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            min-height: 400px;
-        }
-
-        /* Remove legacy responsive overrides on .row to avoid conflicts */
-
-        .elementor-icon-list-items {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .elementor-icon-list-item {
+        .feature-item {
             display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
         }
 
-        .elementor-icon-list-icon {
-            margin-right: 10px;
+        .feature-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .elementor-spacer {
-            height: 20px;
+        .feature-item i {
+            color: #23a1dc;
+            font-size: 1.2rem;
+            margin-top: 2px;
+            flex-shrink: 0;
         }
 
-        .product-category .category-container {
+        .feature-item span {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Image Section */
+        .image-section {
             background-color: #f8f9fa;
-            padding: 40px;
-            border-radius: 8px;
-            margin-bottom: 30px;
         }
 
-        .product-types li:before {
-            content: "\f061"; /* FontAwesome arrow right */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            color: #333;
-        }
-
-        /* Add these image-specific styles */
-        .e-con-boxed .image-container {
-            height: 300px; /* Fixed height for consistency */
+        .image-container {
+            border-radius: 15px;
             overflow: hidden;
-            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
         }
 
-        .e-con-boxed .image-container img {
+        .image-container:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* This ensures the image covers the area without distortion */
-            object-position: center;
+            height: auto;
+            transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
-        /* For responsive design */
-        @media (max-width: 768px) {
-            .e-con-boxed .image-container {
-                height: 250px; /* Slightly smaller on tablets */
-                margin-top: 20px; /* Add some space between text and image on mobile */
-            }
-        }
-
-        @media (max-width: 576px) {
-            .e-con-boxed .image-container {
-                height: 200px; /* Even smaller on mobile phones */
-            }
-        }
-
-        .content-column {
-            padding: 40px;
-        }
-
-        .image-column {
-            padding: 0;
-            position: relative;
-        }
-
-        .image-column .image-container {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            height: 100%;
-        }
-
-        .image-column .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        @media (max-width: 768px) {
-            .image-column {
-                position: relative;
-                height: 300px;
-            }
-            .image-column .image-container {
-                position: relative;
-            }
-            .content-column {
-                padding: 30px;
-            }
-        }
-
-        /* (intentionally left empty - Bootstrap handles grid responsiveness) */
-
-        /* List styles */
-        .elementor-icon-list-items {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .elementor-icon-list-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .elementor-icon-list-icon {
-            margin-right: 10px;
-        }
-
-        /* Title and text styles */
-        .category-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        /* (intentionally left empty) */
-
-        /* Add these new styles */
+        /* Image Popup */
         .image-popup {
             display: none;
             position: fixed;
@@ -588,159 +532,6 @@
             transform: rotate(-45deg);
         }
 
-        .image-column {
-            cursor: pointer;
-        }
-
-        @media (max-width: 992px) {
-            .image-popup {
-                max-width: 600px;
-                max-height: 600px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .image-popup {
-                max-width: 400px;
-                max-height: 400px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .image-popup {
-                max-width: 90%;
-                max-height: 90vh;
-            }
-        }
-
-        .products-section {
-            background-color: #fff;
-        }
-
-        .product-item {
-            position: relative;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .product-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .product-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .product-name {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(35, 161, 220, 0.7);
-            color: white;
-            padding: 10px;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .product-item:hover .product-name {
-            background: rgba(0,0,0,0.9);
-        }
-
-        @media (max-width: 768px) {
-            .product-item img {
-                height: 200px;
-            }
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .product-description p,
-        .lead,
-        .feature-list li,
-        table td,
-        table th {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .table {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 0.95rem;
-        }
-
-        .table th {
-            font-weight: 600;
-        }
-
-        .table td {
-            font-weight: 400;
-        }
-
-        .product-description {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .feature-list li {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 0.75rem;
-        }
-
-        .lead {
-            font-weight: 400;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .table {
-                font-size: 0.85rem;
-            }
-            
-            .lead {
-                font-size: 1.05rem;
-            }
-            
-            p {
-                font-size: 0.95rem;
-            }
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        .collapse {
-            transition: all 0.3s ease;
-        }
-
         /* CTA Section */
         .cta-section {
             padding: 80px 0;
@@ -778,6 +569,43 @@
             color: #23a1dc;
         }
 
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .intro-title {
+                font-size: 1.5rem;
+            }
+            
+            .content-card,
+            .intro-card {
+                padding: 30px 20px;
+            }
+            
+            .intro-highlights {
+                gap: 15px;
+            }
+            
+            .highlight-item {
+                width: calc(50% - 5px);
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Dropdown Menu Styles */
         .dropdown-menu {
             background-color: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.1);
@@ -806,23 +634,10 @@
             cursor: pointer;
         }
 
-        /* Active state for dropdown items */
         .dropdown-item.active, 
         .dropdown-item:active {
             background-color: #f8f9fa;
             color: #000000;
-        }
-
-        @media (max-width: 768px) {
-            .dropdown-menu {
-                border: none;
-                padding-left: 1rem;
-                box-shadow: none;
-            }
-            
-            .dropdown-item {
-                padding: 8px 15px;
-            }
         }
 
         /* Mobile Menu Button Styles */
@@ -867,7 +682,7 @@
             }
         }
     </style>
-    <title>Filter Cartridges & Housings – Genoasis India & UAE</title>
+    <title>Genoasis - Membrane Products</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
 </head>
 	<!-- Start Top Bar -->
@@ -914,9 +729,9 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="frpmedia.html">RO Pressure Vessels & FRP Filters</a></li>
-                            <li><a class="dropdown-item" href="membranes.html">Membrane Products</a></li>
+                            <li><a class="dropdown-item active" href="membranes.html">Membrane Products</a></li>
                             <li><a class="dropdown-item" href="pumps.html">Pumps</a></li>
-                            <li><a class="dropdown-item active" href="filters.html">Filter Cartridges & Housings</a></li>
+                            <li><a class="dropdown-item" href="filters.html">Filter Cartridges & Housings</a></li>
                             <li><a class="dropdown-item" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
                             <li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
                             <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
@@ -940,103 +755,167 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center hero-content">
-                    <h1 class="hero-title" data-aos="fade-up">Filter Cartridges & Housings – India & UAE</h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">High‑performance filtration for industrial and commercial applications across India and UAE. Explore our <a href="Products.html">products</a> or <a href="contact.html">contact our Chennai and Dubai teams</a>.</p>
+                    <h1 class="hero-title" data-aos="fade-up">Membrane Products</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Advanced Membrane Solutions for Water Treatment</p>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="400">Leading supplier of advanced membrane solutions designed to meet diverse water treatment needs. Our Integrated Membrane Solutions (IMS) provide high-performance systems for brackish water, seawater desalination, wastewater treatment, and more.</p>
                 </div>
             </div>
         </div>
     </section>
     <!-- End Hero Section -->
-
-    <!-- Filters & Filter Housings -->
-    <section class="content-section pt-5 pb-3">
+    
+    <!-- Introduction -->
+    <section class="intro-section py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="content-card" data-aos="fade-up">
-                        <h2 class="section-title mb-3">Filters & Filter Housings</h2>
-                        <p class="lead mb-4">Genoasis supplies replacement cartridges and bag filters for industries such as Oil & Gas, Food & Beverage, and Pharmaceuticals. We offer a complete range of filtration products and systems for pure water purification. To meet restocking needs, we provide competitive supply agreements and express delivery services as needed. We supply across India and UAE from Chennai and Dubai — browse our <a href="Products.html">full product range</a>.</p>
-                        <p class="mb-4">We offer a variety of Filtration Cartridge Housing, including String Wound and Melt Blown Filtration Cartridges, designed to meet the needs of various industrial filtration applications. These cartridges are engineered for superior performance, durability, and efficiency.</p>
-
-                        <h3 class="mb-3">Features & Benefits</h3>
-                        <div class="features-grid mb-4">
-                            <div class="feature-item"><i class="fas fa-industry"></i><span>High-precision cartridge filter made from premium polypropylene yarn and core materials</span></div>
-                            <div class="feature-item"><i class="fas fa-layer-group"></i><span>True gradient density achieved through advanced manufacturing techniques</span></div>
-                            <div class="feature-item"><i class="fas fa-filter"></i><span>Superior filtration with high dirt-holding capacity</span></div>
-                            <div class="feature-item"><i class="fas fa-shield-alt"></i><span>Optimal protection for downstream equipment</span></div>
-                            <div class="feature-item"><i class="fas fa-ruler-combined"></i><span>Micron ratings from 0.5 to 150</span></div>
-                            <div class="feature-item"><i class="fas fa-arrows-alt-v"></i><span>Sizes 10", 20", 30", 40", 50", 70"; diameters 2.5" & 4.5"</span></div>
+                    <div class="intro-card" data-aos="fade-up">
+                        <div class="intro-header mb-4">
+                            <div class="intro-icon">
+                                <i class="fas fa-filter"></i>
+                            </div>
+                            <h3 class="intro-title">Advanced Membrane Solutions</h3>
                         </div>
-
-                        <h3 class="mb-3">Certifications</h3>
-                        <p class="mb-4">Tested and certified by NSF International to NSF/ANSI Standard 42 for material requirements.</p>
-
-                        <h3 class="mb-3">Materials</h3>
-                        <div class="features-grid mb-4">
-                            <div class="feature-item"><i class="fas fa-cube"></i><span>Filter Media: Polypropylene</span></div>
-                            <div class="feature-item"><i class="fas fa-cube"></i><span>Core: Polypropylene</span></div>
-                            <div class="feature-item"><i class="fas fa-cube"></i><span>End Caps: Polypropylene</span></div>
-                            <div class="feature-item"><i class="fas fa-ring"></i><span>O-ring/Gasket: None</span></div>
+                        <div class="intro-content">
+                            <p class="lead mb-4">
+                                We are a leading supplier and trader of advanced membrane solutions designed to meet diverse water treatment needs. Our Integrated Membrane Solutions (IMS) are customized to address specific business objectives, providing high-performance systems for applications such as brackish water, seawater desalination, wastewater treatment, and more.
+                            </p>
+                            <div class="intro-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-cogs"></i>
+                                    <span>Comprehensive Technical Support</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-rocket"></i>
+                                    <span>Cutting-Edge Technology</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>High-Performance Systems</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Reliable & Cost-Effective Solutions</span>
+                                </div>
+                            </div>
                         </div>
-
-                        <h3 class="mb-3">Operating Conditions</h3>
-                        <div class="features-grid mb-3">
-                            <div class="feature-item"><i class="fas fa-tachometer-alt"></i><span>Change‑out ΔP: 0.14 MPa (1.4 bar; 20.3 psid) @ 21°C</span></div>
-                            <div class="feature-item"><i class="fas fa-thermometer-half"></i><span>Max operating temperature: 70°C (158°F)</span></div>
-                        </div>
-
-                        <p class="mb-0">These cartridges are designed to meet stringent filtration standards, ensuring consistent quality and high performance in a wide range of industries.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Image Section -->
-    <section class="image-section pt-3 pb-3">
+    <!-- RO Membrane Technology -->
+    <section class="content-section pt-5 pb-3">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="image-container" data-aos="fade-up">
-                        <img src="images/filters1.jpg" alt="Filter cartridges and housings supplier India UAE – Genoasis" class="gallery-img" loading="lazy">
+                    <div class="content-card" data-aos="fade-up">
+                        <h2 class="section-title mb-4">RO Membrane Technology (Reverse Osmosis)</h2>
+                        <p class="lead mb-4">
+                            Reverse osmosis (RO) is an essential process for removing particles with a molecular weight cutoff of 100 to 200. Our RO membranes are designed to effectively eliminate substances such as metal ions, acids, sugars, dyes, natural resins, and ions.
+                        </p>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-award"></i>
+                                <span>High Salt Rejection: Our RO membranes are renowned for their high salt rejection rates, making them the ideal choice for high-purity applications in industries such as pharmaceuticals, power generation, and semiconductor manufacturing.</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>Available Sizes: 4" and 8" configurations for a wide range of applications.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Filter Bags Section -->
+    
+    <!-- Nanofiltration (NF) Membranes -->
     <section class="content-section pt-3 pb-3">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="content-card" data-aos="fade-up">
-                        <h2 class="section-title mb-3">Filter Bags & Housing</h2>
-                        <p class="lead mb-4">Filter Bags provide an economical filtration solution for a wide variety of applications. Offering excellent performance and efficiency, these filter bags provide a simple and cost‑effective way to maintain clean liquids by trapping impurities and debris.</p>
-
-                        <h3 class="mb-3">Features</h3>
-                        <div class="features-grid mb-4">
-                            <div class="feature-item"><i class="fas fa-bolt"></i><span>High‑efficiency filtration performance</span></div>
-                            <div class="feature-item"><i class="fas fa-arrows-alt"></i><span>Wide range of sizes to suit various needs</span></div>
-                            <div class="feature-item"><i class="fas fa-tools"></i><span>Engineered construction for superior efficiency</span></div>
-                            <div class="feature-item"><i class="fas fa-tags"></i><span>Lower initial cost than alternative methods</span></div>
-                            <div class="feature-item"><i class="fas fa-stopwatch"></i><span>Fast installation and replacement, minimal downtime</span></div>
+                        <h2 class="section-title mb-4">Nanofiltration (NF) Membranes</h2>
+                        <p class="lead mb-4">
+                            Nanofiltration membranes are perfect for applications that require the removal of particles with a molecular weight cutoff of 200 to 1500, including divalent ions, organic materials, color, bacteria, and viruses. These membranes can be integrated with RO or ultrafiltration systems for efficient primary or secondary water treatment.
+                        </p>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Superior Performance: Our NF membranes provide excellent performance at low pressures, ideal for applications such as softening, pesticide removal, and pathogen elimination.</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-percentage"></i>
+                                <span>They offer a high degree of salt rejection (91%-99%) while allowing passage of monovalent ions like sodium and chloride, making them perfect for municipal potable water systems.</span>
+                            </div>
                         </div>
-
-                        <p class="mb-0">Filter bags are designed to capture dirt and debris, ensuring that only clean liquid passes through the filter, maintaining system integrity.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Second Image -->
-    <section class="image-section pt-3 pb-5">
+    <!-- Ultrafiltration (UF) Membranes -->
+    <section class="content-section pt-3 pb-3">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="image-container" data-aos="fade-up">
-                        <img src="images/filters2.jpg" alt="Industrial filter bags and housings supplier India UAE – Genoasis" class="gallery-img" loading="lazy">
+                    <div class="content-card" data-aos="fade-up">
+                        <h2 class="section-title mb-4">Ultrafiltration (UF) Membranes</h2>
+                        <p class="lead mb-4">
+                            Our ultrafiltration membranes offer high-efficiency filtration, providing superior permeate quality while minimizing footprint requirements. These modules are suitable for industrial or municipal wastewater, seawater, surface water, and ground water treatment.
+                        </p>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-microchip"></i>
+                                <span>Advanced Ultrafiltration Technology: Utilizing advanced PVDF hollow fibers (0.08 micron pore size), our UF membranes offer high recovery rates, reduced fiber breakage, and no need for backwash pumps. Physical cleaning is performed through air scouring with a patented air diffuser design.</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-cubes"></i>
+                                <span>Modular Systems: Our ultrafiltration modules can be integrated into pre-engineered, standardized rack systems for optimal space usage and efficient operation.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membrane Bioreactor (MBR) Technology -->
+    <section class="content-section pt-3 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-card" data-aos="fade-up">
+                        <h2 class="section-title mb-4">Membrane Bioreactor (MBR) Technology</h2>
+                        <p class="lead mb-4">
+                            Membrane bioreactors (MBRs) combine biological treatment with membrane filtration, producing high-quality permeate water suitable for Cooling Tower, Chiller and RO treatment. These systems eliminate the need for sedimentation tanks and can operate at higher mixed liquor suspended solids (MLSS) levels.
+                        </p>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-filter"></i>
+                                <span>Microfiltration and Ultrafiltration Technology: We offer both microfiltration and ultrafiltration MBR technologies. Microfiltration with a 0.4 µm pore size is ideal for municipal and industrial wastewater treatment.</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-industry"></i>
+                                <span>Ultrafiltration (0.05 µm pore size) is well-suited for more demanding wastewater applications in industries such as chemical, textile, food and beverage, and palm oil production.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Single Image at the End -->
+    <section class="image-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="image-container" data-aos="zoom-in">
+                        <img src="images/membranes.jpg" alt="Membrane Technologies" class="gallery-img">
                     </div>
                 </div>
             </div>
@@ -1049,7 +928,7 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="cta-title" data-aos="fade-up">Ready to Transform Your Water Treatment?</h2>
-                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts today to discuss your filtration requirements and get a customized solution for your facility.</p>
+                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts today to discuss your membrane requirements and get a customized solution for your facility.</p>
                     <a href="contact.html" class="btn-cta" data-aos="fade-up" data-aos-delay="400">Get Expert Consultation</a>
                 </div>
             </div>
@@ -1063,7 +942,7 @@
                 <div class="col-lg-4">
                     <div class="mb-4 footer-logo-wrap">
                         <a href="#" class="footer-logo">
-                            <img src="images/logo.png" alt="Genoasis industrial water treatment supplier India UAE" style="height: 50px;">
+                            <img src="images/logo.png" alt="Company Logo" style="height: 50px;">
                         </a>
                     </div>
                     <p class="mb-4">Empowering water treatment plants with advanced chemicals and supplies for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
@@ -1108,9 +987,9 @@
     </footer>
     <!-- End Footer Section -->
 
-    <script defer src="js/bootstrap.bundle.min.js"></script>
-    <script defer src="js/tiny-slider.js"></script>
-    <script defer src="js/custom.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -1119,7 +998,7 @@
             offset: 100
         });
     </script>
-    <script defer src="js/recaptcha.js"></script>
+    <script src="js/recaptcha.js"></script>
     <div class="popup-overlay"></div>
     <div class="image-popup">
         <div class="popup-close"></div>

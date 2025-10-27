@@ -76,8 +76,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('.tab-item');
     const contents = document.querySelectorAll('.tab-content');
 
-    // Show first tab content by default
-    contents[0].classList.add('active');
+    // Show first tab content by default (with safety check)
+    if (contents.length > 0) {
+        contents[0].classList.add('active');
+    }
 
     tabs.forEach(tab => {
         tab.addEventListener('click', (e) => {
@@ -92,14 +94,18 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Show corresponding content
             const targetId = tab.getAttribute('data-tab');
-            document.getElementById(targetId).classList.add('active');
+            const targetElement = targetId ? document.getElementById(targetId) : null;
+            if (targetElement) {
+                targetElement.classList.add('active');
+            }
         });
     });
 });
 
 // Site-wide WhatsApp floating button (injected on every page)
 document.addEventListener('DOMContentLoaded', function () {
-    if (document.querySelector('.whatsapp-float')) return; // avoid duplicates
+    // Check if already exists to avoid duplicates
+    if (document.querySelector('.whatsapp-float') || !document.body) return;
 
     var phone = '918925883227'; // WhatsApp number without '+' (edit as needed)
     var text = 'Hi Genoasis, I would like to chat.';

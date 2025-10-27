@@ -2,18 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <!-- Preconnect to external domains for faster loading -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 	<link rel="manifest" href="/site.webmanifest" />
-    <meta name="description" content="Valves, pipes and fittings for water treatment: PVC/CPVC pipes, metallic valves, Victaulic couplings. Supplier in India & UAE." />
-    <meta name="keywords" content="valves, pipes, fittings, PVC, CPVC, Victaulic couplings, water treatment, Genoasis" />
+    <meta name="description" content="Disinfection systems for water treatment: UV sterilizers and ozone generators. Industrial supplier in India & UAE. Contact our Chennai and Dubai teams." />
+    <meta name="keywords" content="UV sterilizer, ozone generator, water disinfection, Genoasis, water treatment" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
     <script>
@@ -25,7 +21,7 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="css/tiny-slider.css" rel="stylesheet" media="print" onload="this.media=\'all\'">
+    <link href="css/tiny-slider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <!-- Add AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -211,7 +207,7 @@
         }
 
         .hero-section {
-            background-image: url('images/fittings1.jpg');
+            background-image: url('images/disinfectants1.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -277,15 +273,15 @@
         }
 
         .features-section {
-            padding: 60px 0;
+            padding: 80px 0;
             background-color: #f8f9fa;
         }
 
         .feature-card {
             background: white;
             border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             height: 100%;
@@ -297,23 +293,23 @@
         }
 
         .feature-icon {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, #23a1dc, #1e88c5);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: white;
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
 
         .feature-title {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: #333;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .feature-list {
@@ -323,12 +319,10 @@
         }
 
         .feature-list li {
-            padding: 4px 0;
+            padding: 8px 0;
             border-bottom: 1px solid #eee;
             position: relative;
-            padding-left: 20px;
-            font-size: 0.9rem;
-            line-height: 1.4;
+            padding-left: 25px;
         }
 
         .feature-list li:before {
@@ -599,7 +593,7 @@
             transition: all 0.3s ease;
         }
     </style>
-    <title>Valves, Pipes & Fittings – PVC/CPVC, Victaulic | India & UAE</title>
+    <title>Disinfection Systems – UV & Ozone | India & UAE | Genoasis</title>
 	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
 </head>
 	<!-- Start Top Bar -->
@@ -653,8 +647,8 @@
                             <li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
                             <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
                             <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
-                            <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
-                            <li><a class="dropdown-item active" href="valves.html">Valves, Couplings & Fittings</a></li>
+                            <li><a class="dropdown-item active" href="disinfectants.html">Disinfection Products</a></li>
+                            <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
                             <li><a class="dropdown-item" href="festo-products.html">Festo Products</a></li>
                             <li><a class="dropdown-item" href="atmospheric-water-generators.html">Atmospheric Water Generators</a></li>
                             <li><a class="dropdown-item" href="nanobubble-technology.html">Nanobubble Technology</a></li>
@@ -673,9 +667,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center hero-content">
-                    <h1 class="hero-title" data-aos="fade-up">Valves, Pipes & Fittings – India & UAE</h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">High-quality solutions for water treatment across India and UAE. View <a href="Products.html">products</a> or <a href="contact.html">contact Chennai/Dubai</a>.</p>
-                    <p class="lead" data-aos="fade-up" data-aos-delay="400">Genoasis Technologies offers an extensive range of high-quality pipes, fittings, and valves designed to ensure seamless fluid management in water and wastewater systems. Our products guarantee durability, reliability, and superior performance in all phases of water treatment.</p>
+                    <h1 class="hero-title" data-aos="fade-up">Disinfection Systems – India & UAE</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">UV sterilizers and ozone generators for water treatment across India and UAE. View <a href="Products.html">products</a> or <a href="contact.html">contact Chennai/Dubai</a>.</p>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="400">We offer advanced disinfection solutions for a wide range of applications, ensuring high-efficiency water treatment. Our UV sterilizers and ozone generators are designed to effectively eliminate harmful microorganisms and contaminants from water, providing safe and clean water for industrial, municipal, and commercial uses.</p>
                 </div>
             </div>
         </div>
@@ -686,7 +680,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="display-4 fw-bold" data-aos="fade-up">Comprehensive Valve & Fitting Solutions</h2>
+                    <h2 class="display-4 fw-bold" data-aos="fade-up">Advanced Disinfection Solutions</h2>
                 </div>
             </div>
             
@@ -694,14 +688,14 @@
                 <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-tint"></i>
+                            <i class="fas fa-sun"></i>
                         </div>
-                        <h3 class="feature-title">Pipes & Fittings</h3>
+                        <h3 class="feature-title">UV Sterilizer</h3>
                         <ul class="feature-list">
-                            <li>PVC and CPVC Pipe and Fittings: Durable solutions for water flow management</li>
-                            <li>Customized Fittings: Tailored to meet the specific needs of each system</li>
-                            <li>High-quality materials for long-term reliability</li>
-                            <li>Easy installation and maintenance</li>
+                            <li>Environmentally friendly, chemical-free treatment</li>
+                            <li>Effective against a wide range of microorganisms</li>
+                            <li>Low maintenance and cost-efficient operation</li>
+                            <li>Compact and easy to integrate into existing systems</li>
                         </ul>
                     </div>
                 </div>
@@ -709,14 +703,14 @@
                 <div class="col-lg-6 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-cogs"></i>
+                            <i class="fas fa-atom"></i>
                         </div>
-                        <h3 class="feature-title">Metallic Valves</h3>
+                        <h3 class="feature-title">Ozone Generator</h3>
                         <ul class="feature-list">
-                            <li>Ball Valves, Butterfly Valves, Globe Valves</li>
-                            <li>Needle Valves, Gate Valves</li>
-                            <li>Pressure Relief Valves, Non-Return Valves</li>
-                            <li>Built for durability, efficiency, and long-term reliability</li>
+                            <li>Strong disinfecting power for wastewater and drinking water</li>
+                            <li>Reduces the need for chemicals, lowering operational costs</li>
+                            <li>Effectively controls biological contamination and eliminates odors</li>
+                            <li>Environmentally safe and efficient technology</li>
                         </ul>
                     </div>
                 </div>
@@ -724,40 +718,56 @@
         </div>
     </section>
 
-    <!-- Main Products Image Section -->
+    <!-- UV Sterilizer Section -->
     <section class="solutions-section pt-5">
         <div class="container">
-            <div class="row mb-5">
-                <div class="col-12 text-center" data-aos="fade-up">
-                    <div class="image-container" style="max-width: 900px; margin: 0 auto;">
-                        <img src="images/fittings1.jpg" alt="Valves pipes and fittings collection supplier India UAE – Genoasis" class="img-fluid w-100">
+            <div class="row mb-5 align-items-center">
+                <div class="col-lg-7">
+                    <h2 class="display-5 fw-bold mb-4" data-aos="fade-right">UV Sterilizer Technology</h2>
+                    <p class="lead mb-4" data-aos="fade-right" data-aos-delay="200">
+                        Genoasis UV sterilizers use ultraviolet light to inactivate harmful microorganisms, including bacteria, viruses, and protozoa. The UV disinfection process is highly effective, chemical-free, and environmentally friendly, making it ideal for treating drinking water, wastewater, and process water.
+                    </p>
+                    
+                    <h3 class="h5 mb-3" data-aos="fade-right" data-aos-delay="300">Applications</h3>
+                    <ul class="feature-list mb-4" data-aos="fade-right" data-aos-delay="400">
+                        <li>Municipal water treatment</li>
+                        <li>Food & beverage industry</li>
+                        <li>Pharmaceutical water treatment</li>
+                        <li>Wastewater treatment</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-5" data-aos="fade-left" data-aos-delay="400">
+                    <div class="image-container">
+                        <img src="images/disinfectants1.jpg" alt="UV sterilizer water treatment systems India UAE – Genoasis" class="img-fluid w-100">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Victaulic Couplings Section -->
+    <!-- Ozone Generator Section -->
     <section class="solutions-section alt-bg pt-5">
         <div class="container">
             <div class="row mb-5 align-items-center">
                 <div class="col-lg-5 order-lg-2" data-aos="fade-right" data-aos-delay="400">
                     <div class="image-container">
-                        <img src="images/fittings2.jpg" alt="Victaulic couplings supplier India UAE – Genoasis" class="img-fluid w-100">
+                        <img src="images/disinfectants2.jpg" alt="Ozone generator water treatment systems India UAE – Genoasis" class="img-fluid w-100">
                     </div>
                 </div>
                 
                 <div class="col-lg-7 order-lg-1">
-                    <h2 class="display-5 fw-bold mb-4" data-aos="fade-left">Specialized Couplings: Victaulic</h2>
+                    <h2 class="display-5 fw-bold mb-4" data-aos="fade-left">Ozone Generator Systems</h2>
                     <p class="lead mb-4" data-aos="fade-left" data-aos-delay="200">
-                        We are proud to offer Victaulic couplings, renowned for their high-performance sealing and ease of installation. These couplings are ideal for small to large diameter piping systems and are designed to provide a rigid joint with no expansion, contraction, or linear movement.
+                        Our ozone generators offer an advanced oxidation process to purify water, eliminate odors, and destroy microorganisms. Ozone is a powerful oxidant that effectively treats both organic and inorganic contaminants in water without leaving harmful residues.
                     </p>
 
-                    <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="300">Key Features</h3>
+                    <h3 class="h5 mb-3" data-aos="fade-left" data-aos-delay="300">Applications</h3>
                     <ul class="feature-list mb-4" data-aos="fade-left" data-aos-delay="400">
-                        <li>Patented Angled Pad Design: Locks housing keys into the groove around the full circumference, creating a rigid connection</li>
-                        <li>Rigid Joint: No flexibility required, making them ideal for mechanical rooms, risers, and other areas where flexibility is not desired</li>
-                        <li>Compliance: Victaulic couplings meet ASME B31.1 Power Piping Code, ASME B31.9 Building Services Piping Code, and NFPA 13 Sprinkler Systems Code</li>
+                        <li>Drinking water purification</li>
+                        <li>Industrial wastewater treatment</li>
+                        <li>Aquaculture and pool water disinfection</li>
+                        <li>Food and beverage industry</li>
                     </ul>
                 </div>
             </div>
@@ -769,8 +779,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="cta-title" data-aos="fade-up">Ready to Transform Your Water Treatment?</h2>
-                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts in Chennai or Dubai to discuss your valve and fitting requirements and get a customized solution.</p>
+                    <h2 class="cta-title" data-aos="fade-up">Ready to Enhance Your Water Disinfection?</h2>
+                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts in Chennai or Dubai to discuss your disinfection requirements and get a customized solution.</p>
                     <a href="contact.html" class="btn-cta" data-aos="fade-up" data-aos-delay="400">Get Expert Consultation</a>
                 </div>
             </div>
@@ -829,9 +839,9 @@
     </footer>
     <!-- End Footer Section -->
 
-    <script defer src="js/bootstrap.bundle.min.js"></script>
-    <script defer src="js/tiny-slider.js"></script>
-    <script defer src="js/custom.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -840,7 +850,7 @@
             offset: 100
         });
     </script>
-    <script defer src="js/recaptcha.js"></script>
+    <script src="js/recaptcha.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
