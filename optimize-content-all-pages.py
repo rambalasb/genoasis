@@ -43,7 +43,7 @@ def optimize_page_content(file_path):
         # Fix LinkedIn link  
         content = re.sub(
             r'<a href="#">([^<]*linkedin[^<]*)</a>',
-            r'<a href="https://www.linkedin.com/company/genoasis" target="_blank" rel="noopener">\1</a>',
+            r'<a href="https://www.linkedin.com/company/genoasis-technologies/?viewAsMember=true" target="_blank" rel="noopener">\1</a>',
             content,
             flags=re.IGNORECASE
         )
@@ -80,7 +80,7 @@ def optimize_page_content(file_path):
         )
         content = re.sub(
             r'<a href="#"><span class="fa fa-brands fa-linkedin"></span></a>',
-            r'<a href="https://www.linkedin.com/company/genoasis" target="_blank" rel="noopener"><span class="fa fa-brands fa-linkedin"></span></a>',
+            r'<a href="https://www.linkedin.com/company/genoasis-technologies/?viewAsMember=true" target="_blank" rel="noopener"><span class="fa fa-brands fa-linkedin"></span></a>',
             content
         )
         changes.append("Fixed social media links")
