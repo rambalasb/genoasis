@@ -208,8 +208,13 @@ input, textarea, select { font-family: inherit; }
 .mobile-nav {
   display: none; position: fixed; inset: 0;
   background: var(--white); z-index: 999;
-  padding: 5rem 1.5rem 2rem; overflow-y: auto;
+  padding: 1.5rem 1.5rem 2rem; overflow-y: auto;
   transform: translateX(100%); transition: transform .3s var(--ease);
+}
+.mobile-nav-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-bottom: 1.25rem; margin-bottom: .5rem;
+  border-bottom: 1px solid var(--border);
 }
 .mobile-nav.open { transform: translateX(0); }
 .mobile-nav-links { display: flex; flex-direction: column; gap: .2rem; margin-bottom: 1.5rem; }
@@ -626,7 +631,7 @@ textarea.form-control { resize: vertical; min-height: 130px; }
    ============================================================ */
 .site-footer { background: var(--gray-900); color: rgba(255,255,255,.65); padding: 4rem 0 0; }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.07); }
-.footer-logo { height: 32px; margin-bottom: 1rem; filter: brightness(0) invert(1); }
+.footer-logo { height: 32px; margin-bottom: 1rem; }
 .footer-brand p { font-size: .875rem; line-height: 1.7; margin-bottom: 1.25rem; }
 .footer-social { display: flex; gap: .5rem; }
 .footer-social a {
@@ -704,6 +709,9 @@ textarea.form-control { resize: vertical; min-height: 130px; }
   .nav-links, .nav-cta { display: none; }
   .nav-toggle          { display: flex; }
   .mobile-nav          { display: block; }
+  /* Always show dark logo on mobile — white logo invisible on white overlay */
+  .site-nav:not(.scrolled) .logo-light { display: none; }
+  .site-nav:not(.scrolled) .logo-dark  { display: block; }
   .grid-2, .grid-3     { grid-template-columns: 1fr; }
   .footer-grid         { grid-template-columns: 1fr; gap: 2rem; }
   .bento-grid          { grid-template-columns: 1fr; }
