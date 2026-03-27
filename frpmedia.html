@@ -1,1341 +1,250 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <!-- Preconnect to external domains for faster loading -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-
-	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-	<link rel="manifest" href="/site.webmanifest" />
-    <meta name="description" content="RO pressure vessels and FRP media filter solutions. Industrial supplier across India and UAE. Contact our Chennai and UAE teams." />
-    <meta name="keywords" content="RO pressure vessels, FRP filters, FRP media filters, water treatment equipment, India, UAE, Chennai, UAE" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RPG7M7CLBF');
-    </script>
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="css/tiny-slider.css" rel="stylesheet" media="print" onload="this.media=\'all\'">
-    <link href="css/style.css" rel="stylesheet">
-    <!-- Add AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        /* Modern Navigation Styles */
-        .top-bar {
-            background: white;
-            font-size: 1rem;
-            border-bottom: 1px solid #e9ecef;
-            padding: 12px 0;
-        }
-
-        .top-bar a {
-            color: #495057;
-            transition: color 0.3s ease;
-            font-weight: 500;
-            font-size: 1.1rem;
-        }
-
-        .top-bar a:hover {
-            color: #23a1dc !important;
-        }
-
-        .top-bar i {
-            font-size: 1rem;
-            margin-right: 6px;
-        }
-
-        .custom-navbar-nav .nav-link {
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 12px 20px !important;
-            margin: 0 8px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .nav-link:hover::before {
-            left: 0;
-        }
-
-        .nav-link:hover {
-            color: white !important;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(35, 161, 220, 0.3);
-        }
-
-        .nav-link.active {
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            color: white !important;
-        }
-
-        .nav-link[href="index.html"]:hover {
-            color: #333 !important;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        }
-
-        .nav-link[href="about.html"]:hover {
-            color: #333 !important;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        }
-
-        .nav-link[href="contact.html"]:hover {
-            color: #333 !important;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        }
-
-        .dropdown-toggle::after {
-            transition: transform 0.3s ease;
-            font-size: 0.8rem;
-        }
-
-        .dropdown:hover .dropdown-toggle::after {
-            transform: rotate(180deg);
-        }
-
-        .dropdown.show .dropdown-toggle::after {
-            transform: rotate(180deg);
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            background: white;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 8px 0;
-            margin-top: 8px;
-            min-width: 250px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            position: absolute;
-            z-index: 9999;
-        }
-
-        .dropdown-menu.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-item {
-            padding: 12px 20px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #333;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .dropdown-item:hover {
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            color: white !important;
-            transform: translateX(5px);
-        }
-
-        .dropdown-item:hover,
-        .dropdown-item:focus,
-        .dropdown-item:active {
-            color: white !important;
-            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
-        }
-
-        .dropdown-menu .dropdown-item:hover,
-        .dropdown-menu .dropdown-item:focus,
-        .dropdown-menu .dropdown-item:active {
-            color: white !important;
-            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
-            text-decoration: none;
-        }
-
-        .dropdown-item * {
-            color: inherit;
-        }
-
-        .dropdown-toggle:hover {
-            color: white !important;
-        }
-
-        .dropdown-toggle:hover::before {
-            left: 0;
-        }
-
-        .navbar-brand {
-            transition: transform 0.3s ease;
-        }
-
-        .navbar-brand:hover {
-            transform: scale(1.05);
-        }
-
-        .custom-navbar {
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 1000;
-        }
-
-        .navbar-toggler {
-            border: 2px solid #333;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler:hover {
-            background: #f8f9fa;
-            transform: scale(1.05);
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(35, 161, 220, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-        }
-
-        /* Prevent phone numbers from breaking lines */
-        .footer-section li {
-            white-space: nowrap;
-        }
-
-        .top-bar a, .top-bar span {
-            white-space: nowrap;
-        }
-
-        @media (max-width: 768px) {
-            /* Allow line breaks on mobile for better readability */
-            .footer-section li {
-                white-space: normal;
-            }
-
-            .top-bar a, .top-bar span {
-                white-space: normal;
-            }
-            .top-bar {
-                text-align: center;
-            }
-            
-            .top-bar .d-flex {
-                justify-content: center !important;
-            }
-            
-            .custom-navbar-nav .nav-link {
-                font-size: 1rem;
-                padding: 10px 15px !important;
-                margin: 2px 0;
-            }
-            
-            .dropdown-menu {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                border: none;
-                background: #f8f9fa;
-                margin-top: 0;
-                padding-left: 20px;
-            }
-            
-            .dropdown-item {
-                padding: 8px 15px;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Hero Section Styles */
-        .hero-section {
-            background-image: url('images/products-banner.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* Intro Section */
-        .intro-section {
-            background-color: #f8f9fa;
-        }
-
-        .intro-card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .intro-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .intro-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 2rem;
-        }
-
-        .intro-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #333;
-            margin: 0;
-        }
-
-        .intro-content {
-            text-align: center;
-        }
-
-        .intro-highlights {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 30px;
-            justify-content: flex-start;
-        }
-
-        .highlight-item {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            flex: 0 0 auto;
-            width: calc(25% - 8px);
-        }
-
-        .highlight-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(35, 161, 220, 0.2);
-            border-color: #23a1dc;
-        }
-
-        .highlight-item i {
-            color: #23a1dc;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .highlight-item span {
-            font-weight: 600;
-            color: #333;
-        }
-
-        /* Content Sections */
-        .content-section {
-            background: white;
-        }
-
-        .content-card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 1.5rem;
-        }
-
-        .subsection-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Applications Grid */
-        .applications-grid {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
-            justify-content: flex-start;
-        }
-
-        .app-item {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            flex: 0 0 auto;
-            width: calc(20% - 8px);
-        }
-
-        .app-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(35, 161, 220, 0.2);
-            border-color: #23a1dc;
-        }
-
-        .app-item i {
-            font-size: 2rem;
-            color: #23a1dc;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .app-item span {
-            font-weight: 600;
-            color: #333;
-        }
-
-        /* Series Grid */
-        .series-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-
-        .series-item {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .series-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .series-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .series-content h4 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .series-content p {
-            color: #666;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .feature-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .feature-item i {
-            color: #23a1dc;
-            font-size: 1.2rem;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-
-        .feature-item span {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* Specs Grid */
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .spec-card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .spec-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .spec-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .spec-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .spec-content i {
-            color: #23a1dc;
-            font-size: 1.2rem;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-
-        .spec-content span {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* Image Section */
-        .image-section {
-            background-color: #f8f9fa;
-        }
-
-        .image-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .image-container:hover {
-            transform: scale(1.02);
-        }
-
-        .gallery-img {
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .gallery-img:hover {
-            transform: scale(1.02);
-        }
-
-        /* Image Popup */
-        .image-popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            max-width: 800px;
-            max-height: 800px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .image-popup img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.8);
-            z-index: 999;
-            cursor: pointer;
-        }
-
-        .popup-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .popup-close:hover {
-            background: rgba(0, 0, 0, 0.9);
-        }
-
-        .popup-close::before,
-        .popup-close::after {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 2px;
-            background-color: white;
-        }
-
-        .popup-close::before {
-            transform: rotate(45deg);
-        }
-
-        .popup-close::after {
-            transform: rotate(-45deg);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .intro-title {
-                font-size: 1.5rem;
-            }
-            
-            .content-card,
-            .intro-card {
-                padding: 30px 20px;
-            }
-            
-            .intro-highlights {
-                gap: 15px;
-            }
-            
-            .highlight-item {
-                width: calc(50% - 5px);
-            }
-            
-            .app-item {
-                width: calc(50% - 5px);
-            }
-            
-            .applications-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 15px;
-            }
-            
-            .series-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .specs-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Dropdown Menu Styles */
-        .dropdown-menu {
-            background-color: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            margin-top: 0;
-            padding: 8px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .dropdown-item {
-            color: #333333;
-            padding: 8px 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-item:hover {
-            background-color: #f8f9fa;
-            color: #000000;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .nav-item.dropdown > .nav-link {
-            cursor: pointer;
-        }
-
-        .dropdown-item.active, 
-        .dropdown-item:active {
-            background-color: #f8f9fa;
-            color: #000000;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #23a1dc 0%, #1e88c5 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .cta-description {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .btn-cta {
-            background: white;
-            color: #23a1dc;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-cta:hover {
-            background: #f8f9fa;
-            transform: translateY(-2px);
-            color: #23a1dc;
-        }
-
-        /* Mobile Menu Button Styles */
-        .navbar-toggler {
-            border-color: #333333;
-            background-color: transparent;
-            padding: 0.5rem;
-            margin-right: 15px;
-        }
-        
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-            width: 1.5em;
-            height: 1.5em;
-        }
-
-        @media (max-width: 768px) {
-            .navbar-toggler {
-                margin-right: 15px;
-            }
-            
-            .navbar-collapse {
-                padding: 1rem 0;
-            }
-            
-            .custom-navbar-nav {
-                padding: 0.5rem 0;
-            }
-            
-            .nav-item {
-                padding: 0.5rem 0;
-            }
-            
-            .dropdown-menu {
-                border: none;
-                padding-left: 1rem;
-                margin-top: 0;
-            }
-            
-            .dropdown-item {
-                padding: 0.5rem 0;
-            }
-        }
-    </style>
-    <title>Genoasis - RO Pressure Vessels & FRP Media Filter Solutions</title>
-	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1d35">
+  <title>RO Pressure Vessels &amp; FRP Filters — Genoasis Water Technologies</title>
+  <meta name="description" content="High-quality FRP pressure vessels and multi-media filters for RO plants and water treatment systems. NSF certified, corrosion-resistant, rated for high-pressure operation.">
+  <link rel="icon" href="favicon/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="css/design.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RPG7M7CLBF');</script>
 </head>
-	<!-- Start Top Bar -->
-	<div class="top-bar py-2">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="d-flex justify-content-end">
-						<a href="tel:+918925883227" class="me-3 text-decoration-none">
-							🇮🇳 <i class="fas fa-phone"></i> +91 892 588 3227
-						</a>
-						<span class="me-3">
-							🇦🇪 <i class="fas fa-phone"></i> <a href="tel:+971504973835" class="text-decoration-none">+971 50 497 3835</a> / <a href="tel:+971503571340" class="text-decoration-none">+971 50 357 1340</a>
-						</span>
-						<a href="mailto:info@genoasis.com" class="text-decoration-none">
-							<i class="fas fa-envelope"></i> info@genoasis.com
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Top Bar -->
 <body>
-    <!-- Start Header/Navigation -->
-    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Genoasis navigation bar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="Genoasis industrial water treatment supplier India UAE" style="height: 50px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenoasis" aria-controls="navbarsGenoasis" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarsGenoasis">
-                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li><a class="nav-link" href="about.html">About us</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Products
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item active" href="frpmedia.html">RO Pressure Vessels & FRP Filters</a></li>
-                            <li><a class="dropdown-item" href="pneumatic-products.html">Pneumatic Products</a></li>
-                            <li><a class="dropdown-item" href="membranes.html">Membrane Products</a></li>
-                            <li><a class="dropdown-item" href="pumps.html">Pumps</a></li>
-                            <li><a class="dropdown-item" href="filters.html">Filter Cartridges & Housings</a></li>
-                            <li><a class="dropdown-item" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
-                            <li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
-                            <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
-                            <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
-                            <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
-                            <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
-                            <li><a class="dropdown-item" href="atmospheric-water-generators.html">Atmospheric Water Generators</a></li>
-                            <li><a class="dropdown-item" href="nanobubble-technology.html">Nanobubble Technology</a></li>
-                            <li><a class="dropdown-item" href="dunnage-air-bags.html">Dunnage Air Bags</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link" href="contact.html">Contact us</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- End Header/Navigation -->
-    <!-- Start Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center hero-content">
-                    <h1 class="hero-title" data-aos="fade-up">RO Pressure Vessels & FRP Media Filter Solutions</h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Premium Solutions for Commercial & Industrial Water Treatment</p>
-                    <p class="lead" data-aos="fade-up" data-aos-delay="400">Leading supplier of premium RO pressure vessels and FRP media filters, engineered for cost-effective, continuous, and long-term use in various operating conditions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Hero Section -->
-    
-    <!-- Introduction -->
-    <section class="intro-section py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="intro-card" data-aos="fade-up">
-                        <div class="intro-header mb-4">
-                            <div class="intro-icon">
-                                <i class="fas fa-water"></i>
-                            </div>
-                            <h3 class="intro-title">Premium Water Treatment Solutions</h3>
-                        </div>
-                        <div class="intro-content">
-                            <p class="lead mb-4">
-                                We are a leading supplier and trader of premium RO pressure vessels and FRP media filters, designed to meet the demands of various commercial and industrial water treatment applications.
-                            </p>
-                            <div class="intro-highlights">
-                                <div class="highlight-item">
-                                    <i class="fas fa-cog"></i>
-                                    <span>Cost-effective & Continuous Operation</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-chart-line"></i>
-                                    <span>Optimal Performance in All Conditions</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-industry"></i>
-                                    <span>Municipal, Industrial & Residential Solutions</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <i class="fas fa-shield-alt"></i>
-                                    <span>Highest Level of Performance & Durability</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- RO Membrane Housings -->
-    <section class="content-section pt-5 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="content-card" data-aos="fade-up">
-                        <h2 class="section-title mb-4">RO Membrane Housings</h2>
-                        <p class="lead mb-4">
-                            Our RO membrane housings are the perfect solution for a wide range of applications, including:
-                        </p>
-                        <div class="applications-grid mb-4">
-                            <div class="app-item">
-                                <i class="fas fa-city"></i>
-                                <span>Municipal water treatment</span>
-                            </div>
-                            <div class="app-item">
-                                <i class="fas fa-bolt"></i>
-                                <span>Power generation</span>
-                            </div>
-                            <div class="app-item">
-                                <i class="fas fa-utensils"></i>
-                                <span>Food and beverage processing</span>
-                            </div>
-                            <div class="app-item">
-                                <i class="fas fa-tint"></i>
-                                <span>Ultra-pure water production</span>
-                            </div>
-                            <div class="app-item">
-                                <i class="fas fa-industry"></i>
-                                <span>Oil & Gas</span>
-                            </div>
-                        </div>
-                        <p>These membrane housings are constructed from fibre-reinforced epoxy/glass composites and can accommodate up to 8 membrane elements. They are designed to handle a wide range of operating pressures, including 150 psi, 300 psi, 450 psi, 600 psi, 1000 psi, and 1200 psi. Our RO vessels are highly compatible for brackish, high brackish, and seawater applications.</p>
-                        <p>Membrane housings with 8" and 4" diameters are the most commonly used worldwide across a variety of water treatment projects.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 8-Inch Side Entry Pressure Vessel -->
-    <section class="content-section pt-3 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="content-card" data-aos="fade-up">
-                        <h2 class="section-title mb-4">8-Inch Side Entry Pressure Vessel</h2>
-                        <p class="lead mb-4">
-                            Our 8-inch side entry membrane housings are available in a wide operating pressure range from 150 to 1200 psi. The multi-port design allows vessel-to-vessel connection, minimizing the need for costly manifolds. Patented OCTA technology uses side ports mounted on flat sealing surfaces for easy servicing.
-                        </p>
-                        <div class="series-grid mb-4">
-                            <div class="series-item">
-                                <div class="series-icon">
-                                    <i class="fas fa-cog"></i>
-                                </div>
-                                <div class="series-content">
-                                    <h4>80S Series</h4>
-                                    <p>Available with side-port options of 1.5, 2.0, and 2.5-inch IPS grooved.</p>
-                                </div>
-                            </div>
-                            <div class="series-item">
-                                <div class="series-icon">
-                                    <i class="fas fa-cogs"></i>
-                                </div>
-                                <div class="series-content">
-                                    <h4>80H Series</h4>
-                                    <p>Available with side-port options of 3.0-inch IPS grooved.</p>
-                                </div>
-                            </div>
-                            <div class="series-item">
-                                <div class="series-icon">
-                                    <i class="fas fa-wrench"></i>
-                                </div>
-                                <div class="series-content">
-                                    <h4>80U Series</h4>
-                                    <p>Available with side-port options of 4.0-inch IPS grooved.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <p>Our 8-inch end entry membrane housings are also available in operating pressures of 300, 450, 600, 1000, and 1200 psi.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4-Inch Side Entry Pressure Vessel with Image -->
-    <section class="content-section pt-3 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="content-card" data-aos="fade-up">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6">
-                                <h2 class="section-title mb-4">4-Inch Side Entry Pressure Vessel</h2>
-                                <p class="lead mb-4">
-                                    Our 4-inch side entry membrane housings are available in operating pressures of 300 psi, 450 psi, and 600 psi. The multi-port feature in 4-inch membrane housings enables vessel-to-vessel connections, reducing the need for costly manifolds. Additionally, 4-inch end-entry membrane housings are available in operating pressures of 300, 600, and 1000 psi, designed to accommodate any standard 40-inch-long membrane.
-                                </p>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="image-container" data-aos="fade-left">
-                                    <img src="images/pressurevessels.jpg" alt="RO Pressure Vessels" class="gallery-img" loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Composite Pressure Vessels with Image -->
-    <section class="content-section pt-3 pb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="content-card" data-aos="fade-up">
-                        <div class="row align-items-center mb-5">
-                            <div class="col-lg-6">
-                                <h2 class="section-title mb-4">Composite Pressure Vessels for Softening and Filtration Applications</h2>
-                                <p class="lead mb-4">
-                                    Our composite pressure vessels are perfect for residential, light commercial, and industrial water treatment applications. These vessels offer excellent flexibility and are easy to handle and install, providing superior performance and durability for long-term use in various treatment systems.
-                                </p>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="image-container" data-aos="fade-left">
-                                    <img src="images/pressurevessels1.jpg" alt="Composite Pressure Vessels" class="gallery-img" loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="features-section mb-5">
-                            <h3 class="subsection-title">Features and Benefits:</h3>
-                            <div class="features-grid">
-                                <div class="feature-item">
-                                    <i class="fas fa-shield-alt"></i>
-                                    <span>Constructed with standard polyester or chemical-resistant vinyl ester, depending on the application.</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-tools"></i>
-                                    <span>Easy to handle and install.</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-certificate"></i>
-                                    <span>Residential Tanks (6"-16" diameter) are Certified to NSF 44.</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-award"></i>
-                                    <span>Commercial Tanks (18"-63" diameter) are Certified to NSF 61.</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-database"></i>
-                                    <span>Available in capacities up to 1,600 gallons.</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-layer-group"></i>
-                                    <span>100% composite fiberglass construction for maximum durability.</span>
-                                </div>
-                                <div class="feature-item">
-                                    <i class="fas fa-flask"></i>
-                                    <span>Outstanding performance even in harsh chemical environments.</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="specs-grid">
-                            <div class="spec-card">
-                                <h4 class="spec-title">Material of Construction</h4>
-                                <div class="spec-content">
-                                    <i class="fas fa-cube"></i>
-                                    <span>Polyethylene inner shell for enhanced resistance.</span>
-                                </div>
-                            </div>
-                            
-                            <div class="spec-card">
-                                <h4 class="spec-title">Design Parameters</h4>
-                                <div class="spec-content">
-                                    <i class="fas fa-ruler-combined"></i>
-                                    <span>Safety factor of 4:1. Minimum burst pressure at 600 psi.</span>
-                                </div>
-                            </div>
-                            
-                            <div class="spec-card">
-                                <h4 class="spec-title">Operating Parameters</h4>
-                                <div class="spec-content">
-                                    <i class="fas fa-thermometer-half"></i>
-                                    <span>Maximum operating pressure: 150 psi. Maximum operating temperature: 120°F (threaded); 150°F (flanged).</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section pt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="cta-title" data-aos="fade-up">Ready to Transform Your Water Treatment?</h2>
-                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts today to discuss your RO pressure vessel and FRP filter requirements and get a customized solution for your facility.</p>
-                    <a href="contact.html" class="btn-cta" data-aos="fade-up" data-aos-delay="400">Get Expert Consultation</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Start Footer Section -->
-    <footer class="footer-section">
-        <div class="container relative">
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4">
-                    <div class="mb-4 footer-logo-wrap">
-                        <a href="#" class="footer-logo">
-                            <img src="images/logo.png" alt="Company Logo" style="height: 50px;">
-                        </a>
-                    </div>
-                    <p class="mb-4">Empowering water treatment plants with advanced chemicals and supplies for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
-                    <ul class="list-unstyled custom-social">
-                        <!-- <li><a href="https://www.facebook.com/genoasis" target="_blank" rel="noopener"><span class="fa fa-brands fa-facebook-f"></span></a></li> -->
-                        <!-- <li><a href="https://twitter.com/genoasis" target="_blank" rel="noopener"><span class="fa fa-brands fa-twitter"></span></a></li> -->
-                        <!-- <li><a href="https://www.instagram.com/genoasis" target="_blank" rel="noopener"><span class="fa fa-brands fa-instagram"></span></a></li> -->
-                        <li><a href="https://www.linkedin.com/company/genoasis-technologies/?viewAsMember=true" target="_blank" rel="noopener"><span class="fa fa-brands fa-linkedin"></span></a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-8">
-                    <div class="row links-wrap">
-                        <div class="col-6 col-sm-6 col-md-3">
-                            <ul class="list-unstyled">
-								<li><a href="about.html">About us</a></li>
-								<li><a href="Products.html">Products</a></li>
-								<li><a href="contact.html">Contact us</a></li>
-                            </ul>
-                        </div>
-						<!-- Add Contact Information Section -->
-						<div class="col-6 col-sm-6 col-md-4">
-							<ul class="list-unstyled">
-								<li><i class="fas fa-map-marker-alt me-2"></i>6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</li>
-								<li>🇮🇳 <i class="fas fa-phone me-2"></i>+91 892 588 3227</li>
-								<li>🇦🇪 <i class="fas fa-phone me-2"></i>+971 50 497 3835 / +971 50 357 1340</li>
-								<li><i class="fas fa-envelope me-2"></i>info@genoasis.com</li>
-							</ul>
-						</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-top copyright">
-                <div class="row pt-4">
-                    <div class="col-lg-6">
-                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> Genoasis | All Rights Reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End Footer Section -->
-
-    <script defer src="js/bootstrap.bundle.min.js"></script>
-    <script defer src="js/tiny-slider.js"></script>
-    <script defer src="js/custom.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-    </script>
-    <script defer src="js/recaptcha.js"></script>
-    <div class="popup-overlay"></div>
-    <div class="image-popup">
-        <div class="popup-close"></div>
-        <img src="" alt="Product detail image">
+<nav class="site-nav" id="site-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo"><img src="images/logo.png" alt="Genoasis" class="logo-light" width="140" height="36" loading="eager"><img src="images/logo_b.png" alt="Genoasis" class="logo-dark" width="140" height="36" loading="eager"></a>
+      <ul class="nav-links">
+        <li><a href="index" class="nav-link">Home</a></li>
+        <li><a href="about" class="nav-link">About</a></li>
+        <li class="nav-item--dropdown">
+          <a href="Products" class="nav-link active">Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="frpmedia">RO Pressure Vessels &amp; FRP Filters</a></li>
+            <li><a href="membranes">Membrane Products</a></li>
+            <li><a href="pumps">Pumps</a></li>
+            <li><a href="filters">Filter Cartridges &amp; Housings</a></li>
+            <li><a href="sandmedia">Sand Media &amp; Ion Exchange Resins</a></li>
+            <li><a href="chemicals">Water Treatment Chemicals</a></li>
+            <li><a href="Wastewater">Waste Water Equipments</a></li>
+            <li><a href="instruments">Instruments &amp; Lab Apparatus</a></li>
+            <li><a href="disinfectants">Disinfection Products</a></li>
+            <li><a href="valves">Valves, Couplings &amp; Fittings</a></li>
+            <li><a href="atmospheric-water-generators">Atmospheric Water Generators</a></li>
+            <li><a href="nanobubble-technology">Nanobubble Technology</a></li>
+            <li><a href="pneumatic-products">Pneumatic Products</a></li>
+            <li><a href="dunnage-air-bags">Dunnage Air Bags</a></li>
+          </ul>
+        </li>
+        <li><a href="catalog" class="nav-link">Catalog</a></li>
+        <li><a href="contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:+918925883227" class="nav-phone"><span class="nav-flag">🇮🇳</span> +91 892 588 3227</a>
+        <div class="nav-contact-divider"></div>
+        <a href="tel:+971504973835" class="nav-phone"><span class="nav-flag">🇦🇪</span> +971 50 497 3835</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const galleryImages = document.querySelectorAll('.gallery-img');
-            const popup = document.querySelector('.image-popup');
-            const popupImg = popup.querySelector('img');
-            const overlay = document.querySelector('.popup-overlay');
-            const closeButton = document.querySelector('.popup-close');
+  </div>
+</nav>
+<div class="mobile-nav">
+  <ul class="mobile-nav-links">
+    <li><a href="index">Home</a></li>
+    <li><a href="about">About</a></li>
+    <li><details class="mobile-nav-accordion"><summary>Products <i class="fas fa-chevron-down"></i></summary><ul class="mobile-nav-sub"><li><a href="frpmedia">RO Pressure Vessels &amp; FRP Filters</a></li><li><a href="membranes">Membrane Products</a></li><li><a href="pumps">Pumps</a></li><li><a href="filters">Filter Cartridges &amp; Housings</a></li><li><a href="sandmedia">Sand Media &amp; Ion Exchange Resins</a></li><li><a href="chemicals">Water Treatment Chemicals</a></li><li><a href="Wastewater">Waste Water Equipments</a></li><li><a href="instruments">Instruments &amp; Lab Apparatus</a></li><li><a href="disinfectants">Disinfection Products</a></li><li><a href="valves">Valves, Couplings &amp; Fittings</a></li><li><a href="atmospheric-water-generators">Atmospheric Water Generators</a></li><li><a href="nanobubble-technology">Nanobubble Technology</a></li><li><a href="pneumatic-products">Pneumatic Products</a></li><li><a href="dunnage-air-bags">Dunnage Air Bags</a></li></ul></details></li>
+    <li><a href="catalog">Catalog</a></li>
+    <li><a href="contact">Contact</a></li>
+  </ul>
+  <a href="contact" class="btn btn--primary btn--full">Get a Quote</a>
+</div>
 
-            function closePopup() {
-                popup.style.display = 'none';
-                overlay.style.display = 'none';
-            }
+<!-- HERO -->
+<section class="hero hero--page">
+  <div class="hero-bg"><div class="hero-grid"></div><div class="hero-mesh"></div></div>
+  <div class="container">
+    <div class="hero-breadcrumb"><a href="index">Home</a><i class="fas fa-chevron-right"></i><a href="Products">Products</a><i class="fas fa-chevron-right"></i><span>RO Pressure Vessels &amp; FRP Filters</span></div>
+    <h1 class="hero-title">RO Pressure Vessels &amp; FRP Filters</h1>
+    <p class="hero-sub">Engineered fibre-reinforced polymer vessels for reverse osmosis membrane housing and multi-media pre-treatment filtration across industrial and commercial water systems.</p>
+  </div>
+</section>
 
-            galleryImages.forEach(img => {
-                img.addEventListener('click', function() {
-                    popupImg.src = this.src;
-                    popup.style.display = 'block';
-                    overlay.style.display = 'block';
-                });
-            });
+<!-- MAIN PRODUCT SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="product-detail-grid reveal">
+      <div class="product-detail-image">
+        <img src="images/pressurevessels1.jpg" alt="FRP RO Pressure Vessels" loading="lazy">
+      </div>
+      <div>
+        <div class="detail-tag"><i class="fas fa-tag"></i> Pressure Vessels &amp; FRP Filters</div>
+        <h2>High-Performance FRP Vessels for Every RO Application</h2>
+        <p>Our fibre-reinforced polymer (FRP) pressure vessels are designed to house standard 4", 8", and 16" diameter RO membrane elements, delivering outstanding structural integrity at operating pressures up to 600 psi. The smooth internal liner prevents biofilm accumulation and provides years of trouble-free performance in seawater, brackish water, and high-TDS applications.</p>
+        <p>In addition to membrane housings, we supply FRP multi-media and sand filter vessels for pre-treatment stages. Available in a wide range of diameters and with top or side-mount port configurations, these vessels are the backbone of reliable RO and filtration systems worldwide.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem">
+          <a href="contact" class="btn btn--primary">Get a Quote</a>
+          <a href="catalog" class="btn btn--outline">View Catalog</a>
+        </div>
+      </div>
+    </div>
 
-            closeButton.addEventListener('click', closePopup);
-            overlay.addEventListener('click', closePopup);
+    <!-- PRODUCT SUB-ITEMS GRID -->
+    <div class="section-header reveal" style="margin-top:4rem">
+      <div class="eyebrow">Product Range</div>
+      <h2 class="section-title">Vessels &amp; Filter Products</h2>
+    </div>
+    <div class="product-sub-grid reveal">
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/pressurevessels.jpg" alt="4 inch RO Pressure Vessel" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>4&quot; RO Pressure Vessels</h3>
+          <p>Standard 4" diameter vessels accommodating 2- to 7-element configurations. Ideal for small to medium commercial RO systems, rated up to 300 psi operating pressure with end-port or side-port options.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/pressure-vessels.jpg" alt="8 inch RO Pressure Vessel" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>8&quot; RO Pressure Vessels</h3>
+          <p>Industry-standard 8" diameter vessels for large industrial RO plants. Typically houses 6 membrane elements in series, engineered for pressures up to 600 psi in seawater desalination duty.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/pressurevessels1.jpg" alt="16 inch RO Pressure Vessel" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>16&quot; RO Pressure Vessels</h3>
+          <p>Large-diameter 16" vessels designed for high-capacity industrial and municipal RO plants. Constructed from premium-grade FRP with internal thermoplastic liner for chemical resistance and longevity.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/pressurevessels.jpg" alt="Composite Pressure Vessel" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>Composite Vessels</h3>
+          <p>Carbon-fibre composite pressure vessels offering reduced weight with superior pressure ratings. Suitable for skid-mounted systems and mobile water treatment units where weight is a critical factor.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/pressure-vessels.jpg" alt="FRP Multi-media Filter" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>FRP Multi-media Filters</h3>
+          <p>Large-diameter FRP filter vessels for multi-media, sand, carbon, and softener applications. Available in manual or automatic backwash configurations, suitable for flow rates from 1 to over 200 m³/h.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/pressurevessels1.jpg" alt="FRP Sand Filter" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>FRP Sand Filters</h3>
+          <p>Purpose-built FRP vessels for pressure sand filtration of turbid water. Corrosion-proof construction handles aggressive raw-water chemistries that would damage conventional steel tanks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            // Close popup with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closePopup();
-                }
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const collapseButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
-            
-            collapseButtons.forEach(button => {
-                const showMoreText = button.querySelector('.show-more');
-                const showLessText = button.querySelector('.show-less');
-                
-                button.addEventListener('click', function() {
-                    const isCollapsed = this.getAttribute('aria-expanded') === 'true';
-                    showMoreText.classList.toggle('d-none', !isCollapsed);
-                    showLessText.classList.toggle('d-none', isCollapsed);
-                });
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the Products dropdown link and menu
-            const productsLink = document.querySelector('#navbarDropdown');
-            const dropdownMenu = document.querySelector('.dropdown-menu');
-            const dropdown = document.querySelector('.dropdown');
-            
-            if (productsLink && dropdownMenu && dropdown) {
-                // Handle click on Products link
-                productsLink.addEventListener('click', function(e) {
-                    if (e.target.classList.contains('dropdown-arrow') || dropdown.classList.contains('show')) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('show');
-                        dropdownMenu.classList.toggle('show');
-                    } else {
-                        window.location.href = 'Products.html';
-                    }
-                });
-                
-                // Close dropdown when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!dropdown.contains(e.target)) {
-                        dropdown.classList.remove('show');
-                        dropdownMenu.classList.remove('show');
-                    }
-                });
-                
-                // Desktop hover functionality
-                if (window.innerWidth > 768) {
-                    dropdown.addEventListener('mouseenter', function() {
-                        dropdown.classList.add('show');
-                        dropdownMenu.classList.add('show');
-                    });
-                    
-                    dropdown.addEventListener('mouseleave', function() {
-                        dropdown.classList.remove('show');
-                        dropdownMenu.classList.remove('show');
-                    });
-                }
-            }
-        });
-    </script>
+<!-- FEATURES -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="section-header section-header--center reveal">
+      <div class="eyebrow">Why Choose Us</div>
+      <h2 class="section-title">Key Features &amp; Benefits</h2>
+    </div>
+    <div class="grid-4">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+        <h3>NSF / ANSI Certified</h3>
+        <p>All vessels meet NSF/ANSI 61 and relevant international standards, ensuring safe contact with drinking water and compliance with project specifications.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Corrosion Resistant</h3>
+        <p>FRP construction eliminates rust and corrosion, outperforming steel vessels in saline, acidic, and chemically aggressive water conditions without costly protective coatings.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
+        <h3>High-Pressure Rated</h3>
+        <p>Rated for operating pressures from 150 psi to 600 psi depending on model, with a safety factor exceeding 3:1 for reliable, leak-free operation over the system's lifetime.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><i class="fas fa-history"></i></div>
+        <h3>Long Service Life</h3>
+        <p>UV-stabilised outer winding and chemically inert inner liner deliver a design life exceeding 15 years, minimising total cost of ownership across demanding industrial applications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Applications</div>
+      <h2 class="section-title">Industries &amp; Applications</h2>
+    </div>
+    <div class="grid-2" style="align-items:center;gap:3rem">
+      <div class="reveal">
+        <ul class="check-list">
+          <li>Industrial and commercial reverse osmosis plants</li>
+          <li>Seawater desalination systems (SWRO)</li>
+          <li>Brackish water treatment (BWRO)</li>
+          <li>Pre-treatment multimedia and sand filtration</li>
+          <li>Water softening and ion exchange systems</li>
+          <li>Activated carbon filtration for dechlorination</li>
+          <li>Municipal drinking water treatment</li>
+          <li>Food &amp; beverage process water systems</li>
+        </ul>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <img src="images/pressure-vessels.jpg" alt="FRP Pressure Vessel Applications" loading="lazy" style="border-radius:var(--radius-xl);width:100%;height:300px;object-fit:cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="reveal">
+      <h2>Ready to order or need a custom quote?</h2>
+      <p>Contact our team for pricing, availability, and technical specifications tailored to your requirements.</p>
+      <div class="cta-actions">
+        <a href="contact" class="btn btn--primary btn--lg">Request a Quote</a>
+        <a href="Products" class="btn btn--outline-white btn--lg">Back to Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="images/logo.png" alt="Genoasis" class="footer-logo" loading="lazy"><p>Your trusted partner for industrial water treatment solutions. Serving India and the Middle East with quality products and expert support since 2020.</p><div class="footer-social"><a href="https://www.linkedin.com/company/genoasis-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
+      <div class="footer-col"><h4>Products</h4><div class="footer-links"><a href="frpmedia">RO Pressure Vessels</a><a href="membranes">Membranes</a><a href="pumps">Pumps</a><a href="filters">Filter Cartridges</a><a href="chemicals">Chemicals</a><a href="valves">Valves &amp; Fittings</a><a href="Products">All Products →</a></div></div>
+      <div class="footer-col"><h4>Company</h4><div class="footer-links"><a href="about">About Us</a><a href="catalog">Product Catalog</a><a href="contact">Contact Us</a><a href="catalogs/Genoasis_catalog.pdf" target="_blank" rel="noopener">Download Brochure</a></div></div>
+      <div class="footer-col"><h4>Contact</h4><div class="footer-contact-row"><i class="fas fa-map-marker-alt"></i><span>6, Balaji St, Guduvancherry, Chennai, Tamil Nadu, India</span></div><div class="footer-contact-row"><i class="fas fa-phone"></i><span>+91 892 588 3227 (India)<br>+971 50 497 3835 (UAE)</span></div><div class="footer-contact-row"><i class="fas fa-envelope"></i><span>info@genoasis.com</span></div></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 Genoasis Water Technologies. All rights reserved.</span><span>Chennai, India &amp; Middle East</span></div>
+  </div>
+</footer>
+<script src="js/site.js" defer></script>
 </body>
 </html>

@@ -1,1070 +1,250 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <!-- Preconnect to external domains for faster loading -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-
-	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-	<link rel="manifest" href="/site.webmanifest" />
-    <meta name="description" content=" pneumatic products: cylinders, valves, fittings, air preparation units. Industrial supplier in India. Contact Chennai team." />
-    <meta name="keywords" content=", pneumatic cylinders, solenoid valves, push-in fittings, air preparation, Genoasis" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RPG7M7CLBF');
-    </script>
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="css/tiny-slider.css" rel="stylesheet" media="print" onload="this.media=\'all\'">
-    <link href="css/style.css" rel="stylesheet">
-    <!-- Add AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        /* Modern Navigation Styles */
-        .top-bar {
-            background: white;
-            font-size: 1rem;
-            border-bottom: 1px solid #e9ecef;
-            padding: 12px 0;
-        }
-
-        .top-bar a {
-            color: #495057;
-            transition: color 0.3s ease;
-            font-weight: 500;
-            font-size: 1.1rem;
-        }
-
-        .top-bar a:hover {
-            color: #23a1dc !important;
-        }
-
-        .top-bar i {
-            font-size: 1rem;
-            margin-right: 6px;
-        }
-
-        .custom-navbar-nav .nav-link {
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 12px 20px !important;
-            margin: 0 8px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .custom-navbar-nav .nav-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .custom-navbar-nav .nav-link:hover::before {
-            left: 0;
-        }
-
-        .custom-navbar-nav .nav-link:hover {
-            color: white !important;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(35, 161, 220, 0.3);
-        }
-
-        .custom-navbar-nav .nav-link.active {
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            color: white !important;
-            box-shadow: 0 4px 12px rgba(35, 161, 220, 0.3);
-        }
-
-        .custom-navbar-nav .nav-link.active::before {
-            display: none;
-        }
-
-        .custom-navbar-nav .nav-link[href="index.html"]:hover,
-        .custom-navbar-nav .nav-link[href="about.html"]:hover,
-        .custom-navbar-nav .nav-link[href="contact.html"]:hover {
-            color: #333 !important;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        }
-
-        .dropdown-toggle::after {
-            transition: transform 0.3s ease;
-            font-size: 0.8rem;
-        }
-
-        .dropdown:hover .dropdown-toggle::after {
-            transform: rotate(180deg);
-        }
-
-        .dropdown.show .dropdown-toggle::after {
-            transform: rotate(180deg);
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            background: white;
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            padding: 8px 0;
-            margin-top: 8px;
-            min-width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            position: absolute;
-            z-index: 9999;
-        }
-
-        .dropdown-menu.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-item {
-            padding: 12px 20px;
-            font-size: 1rem;
-            font-weight: 500;
-            color: #333;
-            transition: all 0.3s ease;
-            border-radius: 6px;
-            margin: 2px 8px;
-            text-decoration: none;
-        }
-
-        .dropdown-item:hover,
-        .dropdown-item:focus,
-        .dropdown-item:active {
-            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
-            color: white !important;
-            transform: translateX(5px);
-        }
-
-        .dropdown-menu .dropdown-item:hover,
-        .dropdown-menu .dropdown-item:focus,
-        .dropdown-menu .dropdown-item:active {
-            color: white !important;
-            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
-            text-decoration: none;
-        }
-
-        .dropdown-item * {
-            color: inherit;
-        }
-
-        .dropdown-toggle:hover {
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            color: white !important;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(35, 161, 220, 0.3);
-        }
-
-        .dropdown-toggle:hover::before {
-            display: none;
-        }
-
-        .navbar-brand {
-            transition: transform 0.3s ease;
-        }
-
-        .navbar-brand:hover {
-            transform: scale(1.05);
-        }
-
-        .custom-navbar {
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1000;
-        }
-
-        .navbar-toggler {
-            border: 2px solid #23a1dc;
-            background-color: transparent;
-            padding: 8px 12px;
-            margin-right: 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler:hover {
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            transform: scale(1.05);
-        }
-        
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(35, 161, 220, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-            width: 1.8em;
-            height: 1.8em;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background-image: url('images/-automation.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            padding: 100px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-section .lead {
-            color: white;
-            opacity: 0.95;
-        }
-        
-        /* Hero section links styling */
-        .hero-section a {
-            color: white !important;
-            text-decoration: underline;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .hero-section a:hover {
-            color: #f8f9fa !important;
-            text-decoration: none;
-            transform: translateY(-1px);
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* Category Cards Section */
-        .categories-section {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .category-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            margin-bottom: 30px;
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .category-image {
-            position: relative;
-            height: 300px;
-            overflow: hidden;
-        }
-
-        .category-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .category-card:hover .category-image img {
-            transform: scale(1.1);
-        }
-
-        .category-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(35,161,220,0.8));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .category-card:hover .category-overlay {
-            background: linear-gradient(to bottom, rgba(35,161,220,0.7), rgba(30,136,197,0.9));
-        }
-
-        .category-info {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .category-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .category-count {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.9);
-            font-weight: 500;
-        }
-
-        .category-icon {
-            font-size: 3rem;
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        /* Products Modal */
-        .products-modal {
-            display: none;
-            position: fixed;
-            z-index: 10000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            animation: fadeIn 0.3s;
-            overflow-y: auto;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content-wrapper {
-            position: relative;
-            margin: 50px auto;
-            padding: 40px;
-            width: 90%;
-            max-width: 1200px;
-            background: white;
-            border-radius: 15px;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #333;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 10001;
-            transition: color 0.3s ease;
-        }
-
-        .modal-close:hover {
-            color: #23a1dc;
-        }
-
-        .modal-header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #23a1dc;
-        }
-
-        .modal-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .modal-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-        }
-
-        .products-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .product-item {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .product-item-image {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-        }
-
-        .product-item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        .product-item:hover .product-item-image img {
-            transform: scale(1.1);
-        }
-
-        .product-item-info {
-            padding: 15px;
-            background: white;
-            border-top: 3px solid #23a1dc;
-            text-align: center;
-        }
-
-        .product-item-name {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #333;
-            margin: 0;
-            line-height: 1.4;
-            min-height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Prevent phone numbers from breaking lines */
-        .footer-section li {
-            white-space: nowrap;
-        }
-
-        .top-bar a, .top-bar span {
-            white-space: nowrap;
-        }
-
-        @media (max-width: 768px) {
-            /* Allow line breaks on mobile for better readability */
-            .footer-section li {
-                white-space: normal;
-            }
-
-            .top-bar a, .top-bar span {
-                white-space: normal;
-            }
-            .top-bar {
-                text-align: center;
-            }
-            
-            .d-flex {
-                justify-content: center !important;
-            }
-
-            .custom-navbar-nav .nav-link {
-                font-size: 1rem;
-                padding: 10px 16px !important;
-                margin: 4px 0;
-                text-align: center;
-            }
-
-            .navbar-collapse {
-                padding: 1rem 0;
-                background: rgba(255, 255, 255, 0.95);
-                border-radius: 12px;
-                margin-top: 10px;
-                backdrop-filter: blur(10px);
-            }
-            
-            .dropdown-menu {
-                border: none;
-                box-shadow: none;
-                background: rgba(248, 249, 250, 0.95);
-                padding-left: 1rem;
-                margin-top: 0;
-                border-radius: 8px;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                position: static;
-            }
-
-            .dropdown-menu.show {
-                display: block;
-            }
-            
-            .dropdown-item {
-                padding: 8px 16px;
-                font-size: 0.95rem;
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .category-image {
-                height: 250px;
-            }
-
-            .category-title {
-                font-size: 1.5rem;
-            }
-
-            .modal-content-wrapper {
-                width: 95%;
-                padding: 30px 20px;
-                margin: 20px auto;
-            }
-
-            .modal-title {
-                font-size: 2rem;
-            }
-
-            .products-list {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 15px;
-            }
-
-            .product-item-image {
-                height: 150px;
-            }
-
-            .product-item-name {
-                font-size: 0.85rem;
-                min-height: 35px;
-            }
-        }
-    </style>
-    <title> Pneumatic Products – Cylinders, Valves | India</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1d35">
+  <title>Pneumatic Products — Genoasis Water Technologies</title>
+  <meta name="description" content="ISO-standard pneumatic cylinders, directional control valves, air preparation units, and actuators for factory automation, material handling, and industrial control systems.">
+  <link rel="icon" href="favicon/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="css/design.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RPG7M7CLBF');</script>
 </head>
 <body>
-    <!-- Start Top Bar -->
-    <div class="top-bar py-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="d-flex justify-content-end">
-                        <a href="tel:+918925883227" class="me-3 text-decoration-none">
-                            🇮🇳 <i class="fas fa-phone"></i> +91 892 588 3227
-                        </a>
-                        <span class="me-3">
-                            🇦🇪 <i class="fas fa-phone"></i> <a href="tel:+971504973835" class="text-decoration-none">+971 50 497 3835</a> / <a href="tel:+971503571340" class="text-decoration-none">+971 50 357 1340</a>
-                        </span>
-                        <a href="mailto:info@genoasis.com" class="text-decoration-none">
-                            <i class="fas fa-envelope"></i> info@genoasis.com
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+<nav class="site-nav" id="site-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo"><img src="images/logo.png" alt="Genoasis" class="logo-light" width="140" height="36" loading="eager"><img src="images/logo_b.png" alt="Genoasis" class="logo-dark" width="140" height="36" loading="eager"></a>
+      <ul class="nav-links">
+        <li><a href="index" class="nav-link">Home</a></li>
+        <li><a href="about" class="nav-link">About</a></li>
+        <li class="nav-item--dropdown">
+          <a href="Products" class="nav-link active">Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="frpmedia">RO Pressure Vessels &amp; FRP Filters</a></li>
+            <li><a href="membranes">Membrane Products</a></li>
+            <li><a href="pumps">Pumps</a></li>
+            <li><a href="filters">Filter Cartridges &amp; Housings</a></li>
+            <li><a href="sandmedia">Sand Media &amp; Ion Exchange Resins</a></li>
+            <li><a href="chemicals">Water Treatment Chemicals</a></li>
+            <li><a href="Wastewater">Waste Water Equipments</a></li>
+            <li><a href="instruments">Instruments &amp; Lab Apparatus</a></li>
+            <li><a href="disinfectants">Disinfection Products</a></li>
+            <li><a href="valves">Valves, Couplings &amp; Fittings</a></li>
+            <li><a href="atmospheric-water-generators">Atmospheric Water Generators</a></li>
+            <li><a href="nanobubble-technology">Nanobubble Technology</a></li>
+            <li><a href="pneumatic-products">Pneumatic Products</a></li>
+            <li><a href="dunnage-air-bags">Dunnage Air Bags</a></li>
+          </ul>
+        </li>
+        <li><a href="catalog" class="nav-link">Catalog</a></li>
+        <li><a href="contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:+918925883227" class="nav-phone"><span class="nav-flag">🇮🇳</span> +91 892 588 3227</a>
+        <div class="nav-contact-divider"></div>
+        <a href="tel:+971504973835" class="nav-phone"><span class="nav-flag">🇦🇪</span> +971 50 497 3835</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
-    <!-- End Top Bar -->
+  </div>
+</nav>
+<div class="mobile-nav">
+  <ul class="mobile-nav-links">
+    <li><a href="index">Home</a></li>
+    <li><a href="about">About</a></li>
+    <li><details class="mobile-nav-accordion"><summary>Products <i class="fas fa-chevron-down"></i></summary><ul class="mobile-nav-sub"><li><a href="frpmedia">RO Pressure Vessels &amp; FRP Filters</a></li><li><a href="membranes">Membrane Products</a></li><li><a href="pumps">Pumps</a></li><li><a href="filters">Filter Cartridges &amp; Housings</a></li><li><a href="sandmedia">Sand Media &amp; Ion Exchange Resins</a></li><li><a href="chemicals">Water Treatment Chemicals</a></li><li><a href="Wastewater">Waste Water Equipments</a></li><li><a href="instruments">Instruments &amp; Lab Apparatus</a></li><li><a href="disinfectants">Disinfection Products</a></li><li><a href="valves">Valves, Couplings &amp; Fittings</a></li><li><a href="atmospheric-water-generators">Atmospheric Water Generators</a></li><li><a href="nanobubble-technology">Nanobubble Technology</a></li><li><a href="pneumatic-products">Pneumatic Products</a></li><li><a href="dunnage-air-bags">Dunnage Air Bags</a></li></ul></details></li>
+    <li><a href="catalog">Catalog</a></li>
+    <li><a href="contact">Contact</a></li>
+  </ul>
+  <a href="contact" class="btn btn--primary btn--full">Get a Quote</a>
+</div>
 
-    <!-- Start Header/Navigation -->
-    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Genoasis navigation bar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="Genoasis industrial water treatment supplier India UAE" style="height: 50px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenoasis" aria-controls="navbarsGenoasis" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<!-- HERO -->
+<section class="hero hero--page">
+  <div class="hero-bg"><div class="hero-grid"></div><div class="hero-mesh"></div></div>
+  <div class="container">
+    <div class="hero-breadcrumb"><a href="index">Home</a><i class="fas fa-chevron-right"></i><a href="Products">Products</a><i class="fas fa-chevron-right"></i><span>Pneumatic Products</span></div>
+    <h1 class="hero-title">Pneumatic Products</h1>
+    <p class="hero-sub">ISO-standard pneumatic cylinders, directional control valves, FRL air preparation units, and actuators for precision motion control in factory automation, material handling, and industrial process systems.</p>
+  </div>
+</section>
 
-            <div class="collapse navbar-collapse" id="navbarsGenoasis">
-                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li><a class="nav-link" href="about.html">About us</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Products
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="frpmedia.html">RO Pressure Vessels & FRP Filters</a></li>
-                            <li><a class="dropdown-item active" href="pneumatic-products.html">Pneumatic Products</a></li>
-                            <li><a class="dropdown-item" href="membranes.html">Membrane Products</a></li>
-                            <li><a class="dropdown-item" href="pumps.html">Pumps</a></li>
-                            <li><a class="dropdown-item" href="filters.html">Filter Cartridges & Housings</a></li>
-                            <li><a class="dropdown-item" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
-                            <li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
-                            <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
-                            <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
-                            <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
-                            <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
-                            <li><a class="dropdown-item" href="atmospheric-water-generators.html">Atmospheric Water Generators</a></li>
-                            <li><a class="dropdown-item" href="nanobubble-technology.html">Nanobubble Technology</a></li>
-                            <li><a class="dropdown-item" href="dunnage-air-bags.html">Dunnage Air Bags</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link" href="contact.html">Contact us</a></li>
-                </ul>
-            </div>
+<!-- MAIN PRODUCT SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="product-detail-grid reveal">
+      <div class="product-detail-image">
+        <img src="images/festo-automation.jpg" alt="Pneumatic Products and Automation" loading="lazy">
+      </div>
+      <div>
+        <div class="detail-tag"><i class="fas fa-tag"></i> Pneumatic Products</div>
+        <h2>Precision Pneumatic Components for Industrial Automation</h2>
+        <p>Genoasis supplies a comprehensive portfolio of pneumatic components meeting ISO 15552 (piston cylinders), ISO 6431, and VDMA standards, ensuring direct interchangeability with major global brands. Our cylinders, valves, and air preparation units are selected for their long service life, dimensional accuracy, and consistent performance across millions of operating cycles.</p>
+        <p>From compact ADN cylinders for tight-space applications to guided DFM units for precise linear motion and DSNU round-body cylinders for light-duty tasks, our range covers the full spectrum of pneumatic actuation requirements. We supply individual components, manifold assemblies, and complete pneumatic control panels with full technical support for OEM machine builders and end-users.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem">
+          <a href="contact" class="btn btn--primary">Get a Quote</a>
+          <a href="catalog" class="btn btn--outline">View Catalog</a>
         </div>
-    </nav>
-    <!-- End Header/Navigation -->
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 mx-auto text-center hero-content">
-                    <h1 class="hero-title" data-aos="fade-up"> Pneumatic Products </h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Complete range of pneumatic components across India. Browse <a href="Products.html">products</a> or <a href="contact.html">contact Chennai/UAE</a>.</p>
-                    <p class="lead" data-aos="fade-up" data-aos-delay="400">Click on any category to explore our comprehensive range of  products</p>
-                </div>
-            </div>
-        </div>
-    </section>
-sss
-    <!-- Categories Section -->
-    <section class="categories-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="display-4 fw-bold" data-aos="fade-up">Product Categories</h2>
-                    <p class="lead text-muted" data-aos="fade-up" data-aos-delay="200">Select a category to view all available products</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Pneumatic Fittings & Valves -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="category-card" onclick="openProductsModal('valves')">
-                        <div class="category-image">
-                            <img src="images/pneumatics/VUVSSolenoidValve.jpg" alt="Pneumatic Fittings & Valves">
-                            <div class="category-overlay">
-                                <div class="category-info">
-                                    <i class="fas fa-cogs category-icon"></i>
-                                    <h3 class="category-title">Pneumatic Fittings & Valves</h3>
-                                    <p class="category-count">16 Products</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Push-In Fittings -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="category-card" onclick="openProductsModal('fittings')">
-                        <div class="category-image">
-                            <img src="images/pneumatics/EqualPush-InConnector.jpg" alt="Push-In Fittings">
-                            <div class="category-overlay">
-                                <div class="category-info">
-                                    <i class="fas fa-link category-icon"></i>
-                                    <h3 class="category-title">Push-In Fittings</h3>
-                                    <p class="category-count">27 Products</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DFM Guided Cylinders -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="category-card" onclick="openProductsModal('dfm')">
-                        <div class="category-image">
-                            <img src="images/pneumatics/32mmDFMGuidedCylinder.jpg" alt="DFM Guided Cylinders">
-                            <div class="category-overlay">
-                                <div class="category-info">
-                                    <i class="fas fa-ruler-horizontal category-icon"></i>
-                                    <h3 class="category-title">DFM Guided Cylinders</h3>
-                                    <p class="category-count">8 Products</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ADN Compact Cylinders -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="category-card" onclick="openProductsModal('adn')">
-                        <div class="category-image">
-                            <img src="images/pneumatics/32mmADN-32CompactCylinder.jpg" alt="ADN Compact Cylinders">
-                            <div class="category-overlay">
-                                <div class="category-info">
-                                    <i class="fas fa-compress category-icon"></i>
-                                    <h3 class="category-title">ADN Compact Cylinders</h3>
-                                    <p class="category-count">9 Products</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DSNU & DSBC Cylinders -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="category-card" onclick="openProductsModal('dsnu')">
-                        <div class="category-image">
-                            <img src="images/pneumatics/32mmDSBCCylinder.jpg" alt="DSNU & DSBC Cylinders">
-                            <div class="category-overlay">
-                                <div class="category-info">
-                                    <i class="fas fa-circle category-icon"></i>
-                                    <h3 class="category-title">DSNU & DSBC Cylinders</h3>
-                                    <p class="category-count">7 Products</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Air Preparation -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="category-card" onclick="openProductsModal('air')">
-                        <div class="category-image">
-                            <img src="images/pneumatics/MS4SeriesAirPreparation.jpg" alt="Air Preparation">
-                            <div class="category-overlay">
-                                <div class="category-info">
-                                    <i class="fas fa-wind category-icon"></i>
-                                    <h3 class="category-title">Air Preparation</h3>
-                                    <p class="category-count">4 Products</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Modal -->
-    <div id="productsModal" class="products-modal" onclick="closeModal(event)">
-        <div class="modal-content-wrapper" onclick="event.stopPropagation()">
-            <span class="modal-close" onclick="closeModal(event)">&times;</span>
-            <div class="modal-header">
-                <h2 id="modalTitle" class="modal-title"></h2>
-                <p id="modalSubtitle" class="modal-subtitle"></p>
-            </div>
-            <div id="productsListContainer" class="products-list"></div>
-        </div>
+      </div>
     </div>
 
-    <!-- Catalog Section
-    <section class="catalog-section py-5" style="background: linear-gradient(135deg, #23a1dc, #1e88c5); color: white;">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center" data-aos="fade-up">
-                    <h2 class="display-4 fw-bold mb-4" style="color: white;">Download Our Pneumatics Catalog</h2>
-                    <p class="lead mb-4" style="color: rgba(255,255,255,0.9);">Get comprehensive information about our complete range of  pneumatic products and solutions.</p>
-                    <a href="catalogs/Genoasis_pneumatics_catalog.pdf" class="btn btn-light btn-lg px-5 py-3" download style="background: white; color: #23a1dc; border: none; font-weight: 600;">
-                        <i class="fas fa-download me-2"></i>Download Catalog
-                    </a>
-                </div>
-            </div>
+    <!-- PRODUCT SUB-ITEMS GRID -->
+    <div class="section-header reveal" style="margin-top:4rem">
+      <div class="eyebrow">Product Range</div>
+      <h2 class="section-title">Pneumatic Component Types</h2>
+    </div>
+    <div class="product-sub-grid reveal">
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/pneumatic/12mmADN-12CompactCylinder.jpg" alt="ADN Compact Cylinders" loading="lazy">
         </div>
-    </section> -->
-
-    <!-- Start Footer Section -->
-    <footer class="footer-section">
-        <div class="container relative">
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4">
-                    <div class="mb-4 footer-logo-wrap">
-                        <a href="#" class="footer-logo">
-                            <img src="images/logo.png" alt="Genoasis industrial water treatment supplier India UAE" style="height: 50px;">
-                        </a>
-                    </div>
-                    <p class="mb-4">Empowering water treatment plants with advanced chemicals and supplies for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
-                    <ul class="list-unstyled custom-social">
-                        <!-- <li><a href="https://www.facebook.com/genoasis" target="_blank" rel="noopener"><span class="fa fa-brands fa-facebook-f"></span></a></li> -->
-                        <!-- <li><a href="https://twitter.com/genoasis" target="_blank" rel="noopener"><span class="fa fa-brands fa-twitter"></span></a></li> -->
-                        <!-- <li><a href="https://www.instagram.com/genoasis" target="_blank" rel="noopener"><span class="fa fa-brands fa-instagram"></span></a></li> -->
-                        <li><a href="https://www.linkedin.com/company/genoasis-technologies/?viewAsMember=true" target="_blank" rel="noopener"><span class="fa fa-brands fa-linkedin"></span></a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-8">
-                    <div class="row links-wrap">
-                        <div class="col-6 col-sm-6 col-md-3">
-                            <ul class="list-unstyled">
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="Products.html">Products</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-6 col-sm-6 col-md-4">
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-map-marker-alt me-2"></i>6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</li>
-                                <li>🇮🇳 <i class="fas fa-phone me-2"></i>+91 892 588 3227</li>
-                                <li>🇦🇪 <i class="fas fa-phone me-2"></i>+971 50 497 3835 / +971 50 357 1340</li>
-                                <li><i class="fas fa-envelope me-2"></i>info@genoasis.com</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-top copyright">
-                <div class="row pt-4">
-                    <div class="col-lg-6">
-                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> Genoasis | All Rights Reserved.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="product-sub-card-body">
+          <h3>ADN Compact Cylinders</h3>
+          <p>ISO 21287-compliant compact pneumatic cylinders in bore sizes 12–100 mm and strokes from 5–200 mm. Short installation length, adjustable cushioning, and integrated magnetic piston for proximity sensor compatibility.</p>
         </div>
-    </footer>
-    <!-- End Footer Section -->
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/pneumatic/DFM-GuidedActuator.jpg" alt="DFM Guided Actuators" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>DFM Guided Actuators</h3>
+          <p>Twin-rod guided drives with high torque and lateral force resistance for precise linear positioning in assembly, pressing, and pick-and-place applications. Available in bore sizes 12–63 mm with adjustable end-position cushioning.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/pneumatic/DSNU-RoundCylinder.jpg" alt="DSNU Round Cylinders" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>DSNU Round Cylinders</h3>
+          <p>ISO 6432 compliant round-body cylinders in 8–32 mm bore for light-duty clamping, ejecting, and locking applications. Compact round barrel design with magnetic piston; suitable for both horizontal and vertical mounting.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/festo-automation.jpg" alt="Directional Control Valves" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>Directional Control Valves</h3>
+          <p>Solenoid-operated 5/2, 5/3, and 3/2 directional control valves in sub-base and inline mounting for single and double-acting cylinder control. Available in manual override, monostable, and bistable configurations from G⅛ to G½.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/festo-automation.jpg" alt="Air Preparation Units" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>Air Preparation Units (FRL)</h3>
+          <p>Filter-regulator-lubricator (FRL) combinations, compressed air filters with 5–40 micron element options, pressure regulators with gauge, and micro-fog lubricators for maintaining clean, dry, and correctly pressurised instrument air supplies.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/festo-automation.jpg" alt="Pneumatic Actuators" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>Rotary Actuators &amp; Grippers</h3>
+          <p>Rack-and-pinion rotary actuators for 90° and 180° valve operation, plus parallel and angular pneumatic grippers for automated handling and assembly systems. Suitable for integration with solenoid valve islands and PLC control.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script defer src="js/bootstrap.bundle.min.js"></script>
-    <script defer src="js/tiny-slider.js"></script>
-    <script defer src="js/custom.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
+<!-- FEATURES -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="section-header section-header--center reveal">
+      <div class="eyebrow">Why Choose Us</div>
+      <h2 class="section-title">Key Features &amp; Benefits</h2>
+    </div>
+    <div class="grid-4">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-ruler-combined"></i></div>
+        <h3>ISO Standard Dimensions</h3>
+        <p>All cylinders and valves conform to ISO mounting and port dimensions, ensuring direct interchangeability with existing equipment and simplifying spare parts management.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><i class="fas fa-history"></i></div>
+        <h3>Long Service Life</h3>
+        <p>Hardened piston rods, wear-resistant seals, and precision-machined bores deliver consistent performance over tens of millions of operating cycles in demanding industrial environments.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><i class="fas fa-crosshairs"></i></div>
+        <h3>High Precision</h3>
+        <p>Tight manufacturing tolerances and integrated cushioning provide smooth, precise positioning and controlled deceleration, reducing mechanical shock and extending equipment life.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><i class="fas fa-plug"></i></div>
+        <h3>Sensor Compatible</h3>
+        <p>Magnetic pistons and T-slot cylinder profiles accommodate all standard proximity sensor types, enabling position feedback without modification to the cylinder body.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Products data
-        const productsData = {
-            valves: {
-                title: "Pneumatic Fittings & Valves",
-                subtitle: "Comprehensive selection of connectors, valves, and accessories",
-                products: [
-                    { name: " Silencer", image: "images/pneumatics/Silencer.jpg" },
-                    { name: " VUVS Solenoid Valve", image: "images/pneumatics/VUVSSolenoidValve.jpg" },
-                    { name: "Coned Brass & Sintered Bronze Silencers - 7040 Series Male Thread BSPP", image: "images/pneumatics/ConedBrass&SinteredBronzeSilencers-7040SeriesMaleThreadBSPP.png" },
-                    { name: " MSSD Field Wire Plug", image: "images/pneumatics/MSSDFieldWirePlug.jpg" },
-                    { name: " Roller Lever Valve", image: "images/pneumatics/RollerLeverValve.jpg" },
-                    { name: " VZWF Brass Solenoid Valves", image: "images/pneumatics/VZWFBrassSolenoidValves.jpg" },
-                    { name: "Domed Brass & Sintered Bronze Silencers - 7020 Series", image: "images/pneumatics/DomedBrass&SinteredBronzeSilencers-7020Series-MaleThreadMetric&BSPP.png" },
-                    { name: "Flush Brass Nut Silencers - 1200 Series Male BSPP", image: "images/pneumatics/FlushBrassNutSilencers-1200SeriesMaleBSPP.jpg" },
-                    { name: " VFOE One-way Flow Control Valve", image: "images/pneumatics/VFOEOne-wayFlowControlValve.jpg" },
-                    { name: " M8/M12 Connecting Cables", image: "images/pneumatics/M8:M12ConnectingCables.jpg" },
-                    { name: " Plug & Lead", image: "images/pneumatics/Plug&Lead.jpg" },
-                    { name: " NEBV Plugs / Leads for VUVG Valves", image: "images/pneumatics/NEBVPlugs:LeadsforVUVGValves.jpg" },
-                    { name: " VUVG Solenoid Valve 24vDC", image: "images/pneumatics/VUVGSolenoidValve24vDC.jpg" },
-                    { name: " HGL Pilot Operated Check Valve", image: "images/pneumatics/HGLPilotOperatedCheckValve.jpg" },
-                    { name: " One Way Flow Control Valve - Meter Out", image: "images/pneumatics/OneWayFlowControlValve-MeterOut.jpg" },
-                    { name: " One Way Flow Control Valve - Meter In", image: "images/pneumatics/OneWayFlowControlValve-MeterIn.jpg" }
-                ]
-            },
-            fittings: {
-                title: "Push-In Fittings & Accessories",
-                subtitle: "Quick-connect fittings for fast and reliable pneumatic connections",
-                products: [
-                    { name: " Polyurethane Pneumatic Tube", image: "images/pneumatics/PolyurethanePneumaticTube.jpg" },
-                    { name: " Equal Push-In Connector", image: "images/pneumatics/EqualPush-InConnector.jpg" },
-                    { name: " Push-In Blank", image: "images/pneumatics/Push-InBlank.jpg" },
-                    { name: " Push-In Parallel Male Stud Elbow", image: "images/pneumatics/Push-InParallelMaleStudElbow.jpg" },
-                    { name: " Push-In Reducing Connector", image: "images/pneumatics/Push-InReducingConnector.jpg" },
-                    { name: " Push-In Equal Tee", image: "images/pneumatics/Push-InEqualTee.jpg" },
-                    { name: " Push-In Parallel Male Stud Straight (External)", image: "images/pneumatics/Push-InParallelMaleStudStraight(External).jpg" },
-                    { name: " Push-In Taper Male Stud Straight (External)", image: "images/pneumatics/Push-InTaperMaleStudStraight(External).jpg" },
-                    { name: " Push-In Taper Male Stud Elbow", image: "images/pneumatics/Push-InTaperMaleStudElbow.jpg" },
-                    { name: " Push-In Equal Y Piece", image: "images/pneumatics/Push-InEqualYPiece.jpg" },
-                    { name: " Push-In Equal Elbow", image: "images/pneumatics/Push-InEqualElbow.jpg" },
-                    { name: " Push-In Bulkhead Connector", image: "images/pneumatics/Push-InBulkheadConnector.jpg" },
-                    { name: " Push-In Female Stud Straight", image: "images/pneumatics/Push-InFemaleStudStraight.jpg" },
-                    { name: " Push-In Parallel Male Stud Straight (Internal)", image: "images/pneumatics/Push-InParallelMaleStudStraight(Internal).jpg" },
-                    { name: " Push-In Reducing Tee", image: "images/pneumatics/Push-InReducingTee.jpg" },
-                    { name: " Push-In Taper Male Stud Branch Tee", image: "images/pneumatics/Push-InTaperMaleStudBranchTee.jpg" },
-                    { name: " Push-In Stem Reducer", image: "images/pneumatics/Push-InStemReducer.jpg" },
-                    { name: " Push-In Taper Male Stud Y Piece Elbow", image: "images/pneumatics/Push-InTaperMaleStudYPieceElbow.jpg" },
-                    { name: " Push-In Parallel Banjo", image: "images/pneumatics/Push-InParallelBanjo.jpg" },
-                    { name: " Push-In Equal Stem Elbow", image: "images/pneumatics/Push-InEqualStemElbow.jpg" },
-                    { name: " Push-In Fittings Assortment Kit - 194 Pieces (KIT 1)", image: "images/pneumatics/Push-InFittingsAssortmentKit-194Pieces(KIT1).jpg" },
-                    { name: " Push-In Reducing Y Piece", image: "images/pneumatics/Push-InReducingYPiece.jpg" },
-                    { name: " Push-In Female Stud Elbow", image: "images/pneumatics/Push-InFemaleStudElbow.jpg" },
-                    { name: " Push-In Taper Male Stud Y Piece Straight", image: "images/pneumatics/Push-InTaperMaleStudYPieceStraight.jpg" },
-                    { name: " Push-In Taper Male Stud Straight (Internal)", image: "images/pneumatics/Push-InTaperMaleStudStraight(Internal).jpg" },
-                    { name: " Push-In Taper Male Stud Running Tee", image: "images/pneumatics/Push-InTaperMaleStudRunningTee.jpg" },
-                    { name: " Push-In Taper Extended Male Stud Elbow", image: "images/pneumatics/Push-InTaperExtendedMaleStudElbow.jpg" }
-                ]
-            },
-            dfm: {
-                title: "DFM Guided Cylinders",
-                subtitle: "Precision guided pneumatic cylinders for accurate linear motion",
-                products: [
-                    { name: " 12mm DFM Guided Cylinder", image: "images/pneumatics/12mmDFMGuidedCylinder.jpg" },
-                    { name: " 16mm DFM Guided Cylinder", image: "images/pneumatics/16mmDFMGuidedCylinder.jpg" },
-                    { name: " 20mm DFM Guided Cylinder", image: "images/pneumatics/20mmDFMGuidedCylinder.jpg" },
-                    { name: " 25mm DFM Guided Cylinder", image: "images/pneumatics/25mmDFMGuidedCylinder.jpg" },
-                    { name: " 32mm DFM Guided Cylinder", image: "images/pneumatics/32mmDFMGuidedCylinder.jpg" },
-                    { name: " 40mm DFM Guided Cylinder", image: "images/pneumatics/40mmDFMGuidedCylinder.jpg" },
-                    { name: " 50mm DFM Guided Cylinder", image: "images/pneumatics/50mmDFMGuidedCylinder.jpg" },
-                    { name: " 63mm DFM Guided Cylinder", image: "images/pneumatics/63mmDFMGuidedCylinder.jpg" }
-                ]
-            },
-            adn: {
-                title: "ADN Compact Cylinders",
-                subtitle: "Space-saving compact pneumatic cylinders for tight installations",
-                products: [
-                    { name: " 12mm ADN-12 Compact Cylinder", image: "images/pneumatics/12mmADN-12CompactCylinder.jpg" },
-                    { name: " 16mm ADN-16 Compact Cylinder", image: "images/pneumatics/16mmADN-16CompactCylinder.jpg" },
-                    { name: " 20mm ADN-20 Compact Cylinder", image: "images/pneumatics/20mmADN-20CompactCylinder.jpg" },
-                    { name: " 25mm ADN-25 Compact Cylinder", image: "images/pneumatics/25mmADN-25CompactCylinder.jpg" },
-                    { name: " 32mm ADN-32 Compact Cylinder", image: "images/pneumatics/32mmADN-32CompactCylinder.jpg" },
-                    { name: " 40mm ADN-40 Compact Cylinder", image: "images/pneumatics/40mmADN-40CompactCylinder.jpg" },
-                    { name: " 50mm ADN-50 Compact Cylinder", image: "images/pneumatics/50mmADN-50CompactCylinder.jpg" },
-                    { name: " 63mm ADN-63 Double Acting Compact Cylinder", image: "images/pneumatics/63mmADN-63DoubleActingCompactCylinder.jpg" },
-                    { name: " 80mm bore ADN Compact Cylinder", image: "images/pneumatics/80mmboreADNCompactCylinder.jpg" }
-                ]
-            },
-            dsnu: {
-                title: "DSNU Round & DSBC Cylinders",
-                subtitle: "Standard pneumatic cylinders for general industrial applications",
-                products: [
-                    { name: " 12mm DSNU Round Cylinder", image: "images/pneumatics/12mmDSNURoundCylinder.jpg" },
-                    { name: " 16mm DSNU Round Cylinder", image: "images/pneumatics/16mmDSNURoundCylinder.jpg" },
-                    { name: " 20mm DSNU Round Cylinder", image: "images/pneumatics/20mmDSNURoundCylinder.jpg" },
-                    { name: " 25mm DSNU Round Cylinder", image: "images/pneumatics/25mmDSNURoundCylinder.jpg" },
-                    { name: " 32mm DSBC Cylinder", image: "images/pneumatics/32mmDSBCCylinder.jpg" },
-                    { name: " 40mm DSBC Cylinder", image: "images/pneumatics/40mmDSBCCylinder.jpg" },
-                    { name: " 50mm DSBC Cylinder", image: "images/pneumatics/50mmDSBCCylinder.jpg" }
-                ]
-            },
-            air: {
-                title: "Air Preparation Equipment",
-                subtitle: "Filters, regulators, and service units for clean, regulated compressed air",
-                products: [
-                    { name: " MS4 Series Air Preparation", image: "images/pneumatics/MS4SeriesAirPreparation.jpg" },
-                    { name: " MSB Box Sets", image: "images/pneumatics/MSBBoxSets.jpg" },
-                    { name: " MS6 Series Air Preparation", image: "images/pneumatics/MS6SeriesAirPreparation.jpg" },
-                    { name: " LRP Precision Pressure Regulator", image: "images/pneumatics/LRPPrecisionPressureRegulator.jpg" }
-                ]
-            }
-        };
+<!-- APPLICATIONS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Applications</div>
+      <h2 class="section-title">Industries &amp; Applications</h2>
+    </div>
+    <div class="grid-2" style="align-items:center;gap:3rem">
+      <div class="reveal">
+        <ul class="check-list">
+          <li>Factory automation and robotic assembly systems</li>
+          <li>Material handling and conveyor actuators</li>
+          <li>Automated valve actuation in water treatment plants</li>
+          <li>Packaging and filling machine motion control</li>
+          <li>Clamping, pressing, and stamping operations</li>
+          <li>Pharmaceutical and food-grade automation</li>
+          <li>Automotive body shop and assembly fixtures</li>
+          <li>General industrial machine building and OEM</li>
+        </ul>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <img src="images/festo-automation.jpg" alt="Pneumatic Automation Applications" loading="lazy" style="border-radius:var(--radius-xl);width:100%;height:300px;object-fit:cover">
+      </div>
+    </div>
+  </div>
+</section>
 
-        function openProductsModal(category) {
-            const modal = document.getElementById('productsModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalSubtitle = document.getElementById('modalSubtitle');
-            const productsListContainer = document.getElementById('productsListContainer');
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="reveal">
+      <h2>Ready to order or need a custom quote?</h2>
+      <p>Contact our team for pricing, availability, and technical specifications tailored to your requirements.</p>
+      <div class="cta-actions">
+        <a href="contact" class="btn btn--primary btn--lg">Request a Quote</a>
+        <a href="Products" class="btn btn--outline-white btn--lg">Back to Products</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-            const categoryData = productsData[category];
-            
-            modalTitle.textContent = categoryData.title;
-            modalSubtitle.textContent = categoryData.subtitle;
-            
-            productsListContainer.innerHTML = '';
-            categoryData.products.forEach(product => {
-                const productItem = document.createElement('div');
-                productItem.className = 'product-item';
-                productItem.innerHTML = `
-                    <div class="product-item-image">
-                        <img src="${product.image}" alt="${product.name}">
-                    </div>
-                    <div class="product-item-info">
-                        <p class="product-item-name">${product.name}</p>
-                    </div>
-                `;
-                productsListContainer.appendChild(productItem);
-            });
-
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(event) {
-            if (event) {
-                event.stopPropagation();
-            }
-            const modal = document.getElementById('productsModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when pressing Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Products dropdown functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const productsLink = document.querySelector('#navbarDropdown');
-            const dropdownMenu = document.querySelector('.dropdown-menu');
-            const dropdown = document.querySelector('.dropdown');
-            
-            if (productsLink && dropdownMenu && dropdown) {
-                productsLink.addEventListener('click', function(e) {
-                    if (e.target.classList.contains('dropdown-arrow') || dropdown.classList.contains('show')) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('show');
-                        dropdownMenu.classList.toggle('show');
-                    } else {
-                        window.location.href = 'Products.html';
-                    }
-                });
-                
-                document.addEventListener('click', function(e) {
-                    if (!dropdown.contains(e.target)) {
-                        dropdown.classList.remove('show');
-                        dropdownMenu.classList.remove('show');
-                    }
-                });
-                
-                if (window.innerWidth > 768) {
-                    dropdown.addEventListener('mouseenter', function() {
-                        dropdown.classList.add('show');
-                        dropdownMenu.classList.add('show');
-                    });
-                    
-                    dropdown.addEventListener('mouseleave', function() {
-                        dropdown.classList.remove('show');
-                        dropdownMenu.classList.remove('show');
-                    });
-                }
-            }
-        });
-    </script>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="images/logo.png" alt="Genoasis" class="footer-logo" loading="lazy"><p>Your trusted partner for industrial water treatment solutions. Serving India and the Middle East with quality products and expert support since 2020.</p><div class="footer-social"><a href="https://www.linkedin.com/company/genoasis-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
+      <div class="footer-col"><h4>Products</h4><div class="footer-links"><a href="frpmedia">RO Pressure Vessels</a><a href="membranes">Membranes</a><a href="pumps">Pumps</a><a href="filters">Filter Cartridges</a><a href="chemicals">Chemicals</a><a href="valves">Valves &amp; Fittings</a><a href="Products">All Products →</a></div></div>
+      <div class="footer-col"><h4>Company</h4><div class="footer-links"><a href="about">About Us</a><a href="catalog">Product Catalog</a><a href="contact">Contact Us</a><a href="catalogs/Genoasis_catalog.pdf" target="_blank" rel="noopener">Download Brochure</a></div></div>
+      <div class="footer-col"><h4>Contact</h4><div class="footer-contact-row"><i class="fas fa-map-marker-alt"></i><span>6, Balaji St, Guduvancherry, Chennai, Tamil Nadu, India</span></div><div class="footer-contact-row"><i class="fas fa-phone"></i><span>+91 892 588 3227 (India)<br>+971 50 497 3835 (UAE)</span></div><div class="footer-contact-row"><i class="fas fa-envelope"></i><span>info@genoasis.com</span></div></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 Genoasis Water Technologies. All rights reserved.</span><span>Chennai, India &amp; Middle East</span></div>
+  </div>
+</footer>
+<script src="js/site.js" defer></script>
 </body>
 </html>

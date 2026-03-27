@@ -1,1219 +1,250 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  <!-- Preconnect to external domains for faster loading -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-
-	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-	<link rel="manifest" href="/site.webmanifest" />
-    <meta name="description" content="Industrial filter cartridges and housings for pure water systems. Supplier in India and UAE. Get support from our Chennai and UAE teams." />
-    <meta name="keywords" content="bootstrap, bootstrap4" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RPG7M7CLBF');
-    </script>
-    <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="css/tiny-slider.css" rel="stylesheet" media="print" onload="this.media=\'all\'">
-    <link href="css/style.css" rel="stylesheet">
-    <!-- Add AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        /* Modern Navigation Styles */
-        .top-bar {
-            background: white;
-            font-size: 1rem;
-            border-bottom: 1px solid #e9ecef;
-            padding: 12px 0;
-        }
-
-        .top-bar a {
-            color: #495057;
-            transition: color 0.3s ease;
-            font-weight: 500;
-            font-size: 1.1rem;
-        }
-
-        .top-bar a:hover {
-            color: #23a1dc !important;
-        }
-
-        .top-bar i {
-            font-size: 1rem;
-            margin-right: 6px;
-        }
-
-        .custom-navbar-nav .nav-link {
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 12px 20px !important;
-            margin: 0 8px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            transition: left 0.3s ease;
-            z-index: -1;
-        }
-
-        .nav-link:hover::before {
-            left: 0;
-        }
-
-        .nav-link:hover {
-            color: white !important;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(35, 161, 220, 0.3);
-        }
-
-        .nav-link.active {
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            color: white !important;
-        }
-
-        .nav-link[href="index.html"]:hover {
-            color: #333 !important;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        }
-
-        .nav-link[href="about.html"]:hover {
-            color: #333 !important;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        }
-
-        .nav-link[href="contact.html"]:hover {
-            color: #333 !important;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        }
-
-        .dropdown-toggle::after {
-            transition: transform 0.3s ease;
-            font-size: 0.8rem;
-        }
-
-        .dropdown:hover .dropdown-toggle::after {
-            transform: rotate(180deg);
-        }
-
-        .dropdown.show .dropdown-toggle::after {
-            transform: rotate(180deg);
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            background: white;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 8px 0;
-            margin-top: 8px;
-            min-width: 250px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            position: absolute;
-            z-index: 9999;
-        }
-
-        .dropdown-menu.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-item {
-            padding: 12px 20px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #333;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .dropdown-item:hover {
-            background: linear-gradient(135deg, #23a1dc, #1e88c5);
-            color: white !important;
-            transform: translateX(5px);
-        }
-
-        .dropdown-item:hover,
-        .dropdown-item:focus,
-        .dropdown-item:active {
-            color: white !important;
-            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
-        }
-
-        .dropdown-menu .dropdown-item:hover,
-        .dropdown-menu .dropdown-item:focus,
-        .dropdown-menu .dropdown-item:active {
-            color: white !important;
-            background: linear-gradient(135deg, #23a1dc, #1e88c5) !important;
-            text-decoration: none;
-        }
-
-        .dropdown-item * {
-            color: inherit;
-        }
-
-        .dropdown-toggle:hover {
-            color: white !important;
-        }
-
-        .dropdown-toggle:hover::before {
-            left: 0;
-        }
-
-        .navbar-brand {
-            transition: transform 0.3s ease;
-        }
-
-        .navbar-brand:hover {
-            transform: scale(1.05);
-        }
-
-        .custom-navbar {
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 1000;
-        }
-
-        .navbar-toggler {
-            border: 2px solid #333;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler:hover {
-            background: #f8f9fa;
-            transform: scale(1.05);
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(35, 161, 220, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-        }
-
-        /* Prevent phone numbers from breaking lines */
-        .footer-section li {
-            white-space: nowrap;
-        }
-
-        .top-bar a, .top-bar span {
-            white-space: nowrap;
-        }
-
-        @media (max-width: 768px) {
-            /* Allow line breaks on mobile for better readability */
-            .footer-section li {
-                white-space: normal;
-            }
-
-            .top-bar a, .top-bar span {
-                white-space: normal;
-            }
-            .top-bar {
-                text-align: center;
-            }
-            
-            .top-bar .d-flex {
-                justify-content: center !important;
-            }
-            
-            .custom-navbar-nav .nav-link {
-                font-size: 1rem;
-                padding: 10px 15px !important;
-                margin: 2px 0;
-            }
-            
-            .dropdown-menu {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                border: none;
-                background: #f8f9fa;
-                margin-top: 0;
-                padding-left: 20px;
-            }
-            
-            .dropdown-item {
-                padding: 8px 15px;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Hero Section Styles */
-        .hero-section {
-            background-image: url('images/products-banner.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
-
-        .hero-content { position: relative; z-index: 2; }
-        .hero-title { font-size: 3.0rem; font-weight: 700; margin-bottom: 1rem; color: #fff; }
-        .hero-subtitle { font-size: 1.2rem; font-weight: 300; opacity: 0.95; }
-        
-        /* Hero section links styling */
-        .hero-section a {
-            color: white !important;
-            text-decoration: underline;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .hero-section a:hover {
-            color: #f8f9fa !important;
-            text-decoration: none;
-            transform: translateY(-1px);
-        }
-
-        /* Modern Content Sections */
-        .content-section { background: #fff; }
-        .content-card {
-            background: #fff;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: none;
-            border: 1px solid #e9ecef;
-        }
-        .section-title { font-size: 2.2rem; font-weight: 700; color: #333; margin-bottom: 1.25rem; }
-
-        /* Features Grid */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
-        .feature-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: #f8f9fa; border-radius: 10px; }
-        .feature-item i { color: #23a1dc; font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
-        .feature-item span { color: #555; line-height: 1.6; }
-
-        /* Image Sections */
-        .image-section { background: #fff; }
-        .image-container { border-radius: 15px; overflow: hidden; box-shadow: none; }
-        .gallery-img { width: 100%; height: auto; cursor: pointer; transition: transform 0.3s ease; }
-        .gallery-img:hover { transform: scale(1.02); }
-
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.2rem; }
-            .content-card { padding: 28px 20px; }
-            .section-title { font-size: 1.8rem; }
-        }
-        .product-category .category-title {
-            color: #333;
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .product-types {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 1rem;
-        }
-
-        .product-types li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .product-types li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #333;
-        }
-
-        .e-con-boxed {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 30px;
-        }
-
-        .e-con-inner {
-            width: 100%;
-        }
-
-        /* Use Bootstrap's default .row behavior (no overrides) */
-
-        .content-column {
-            padding: 40px;
-            width: 66.666%;
-            background-color: #f8f9fa;
-        }
-
-        .image-column {
-            width: 33.333%;
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            min-height: 400px;
-        }
-
-        /* Remove legacy responsive overrides on .row to avoid conflicts */
-
-        .elementor-icon-list-items {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .elementor-icon-list-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .elementor-icon-list-icon {
-            margin-right: 10px;
-        }
-
-        .elementor-spacer {
-            height: 20px;
-        }
-
-        .product-category .category-container {
-            background-color: #f8f9fa;
-            padding: 40px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        .product-types li:before {
-            content: "\f061"; /* FontAwesome arrow right */
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            color: #333;
-        }
-
-        /* Add these image-specific styles */
-        .e-con-boxed .image-container {
-            height: 300px; /* Fixed height for consistency */
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .e-con-boxed .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* This ensures the image covers the area without distortion */
-            object-position: center;
-        }
-
-        /* For responsive design */
-        @media (max-width: 768px) {
-            .e-con-boxed .image-container {
-                height: 250px; /* Slightly smaller on tablets */
-                margin-top: 20px; /* Add some space between text and image on mobile */
-            }
-        }
-
-        @media (max-width: 576px) {
-            .e-con-boxed .image-container {
-                height: 200px; /* Even smaller on mobile phones */
-            }
-        }
-
-        .content-column {
-            padding: 40px;
-        }
-
-        .image-column {
-            padding: 0;
-            position: relative;
-        }
-
-        .image-column .image-container {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            height: 100%;
-        }
-
-        .image-column .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        @media (max-width: 768px) {
-            .image-column {
-                position: relative;
-                height: 300px;
-            }
-            .image-column .image-container {
-                position: relative;
-            }
-            .content-column {
-                padding: 30px;
-            }
-        }
-
-        /* (intentionally left empty - Bootstrap handles grid responsiveness) */
-
-        /* List styles */
-        .elementor-icon-list-items {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .elementor-icon-list-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .elementor-icon-list-icon {
-            margin-right: 10px;
-        }
-
-        /* Title and text styles */
-        .category-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        /* (intentionally left empty) */
-
-        /* Add these new styles */
-        .image-popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            max-width: 800px;
-            max-height: 800px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .image-popup img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.8);
-            z-index: 999;
-            cursor: pointer;
-        }
-
-        .popup-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .popup-close:hover {
-            background: rgba(0, 0, 0, 0.9);
-        }
-
-        .popup-close::before,
-        .popup-close::after {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 2px;
-            background-color: white;
-        }
-
-        .popup-close::before {
-            transform: rotate(45deg);
-        }
-
-        .popup-close::after {
-            transform: rotate(-45deg);
-        }
-
-        .image-column {
-            cursor: pointer;
-        }
-
-        @media (max-width: 992px) {
-            .image-popup {
-                max-width: 600px;
-                max-height: 600px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .image-popup {
-                max-width: 400px;
-                max-height: 400px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .image-popup {
-                max-width: 90%;
-                max-height: 90vh;
-            }
-        }
-
-        .products-section {
-            background-color: #fff;
-        }
-
-        .product-item {
-            position: relative;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .product-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .product-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .product-name {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(35, 161, 220, 0.7);
-            color: white;
-            padding: 10px;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .product-item:hover .product-name {
-            background: rgba(0,0,0,0.9);
-        }
-
-        @media (max-width: 768px) {
-            .product-item img {
-                height: 200px;
-            }
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .product-description p,
-        .lead,
-        .feature-list li,
-        table td,
-        table th {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        .table {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 0.95rem;
-        }
-
-        .table th {
-            font-weight: 600;
-        }
-
-        .table td {
-            font-weight: 400;
-        }
-
-        .product-description {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .feature-list li {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 0.75rem;
-        }
-
-        .lead {
-            font-weight: 400;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .table {
-                font-size: 0.85rem;
-            }
-            
-            .lead {
-                font-size: 1.05rem;
-            }
-            
-            p {
-                font-size: 0.95rem;
-            }
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-        }
-
-        .collapse {
-            transition: all 0.3s ease;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #23a1dc 0%, #1e88c5 100%);
-            color: white;
-            text-align: center;
-        }
-
-        .cta-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .cta-description {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .btn-cta {
-            background: white;
-            color: #23a1dc;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-cta:hover {
-            background: #f8f9fa;
-            transform: translateY(-2px);
-            color: #23a1dc;
-        }
-
-        .dropdown-menu {
-            background-color: #ffffff;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            margin-top: 0;
-            padding: 8px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .dropdown-item {
-            color: #333333;
-            padding: 8px 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .dropdown-item:hover {
-            background-color: #f8f9fa;
-            color: #000000;
-        }
-
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .nav-item.dropdown > .nav-link {
-            cursor: pointer;
-        }
-
-        /* Active state for dropdown items */
-        .dropdown-item.active, 
-        .dropdown-item:active {
-            background-color: #f8f9fa;
-            color: #000000;
-        }
-
-        @media (max-width: 768px) {
-            .dropdown-menu {
-                border: none;
-                padding-left: 1rem;
-                box-shadow: none;
-            }
-            
-            .dropdown-item {
-                padding: 8px 15px;
-            }
-        }
-
-        /* Mobile Menu Button Styles */
-        .navbar-toggler {
-            border-color: #333333;
-            background-color: transparent;
-            padding: 0.5rem;
-            margin-right: 15px;
-        }
-        
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 51, 51, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-            width: 1.5em;
-            height: 1.5em;
-        }
-
-        @media (max-width: 768px) {
-            .navbar-toggler {
-                margin-right: 15px;
-            }
-            
-            .navbar-collapse {
-                padding: 1rem 0;
-            }
-            
-            .custom-navbar-nav {
-                padding: 0.5rem 0;
-            }
-            
-            .nav-item {
-                padding: 0.5rem 0;
-            }
-            
-            .dropdown-menu {
-                border: none;
-                padding-left: 1rem;
-                margin-top: 0;
-            }
-            
-            .dropdown-item {
-                padding: 0.5rem 0;
-            }
-        }
-    </style>
-    <title>Filter Cartridges & Housings – Genoasis India & UAE</title>
-	<script src="https://www.google.com/recaptcha/api.js?render=6LdbbNEqAAAAAICt9O0PGfaTPi4ikCI8gBVaannf"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1d35">
+  <title>Filter Cartridges &amp; Housings — Genoasis Water Technologies</title>
+  <meta name="description" content="String wound, melt blown, pleated, and carbon block filter cartridges plus stainless steel and polypropylene housings for pre-RO filtration and process water applications.">
+  <link rel="icon" href="favicon/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <link rel="stylesheet" href="css/design.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RPG7M7CLBF"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RPG7M7CLBF');</script>
 </head>
-	<!-- Start Top Bar -->
-	<div class="top-bar py-2">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="d-flex justify-content-end">
-						<a href="tel:+918925883227" class="me-3 text-decoration-none">
-							🇮🇳 <i class="fas fa-phone"></i> +91 892 588 3227
-						</a>
-						<span class="me-3">
-							🇦🇪 <i class="fas fa-phone"></i> <a href="tel:+971504973835" class="text-decoration-none">+971 50 497 3835</a> / <a href="tel:+971503571340" class="text-decoration-none">+971 50 357 1340</a>
-						</span>
-						<a href="mailto:info@genoasis.com" class="text-decoration-none">
-							<i class="fas fa-envelope"></i> info@genoasis.com
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Top Bar -->
 <body>
-    <!-- Start Header/Navigation -->
-    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Genoasis navigation bar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="Genoasis industrial water treatment supplier India UAE" style="height: 50px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsGenoasis" aria-controls="navbarsGenoasis" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarsGenoasis">
-                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li><a class="nav-link" href="about.html">About us</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="Products.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Products
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="frpmedia.html">RO Pressure Vessels & FRP Filters</a></li>
-                            <li><a class="dropdown-item" href="pneumatic-products.html">Pneumatic Products</a></li>
-                            <li><a class="dropdown-item" href="membranes.html">Membrane Products</a></li>
-                            <li><a class="dropdown-item" href="pumps.html">Pumps</a></li>
-                            <li><a class="dropdown-item active" href="filters.html">Filter Cartridges & Housings</a></li>
-                            <li><a class="dropdown-item" href="sandmedia.html">Sand Media & Ion Exchange Resins</a></li>
-                            <li><a class="dropdown-item" href="chemicals.html">Water Treatment Chemicals</a></li>
-                            <li><a class="dropdown-item" href="Wastewater.html">Waste Water Equipments</a></li>
-                            <li><a class="dropdown-item" href="instruments.html">Instruments & Lab Apparatus</a></li>
-                            <li><a class="dropdown-item" href="disinfectants.html">Disinfection Products</a></li>
-                            <li><a class="dropdown-item" href="valves.html">Valves, Couplings & Fittings</a></li>
-                            <li><a class="dropdown-item" href="atmospheric-water-generators.html">Atmospheric Water Generators</a></li>
-                            <li><a class="dropdown-item" href="nanobubble-technology.html">Nanobubble Technology</a></li>
-                            <li><a class="dropdown-item" href="dunnage-air-bags.html">Dunnage Air Bags</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="nav-link" href="contact.html">Contact us</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- End Header/Navigation -->
-    <!-- Start Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center hero-content">
-                    <h1 class="hero-title" data-aos="fade-up">Filter Cartridges & Housings – India & UAE</h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">High‑performance filtration for industrial and commercial applications across India and UAE. Explore our <a href="Products.html">products</a> or <a href="contact.html">contact our Chennai and UAE teams</a>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Hero Section -->
-
-    <!-- Filters & Filter Housings -->
-    <section class="content-section pt-5 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="content-card" data-aos="fade-up">
-                        <h2 class="section-title mb-3">Filters & Filter Housings</h2>
-                        <p class="lead mb-4">Genoasis supplies replacement cartridges and bag filters for industries such as Oil & Gas, Food & Beverage, and Pharmaceuticals. We offer a complete range of filtration products and systems for pure water purification. To meet restocking needs, we provide competitive supply agreements and express delivery services as needed. We supply across India and UAE from Chennai and UAE — browse our <a href="Products.html">full product range</a>.</p>
-                        <p class="mb-4">We offer a variety of Filtration Cartridge Housing, including String Wound and Melt Blown Filtration Cartridges, designed to meet the needs of various industrial filtration applications. These cartridges are engineered for superior performance, durability, and efficiency.</p>
-
-                        <h3 class="mb-3">Features & Benefits</h3>
-                        <div class="features-grid mb-4">
-                            <div class="feature-item"><i class="fas fa-industry"></i><span>High-precision cartridge filter made from premium polypropylene yarn and core materials</span></div>
-                            <div class="feature-item"><i class="fas fa-layer-group"></i><span>True gradient density achieved through advanced manufacturing techniques</span></div>
-                            <div class="feature-item"><i class="fas fa-filter"></i><span>Superior filtration with high dirt-holding capacity</span></div>
-                            <div class="feature-item"><i class="fas fa-shield-alt"></i><span>Optimal protection for downstream equipment</span></div>
-                            <div class="feature-item"><i class="fas fa-ruler-combined"></i><span>Micron ratings from 0.5 to 150</span></div>
-                            <div class="feature-item"><i class="fas fa-arrows-alt-v"></i><span>Sizes 10", 20", 30", 40", 50", 70"; diameters 2.5" & 4.5"</span></div>
-                        </div>
-
-                        <h3 class="mb-3">Certifications</h3>
-                        <p class="mb-4">Tested and certified by NSF International to NSF/ANSI Standard 42 for material requirements.</p>
-
-                        <h3 class="mb-3">Materials</h3>
-                        <div class="features-grid mb-4">
-                            <div class="feature-item"><i class="fas fa-cube"></i><span>Filter Media: Polypropylene</span></div>
-                            <div class="feature-item"><i class="fas fa-cube"></i><span>Core: Polypropylene</span></div>
-                            <div class="feature-item"><i class="fas fa-cube"></i><span>End Caps: Polypropylene</span></div>
-                            <div class="feature-item"><i class="fas fa-ring"></i><span>O-ring/Gasket: None</span></div>
-                        </div>
-
-                        <h3 class="mb-3">Operating Conditions</h3>
-                        <div class="features-grid mb-3">
-                            <div class="feature-item"><i class="fas fa-tachometer-alt"></i><span>Change‑out ΔP: 0.14 MPa (1.4 bar; 20.3 psid) @ 21°C</span></div>
-                            <div class="feature-item"><i class="fas fa-thermometer-half"></i><span>Max operating temperature: 70°C (158°F)</span></div>
-                        </div>
-
-                        <p class="mb-0">These cartridges are designed to meet stringent filtration standards, ensuring consistent quality and high performance in a wide range of industries.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Image Section -->
-    <section class="image-section pt-3 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="image-container" data-aos="fade-up">
-                        <img src="images/filters1.jpg" alt="Filter cartridges and housings supplier India UAE – Genoasis" class="gallery-img" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Filter Bags Section -->
-    <section class="content-section pt-3 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="content-card" data-aos="fade-up">
-                        <h2 class="section-title mb-3">Filter Bags & Housing</h2>
-                        <p class="lead mb-4">Filter Bags provide an economical filtration solution for a wide variety of applications. Offering excellent performance and efficiency, these filter bags provide a simple and cost‑effective way to maintain clean liquids by trapping impurities and debris.</p>
-
-                        <h3 class="mb-3">Features</h3>
-                        <div class="features-grid mb-4">
-                            <div class="feature-item"><i class="fas fa-bolt"></i><span>High‑efficiency filtration performance</span></div>
-                            <div class="feature-item"><i class="fas fa-arrows-alt"></i><span>Wide range of sizes to suit various needs</span></div>
-                            <div class="feature-item"><i class="fas fa-tools"></i><span>Engineered construction for superior efficiency</span></div>
-                            <div class="feature-item"><i class="fas fa-tags"></i><span>Lower initial cost than alternative methods</span></div>
-                            <div class="feature-item"><i class="fas fa-stopwatch"></i><span>Fast installation and replacement, minimal downtime</span></div>
-                        </div>
-
-                        <p class="mb-0">Filter bags are designed to capture dirt and debris, ensuring that only clean liquid passes through the filter, maintaining system integrity.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Second Image -->
-    <section class="image-section pt-3 pb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="image-container" data-aos="fade-up">
-                        <img src="images/filters2.jpg" alt="Industrial filter bags and housings supplier India UAE – Genoasis" class="gallery-img" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section pt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="cta-title" data-aos="fade-up">Ready to Transform Your Water Treatment?</h2>
-                    <p class="cta-description" data-aos="fade-up" data-aos-delay="200">Contact our experts today to discuss your filtration requirements and get a customized solution for your facility.</p>
-                    <a href="contact.html" class="btn-cta" data-aos="fade-up" data-aos-delay="400">Get Expert Consultation</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Start Footer Section -->
-    <footer class="footer-section">
-        <div class="container relative">
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4">
-                    <div class="mb-4 footer-logo-wrap">
-                        <a href="#" class="footer-logo">
-                            <img src="images/logo.png" alt="Genoasis industrial water treatment supplier India UAE" style="height: 50px;">
-                        </a>
-                    </div>
-                    <p class="mb-4">Empowering water treatment plants with advanced chemicals and supplies for safe, sustainable water management. Innovative solutions for a healthier environment and a sustainable future.</p>
-                    <ul class="list-unstyled custom-social">
-                        <!-- <li><a href="https://www.facebook.com/genoasis" target="_blank" rel="noopener"><span class="fa fa-brands fa-facebook-f"></span></a></li> -->
-                        <!-- <li><a href="https://twitter.com/genoasis" target="_blank" rel="noopener"><span class="fa fa-brands fa-twitter"></span></a></li> -->
-                        <!-- <li><a href="https://www.instagram.com/genoasis" target="_blank" rel="noopener"><span class="fa fa-brands fa-instagram"></span></a></li> -->
-                        <li><a href="https://www.linkedin.com/company/genoasis-technologies/?viewAsMember=true" target="_blank" rel="noopener"><span class="fa fa-brands fa-linkedin"></span></a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-8">
-                    <div class="row links-wrap">
-                        <div class="col-6 col-sm-6 col-md-3">
-                            <ul class="list-unstyled">
-								<li><a href="about.html">About us</a></li>
-								<li><a href="Products.html">Products</a></li>
-								<li><a href="contact.html">Contact us</a></li>
-                            </ul>
-                        </div>
-						<!-- Add Contact Information Section -->
-						<div class="col-6 col-sm-6 col-md-4">
-							<ul class="list-unstyled">
-								<li><i class="fas fa-map-marker-alt me-2"></i>6, Balaji St, Guduvancherry<br>Chennai, Tamil Nadu, India</li>
-								<li>🇮🇳 <i class="fas fa-phone me-2"></i>+91 892 588 3227</li>
-								<li>🇦🇪 <i class="fas fa-phone me-2"></i>+971 50 497 3835 / +971 50 357 1340</li>
-								<li><i class="fas fa-envelope me-2"></i>info@genoasis.com</li>
-							</ul>
-						</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-top copyright">
-                <div class="row pt-4">
-                    <div class="col-lg-6">
-                        <p class="mb-2 text-center text-lg-start">&copy; <script>document.write(new Date().getFullYear());</script> Genoasis | All Rights Reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End Footer Section -->
-
-    <script defer src="js/bootstrap.bundle.min.js"></script>
-    <script defer src="js/tiny-slider.js"></script>
-    <script defer src="js/custom.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 100
-        });
-    </script>
-    <script defer src="js/recaptcha.js"></script>
-    <div class="popup-overlay"></div>
-    <div class="image-popup">
-        <div class="popup-close"></div>
-        <img src="" alt="Product detail image">
+<nav class="site-nav" id="site-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index" class="nav-logo"><img src="images/logo.png" alt="Genoasis" class="logo-light" width="140" height="36" loading="eager"><img src="images/logo_b.png" alt="Genoasis" class="logo-dark" width="140" height="36" loading="eager"></a>
+      <ul class="nav-links">
+        <li><a href="index" class="nav-link">Home</a></li>
+        <li><a href="about" class="nav-link">About</a></li>
+        <li class="nav-item--dropdown">
+          <a href="Products" class="nav-link active">Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="frpmedia">RO Pressure Vessels &amp; FRP Filters</a></li>
+            <li><a href="membranes">Membrane Products</a></li>
+            <li><a href="pumps">Pumps</a></li>
+            <li><a href="filters">Filter Cartridges &amp; Housings</a></li>
+            <li><a href="sandmedia">Sand Media &amp; Ion Exchange Resins</a></li>
+            <li><a href="chemicals">Water Treatment Chemicals</a></li>
+            <li><a href="Wastewater">Waste Water Equipments</a></li>
+            <li><a href="instruments">Instruments &amp; Lab Apparatus</a></li>
+            <li><a href="disinfectants">Disinfection Products</a></li>
+            <li><a href="valves">Valves, Couplings &amp; Fittings</a></li>
+            <li><a href="atmospheric-water-generators">Atmospheric Water Generators</a></li>
+            <li><a href="nanobubble-technology">Nanobubble Technology</a></li>
+            <li><a href="pneumatic-products">Pneumatic Products</a></li>
+            <li><a href="dunnage-air-bags">Dunnage Air Bags</a></li>
+          </ul>
+        </li>
+        <li><a href="catalog" class="nav-link">Catalog</a></li>
+        <li><a href="contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:+918925883227" class="nav-phone"><span class="nav-flag">🇮🇳</span> +91 892 588 3227</a>
+        <div class="nav-contact-divider"></div>
+        <a href="tel:+971504973835" class="nav-phone"><span class="nav-flag">🇦🇪</span> +971 50 497 3835</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const galleryImages = document.querySelectorAll('.gallery-img');
-            const popup = document.querySelector('.image-popup');
-            const popupImg = popup.querySelector('img');
-            const overlay = document.querySelector('.popup-overlay');
-            const closeButton = document.querySelector('.popup-close');
+  </div>
+</nav>
+<div class="mobile-nav">
+  <ul class="mobile-nav-links">
+    <li><a href="index">Home</a></li>
+    <li><a href="about">About</a></li>
+    <li><details class="mobile-nav-accordion"><summary>Products <i class="fas fa-chevron-down"></i></summary><ul class="mobile-nav-sub"><li><a href="frpmedia">RO Pressure Vessels &amp; FRP Filters</a></li><li><a href="membranes">Membrane Products</a></li><li><a href="pumps">Pumps</a></li><li><a href="filters">Filter Cartridges &amp; Housings</a></li><li><a href="sandmedia">Sand Media &amp; Ion Exchange Resins</a></li><li><a href="chemicals">Water Treatment Chemicals</a></li><li><a href="Wastewater">Waste Water Equipments</a></li><li><a href="instruments">Instruments &amp; Lab Apparatus</a></li><li><a href="disinfectants">Disinfection Products</a></li><li><a href="valves">Valves, Couplings &amp; Fittings</a></li><li><a href="atmospheric-water-generators">Atmospheric Water Generators</a></li><li><a href="nanobubble-technology">Nanobubble Technology</a></li><li><a href="pneumatic-products">Pneumatic Products</a></li><li><a href="dunnage-air-bags">Dunnage Air Bags</a></li></ul></details></li>
+    <li><a href="catalog">Catalog</a></li>
+    <li><a href="contact">Contact</a></li>
+  </ul>
+  <a href="contact" class="btn btn--primary btn--full">Get a Quote</a>
+</div>
 
-            function closePopup() {
-                popup.style.display = 'none';
-                overlay.style.display = 'none';
-            }
+<!-- HERO -->
+<section class="hero hero--page">
+  <div class="hero-bg"><div class="hero-grid"></div><div class="hero-mesh"></div></div>
+  <div class="container">
+    <div class="hero-breadcrumb"><a href="index">Home</a><i class="fas fa-chevron-right"></i><a href="Products">Products</a><i class="fas fa-chevron-right"></i><span>Filter Cartridges &amp; Housings</span></div>
+    <h1 class="hero-title">Filter Cartridges &amp; Housings</h1>
+    <p class="hero-sub">Complete range of depth and surface filtration cartridges paired with polypropylene, stainless steel, and multi-bag housings for pre-treatment, process water, and point-of-use applications.</p>
+  </div>
+</section>
 
-            galleryImages.forEach(img => {
-                img.addEventListener('click', function() {
-                    popupImg.src = this.src;
-                    popup.style.display = 'block';
-                    overlay.style.display = 'block';
-                });
-            });
+<!-- MAIN PRODUCT SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="product-detail-grid reveal">
+      <div class="product-detail-image">
+        <img src="images/filters.jpg" alt="Filter Cartridges and Housings" loading="lazy">
+      </div>
+      <div>
+        <div class="detail-tag"><i class="fas fa-tag"></i> Filter Cartridges &amp; Housings</div>
+        <h2>Reliable Particulate Removal Across All Micron Ratings</h2>
+        <p>Our cartridge filter programme covers every stage of water treatment filtration from coarse 100-micron pre-filtration through to absolute 0.2-micron sterilising-grade polishing. All cartridge types are manufactured from food-grade polypropylene, ensuring compliance with drinking water and food &amp; beverage applications.</p>
+        <p>Compatible housings range from single-cartridge residential units to multi-cartridge stainless steel vessels handling hundreds of cubic metres per hour. We supply standard 10", 20", 30", and 40" cartridges in all major formats, ensuring drop-in replacement compatibility with existing systems regardless of the original manufacturer.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem">
+          <a href="contact" class="btn btn--primary">Get a Quote</a>
+          <a href="catalog" class="btn btn--outline">View Catalog</a>
+        </div>
+      </div>
+    </div>
 
-            closeButton.addEventListener('click', closePopup);
-            overlay.addEventListener('click', closePopup);
+    <!-- PRODUCT SUB-ITEMS GRID -->
+    <div class="section-header reveal" style="margin-top:4rem">
+      <div class="eyebrow">Product Range</div>
+      <h2 class="section-title">Cartridge Types &amp; Housings</h2>
+    </div>
+    <div class="product-sub-grid reveal">
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/filters.jpg" alt="String Wound PP Filter Cartridge" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>String Wound Polypropylene Cartridges</h3>
+          <p>Depth-filtration cartridges with graded density wound construction for high dirt-holding capacity. Available in 1–100 micron ratings; economical and widely used in RO pre-treatment and general industrial filtration.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/filters1.jpg" alt="Melt Blown Filter Cartridge" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>Melt Blown Polypropylene Cartridges</h3>
+          <p>Thermally bonded melt-blown cartridges offering consistent micron ratings from 0.5 to 50 microns. No binder or adhesive — 100% polypropylene construction ensures chemical compatibility and clean filtration.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/filters2.jpg" alt="Pleated Filter Cartridge" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>Pleated Filter Cartridges</h3>
+          <p>High surface area pleated membrane cartridges in PP, PES, PVDF, and nylon for low pressure drop and long service life. Available in absolute micron ratings from 0.2 to 10 microns for critical applications.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/filters.jpg" alt="Carbon Block Filter Cartridge" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>Carbon Block Cartridges</h3>
+          <p>Extruded activated carbon block cartridges for simultaneous particulate filtration and chlorine, taste, and odour removal. Essential for protecting TFC RO membranes from chlorine oxidation damage.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/filters1.jpg" alt="Filter Housing" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>Polypropylene Filter Housings</h3>
+          <p>Single and multi-cartridge transparent and opaque PP housings in 10" and 20" sizes. Pressure-rated to 125 psi with NSF-compliant O-ring seals; ideal for residential, commercial, and light industrial service.</p>
+        </div>
+      </div>
+      <div class="product-sub-card">
+        <div class="product-sub-card-img">
+          <img src="images/filters2.jpg" alt="Stainless Steel Filter Housing" loading="lazy">
+        </div>
+        <div class="product-sub-card-body">
+          <h3>Stainless Steel Multi-Cartridge Housings</h3>
+          <p>SS304 and SS316L housings accommodating 1 to 48 cartridges for high-flow industrial applications. Rated up to 150 psi and 90°C for hot water and steam-sanitisable process water systems.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            // Close popup with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closePopup();
-                }
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const collapseButtons = document.querySelectorAll('[data-bs-toggle="collapse"]');
-            
-            collapseButtons.forEach(button => {
-                const showMoreText = button.querySelector('.show-more');
-                const showLessText = button.querySelector('.show-less');
-                
-                button.addEventListener('click', function() {
-                    const isCollapsed = this.getAttribute('aria-expanded') === 'true';
-                    showMoreText.classList.toggle('d-none', !isCollapsed);
-                    showLessText.classList.toggle('d-none', isCollapsed);
-                });
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the Products dropdown link and menu
-            const productsLink = document.querySelector('#navbarDropdown');
-            const dropdownMenu = document.querySelector('.dropdown-menu');
-            const dropdown = document.querySelector('.dropdown');
-            
-            if (productsLink && dropdownMenu && dropdown) {
-                // Handle click on Products link
-                productsLink.addEventListener('click', function(e) {
-                    if (e.target.classList.contains('dropdown-arrow') || dropdown.classList.contains('show')) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('show');
-                        dropdownMenu.classList.toggle('show');
-                    } else {
-                        window.location.href = 'Products.html';
-                    }
-                });
-                
-                // Close dropdown when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!dropdown.contains(e.target)) {
-                        dropdown.classList.remove('show');
-                        dropdownMenu.classList.remove('show');
-                    }
-                });
-                
-                // Desktop hover functionality
-                if (window.innerWidth > 768) {
-                    dropdown.addEventListener('mouseenter', function() {
-                        dropdown.classList.add('show');
-                        dropdownMenu.classList.add('show');
-                    });
-                    
-                    dropdown.addEventListener('mouseleave', function() {
-                        dropdown.classList.remove('show');
-                        dropdownMenu.classList.remove('show');
-                    });
-                }
-            }
-        });
-    </script>
+<!-- FEATURES -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="section-header section-header--center reveal">
+      <div class="eyebrow">Why Choose Us</div>
+      <h2 class="section-title">Key Features &amp; Benefits</h2>
+    </div>
+    <div class="grid-4">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
+        <h3>Wide Micron Ratings</h3>
+        <p>From 100-micron nominal to 0.2-micron absolute, our cartridge range addresses every particulate challenge from coarse pre-filtration to sterilising-grade polishing.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon"><i class="fas fa-utensils"></i></div>
+        <h3>Food-Grade Materials</h3>
+        <p>All cartridges manufactured from virgin, FDA-compliant polypropylene with no binders or extractable substances, ensuring safe use in drinking water and food processing.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon"><i class="fas fa-fill-drip"></i></div>
+        <h3>High Dirt-Holding Capacity</h3>
+        <p>Graded-density depth construction maximises dirt-holding capacity and service intervals, reducing cartridge consumption and maintenance frequency.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+        <h3>Universal Compatibility</h3>
+        <p>Standard 222 and 226 end-cap configurations and DOE (double open end) designs ensure compatibility with all major housing brands and OEM filtration equipment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Applications</div>
+      <h2 class="section-title">Industries &amp; Applications</h2>
+    </div>
+    <div class="grid-2" style="align-items:center;gap:3rem">
+      <div class="reveal">
+        <ul class="check-list">
+          <li>Pre-RO 5-micron cartridge filtration (CFS)</li>
+          <li>Drinking water point-of-use polishing</li>
+          <li>Process water for food &amp; beverage production</li>
+          <li>Pharmaceutical water purification (WFI pre-treatment)</li>
+          <li>Cooling tower make-up water filtration</li>
+          <li>Chemical process filtration and clarification</li>
+          <li>Swimming pool and recreational water treatment</li>
+          <li>Semiconductor and electronics ultra-pure water</li>
+        </ul>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <img src="images/filters1.jpg" alt="Filter Cartridge Applications" loading="lazy" style="border-radius:var(--radius-xl);width:100%;height:300px;object-fit:cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="reveal">
+      <h2>Ready to order or need a custom quote?</h2>
+      <p>Contact our team for pricing, availability, and technical specifications tailored to your requirements.</p>
+      <div class="cta-actions">
+        <a href="contact" class="btn btn--primary btn--lg">Request a Quote</a>
+        <a href="Products" class="btn btn--outline-white btn--lg">Back to Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="images/logo.png" alt="Genoasis" class="footer-logo" loading="lazy"><p>Your trusted partner for industrial water treatment solutions. Serving India and the Middle East with quality products and expert support since 2020.</p><div class="footer-social"><a href="https://www.linkedin.com/company/genoasis-technologies/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
+      <div class="footer-col"><h4>Products</h4><div class="footer-links"><a href="frpmedia">RO Pressure Vessels</a><a href="membranes">Membranes</a><a href="pumps">Pumps</a><a href="filters">Filter Cartridges</a><a href="chemicals">Chemicals</a><a href="valves">Valves &amp; Fittings</a><a href="Products">All Products →</a></div></div>
+      <div class="footer-col"><h4>Company</h4><div class="footer-links"><a href="about">About Us</a><a href="catalog">Product Catalog</a><a href="contact">Contact Us</a><a href="catalogs/Genoasis_catalog.pdf" target="_blank" rel="noopener">Download Brochure</a></div></div>
+      <div class="footer-col"><h4>Contact</h4><div class="footer-contact-row"><i class="fas fa-map-marker-alt"></i><span>6, Balaji St, Guduvancherry, Chennai, Tamil Nadu, India</span></div><div class="footer-contact-row"><i class="fas fa-phone"></i><span>+91 892 588 3227 (India)<br>+971 50 497 3835 (UAE)</span></div><div class="footer-contact-row"><i class="fas fa-envelope"></i><span>info@genoasis.com</span></div></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 Genoasis Water Technologies. All rights reserved.</span><span>Chennai, India &amp; Middle East</span></div>
+  </div>
+</footer>
+<script src="js/site.js" defer></script>
 </body>
 </html>
