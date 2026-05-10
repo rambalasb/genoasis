@@ -709,7 +709,7 @@ textarea.form-control { resize: vertical; min-height: 130px; }
   .nav-links, .nav-cta { display: none; }
   .nav-toggle          { display: flex; }
   .mobile-nav          { display: block; }
-  /* Always show dark logo on mobile — white logo invisible on white overlay */
+  /* Always show dark logo on mobile - white logo invisible on white overlay */
   .site-nav:not(.scrolled) .logo-light { display: none; }
   .site-nav:not(.scrolled) .logo-dark  { display: block; }
   .grid-2, .grid-3     { grid-template-columns: 1fr; }

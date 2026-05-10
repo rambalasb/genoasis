@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================
-   1. NAV — transparent → solid on scroll
+   1. NAV - transparent → solid on scroll
    ============================================================ */
 (function () {
   var nav = document.getElementById('site-nav');
@@ -52,7 +52,7 @@
 }());
 
 /* ============================================================
-   4. CATALOG — ACCORDION
+   4. CATALOG - ACCORDION
    ============================================================ */
 (function () {
   document.querySelectorAll('.product-item-header').forEach(function (header) {
@@ -63,7 +63,7 @@
 }());
 
 /* ============================================================
-   5. CATALOG — SEARCH & FILTER
+   5. CATALOG - SEARCH & FILTER
    ============================================================ */
 (function () {
   var searchEl = document.getElementById('catalog-search');
@@ -96,7 +96,7 @@
 }());
 
 /* ============================================================
-   6. TESTIMONIALS — SCROLL NAV
+   6. TESTIMONIALS - SCROLL NAV
    ============================================================ */
 (function () {
   var track = document.querySelector('.testimonials-track');
