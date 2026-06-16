@@ -5,26 +5,18 @@
 
     Developer: Genoasis Development Team
     Contact: info [at] genoasis.com
-    From: Chennai, India & UAE, UAE
+    From: Chennai, India & UAE
 
-# THANKS
+# SITE
 
-    Bootstrap Framework
-    Font Awesome Icons
-    AOS Animation Library
+    Last update: 2026/06/16
+    Language: English
+    Doctype: HTML5
+    Markets: Middle East, Africa, Australia, New Zealand, India & worldwide
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3, JavaScript
-    Bootstrap 5
     Font Awesome 6
-    AOS (Animate On Scroll)
+    Google Fonts (Inter)
     Google Analytics
-    Google reCAPTCHA
-
-# SITE
-
-    Last update: 2024/01/15
-    Language: English
-    Doctype: HTML5
-    IDE: VS Code
