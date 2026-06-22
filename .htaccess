@@ -113,6 +113,37 @@
 
 AddType image/webp .webp
 
+# 301 redirects - product pages consolidated into 6 business divisions (2026)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Water Treatment Consumables & Spares
+    RewriteRule ^membranes/?$            /consumables-spares/ [R=301,L]
+    RewriteRule ^frpmedia/?$             /consumables-spares/ [R=301,L]
+    RewriteRule ^filters/?$              /consumables-spares/ [R=301,L]
+    RewriteRule ^sandmedia/?$            /consumables-spares/ [R=301,L]
+    RewriteRule ^valves/?$               /consumables-spares/ [R=301,L]
+
+    # RO & Cooling Water Chemicals
+    RewriteRule ^chemicals/?$            /ro-cooling-water-chemicals/ [R=301,L]
+    RewriteRule ^disinfectants/?$        /ro-cooling-water-chemicals/ [R=301,L]
+
+    # STP & ETP Biological Media
+    RewriteRule ^wastewater/?$           /stp-etp-biological-media/ [R=301,L]
+
+    # Pneumatic & Automation Components
+    RewriteRule ^pneumatic-products/?$   /pneumatic-automation/ [R=301,L]
+    RewriteRule ^instruments/?$          /pneumatic-automation/ [R=301,L]
+
+    # Sludge Dewatering & Industrial Pumping Solutions
+    RewriteRule ^pumps/?$                /sludge-dewatering-pumping/ [R=301,L]
+
+    # Dropped pages -> homepage
+    RewriteRule ^atmospheric-water-generators/?$ / [R=301,L]
+    RewriteRule ^nanobubble-technology/?$        / [R=301,L]
+    RewriteRule ^dunnage-air-bags/?$             / [R=301,L]
+</IfModule>
+
 # Force HTTPS (optional - uncomment if needed)
 # <IfModule mod_rewrite.c>
 #     RewriteEngine On

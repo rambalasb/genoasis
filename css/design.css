@@ -346,6 +346,9 @@ input, textarea, select { font-family: inherit; }
 }
 .feature-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .5rem; }
 .feature-card p  { font-size: .9rem; color: var(--text-muted); line-height: 1.65; }
+a.feature-card { display: block; text-decoration: none; }
+.division-link { display: inline-flex; align-items: center; gap: .4rem; margin-top: 1.1rem; font-weight: 600; font-size: .85rem; color: var(--cyan); transition: gap var(--dur) var(--ease); }
+a.feature-card:hover .division-link { gap: .65rem; }
 
 /* ============================================================
    10. INDUSTRY CARDS
